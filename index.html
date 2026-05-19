@@ -394,7 +394,7 @@
     <div class="social-proof-popup" id="socialProof">
         <div class="sp-icon">🛍️</div>
         <div class="sp-text">
-            <p id="spLocation">Alguien de México acaba de comprar</p>
+            <p id="spLocation">El número +52 *****12 compró</p>
             <h4 id="spItem">Disney+ (3 Meses)</h4>
             <span class="sp-time" id="spTime">Hace 2 minutos</span>
         </div>
@@ -1236,16 +1236,17 @@
         const purchases = [
             "Netflix (1 Mes)", "Disney+ (3 Meses)", "Diamantes Free Fire", "Spotify Premium", "VIX+ (Cuenta Nueva)", "TikTok Seguidores", "Codpoints (Xbox)", "Canva Pro", "Apple TV + MLS"
         ];
-        const locations = ["Estados Unidos", "México", "Colombia", "El Salvador", "Perú", "Argentina", "Chile", "Ecuador", "Guatemala"];
+        const phoneCodes = ["+1", "+52", "+57", "+503", "+51", "+54", "+56", "+593", "+502", "+504", "+505", "+506", "+507", "+595", "+598"];
         const times = ["Hace 2 minutos", "Hace 5 minutos", "Hace 1 minuto", "Hace 10 minutos", "Recién ahora"];
 
         setInterval(() => {
             let popup = document.getElementById('socialProof');
             let item = purchases[Math.floor(Math.random() * purchases.length)];
-            let loc = locations[Math.floor(Math.random() * locations.length)];
+            let code = phoneCodes[Math.floor(Math.random() * phoneCodes.length)];
+            let randomDigits = Math.floor(Math.random() * 90) + 10; // Número aleatorio de 2 dígitos
             let time = times[Math.floor(Math.random() * times.length)];
 
-            document.getElementById('spLocation').innerText = `Alguien de ${loc} acaba de comprar`;
+            document.getElementById('spLocation').innerText = `El número ${code} *****${randomDigits} compró`;
             document.getElementById('spItem').innerText = item;
             document.getElementById('spTime').innerText = time;
 

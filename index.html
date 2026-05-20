@@ -304,7 +304,7 @@
         .btn-modern-buy { flex: 1; background: var(--primary); border: none; border-radius: 12px; color: #fff; font-weight: 700; font-size: 0.9rem; padding: 15px; cursor: pointer; transition: 0.3s; box-shadow: 0 0 15px rgba(138,43,226,0.4); text-transform: uppercase; }
         .btn-modern-buy:hover { background: #9d4edd; transform: translateY(-2px); }
 
-        /* --- NUEVO MODAL DE PAGO --- */
+        /* --- NUEVO MODAL DE PAGO (CUENTAS Y COMPROBANTE) --- */
         .pay-methods-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
         .pay-method-card { background: #14101d; border: 1px solid #2d2440; border-radius: 12px; padding: 15px; font-size: 0.85rem; line-height: 1.5; transition: border 0.3s;}
         .pay-method-card:hover { border-color: var(--primary); }
@@ -475,6 +475,7 @@
                         </svg>
                         CARRITO
                     </button>
+                    <!-- AL DARLE CLIC A ESTE BOTÓN, AHORA ABRE LA VENTANA DE PAGO -->
                     <button class="btn-modern-buy" onclick="buyNowFromModal()">COMPRAR</button>
                 </div>
             </div>
@@ -488,7 +489,6 @@
             <div class="modal-title" style="text-align: center; margin-bottom: 10px;">DATOS DE PAGO</div>
             <p style="text-align:center; color: var(--text-dim); font-size: 0.95rem; margin-bottom: 25px;">Monto total a depositar: <strong id="payModalTotal" style="color:var(--accent); font-size: 1.3rem;">$0 MXN</strong></p>
             
-            <!-- Aquí puedes actualizar tus datos reales -->
             <div class="pay-methods-grid">
                 <div class="pay-method-card">
                     <strong>🏦 Transferencia (SPEI)</strong>
@@ -1084,7 +1084,9 @@
         let currentItem = null;
         let selectedCurrency = "MXN";
         let exchangeRate = 20;
-        let pendingOrderText = ""; // Variable para guardar el pedido temporalmente
+        
+        // Variable esencial para almacenar el texto antes de ir a pagar
+        let pendingOrderText = ""; 
 
         function formatPrice(p) {
             const amount = parseFloat(String(p).replace(/[^\d.]/g, '')) || 0;
@@ -1141,7 +1143,7 @@
             updateDisplayedPrices();
         });
 
-        // Modal Dinámico
+        /* --- MODAL PRINCIPAL DE PRODUCTO --- */
         function openModal(element, title, msgText, optionsStr) {
             let imgSrc = element.querySelector('.service-img').src;
             document.getElementById('modalImg').src = imgSrc;
@@ -1193,8 +1195,10 @@
         }
 
         function closeModal() { document.getElementById('purchaseModal').classList.remove('active'); }
+        
         function toggleCart() { document.getElementById('cartSidebar').classList.toggle('active'); }
 
+        /* --- LÓGICA DEL CARRITO --- */
         function updateCartUI() {
             const container = document.getElementById('cartItemsContainer');
             const badge = document.getElementById('cartBadge');
@@ -1236,11 +1240,14 @@
 
         function removeFromCart(index) { cart.splice(index, 1); updateCartUI(); }
 
-        /* LÓGICA MODIFICADA PARA ABRIR VENTANA DE PAGO */
+        /* --- LÓGICA DE COMPRA (ABRE VENTANA DE PAGOS) --- */
         function buyNowFromModal() {
             if(currentItem) {
                 const name = document.getElementById('buyerName').value.trim() || "(No especificado)";
+                // Guardamos el texto del pedido en la variable global
                 pendingOrderText = `${currentItem.msg}: ${currentItem.optionLabel} (${currentItem.display}). Mi nombre es: ${name}`;
+                
+                // Cerramos ventana de producto y abrimos ventana de métodos de pago
                 closeModal();
                 openPaymentModal(currentItem.display);
             }
@@ -1249,6 +1256,7 @@
         function checkoutCart() {
             if(cart.length === 0) return alert("Tu carrito está vacío.");
             const name = document.getElementById('cartNameInput').value.trim() || "(No especificado)";
+            
             let text = `Hola, confirmo mi pedido en el Carrito:\n\n`;
             let total = 0;
             cart.forEach(item => {
@@ -1257,21 +1265,29 @@
             });
             text += `\nTotal estimado: $${total} MXN\nNombre: ${name}`;
             
+            // Guardamos el texto del pedido múltiple
             pendingOrderText = text;
-            toggleCart(); // Cierra el sidebar del carrito
+            
+            // Cerramos carrito y abrimos métodos de pago
+            toggleCart(); 
             openPaymentModal(`$${total} MXN`);
         }
 
-        /* CONTROL DEL NUEVO MODAL DE PAGO */
+        /* --- CONTROL DEL MODAL DE DATOS DE PAGO --- */
         function openPaymentModal(totalDisplay) {
             document.getElementById('payModalTotal').innerText = totalDisplay;
             
-            // Reinicia el input de archivo y texto
+            // Limpia el input de archivo por si había algo antes
             const fileInput = document.getElementById('proofInput');
-            fileInput.value = '';
-            document.getElementById('file-upload-text').innerText = "📤 Toca aquí para subir tu foto o captura";
-            document.getElementById('file-upload-text').style.color = "#fff";
+            if(fileInput) fileInput.value = '';
             
+            const fileText = document.getElementById('file-upload-text');
+            if(fileText) {
+                fileText.innerText = "📤 Toca aquí para subir tu foto o captura";
+                fileText.style.color = "#fff";
+            }
+            
+            // Muestra la ventana
             document.getElementById('paymentModal').classList.add('active');
         }
 
@@ -1292,20 +1308,22 @@
 
         function sendOrderWithProof() {
             const fileInput = document.getElementById('proofInput');
+            
+            // Valida que el usuario haya subido la foto primero
             if(!fileInput.files || fileInput.files.length === 0) {
                 alert("⚠️ Por favor, selecciona la foto o captura de tu comprobante primero.");
                 return;
             }
             
-            // Añade un recordatorio al texto para WhatsApp
-            let finalWAtext = pendingOrderText + `\n\n*Adjunto comprobante de pago.*`;
+            // Adjunta aviso en el texto para WA
+            let finalWAtext = pendingOrderText + `\n\n*Adjunto comprobante de pago en la imagen.*`;
             
-            // Abre WhatsApp
+            // Manda a WhatsApp
             window.open(`https://wa.me/526611078412?text=${encodeURIComponent(finalWAtext)}`, '_blank');
             closePaymentModal();
         }
 
-        /* FILTROS DE CATÁLOGO */
+        /* --- OTROS SCRIPTS (Filtros, FAQ, Proof, etc) --- */
         function filterCatalog(category) {
             document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
@@ -1327,7 +1345,6 @@
             });
         }
 
-        /* LÓGICA PREGUNTAS FRECUENTES (FAQ) */
         function toggleFaq(element) {
             let item = element.parentElement;
             let answer = item.querySelector('.faq-answer');
@@ -1345,7 +1362,6 @@
             }
         }
 
-        /* NOTIFICACIONES DE VENTAS SIMULADAS */
         const purchases = [
             "Netflix (1 Mes)", "Disney+ (3 Meses)", "Diamantes Free Fire", "Spotify Premium", "VIX+ (Cuenta Nueva)", "TikTok Seguidores", "Codpoints (Xbox)", "Canva Pro", "Apple TV + MLS"
         ];
@@ -1367,7 +1383,6 @@
             setTimeout(() => { popup.classList.remove('show'); }, 4000); 
         }, 20000); 
 
-        /* Lógica de Reseñas */
         let selectedStars = 5;
         const starSpans = document.querySelectorAll('#stars span');
         starSpans.forEach(s => {

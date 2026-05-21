@@ -393,6 +393,106 @@
             .services-grid { grid-template-columns: 1fr; }
             .contact-links { flex-direction: column; width: 100%; }
         }
+
+
+        /* --- VESSEL 3.0: MOBILE FIRST, LIVE VIEWERS REALISTAS, BRAND FX Y CARRUSEL PREMIUM --- */
+        html { scroll-padding-top: 110px; }
+        body { background: radial-gradient(circle at 20% 0%, rgba(138,43,226,0.10), transparent 28%), radial-gradient(circle at 85% 12%, rgba(0,255,204,0.07), transparent 24%), var(--bg-color); }
+        nav { gap: 18px; }
+        .brand-logo { position: relative; padding: 6px 10px 6px 6px; border-radius: 18px; overflow: hidden; isolation: isolate; }
+        .brand-logo::before { content:''; position:absolute; inset:-70%; background: conic-gradient(from 0deg, transparent, rgba(0,255,204,.20), transparent, rgba(138,43,226,.24), transparent); animation: brandOrbit 5.5s linear infinite; z-index:-2; opacity:.8; }
+        .brand-logo::after { content:''; position:absolute; inset:1px; background:rgba(7,7,10,.84); border-radius:17px; z-index:-1; }
+        .brand-mark { animation: brandFloat 3.5s ease-in-out infinite; }
+        .brand-mark::after { animation: brandSlash 2.8s ease-in-out infinite; }
+        .brand-name { position:relative; text-shadow:0 0 18px rgba(138,43,226,.38); }
+        .brand-name::after { content:''; position:absolute; left:-8%; right:-8%; top:-25%; height:150%; background:linear-gradient(90deg, transparent, rgba(255,255,255,.38), transparent); transform:translateX(-140%) skewX(-18deg); animation: brandShine 4.2s ease-in-out infinite; pointer-events:none; }
+        @keyframes brandOrbit { to { transform:rotate(360deg); } }
+        @keyframes brandFloat { 0%,100%{ transform:translateY(0) rotate(0deg); } 50%{ transform:translateY(-3px) rotate(-2deg); } }
+        @keyframes brandSlash { 0%,100%{ opacity:.55; transform:rotate(-28deg) translateX(0); } 50%{ opacity:.95; transform:rotate(-28deg) translateX(7px); } }
+        @keyframes brandShine { 0%,55%{ transform:translateX(-140%) skewX(-18deg); } 72%,100%{ transform:translateX(140%) skewX(-18deg); } }
+
+        .mini-carousel-container { margin-top: 34px; padding: 9px 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent); mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent); }
+        .mini-carousel-track { gap: 12px; animation-duration: 36s; }
+        .mini-carousel-track:hover { animation-play-state: paused; }
+        .mini-card { min-width: 188px; min-height: 54px; border-radius: 18px; padding: 8px 14px 8px 8px; background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.025)); border-color: rgba(255,255,255,.11); box-shadow: 0 12px 34px rgba(0,0,0,.25); }
+        .mini-card img { width: 38px; height: 38px; border-radius: 14px; }
+        .mini-card div { display:flex; flex-direction:column; gap:3px; line-height:1.05; }
+        .mini-card small { color:var(--text-dim); font-size:.62rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+
+        .service-card { will-change: transform; }
+        .card-live-meta span.viewer-chip { min-width: 92px; text-align:center; transition: transform .25s ease, background .25s ease, color .25s ease; }
+        .card-live-meta span.viewer-chip.bump { transform: scale(1.08); background: rgba(0,255,204,.16); color: var(--accent); }
+        .viewer-dot { display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--accent); margin-right:5px; box-shadow:0 0 10px var(--accent); animation: viewerPulse 1.4s ease-in-out infinite; }
+        @keyframes viewerPulse { 0%,100%{ opacity:.45; transform:scale(.85); } 50%{ opacity:1; transform:scale(1.2); } }
+
+        .service-note { margin: -8px 0 14px; color: var(--text-dim); font-size: .78rem; line-height: 1.55; border-left: 2px solid rgba(0,255,204,.45); padding-left: 10px; }
+        .mobile-bottom-nav { display:none; }
+
+        @media (max-width: 768px) {
+            body { padding-bottom: 82px; }
+            nav { align-items:center; padding: 10px 4%; gap:10px; }
+            .menu { width:100%; display:grid; grid-template-columns:repeat(4,1fr); gap:7px; }
+            .menu a, .btn-login { border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.035); border-radius:12px; padding:10px 6px; text-align:center; font-size:.64rem; }
+            .currency-switcher { padding:5px; border-radius:14px; }
+            .currency-btn { min-width:0; padding:9px 10px; }
+            .hero { min-height: 88vh; height:auto; padding: 118px 5% 34px; background-attachment: scroll; justify-content:flex-start; }
+            .hero-content { margin-top: 0; max-width: none; }
+            .badge { font-size:.67rem; margin-bottom:14px; }
+            .hero h1 { font-size: clamp(2rem, 11vw, 3.05rem); line-height: .98; margin-bottom: 16px; }
+            .hero p { font-size: .96rem; line-height:1.55; margin-bottom:22px; }
+            .hero-actions { gap:12px; }
+            .btn { width:100%; padding: 16px 20px; border-radius: 18px; }
+            .contact-links { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+            .btn-contact { justify-content:center; padding:13px 10px; border-radius:16px; font-size:.72rem; }
+            .mini-carousel-container { margin-top:22px; }
+            .mini-carousel-track { animation-duration: 28s; }
+            .mini-card { min-width: 156px; min-height: 50px; font-size:.72rem; }
+            .mini-card img { width:34px; height:34px; }
+            #catalogo-ancla { scroll-margin-top: 135px; }
+            .catalog-filters { position: sticky; top: 104px; background: rgba(7,7,10,.80); backdrop-filter: blur(12px); padding: 10px 0; margin:0; overflow-x:auto; flex-wrap:nowrap; justify-content:flex-start; z-index: 50; scrollbar-width:none; }
+            .catalog-filters::-webkit-scrollbar { display:none; }
+            .filter-btn { white-space:nowrap; padding: 11px 15px; font-size:.68rem; }
+            .section-title { font-size: 1.45rem; margin: 25px 0; padding-top: 18px; }
+            .services-section { padding: 0 3.5% 28px; }
+            .services-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .service-card { border-radius: 18px; box-shadow: 0 10px 28px rgba(0,0,0,.28); }
+            .img-container { height: 118px; }
+            .limited-badge { top:8px; left:8px; font-size:.55rem; padding:6px 8px; }
+            .card-live-meta { left:7px; right:7px; bottom:7px; font-size:.55rem; gap:5px; }
+            .card-live-meta span { padding:5px 6px; }
+            .card-live-meta span.viewer-chip { min-width: 76px; }
+            .service-info { padding: 12px; }
+            .service-info h3 { font-size: .84rem; line-height:1.2; margin-bottom:8px; }
+            .options-list { margin-bottom: 12px; line-height:1.45; }
+            .options-list li { align-items:flex-start; gap:6px; }
+            .service-note { font-size:.66rem; margin:-2px 0 10px; }
+            .price-container { padding-top:10px; }
+            .price-label { font-size:.62rem; }
+            .price { font-size:1rem; }
+            .modal-overlay { align-items:flex-end; }
+            .modal-box { width:100%; max-width:none; border-radius: 24px 24px 0 0; max-height: 92vh; padding: 20px; }
+            .modal-header-modern { margin-bottom: 18px; }
+            .modal-thumbnail { width:52px; height:52px; }
+            .modal-title { font-size:1.05rem; }
+            .deal-strip { gap:8px; margin-bottom:16px; }
+            .deal-pill { min-height:auto; padding:10px; }
+            .deal-pill strong { font-size:.9rem; }
+            .modal-buttons-modern { position:sticky; bottom:-20px; background:#0d0914; padding-top:10px; padding-bottom:6px; }
+            .upsell-card { align-items:flex-start; flex-direction:column; }
+            .upsell-card button { width:100%; }
+            .cart-sidebar { max-width:none; width:92%; right:-92%; }
+            .cart-float-btn { width:58px; height:58px; right:18px; bottom:92px; }
+            .social-proof-popup { display:none; }
+            .mobile-bottom-nav { position:fixed; left:12px; right:12px; bottom:12px; height:62px; display:grid; grid-template-columns:repeat(4,1fr); gap:8px; padding:8px; background:rgba(10,10,15,.88); border:1px solid rgba(255,255,255,.10); backdrop-filter:blur(18px); border-radius:22px; z-index:1200; box-shadow:0 14px 42px rgba(0,0,0,.55); }
+            .mobile-bottom-nav a, .mobile-bottom-nav button { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; color:#fff; text-decoration:none; background:transparent; border:0; font-weight:900; font-size:.62rem; }
+            .mobile-bottom-nav b { font-size:1.05rem; line-height:1; }
+        }
+        @media (max-width: 430px) {
+            .services-grid { gap: 10px; }
+            .img-container { height: 105px; }
+            .options-list li span:last-child { text-align:right; }
+        }
+
     </style>
 </head>
 <body>
@@ -605,6 +705,13 @@
         </div>
     </nav>
 
+    <div class="mobile-bottom-nav" aria-label="Navegación móvil">
+        <a href="#catalogo-ancla"><b>🛒</b><span>Catálogo</span></a>
+        <a href="https://wa.me/526611078412?text=Hola,%20quiero%20hacer%20un%20pedido." target="_blank"><b>💬</b><span>WhatsApp</span></a>
+        <button type="button" onclick="toggleCart()"><b>🧺</b><span>Carrito</span></button>
+        <button type="button" onclick="openLoginModal()"><b>👤</b><span>Cuenta</span></button>
+    </div>
+
     <div class="hero">
         <div class="hero-content">
             <div class="badge">CATÁLOGO DIGITAL · ENTREGA RÁPIDA</div>
@@ -626,22 +733,24 @@
                 </div>
             </div>
 
-            <div class="mini-carousel-container">
+            <div class="mini-carousel-container" aria-label="Servicios destacados">
                 <div class="mini-carousel-track">
-                    <div class="mini-card"><img src="https://i.imgur.com/k2EcQDW.jpg" referrerpolicy="no-referrer"><div>NETFLIX <span class="c-primary">$90</span></div></div>
-                    <div class="mini-card"><img src="https://i.imgur.com/8zUIcAF.jpg" referrerpolicy="no-referrer"><div>FREE FIRE <span class="c-accent">$195</span></div></div>
-                    <div class="mini-card"><img src="https://i.imgur.com/Ymyilp2.png" referrerpolicy="no-referrer"><div>PRIME VIDEO <span class="c-primary">$50</span></div></div>
-                    <div class="mini-card"><img src="https://i.imgur.com/4F6ADP2.png" referrerpolicy="no-referrer"><div>MAX <span class="c-primary">$50</span></div></div>
-                    <div class="mini-card"><img src="https://i.imgur.com/qMIAoBj.png" referrerpolicy="no-referrer"><div>CANVA PRO <span class="c-accent">$60</span></div></div>
-                    <div class="mini-card"><img src="https://i.imgur.com/ETm5cQn.png" referrerpolicy="no-referrer"><div>SPOTIFY <span class="c-primary">$80</span></div></div>
-                    <div class="mini-card"><img src="https://i.imgur.com/NbxACqw.jpg" referrerpolicy="no-referrer"><div>CODPOINTS <span class="c-accent">$200</span></div></div>
-                    <div class="mini-card"><img src="https://i.imgur.com/k2EcQDW.jpg" referrerpolicy="no-referrer"><div>NETFLIX <span class="c-primary">$90</span></div></div>
-                    <div class="mini-card"><img src="https://i.imgur.com/8zUIcAF.jpg" referrerpolicy="no-referrer"><div>FREE FIRE <span class="c-accent">$195</span></div></div>
-                    <div class="mini-card"><img src="https://i.imgur.com/Ymyilp2.png" referrerpolicy="no-referrer"><div>PRIME VIDEO <span class="c-primary">$50</span></div></div>
-                    <div class="mini-card"><img src="https://i.imgur.com/4F6ADP2.png" referrerpolicy="no-referrer"><div>MAX <span class="c-primary">$50</span></div></div>
-                    <div class="mini-card"><img src="https://i.imgur.com/qMIAoBj.png" referrerpolicy="no-referrer"><div>CANVA PRO <span class="c-accent">$60</span></div></div>
-                    <div class="mini-card"><img src="https://i.imgur.com/ETm5cQn.png" referrerpolicy="no-referrer"><div>SPOTIFY <span class="c-primary">$80</span></div></div>
-                    <div class="mini-card"><img src="https://i.imgur.com/NbxACqw.jpg" referrerpolicy="no-referrer"><div>CODPOINTS <span class="c-accent">$200</span></div></div>
+                    <div class="mini-card"><img src="https://i.imgur.com/8zUIcAF.jpg" referrerpolicy="no-referrer"><div><small>Recarga rápida</small>FREE FIRE <span class="c-accent">desde $195</span></div></div>
+                    <div class="mini-card"><img src="https://i.imgur.com/NbxACqw.jpg" referrerpolicy="no-referrer"><div><small>Xbox</small>CODPOINTS <span class="c-accent">desde $200</span></div></div>
+                    <div class="mini-card"><img src="https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=120&q=80" referrerpolicy="no-referrer"><div><small>Código</small>HALO CREDITS <span class="c-accent">desde $70</span></div></div>
+                    <div class="mini-card"><img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=120&q=80" referrerpolicy="no-referrer"><div><small>Game Pass</small>ROBUX <span class="c-accent">desde $195</span></div></div>
+                    <div class="mini-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Microsoft_365_%282022%29.svg" referrerpolicy="no-referrer"><div><small>Cuenta nueva</small>OFFICE 365 <span class="c-primary">$235</span></div></div>
+                    <div class="mini-card"><img src="https://i.imgur.com/R0wioDr.png" referrerpolicy="no-referrer"><div><small>IA Premium</small>CHATGPT <span class="c-primary">$145</span></div></div>
+                    <div class="mini-card"><img src="https://i.imgur.com/qMIAoBj.png" referrerpolicy="no-referrer"><div><small>Diseño</small>CANVA PRO <span class="c-accent">$60</span></div></div>
+                    <div class="mini-card"><img src="https://i.imgur.com/k2EcQDW.jpg" referrerpolicy="no-referrer"><div><small>Streaming</small>NETFLIX <span class="c-primary">desde $90</span></div></div>
+                    <div class="mini-card"><img src="https://i.imgur.com/8zUIcAF.jpg" referrerpolicy="no-referrer"><div><small>Recarga rápida</small>FREE FIRE <span class="c-accent">desde $195</span></div></div>
+                    <div class="mini-card"><img src="https://i.imgur.com/NbxACqw.jpg" referrerpolicy="no-referrer"><div><small>Xbox</small>CODPOINTS <span class="c-accent">desde $200</span></div></div>
+                    <div class="mini-card"><img src="https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=120&q=80" referrerpolicy="no-referrer"><div><small>Código</small>HALO CREDITS <span class="c-accent">desde $70</span></div></div>
+                    <div class="mini-card"><img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=120&q=80" referrerpolicy="no-referrer"><div><small>Game Pass</small>ROBUX <span class="c-accent">desde $195</span></div></div>
+                    <div class="mini-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Microsoft_365_%282022%29.svg" referrerpolicy="no-referrer"><div><small>Cuenta nueva</small>OFFICE 365 <span class="c-primary">$235</span></div></div>
+                    <div class="mini-card"><img src="https://i.imgur.com/R0wioDr.png" referrerpolicy="no-referrer"><div><small>IA Premium</small>CHATGPT <span class="c-primary">$145</span></div></div>
+                    <div class="mini-card"><img src="https://i.imgur.com/qMIAoBj.png" referrerpolicy="no-referrer"><div><small>Diseño</small>CANVA PRO <span class="c-accent">$60</span></div></div>
+                    <div class="mini-card"><img src="https://i.imgur.com/k2EcQDW.jpg" referrerpolicy="no-referrer"><div><small>Streaming</small>NETFLIX <span class="c-primary">desde $90</span></div></div>
                 </div>
             </div>
         </div>
@@ -677,6 +786,24 @@
                             <h3>Codpoints (Solo Xbox)</h3>
                             <ul class="options-list"><li><span>2,400 CP</span> <span>$200</span></li><li><span>4,800 CP</span> <span>$395</span></li><li><span>... hasta 12,000 CP</span> <span>$975</span></li></ul>
                             <div class="price-container"><span class="price-label">Desde</span><div class="price">$200 MXN</div></div>
+                        </div>
+                    </div>
+                    <div class="service-card gaming-card" data-category="gaming" data-note="Entrega en código digital para Halo Infinite. Se envía el código para canjear los créditos." onclick="openModal(this, 'Créditos Halo Infinite', 'Hola, quiero comprar créditos para Halo Infinite en código', '500 créditos|70; 1,000 créditos|125; 2,200 créditos|195; 5,600 créditos|500; 11,500 créditos|1000')">
+                        <div class="img-container"><img src="https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=800&q=80" alt="Créditos Halo Infinite" class="service-img" referrerpolicy="no-referrer"></div>
+                        <div class="service-info">
+                            <h3>Créditos Halo Infinite</h3>
+                            <ul class="options-list"><li><span>500 créditos</span> <span>$70</span></li><li><span>1,000 créditos</span> <span>$125</span></li><li><span>... hasta 11,500</span> <span>$1,000</span></li></ul>
+                            <div class="service-note">Entrega en código digital para Halo Infinite.</div>
+                            <div class="price-container"><span class="price-label">Desde</span><div class="price">$70 MXN</div></div>
+                        </div>
+                    </div>
+                    <div class="service-card gaming-card" data-category="gaming" data-note="Servicio vía recarga. Se ocupa acceso a la cuenta. Tarda de 3 a 5 días en reflejarse porque es vía Game Pass." onclick="openModal(this, 'Robux para Roblox', 'Hola, quiero comprar Robux para Roblox vía recarga Game Pass', '1,000 Robux|195; 2,000 Robux|355; 3,000 Robux|545; 4,000 Robux|675; 5,000 Robux|865; 10,000 Robux|1645')">
+                        <div class="img-container"><img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&q=80" alt="Robux para Roblox" class="service-img" referrerpolicy="no-referrer"></div>
+                        <div class="service-info">
+                            <h3>Robux para Roblox</h3>
+                            <ul class="options-list"><li><span>1,000 Robux</span> <span>$195</span></li><li><span>2,000 Robux</span> <span>$355</span></li><li><span>... hasta 10,000</span> <span>$1,645</span></li></ul>
+                            <div class="service-note">Vía recarga Game Pass. Requiere acceso y tarda 3 a 5 días.</div>
+                            <div class="price-container"><span class="price-label">Desde</span><div class="price">$195 MXN</div></div>
                         </div>
                     </div>
                     <!-- TARJETA NUEVA: COLECCIÓN XBOX RETRO QUE ABRE EL BUSCADOR INTERACTIVO -->
@@ -866,6 +993,10 @@
                     <div class="service-card" data-category="software" onclick="openModal(this, 'Google IA Pro', 'Hola, quiero Google IA Pro', '12 Meses|235')">
                         <div class="img-container"><img src="https://i.imgur.com/VpySN6K.png" alt="Google IA Pro" class="service-img" referrerpolicy="no-referrer"></div>
                         <div class="service-info"><h3>Google IA Pro</h3><ul class="options-list"><li><span>Membresía Completa</span> <span>12 Meses</span></li></ul><div class="price-container"><span class="price-label">Precio</span><div class="price">$235 MXN</div></div></div>
+                    </div>
+                    <div class="service-card" data-category="software" onclick="openModal(this, 'Office 365', 'Hola, quiero Office 365 12 meses cuenta nueva', '12 Meses Cuenta Nueva|235')">
+                        <div class="img-container"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Microsoft_365_%282022%29.svg" alt="Office 365" class="service-img" referrerpolicy="no-referrer"></div>
+                        <div class="service-info"><h3>Office 365</h3><ul class="options-list"><li><span>Cuenta nueva</span> <span>12 Meses</span></li></ul><div class="price-container"><span class="price-label">Precio</span><div class="price">$235 MXN</div></div></div>
                     </div>
                     <div class="service-card" data-category="software" onclick="openModal(this, 'ChatGPT Plus', 'Hola, quiero ChatGPT Plus', '1 Mes|145')">
                         <div class="img-container"><img src="https://i.imgur.com/R0wioDr.png" alt="ChatGPT Plus" class="service-img" referrerpolicy="no-referrer"></div>
@@ -1991,7 +2122,7 @@
         }
 
         const purchases = [
-            "Netflix (1 Mes)", "Disney+ (3 Meses)", "Diamantes Free Fire", "Spotify Premium", "VIX+ (Cuenta Nueva)", "TikTok Seguidores", "Codpoints (Xbox)", "Canva Pro", "Apple TV + MLS"
+            "Netflix (1 Mes)", "Disney+ (3 Meses)", "Diamantes Free Fire", "Spotify Premium", "VIX+ (Cuenta Nueva)", "TikTok Seguidores", "Codpoints (Xbox)", "Halo Infinite Créditos", "Robux Roblox", "Office 365", "Canva Pro", "Apple TV + MLS"
         ];
         const phoneCodes = ["+1", "+52", "+57", "+503", "+51", "+54", "+56", "+593", "+502", "+504", "+505", "+506", "+507", "+595", "+598"];
         const times = ["Hace 2 minutos", "Hace 5 minutos", "Hace 1 minuto", "Hace 10 minutos", "Recién ahora"];
@@ -2048,6 +2179,221 @@
             document.getElementById('rev-name').value = '';
             document.getElementById('rev-msg').value = '';
         }
+
+
+        /* --- VESSEL 3.0 JS: VISTAS VIVAS, MODAL CON NOTAS, UPSELLS POR CATEGORÍA --- */
+        const vesselViewerState = new Map();
+        const vesselViewerTimers = new Map();
+
+        function getViewerRange(title) {
+            const lower = title.toLowerCase();
+            if (lower.includes('halo') || lower.includes('robux') || lower.includes('retro')) return { min: 1, max: 12 };
+            if (lower.includes('office') || lower.includes('vpn') || lower.includes('duolingo') || lower.includes('eleven')) return { min: 1, max: 9 };
+            if (lower.includes('netflix') || lower.includes('disney') || lower.includes('spotify') || lower.includes('chatgpt') || lower.includes('free fire')) return { min: 7, max: 25 };
+            return { min: 2, max: 18 };
+        }
+
+        function clampNumber(value, min, max) { return Math.max(min, Math.min(max, value)); }
+        function randomBetween(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+        function randomViewerStep() {
+            const roll = Math.random();
+            if (roll < .55) return 1;
+            if (roll < .82) return -1;
+            if (roll < .92) return 2;
+            return -2;
+        }
+
+        function getProductKey(card, index) {
+            const title = card.querySelector('h3')?.innerText?.trim() || `producto-${index}`;
+            return title.toLowerCase().replace(/[^a-z0-9áéíóúñ]+/gi, '-');
+        }
+
+        function scheduleViewerUpdate(key) {
+            if (vesselViewerTimers.has(key)) clearTimeout(vesselViewerTimers.get(key));
+            const delay = randomBetween(3500, 12500);
+            const timer = setTimeout(() => {
+                const state = vesselViewerState.get(key);
+                if (!state) return;
+                state.value = clampNumber(state.value + randomViewerStep(), state.min, state.max);
+                document.querySelectorAll(`[data-view-key="${key}"]`).forEach(el => {
+                    el.innerHTML = `<span class="viewer-dot"></span>${state.value} mirando`;
+                    el.classList.add('bump');
+                    setTimeout(() => el.classList.remove('bump'), 420);
+                });
+                if (currentItem && currentItem.viewKey === key) {
+                    const modalViewers = document.getElementById('modalViewers');
+                    if (modalViewers) modalViewers.innerText = `${state.value} personas`;
+                }
+                scheduleViewerUpdate(key);
+            }, delay);
+            vesselViewerTimers.set(key, timer);
+        }
+
+        function enhanceProductCards() {
+            document.querySelectorAll('.service-card').forEach((card, index) => {
+                const title = card.querySelector('h3')?.innerText || `producto-${index}`;
+                const imgBox = card.querySelector('.img-container');
+                if (!imgBox) return;
+                const key = getProductKey(card, index);
+                const range = getViewerRange(title);
+                if (!vesselViewerState.has(key)) {
+                    const seedBase = stableNumberFromText(title + 'viewer-seed', range.min, Math.min(range.max, range.min + 8));
+                    vesselViewerState.set(key, { value: seedBase, min: range.min, max: range.max });
+                    scheduleViewerUpdate(key);
+                }
+                const stock = stableNumberFromText(title + 'stock-v3', 3, 11);
+                const viewers = vesselViewerState.get(key).value;
+                if (!imgBox.querySelector('.limited-badge')) {
+                    imgBox.insertAdjacentHTML('beforeend', `
+                        <div class="limited-badge">Oferta limitada</div>
+                        <div class="card-live-meta"><span>🔥 ${stock} en stock</span><span class="viewer-chip" data-view-key="${key}"><span class="viewer-dot"></span>${viewers} mirando</span></div>
+                    `);
+                } else {
+                    const chip = imgBox.querySelector('.viewer-chip');
+                    if (chip) { chip.dataset.viewKey = key; chip.innerHTML = `<span class="viewer-dot"></span>${viewers} mirando`; }
+                }
+            });
+        }
+
+        function getUpsellPool(currentTitle) {
+            const lower = currentTitle.toLowerCase();
+            if (lower.includes('halo') || lower.includes('cod') || lower.includes('free fire') || lower.includes('robux') || lower.includes('retro')) {
+                return [
+                    { title: 'Xbox Game Pass', optionLabel: 'Recomendado para gaming', price: 95, msg: 'Hola, quiero Xbox Game Pass' },
+                    { title: 'Spotify Premium', optionLabel: '1 Mes', price: 80, msg: 'Hola, quiero Spotify Premium' },
+                    { title: 'Discord Nitro', optionLabel: 'Promo', price: 95, msg: 'Hola, quiero Discord Nitro' }
+                ];
+            }
+            if (lower.includes('chatgpt') || lower.includes('google') || lower.includes('office') || lower.includes('canva') || lower.includes('capcut') || lower.includes('adobe')) {
+                return [
+                    { title: 'Office 365', optionLabel: '12 Meses Cuenta Nueva', price: 235, msg: 'Hola, quiero Office 365 12 meses cuenta nueva' },
+                    { title: 'Canva Pro', optionLabel: '1 Mes Promo', price: 60, msg: 'Hola, quiero Canva Pro' },
+                    { title: 'CapCut Pro', optionLabel: '1 Mes', price: 65, msg: 'Hola, quiero CapCut Pro' }
+                ];
+            }
+            return upsellCatalog;
+        }
+
+        function renderUpsells(currentTitle) {
+            const box = document.getElementById('upsellBox');
+            const list = document.getElementById('upsellList');
+            if(!box || !list) return;
+            const titleLower = currentTitle.toLowerCase();
+            const picks = getUpsellPool(currentTitle).filter(x => !titleLower.includes(x.title.toLowerCase().split(' ')[0])).slice(0, 3);
+            list.innerHTML = picks.map((item, idx) => `
+                <div class="upsell-card">
+                    <div><b>${item.title}</b><small style="display:block;color:var(--text-dim);margin-top:3px;">${item.optionLabel}</small><span>${formatPrice(item.price)}</span></div>
+                    <button type="button" onclick="addUpsellToCartV3(${idx}, '${currentTitle.replace(/'/g, "\\'")}')">Agregar</button>
+                </div>
+            `).join('');
+            box.style.display = picks.length ? 'block' : 'none';
+            box.dataset.currentTitle = currentTitle;
+        }
+
+        function addUpsellToCartV3(index, currentTitle) {
+            const titleLower = currentTitle.toLowerCase();
+            const picks = getUpsellPool(currentTitle).filter(x => !titleLower.includes(x.title.toLowerCase().split(' ')[0])).slice(0, 3);
+            const item = picks[index];
+            if(!item) return;
+            cart.push({ ...item, display: formatPrice(item.price), details: 'Recomendación automática agregada desde el producto' });
+            updateCartUI();
+            const btn = document.querySelector('.cart-float-btn');
+            if (btn) {
+                btn.classList.add('pulse-glow');
+                setTimeout(() => btn.classList.remove('pulse-glow'), 1400);
+            }
+        }
+
+        function startDealCountdown(title, key) {
+            clearInterval(countdownTimer);
+            const state = key ? vesselViewerState.get(key) : null;
+            currentUrgency = {
+                stock: stableNumberFromText(title + 'stock-v3', 3, 11),
+                viewers: state ? state.value : stableNumberFromText(title + 'fallback', 2, 18),
+                seconds: stableNumberFromText(title + 'timer-v3', 420, 1080)
+            };
+            const tick = () => {
+                const m = String(Math.floor(currentUrgency.seconds / 60)).padStart(2, '0');
+                const sec = String(currentUrgency.seconds % 60).padStart(2, '0');
+                const modalCountdown = document.getElementById('modalCountdown');
+                const modalStock = document.getElementById('modalStock');
+                const modalViewers = document.getElementById('modalViewers');
+                if (modalCountdown) modalCountdown.innerText = `${m}:${sec}`;
+                if (modalStock) modalStock.innerText = `${currentUrgency.stock} piezas`;
+                if (modalViewers) {
+                    const live = key && vesselViewerState.get(key) ? vesselViewerState.get(key).value : currentUrgency.viewers;
+                    modalViewers.innerText = `${live} personas`;
+                }
+                if(currentUrgency.seconds > 0) currentUrgency.seconds--;
+            };
+            tick();
+            countdownTimer = setInterval(tick, 1000);
+        }
+
+        function openModal(element, title, msgText, optionsStr) {
+            let imgSrc = element.querySelector('.service-img').src;
+            document.getElementById('modalImg').src = imgSrc;
+            let options = optionsStr.split(';').map(o => o.trim());
+            let selectHtml = '';
+            options.forEach((opt) => {
+                let parts = opt.split('|');
+                let label = parts[0];
+                let price = parts[1];
+                let displayPrice = formatPrice(price);
+                selectHtml += `<option value="${price}" data-label="${label}">${label} - ${displayPrice}</option>`;
+            });
+            let selectContainer = document.getElementById('modalSelectContainer');
+            let selectElement = document.getElementById('modalServiceOptions');
+            const note = element.getAttribute('data-note') || '';
+            let noteEl = document.getElementById('modalProductNote');
+            if (!noteEl) {
+                noteEl = document.createElement('div');
+                noteEl.id = 'modalProductNote';
+                noteEl.className = 'stock-warning';
+                document.querySelector('#purchaseModal .modal-body').insertBefore(noteEl, document.getElementById('modalSelectContainer'));
+            }
+            noteEl.style.display = note ? 'block' : 'none';
+            noteEl.innerText = note;
+
+            if (options.length > 1) {
+                selectContainer.style.display = 'block';
+                selectElement.innerHTML = selectHtml;
+                let initialPrice = options[0].split('|')[1];
+                let initialLabel = options[0].split('|')[0];
+                document.getElementById('modalPrice').innerText = formatPrice(initialPrice);
+                currentItem = { title, price: parseInt(initialPrice), display: formatPrice(initialPrice), msg: msgText, optionLabel: initialLabel, details: note };
+            } else {
+                selectContainer.style.display = 'none';
+                let singlePrice = options[0].split('|')[1];
+                let singleLabel = options[0].split('|')[0];
+                document.getElementById('modalPrice').innerText = formatPrice(singlePrice);
+                currentItem = { title, price: parseInt(singlePrice), display: formatPrice(singlePrice), msg: msgText, optionLabel: singleLabel, details: note };
+            }
+            const key = getProductKey(element, Array.from(document.querySelectorAll('.service-card')).indexOf(element));
+            currentItem.viewKey = key;
+            document.getElementById('modalTitle').innerText = title;
+            const account = JSON.parse(localStorage.getItem('vesselAccount') || '{}');
+            document.getElementById('buyerName').value = account.name || "";
+            startDealCountdown(title, key);
+            renderUpsells(title);
+            document.getElementById('purchaseModal').classList.add('active');
+        }
+
+        function updateModalPrice() {
+            let select = document.getElementById('modalServiceOptions');
+            let selectedOption = select.options[select.selectedIndex];
+            let newPrice = selectedOption.value;
+            let newLabel = selectedOption.getAttribute('data-label');
+            document.getElementById('modalPrice').innerText = formatPrice(newPrice);
+            currentItem.price = parseInt(newPrice);
+            currentItem.display = formatPrice(newPrice);
+            currentItem.optionLabel = newLabel;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(enhanceProductCards, 250);
+        });
+
     </script>
 </body>
 </html>

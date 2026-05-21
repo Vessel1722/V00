@@ -33,52 +33,11 @@
         }
 
         .menu-right { display:flex; align-items:center; gap:14px; }
-        .currency-switcher {
-            display:flex;
-            align-items:center;
-            gap:8px;
-            padding:7px;
-            border-radius:18px;
-            background: linear-gradient(135deg, rgba(14,14,22,0.98), rgba(24,18,38,0.96));
-            border: 1px solid rgba(138,43,226,0.22);
-            box-shadow: 0 10px 28px rgba(0,0,0,0.30), inset 0 0 0 1px rgba(255,255,255,0.03);
-            position: relative;
-            overflow: hidden;
-        }
-        .currency-switcher::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(120deg, rgba(138,43,226,0.14), transparent 45%, rgba(0,255,204,0.08));
-            pointer-events: none;
-        }
-        .currency-btn {
-            position: relative;
-            z-index: 1;
-            min-width: 72px;
-            border: 1px solid transparent;
-            background: transparent;
-            color: var(--text-dim);
-            padding: 10px 16px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: 900;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.25s ease;
-        }
-        .currency-btn:hover {
-            color: #fff;
-            background: rgba(255,255,255,0.05);
-            border-color: rgba(255,255,255,0.06);
-        }
-        .currency-btn.active {
-            background: linear-gradient(135deg, rgba(138,43,226,0.88), rgba(0,255,204,0.36));
-            color: #fff;
-            border-color: rgba(255,255,255,0.12);
-            box-shadow: 0 8px 20px rgba(138,43,226,0.28), inset 0 0 0 1px rgba(255,255,255,0.05);
-        }
+        .currency-switcher { display:flex; align-items:center; gap:8px; padding:7px; border-radius:18px; background: linear-gradient(135deg, rgba(14,14,22,0.98), rgba(24,18,38,0.96)); border: 1px solid rgba(138,43,226,0.22); box-shadow: 0 10px 28px rgba(0,0,0,0.30), inset 0 0 0 1px rgba(255,255,255,0.03); position: relative; overflow: hidden; }
+        .currency-switcher::before { content: ''; position: absolute; inset: 0; background: linear-gradient(120deg, rgba(138,43,226,0.14), transparent 45%, rgba(0,255,204,0.08)); pointer-events: none; }
+        .currency-btn { position: relative; z-index: 1; min-width: 72px; border: 1px solid transparent; background: transparent; color: var(--text-dim); padding: 10px 16px; border-radius: 12px; font-size: 0.75rem; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: all 0.25s ease; }
+        .currency-btn:hover { color: #fff; background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.06); }
+        .currency-btn.active { background: linear-gradient(135deg, rgba(138,43,226,0.88), rgba(0,255,204,0.36)); color: #fff; border-color: rgba(255,255,255,0.12); box-shadow: 0 8px 20px rgba(138,43,226,0.28), inset 0 0 0 1px rgba(255,255,255,0.05); }
         .menu { display: flex; gap: 15px; }
         .menu a { color: var(--text-light); text-decoration: none; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; transition: color 0.3s; }
         .menu a:hover { color: var(--primary); }
@@ -107,12 +66,7 @@
         /* --- NUEVO CAROUSEL CON IMÁGENES MINIATURA --- */
         .mini-carousel-container { margin-top: 50px; width: 100%; overflow: hidden; position: relative; }
         .mini-carousel-track { display: flex; gap: 15px; width: max-content; animation: scrollMini 45s linear infinite; } 
-        .mini-card { 
-            background: linear-gradient(135deg, rgba(20, 20, 30, 0.9) 0%, rgba(10, 10, 15, 0.9) 100%); 
-            border: 1px solid rgba(255,255,255,0.1); border-radius: 50px; 
-            padding: 5px 15px 5px 5px; display: flex; align-items: center; gap: 10px; 
-            font-size: 0.8rem; font-weight: 700; color: #fff; white-space: nowrap; backdrop-filter: blur(5px); 
-        }
+        .mini-card { background: linear-gradient(135deg, rgba(20, 20, 30, 0.9) 0%, rgba(10, 10, 15, 0.9) 100%); border: 1px solid rgba(255,255,255,0.1); border-radius: 50px; padding: 5px 15px 5px 5px; display: flex; align-items: center; gap: 10px; font-size: 0.8rem; font-weight: 700; color: #fff; white-space: nowrap; backdrop-filter: blur(5px); }
         .mini-card img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 1px solid var(--primary); }
         .mini-card span.c-accent { color: var(--accent); font-weight: 900; }
         .mini-card span.c-primary { color: #d4a5ff; font-weight: 900; }
@@ -256,11 +210,16 @@
         .retro-info-banner .promo-text { color: var(--accent); font-weight: 900; font-size: 0.9rem; margin-top: 5px; display: block;}
         .retro-search-container { padding: 15px 20px; flex-shrink: 0;}
         .retro-grid { padding: 0 20px 20px 20px; overflow-y: auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; flex-grow: 1; align-content: start;}
-        .retro-card { background: #14101d; border: 1px solid #2d2440; border-radius: 12px; padding: 15px; cursor: pointer; transition: 0.2s; display: flex; flex-direction: column; justify-content: space-between;}
+        
+        .retro-card { background: #14101d; border: 1px solid #2d2440; border-radius: 12px; padding: 15px; cursor: pointer; transition: 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: space-between;}
         .retro-card:hover { border-color: rgba(138,43,226,0.5); transform: translateY(-2px);}
         .retro-card.selected { border-color: var(--accent); background: rgba(0, 255, 204, 0.05); box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);}
-        .r-title { font-weight: 700; color: #fff; font-size: 0.9rem; margin-bottom: 8px; line-height: 1.3;}
-        .r-bot { display: flex; justify-content: space-between; align-items: center; margin-top: 10px;}
+        
+        /* Estilo para las imágenes de los juegos retro (280x420) */
+        .retro-game-img { width: 100%; max-width: 180px; aspect-ratio: 280 / 420; object-fit: cover; border-radius: 8px; margin-bottom: 12px; background: #1a1a26; border: 1px solid rgba(255,255,255,0.05); }
+
+        .r-title { font-weight: 700; color: #fff; font-size: 0.9rem; margin-bottom: 8px; line-height: 1.3; text-align: center;}
+        .r-bot { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; width: 100%;}
         .r-price { color: var(--accent); font-weight: 900; font-size: 1.1rem;}
         .retro-footer { background: #07070a; border-top: 1px solid rgba(255,255,255,0.05); padding: 20px; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; flex-wrap: wrap; gap: 15px;}
         .retro-totals { display: flex; gap: 20px; font-size: 0.9rem; color: var(--text-dim);}
@@ -392,7 +351,6 @@
         </div>
     </div>
 
-    <!-- MODAL DE COMPRA PRINCIPAL -->
     <div class="modal-overlay" id="purchaseModal">
         <div class="modal-box">
             <div class="modal-close" onclick="closeModal()">✕</div>
@@ -428,14 +386,12 @@
                         </svg>
                         CARRITO
                     </button>
-                    <!-- AL DARLE CLIC A ESTE BOTÓN, SE ABRE LA VENTANA DE PAGO -->
                     <button class="btn-modern-buy" onclick="buyNowFromModal()">COMPRAR</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- NUEVO MODAL INTERACTIVO PARA JUEGOS RETRO -->
     <div class="modal-overlay" id="retroModal">
         <div class="modal-box retro-modal-box">
             <div class="retro-header">
@@ -460,8 +416,7 @@
             </div>
 
             <div class="retro-grid" id="retroGridContainer">
-                <!-- Se inyecta con JavaScript -->
-            </div>
+                </div>
 
             <div class="retro-footer">
                 <div class="retro-totals">
@@ -480,7 +435,6 @@
         </div>
     </div>
 
-    <!-- MODAL DE PAGO (CUENTAS Y COMPROBANTE) -->
     <div class="modal-overlay" id="paymentModal">
         <div class="modal-box" style="max-width: 550px;">
             <div class="modal-close" onclick="closePaymentModal()">✕</div>
@@ -614,7 +568,33 @@
                             <div class="price-container"><span class="price-label">Desde</span><div class="price">$200 MXN</div></div>
                         </div>
                     </div>
-                    <!-- TARJETA NUEVA: COLECCIÓN XBOX RETRO QUE ABRE EL BUSCADOR INTERACTIVO -->
+                    
+                    <div class="service-card gaming-card" data-category="gaming" onclick="openModal(this, 'Créditos Halo Infinite', 'Hola, quiero Créditos para Halo Infinite en código', '500 Créditos|70; 1,000 Créditos|125; 2,200 Créditos|195; 5,600 Créditos|500; 11,500 Créditos|1000')">
+                        <div class="img-container"><img src="https://via.placeholder.com/400x190/1a1a26/a0a0b0?text=FOTO+HALO" alt="Halo Infinite" class="service-img" referrerpolicy="no-referrer"></div>
+                        <div class="service-info">
+                            <h3>Créditos Halo Infinite</h3>
+                            <ul class="options-list">
+                                <li><span style="color:var(--accent); font-size: 0.75rem;">(Se entrega en Código)</span></li>
+                                <li><span>500 Créditos</span> <span>$70</span></li>
+                                <li><span>... hasta 11,500</span> <span>$1,000</span></li>
+                            </ul>
+                            <div class="price-container"><span class="price-label">Desde</span><div class="price">$70 MXN</div></div>
+                        </div>
+                    </div>
+
+                    <div class="service-card gaming-card" data-category="gaming" onclick="openModal(this, 'Robux para Roblox', 'Hola, quiero Robux para Roblox (Vía recarga Game Pass)', '1,000 Robux|195; 2,000 Robux|355; 3,000 Robux|545; 4,000 Robux|675; 5,000 Robux|865; 10,000 Robux|1645')">
+                        <div class="img-container"><img src="https://via.placeholder.com/400x190/1a1a26/a0a0b0?text=FOTO+ROBLOX" alt="Roblox" class="service-img" referrerpolicy="no-referrer"></div>
+                        <div class="service-info">
+                            <h3>Robux para Roblox</h3>
+                            <ul class="options-list">
+                                <li style="border:none;"><span style="color:var(--accent); font-size: 0.7rem; line-height: 1.2;">Vía recarga (acceso a cuenta). Tarda de 3 a 5 días (Vía Game Pass).</span></li>
+                                <li><span>1,000 Robux</span> <span>$195</span></li>
+                                <li><span>... hasta 10,000</span> <span>$1,645</span></li>
+                            </ul>
+                            <div class="price-container"><span class="price-label">Desde</span><div class="price">$195 MXN</div></div>
+                        </div>
+                    </div>
+
                     <div class="service-card gaming-card" data-category="gaming" onclick="openRetroModal()">
                         <div class="img-container"><img src="https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=800&q=80" alt="Xbox Retro" class="service-img" referrerpolicy="no-referrer"></div>
                         <div class="service-info">
@@ -806,6 +786,16 @@
                         <div class="img-container"><img src="https://i.imgur.com/R0wioDr.png" alt="ChatGPT Plus" class="service-img" referrerpolicy="no-referrer"></div>
                         <div class="service-info"><h3>ChatGPT Plus</h3><div class="price-container"><span class="price-label">Precio</span><div class="price">$145 MXN</div></div></div>
                     </div>
+                    
+                    <div class="service-card" data-category="software" onclick="openModal(this, 'Office 365', 'Hola, quiero Office 365 (12 Meses Cuenta Nueva)', '12 Meses Cuenta Nueva|235')">
+                        <div class="img-container"><img src="https://via.placeholder.com/400x190/1a1a26/a0a0b0?text=FOTO+OFFICE" alt="Office 365" class="service-img" referrerpolicy="no-referrer"></div>
+                        <div class="service-info">
+                            <h3>Office 365</h3>
+                            <ul class="options-list"><li><span>Cuenta Nueva</span> <span>12 Meses</span></li></ul>
+                            <div class="price-container"><span class="price-label">Precio</span><div class="price">$235 MXN</div></div>
+                        </div>
+                    </div>
+
                     <div class="service-card" data-category="software" onclick="openModal(this, 'Canva Pro', 'Hola, quiero Canva Pro', '1 Mes (Promo)|60; 1 Mes (Invitación)|65')">
                         <div class="img-container"><img src="https://i.imgur.com/qMIAoBj.png" alt="Canva Pro" class="service-img" referrerpolicy="no-referrer"></div>
                         <div class="service-info">
@@ -1089,581 +1079,342 @@
         let pendingOrderText = ""; 
 
         // LISTA DE JUEGOS RETRO PARA EL MODAL INTERACTIVO
-        const retroGamesRaw = `🎮 Assassin's Creed $95
-        🎮 Assassin's Creed II $95
-        🎮 Assassin's Creed Revelations $95
-        🎮 Assassin's Creed® Rogue $100
-        🎮 A Kingdom for Keflings $75
-        🎮 A World of Kefling $75
-        🕹 Advent Rising $70
-        🎮 Adventure Time: The Secret of the Nameless Kingdom $90
-        🎮 Alan Wake $100
-        🎮 Alan Wake's American Nightmare $70
-        🎮 Alien Hominid HD $70
-        🎮 Army Of Two $100
-        🕹 Armed and Dangerous $85
-        🎮 Band of Bugs + DLC $95
-        🎮 Banjo-Kazooie $95
-        🎮 Banjo-Kazooie: Nuts & Bolts $95
-        🎮 Banjo-Tooie $90
-        🎮 BattleBlock Theater $80
-        🎮 Battlefield 1943 $70
-        🎮 Battlestations: Midway $100
-        🎮 Battlestations Pacific $100
-        🎮 BAYONETTA $95
-        🎮 Bellator: MMA Onslaught $75
-        🎮 BioShock Infinite $140
-        🎮 BioShock 2 $120
-        🕹 Black $100
-        🎮 BCFx-Doug Williams Ed. $85
-        🕹 BLiNX: The Time Sweeper $95
-        🎮 Blood Knights $70
-        🎮 Bloodforge $70
-        🕹 BloodRayne 2 $85
-        🎮 Blue Dragon $85
-        🎮 Borderlands $100
-        🎮 Borderlands 2 $100
-        🎮 Bound by Flame $85
-        🎮 Binary Domain $95
-        🎮 Braid $70
-        🎮 Brave $90
-        🕹 Breakdown $80
-        🎮 Brothers in Arms: Hell's Highway $85
-        🎮 Brutal Legend $90
-        🎮 Bully: Scholarship Edition $125
-        🎮 Cars 2 $95
-        🎮 Cars: La Copa Int. de Mate $95
-        🎮 Call of Duty®: World at War $145
-        🎮 Call of Duty® 2 $145
-        🎮 Call of Duty® 3 $145
-        🎮 Call of Duty®: Modern Warfare® 2 $165
-        🎮 Call of Duty®: Modern Warfare® 3 $165
-        🎮 Call of Duty® 4: Modern Warfare® $165
-        🎮 Call of Juarez: Bound in Blood $85
-        🎮 Call of Juarez: The Cartel $100
-        🎮 Call of Juarez Gunslinger $85
-        🎮 CAPCOM ARCADE CABINET $35
-        🎮 Castle of Illusion Starring Mickey Mouse $95
-        🎮 CastleStorm $70
-        🎮 Castlevania: Lords of Shadow $95
-        🎮 Castlevania: Lords of Shadow - Mirror of Fate HD $95
-        🎮 Castlevania: Lords of Shadow 2 $100
-        🎮 Castlevania: Symphony of the Night $75
-        🎮 Cloning Clyde $35
-        🕹 Chicken Little $85
-        🎮 Child Of Eden $85
-        🎮 Command and Conquer 3 Tiberium Wars $165
-        🎮 Comic Jumper $85
-        🎮 Conan $95
-        🎮 Condemned Criminal Origins $95
-        🕹 Conker: Live and Reloaded $95
-        🎮 Costume Quest $85
-        🎮 Costume Quest 2 $90
-        🕹 Crimson Skies: High Road to Revenge $85
-        🎮 CRYSTAL DEFENDERS $75
-        🎮 Crysis $145
-        🎮 Crysis 2 $100
-        🎮 Darksiders $100
-        🎮 Dark Void $165
-        🎮 De Blob 2 $95
-        🎮 Deadfall Adventures $100
-        🎮 DEADLY PREMONITION $95
-        🎮 DEAD RISING 2: CASE WEST $75
-        🎮 Dead Space $95
-        🎮 Dead Space 2 $100
-        🎮 Dead Space 3 $100
-        🕹 DEAD OR ALIVE 1 Ultimate $95
-        🕹 DEAD OR ALIVE 2 Ultimate $95
-        🕹 DEAD OR ALIVE 3 $100
-        🎮 Deadliest Warrior $70
-        🎮 Deadliest Warrior Legends $70
-        🎮 Death By Cube $100
-        🎮 DEUS EX: HUMAN REVOLUTION $200
-        🕹 Destroy All Humans! $95
-        🎮 Disney Bolt $90
-        🎮 Disney Epic Mickey El Poder de Dos $95
-        🎮 Double Dragon Neon $70
-        🎮 Dragon Age: Origins + DLC $100
-        🎮 Dragon's Lair $70
-        🎮 DuckTales Remastered $135
-        🎮 Dungeons & Dragons: Chronicles Of Mystara $165
-        🎮 Dungeon Siege III $90
-        🎮 Eat Lead $90
-        🎮 Earth Defense Force 2017 $95
-        🎮 Earth Defense Force 2025 $165
-        🎮 Enslaved $95
-        🎮 Escape Dead Island $80
-        🎮 Fable Anniversary $120
-        🎮 Fable II $90
-        🎮 Fable III $90
-        🎮 Fable Heroes $80
-        🎮 Faery: Legends Of Avalon $80
-        🎮 Far Cry Classic $70
-        🎮 Far Cry® 2 $85
-        🎮 Far Cry 3 $90
-        🎮 Far Cry® 3 Blood Dragon $85
-        🎮 F.E.A.R. 2 $185
-        🎮 FIGHT NIGHT CHAMPION $170
-        🎮 Fighting Vipers $40
-        🎮 FINAL FANTASY XIII $100
-        🎮 FINAL FANTASY XIII-2 $100
-        🎮 FFXIII LIGHTNING RETURNS $100
-        🎮 Flashback $75
-        🎮 Foul Play $65
-        🎮 From Dust $75
-        🎮 Frontlines:Fuel of War $85
-        🕹 Full Spectrum Warrior $85
-        🕹 Fuzion Frenzy $80
-        🎮 Gears Of War $120
-        🎮 Gears Of War 2 $120
-        🎮 Gears Of War 3 $120
-        🎮 Gears Of War: Judgment $120
-        🎮 Grand Theft Auto IV $100
-        🎮 Geometry Wars Evolved² $70 
-        🎮 Geometry Wars 3: Dimensions Evolved $75
-        🎮 Girl Fight $70
-        🎮 Goat Simulator $75
-        🕹 Gladius $75
-        🕹 Gunvalkyrie $70
-        🎮 Gyromancer $75
-        🎮 Hard Corps: Uprising $95
-        🎮 Haunted House $45
-        🎮 Heavy Weapon $90
-        🎮 Hitman HD Pack $95
-        🎮 Hitman: Absolution $95
-        🎮 Hitman: Blood Money $95
-        🕹 Hunter: The Reckoning $95
-        🎮 Hydro Thunder $75
-        🎮 Hydrophobia $65
-        🎮 I Am Alive $75
-        🎮 ilomilo $45
-        🕹 Indiana Jones And The Emperor's Tomb $95
-        🎮 Infinite Undiscovery $95
-        🎮 Injustice: GODS AMONG US $100
-        🎮 Insanely Twisted Shadow Planet $80
-        🕹 Jade Empire $75
-        🎮 Joy Ride Turbo $75
-        🎮 JUJU $80
-        🎮 Just Cause $90
-        🎮 Just Cause 2 $95
-        🎮 Kameo: Elements of Power $80
-        🎮 Kane & Lynch 2 $100
-        🎮 Killer Is Dead $90
-        🎮 Lazy Raiders $65
-        🎮 LEGO Indiana Jones: La trilogía original $100
-        🎮 LEGO® Indiana Jones™ 2 $100
-        🎮 LEGO Piratas del Caribe El Videojuego $100
-        🎮 LEGO Star Wars II: The Original Trilogy $135
-        🎮 LEGO Star Wars III $95
-        🎮 LEGO Star Wars: TCS $115
-        🎮 Lost Odyssey $100
-        🎮 Lost Planet 2 $170
-        🎮 Lost Planet 3 $185
-        🎮 Mafia II $100
-        🕹 Manhunt $135
-        🎮 Mars: War Logs $75
-        🎮 Marlow Briggs and the Mask of the Death $75
-        🎮 Mass Effect $85
-        🎮 Mass Effect 2 $95
-        🎮 Mass Effect 3 $120
-        🕹 Max Payne $125
-        🕹 Max Payne 2: The Fall of Max Payne $125
-        🎮 Max Payne 3 $150
-        🎮 Medal of Honor Airborne $135
-        🎮 Meet The Robinsons $95
-        🎮 METAL GEAR RISING: REVENGEANCE $100
-        🎮 METAL SLUG 3 $70
-        🕹 Mercenaries: Playground Of Destruction $80
-        🎮 Midnight Club: Los Angeles Complete $100
-        🎮 Midway Arcade Origins $80
-        🎮 Might & Magic Clash of Heroes $85
-        🎮 Mini Ninjas $85
-        🎮 Mirror’s Edge $95
-        🎮 Monaco: What’s Yours is Mine $70
-        🎮 Monday Night Combat $70
-        🎮 Monkey Island Special Edition $60
-        🎮 Monkey Island 2 Special Edition $70
-        🎮 Ms. Splosion Man $75
-        🎮 MX vs. ATV Alive $90
-        🎮 MX vs. ATV Reflex $85
-        🕹 MX Unleashed $85
-        🎮 NEOGEO BATTLE COLISEUM $65
-        🎮 NINJA GAIDEN 3: RE $140
-        🎮 NIER $185
-        🕹 Oddworld: Munch's Oddysee $85
-        🎮 Orcs Must Die! $70
-        🕹 Otogi: Myth of Demons $90
-        🕹 Otogi 2: Immortal Warriors $90
-        🎮 Outpost Kaloki X $65
-        🎮 Outland $70
-        🎮 Pac-Man: Championship Edition DX+ $65
-        🕹 Panzer Dragoon Orta $55
-        🎮 Peggle $65
-        🎮 Perfect Dark $70
-        🎮 Perfect Dark Zero $85
-        🎮 Planets Under Attack $75
-        🎮 Plantas vs Zombis $90
-        🎮 Portal: Still Alive $80
-        🎮 Port Royale 3 $85
-        🕹 Psychonauts $85
-        🎮 Putty Squad $75
-        🎮 Quantum Conundrum $65
-        🎮 Radiant Silvergun $75
-        🎮 Raskulls $65
-        🎮 Rayman® Origins $60
-        🎮 Rayman 3 HD $60
-        🎮 Rayman® Legends $95
-        🎮 R.A.W. - Realms of Ancient War $100
-        🎮 Red Dead Redemption + DLC $140
-        🕹 Red Dead Revolver $130
-        🎮 Red Faction: Armageddon $70
-        🕹 Red faction II $65
-        🎮 RESIDENT EVIL CODE: Veronica X $145
-        🎮 Rock Of Ages $70
-        🎮 Rumble Roses XX $85
-        🎮 Sacred Citadel $65
-        🎮 Sacred 2: Fallen Angel $95
-        🎮 Sacred 3 $95
-        🎮 Saints Row $85
-        🎮 Saints Row 2 $95
-        🎮 Saints Row: Gat Out of Hell $95
-        🎮 Saints Row®: The Third™ $90
-        🎮 Saints Row IV $100
-        🎮 ScreamRide $90
-        🕹 Secret Weapons Over Normandy $70
-        🎮 Shadow Complex $80
-        🎮 Shadowrun $85
-        🕹 Sid Meier's Pirates! $80
-        🕹 Sid Meier's Civilization Revolution $100
-        🎮 Sine Mora $70
-        🎮 Skate 3 $100
-        🎮 Skydive $50
-        🎮 Slender: The Arrival (2014) $70
-        🎮 Sniper Elite V2 $100
-        🎮 Sonic Unleashed $95
-        🎮 Sonic All-Star Racing Transformed $95
-        🎮 Space Invaders Infinity Gene $65
-        🎮 SpongeBob: Truth-Sq. $95
-        🎮 Split/Second $95
-        🎮 Splosion Man $65
-        🎮 Stacking $75
-        🎮 Star Ocean: The Last Hope $90
-        🕹 STAR WARS Battlefront $85
-        🕹 Star Wars Battlefront II $85
-        🕹 Star Wars Jedi Knight II: Jedi Outcast $75
-        🕹 Star Wars Episode III: Revenge Of The Sith $75
-        🕹 Star Wars Jedi Starfighter $80
-        🕹 STAR WARS Starfighter Special Edition $95
-        🕹 Star Wars Jedi Knight: Jedi Academy $80
-        🕹 Star Wars KOTOR II $75
-        🕹 Star Wars Republic Commando $90
-        🕹 Star Wars: The Clone Wars $85
-        🎮 Star Wars: The Force Unleashed $100
-        🎮 Star Wars: The Force Unleashed II $100
-        🕹 STAR WARS™ - Knights of the Old Republic™ $85
-        🎮 Street Fighters IV $165
-        🎮 SUPER STREETFIGHTER IV ARCADE EDITION $165
-        🎮 Super Meat Boy $85
-        🎮 Supreme Commander 2 $90
-        🎮 SSX $95
-        🕹 SSX 3 $80
-        🎮 Rockstar Table Tennis $95
-        🎮 Tekken 6 $90
-        🎮 Texas Hold'em $40
-        🕹 TimeSplitters Future Perfect $75
-        🕹 TimeSplitters 2 $90
-        🎮 The Bureau $95
-        🎮 The King Of Fighters XIII $100
-        🕹 The Elder Scrolls III: Morrowind $85
-        🎮 The Maw $65
-        🎮 The Splatters $70
-        🎮 The Walking Dead: Michonne - Season Pass $65
-        🎮 The Walking Dead: Season Two - SEASON PASS $80
-        🎮 The Walking Dead: A Telltale Games Series (2,3,4,5) $80
-        🎮 Tom Clancy’s Splinter Cell® Blacklist™ $100
-        🎮 Tom Clancy's Ghost Recon Advanced Warfighter 2 $90
-        🎮 Tom Clancy's Rainbow Six Vegas $100
-        🎮 Tom Clancy's Rainbow Six Vegas 2 $95
-        🎮 Tom Clancy's Splinter Cell® Conviction™ $100
-        🕹 Tom Clancy's Splinter Cell® Chaos Theory $90
-        🎮 Tom Clancy's Splinter Cell® Double Agent™ $100
-        🎮 Torchlight $65
-        🎮 Toy Story 3 $100
-        🎮 Trials HD $70
-        🕹 Thrillville $80
-        🎮 Thrillville: FDC $85
-        🎮 Tropico 4 $75
-        🎮 Tron: Evolution $85
-        🎮 Unbound Saga $70
-        🎮 Unreal Tournament® 3 $85
-        🎮 VANQUISH $100
-        🎮 Virtua Fighter 5 Final Showdown $75
-        🎮 Viva Piñata: TIP $90
-        🎮 Viva Piñata Party Animals $90
-        🎮 Wolfenstein 3D $60
-        🎮 World Of Soccer $70
-        🎮 XCOM Enemy Within $100
-        🎮 XCOM Enemy Unknown $175`;
+        // ¡SUPER FÁCIL PARA TI!: 
+        // Para ponerle la foto a un juego, solo cambia el link que está al final de cada línea (después del último |)
+        const retroGamesRaw = [
+            "🎮|Assassin's Creed|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Assassin's Creed II|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Assassin's Creed Revelations|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Assassin's Creed® Rogue|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|A Kingdom for Keflings|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|A World of Kefling|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Advent Rising|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Adventure Time: The Secret of the Nameless Kingdom|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Alan Wake|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Alan Wake's American Nightmare|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Alien Hominid HD|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Army Of Two|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Armed and Dangerous|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Band of Bugs + DLC|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Banjo-Kazooie|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Banjo-Kazooie: Nuts & Bolts|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Banjo-Tooie|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|BattleBlock Theater|80|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Battlefield 1943|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Battlestations: Midway|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Battlestations Pacific|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|BAYONETTA|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Bellator: MMA Onslaught|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|BioShock Infinite|140|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|BioShock 2|120|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Black|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|BCFx-Doug Williams Ed.|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|BLiNX: The Time Sweeper|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Blood Knights|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Bloodforge|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|BloodRayne 2|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Blue Dragon|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Borderlands|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Borderlands 2|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Bound by Flame|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Binary Domain|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Braid|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Brave|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Breakdown|80|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Brothers in Arms: Hell's Highway|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Brutal Legend|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Bully: Scholarship Edition|125|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Cars 2|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Cars: La Copa Int. de Mate|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Call of Duty®: World at War|145|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Call of Duty® 2|145|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Call of Duty® 3|145|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Call of Duty®: Modern Warfare® 2|165|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Call of Duty®: Modern Warfare® 3|165|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Call of Duty® 4: Modern Warfare®|165|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Call of Juarez: Bound in Blood|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Call of Juarez: The Cartel|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Call of Juarez Gunslinger|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|CAPCOM ARCADE CABINET|35|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Castle of Illusion Starring Mickey Mouse|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|CastleStorm|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Castlevania: Lords of Shadow|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Castlevania: Lords of Shadow - Mirror of Fate HD|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Castlevania: Lords of Shadow 2|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Castlevania: Symphony of the Night|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Cloning Clyde|35|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Chicken Little|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Child Of Eden|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Command and Conquer 3 Tiberium Wars|165|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Comic Jumper|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Conan|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Condemned Criminal Origins|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Conker: Live and Reloaded|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Costume Quest|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Costume Quest 2|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Crimson Skies: High Road to Revenge|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|CRYSTAL DEFENDERS|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Crysis|145|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Crysis 2|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Darksiders|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Dark Void|165|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|De Blob 2|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Deadfall Adventures|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|DEADLY PREMONITION|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|DEAD RISING 2: CASE WEST|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Dead Space|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Dead Space 2|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Dead Space 3|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|DEAD OR ALIVE 1 Ultimate|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|DEAD OR ALIVE 2 Ultimate|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|DEAD OR ALIVE 3|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Deadliest Warrior|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Deadliest Warrior Legends|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Death By Cube|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|DEUS EX: HUMAN REVOLUTION|200|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Destroy All Humans!|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Disney Bolt|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Disney Epic Mickey El Poder de Dos|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Double Dragon Neon|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Dragon Age: Origins + DLC|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Dragon's Lair|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|DuckTales Remastered|135|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Dungeons & Dragons: Chronicles Of Mystara|165|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Dungeon Siege III|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Eat Lead|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Earth Defense Force 2017|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Earth Defense Force 2025|165|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Enslaved|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Escape Dead Island|80|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Fable Anniversary|120|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Fable II|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Fable III|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Fable Heroes|80|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Faery: Legends Of Avalon|80|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Far Cry Classic|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Far Cry® 2|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Far Cry 3|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Far Cry® 3 Blood Dragon|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|F.E.A.R. 2|185|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|FIGHT NIGHT CHAMPION|170|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Fighting Vipers|40|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|FINAL FANTASY XIII|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|FINAL FANTASY XIII-2|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|FFXIII LIGHTNING RETURNS|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Flashback|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Foul Play|65|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|From Dust|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Frontlines:Fuel of War|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Full Spectrum Warrior|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Fuzion Frenzy|80|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Gears Of War|120|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Gears Of War 2|120|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Gears Of War 3|120|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Gears Of War: Judgment|120|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Grand Theft Auto IV|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Geometry Wars Evolved²|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Geometry Wars 3: Dimensions Evolved|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Girl Fight|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Goat Simulator|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Gladius|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Gunvalkyrie|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Gyromancer|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Hard Corps: Uprising|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Haunted House|45|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Heavy Weapon|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Hitman HD Pack|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Hitman: Absolution|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Hitman: Blood Money|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Hunter: The Reckoning|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Hydro Thunder|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Hydrophobia|65|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|I Am Alive|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|ilomilo|45|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Indiana Jones And The Emperor's Tomb|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Infinite Undiscovery|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Injustice: GODS AMONG US|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Insanely Twisted Shadow Planet|80|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Jade Empire|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Joy Ride Turbo|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|JUJU|80|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Just Cause|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Just Cause 2|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Kameo: Elements of Power|80|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Kane & Lynch 2|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Killer Is Dead|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Lazy Raiders|65|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|LEGO Indiana Jones: La trilogía original|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|LEGO® Indiana Jones™ 2|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|LEGO Piratas del Caribe El Videojuego|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|LEGO Star Wars II: The Original Trilogy|135|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|LEGO Star Wars III|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|LEGO Star Wars: TCS|115|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Lost Odyssey|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Lost Planet 2|170|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Lost Planet 3|185|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Mafia II|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Manhunt|135|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Mars: War Logs|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Marlow Briggs and the Mask of the Death|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Mass Effect|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Mass Effect 2|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Mass Effect 3|120|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Max Payne|125|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Max Payne 2: The Fall of Max Payne|125|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Max Payne 3|150|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Medal of Honor Airborne|135|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Meet The Robinsons|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|METAL GEAR RISING: REVENGEANCE|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|METAL SLUG 3|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Mercenaries: Playground Of Destruction|80|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Midnight Club: Los Angeles Complete|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Midway Arcade Origins|80|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Might & Magic Clash of Heroes|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Mini Ninjas|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Mirror’s Edge|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Monaco: What’s Yours is Mine|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Monday Night Combat|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Monkey Island Special Edition|60|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Monkey Island 2 Special Edition|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Ms. Splosion Man|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|MX vs. ATV Alive|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|MX vs. ATV Reflex|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|MX Unleashed|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|NEOGEO BATTLE COLISEUM|65|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|NINJA GAIDEN 3: RE|140|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|NIER|185|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Oddworld: Munch's Oddysee|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Orcs Must Die!|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Otogi: Myth of Demons|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Otogi 2: Immortal Warriors|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Outpost Kaloki X|65|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Outland|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Pac-Man: Championship Edition DX+|65|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Panzer Dragoon Orta|55|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Peggle|65|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Perfect Dark|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Perfect Dark Zero|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Planets Under Attack|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Plantas vs Zombis|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Portal: Still Alive|80|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Port Royale 3|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Psychonauts|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Putty Squad|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Quantum Conundrum|65|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Radiant Silvergun|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Raskulls|65|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Rayman® Origins|60|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Rayman 3 HD|60|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Rayman® Legends|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|R.A.W. - Realms of Ancient War|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Red Dead Redemption + DLC|140|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Red Dead Revolver|130|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Red Faction: Armageddon|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Red faction II|65|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|RESIDENT EVIL CODE: Veronica X|145|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Rock Of Ages|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Rumble Roses XX|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Sacred Citadel|65|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Sacred 2: Fallen Angel|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Sacred 3|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Saints Row|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Saints Row 2|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Saints Row: Gat Out of Hell|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Saints Row®: The Third™|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Saints Row IV|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|ScreamRide|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Secret Weapons Over Normandy|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Shadow Complex|80|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Shadowrun|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Sid Meier's Pirates!|80|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Sid Meier's Civilization Revolution|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Sine Mora|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Skate 3|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Skydive|50|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Slender: The Arrival (2014)|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Sniper Elite V2|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Sonic Unleashed|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Sonic All-Star Racing Transformed|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Space Invaders Infinity Gene|65|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|SpongeBob: Truth-Sq.|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Split/Second|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Splosion Man|65|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Stacking|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Star Ocean: The Last Hope|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|STAR WARS Battlefront|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Star Wars Battlefront II|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Star Wars Jedi Knight II: Jedi Outcast|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Star Wars Episode III: Revenge Of The Sith|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Star Wars Jedi Starfighter|80|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|STAR WARS Starfighter Special Edition|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Star Wars Jedi Knight: Jedi Academy|80|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Star Wars KOTOR II|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Star Wars Republic Commando|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Star Wars: The Clone Wars|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Star Wars: The Force Unleashed|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Star Wars: The Force Unleashed II|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|STAR WARS™ - Knights of the Old Republic™|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Street Fighters IV|165|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|SUPER STREETFIGHTER IV ARCADE EDITION|165|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Super Meat Boy|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Supreme Commander 2|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|SSX|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|SSX 3|80|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Rockstar Table Tennis|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Tekken 6|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Texas Hold'em|40|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|TimeSplitters Future Perfect|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|TimeSplitters 2|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|The Bureau|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|The King Of Fighters XIII|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|The Elder Scrolls III: Morrowind|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|The Maw|65|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|The Splatters|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|The Walking Dead: Michonne - Season Pass|65|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|The Walking Dead: Season Two - SEASON PASS|80|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|The Walking Dead: A Telltale Games Series (2,3,4,5)|80|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Tom Clancy’s Splinter Cell® Blacklist™|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Tom Clancy's Ghost Recon Advanced Warfighter 2|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Tom Clancy's Rainbow Six Vegas|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Tom Clancy's Rainbow Six Vegas 2|95|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Tom Clancy's Splinter Cell® Conviction™|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Tom Clancy's Splinter Cell® Chaos Theory|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Tom Clancy's Splinter Cell® Double Agent™|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Torchlight|65|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Toy Story 3|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Trials HD|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🕹|Thrillville|80|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Thrillville: FDC|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Tropico 4|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Tron: Evolution|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Unbound Saga|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Unreal Tournament® 3|85|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|VANQUISH|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Virtua Fighter 5 Final Showdown|75|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Viva Piñata: TIP|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Viva Piñata Party Animals|90|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|Wolfenstein 3D|60|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|World Of Soccer|70|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|XCOM Enemy Within|100|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420",
+            "🎮|XCOM Enemy Unknown|175|https://via.placeholder.com/280x420/1a1a26/a0a0b0?text=FOTO+280x420"
+        ];
 
         let parsedRetroGames = [];
         let selectedRetroGames = [];
 
         function initRetroGames() {
-            let lines = retroGamesRaw.split('\n');
-            lines.forEach((line, index) => {
-                let match = line.trim().match(/([🎮🕹])\s+(.+?)\s+\$(\d+)/);
-                if(match) {
-                    parsedRetroGames.push({
-                        id: 'rg-' + index,
-                        icon: match[1],
-                        name: match[2].trim(),
-                        price: parseInt(match[3])
-                    });
-                }
+            retroGamesRaw.forEach((line, index) => {
+                let parts = line.split('|');
+                parsedRetroGames.push({
+                    id: 'rg-' + index,
+                    icon: parts[0].trim(),
+                    name: parts[1].trim(),
+                    price: parseInt(parts[2].trim()),
+                    img: parts[3].trim()
+                });
             });
         }
         initRetroGames();
-
-        function formatPrice(p) {
-            const amount = parseFloat(String(p).replace(/[^\d.]/g, '')) || 0;
-            if(amount === 0) return "Cotizar en Chat";
-            if(selectedCurrency === "USD") return "$" + (amount / exchangeRate).toFixed(2) + " USD";
-            return "$" + amount.toFixed(0) + " MXN";
-        }
-
-        function updateDisplayedPrices() {
-            document.querySelectorAll('.price').forEach(el => {
-                if (!el.dataset.basePrice) {
-                    const match = el.textContent.match(/\$\s*([\d.,]+)/);
-                    if (match) el.dataset.basePrice = match[1].replace(/,/g, '');
-                }
-                if (el.dataset.basePrice) el.textContent = formatPrice(el.dataset.basePrice);
-            });
-
-            document.querySelectorAll('.options-list li span:last-child').forEach(el => {
-                if (!el.dataset.basePrice) {
-                    const match = el.textContent.match(/\$\s*([\d.,]+)/);
-                    if (match) el.dataset.basePrice = match[1].replace(/,/g, '');
-                    else if (/cotizar/i.test(el.textContent)) el.dataset.basePrice = '0';
-                }
-                if (el.dataset.basePrice) el.textContent = formatPrice(el.dataset.basePrice);
-            });
-
-            document.querySelectorAll('.currency-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.currency === selectedCurrency);
-            });
-
-            if (currentItem) {
-                const modalPrice = document.getElementById('modalPrice');
-                if (modalPrice) modalPrice.innerText = formatPrice(currentItem.price);
-                const select = document.getElementById('modalServiceOptions');
-                if (select && select.options.length) {
-                    Array.from(select.options).forEach(opt => {
-                        const label = opt.getAttribute('data-label') || '';
-                        opt.textContent = `${label} - ${formatPrice(opt.value)}`;
-                    });
-                }
-            }
-            
-            // Actualiza también los precios del modal retro si está abierto
-            if(document.getElementById('retroModal').classList.contains('active')){
-                filterRetroGrid();
-                updateRetroFooter();
-            }
-
-            if (typeof updateCartUI === 'function' && cart.length >= 0) {
-                updateCartUI();
-            }
-        }
-
-        function setCurrency(currency) {
-            selectedCurrency = currency;
-            updateDisplayedPrices();
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            updateDisplayedPrices();
-        });
-
-        /* --- MODAL PRINCIPAL DE PRODUCTO --- */
-        function openModal(element, title, msgText, optionsStr) {
-            let imgSrc = element.querySelector('.service-img').src;
-            document.getElementById('modalImg').src = imgSrc;
-            
-            let options = optionsStr.split(';').map(o => o.trim());
-            let selectHtml = '';
-            
-            options.forEach((opt) => {
-                let parts = opt.split('|');
-                let label = parts[0];
-                let price = parts[1];
-                let displayPrice = formatPrice(price);
-                selectHtml += `<option value="${price}" data-label="${label}">${label} - ${displayPrice}</option>`;
-            });
-
-            let selectContainer = document.getElementById('modalSelectContainer');
-            let selectElement = document.getElementById('modalServiceOptions');
-
-            if (options.length > 1) {
-                selectContainer.style.display = 'block';
-                selectElement.innerHTML = selectHtml;
-                let initialPrice = options[0].split('|')[1];
-                let initialLabel = options[0].split('|')[0];
-                document.getElementById('modalPrice').innerText = formatPrice(initialPrice);
-                currentItem = { title: title, price: parseInt(initialPrice), display: formatPrice(initialPrice), msg: msgText, optionLabel: initialLabel };
-            } else {
-                selectContainer.style.display = 'none';
-                let singlePrice = options[0].split('|')[1];
-                let singleLabel = options[0].split('|')[0];
-                document.getElementById('modalPrice').innerText = formatPrice(singlePrice);
-                currentItem = { title: title, price: parseInt(singlePrice), display: formatPrice(singlePrice), msg: msgText, optionLabel: singleLabel };
-            }
-
-            document.getElementById('modalTitle').innerText = title;
-            document.getElementById('buyerName').value = "";
-            document.getElementById('purchaseModal').classList.add('active');
-        }
-
-        function updateModalPrice() {
-            let select = document.getElementById('modalServiceOptions');
-            let selectedOption = select.options[select.selectedIndex];
-            let newPrice = selectedOption.value;
-            let newLabel = selectedOption.getAttribute('data-label');
-            
-            document.getElementById('modalPrice').innerText = formatPrice(newPrice);
-            currentItem.price = parseInt(newPrice);
-            currentItem.display = formatPrice(newPrice);
-            currentItem.optionLabel = newLabel;
-        }
-
-        function closeModal() { document.getElementById('purchaseModal').classList.remove('active'); }
-        
-        function toggleCart() { document.getElementById('cartSidebar').classList.toggle('active'); }
-
-        /* --- LÓGICA DEL CARRITO --- */
-        function updateCartUI() {
-            const container = document.getElementById('cartItemsContainer');
-            const badge = document.getElementById('cartBadge');
-            const totalEl = document.getElementById('cartTotalPrice');
-            badge.innerText = cart.length;
-            
-            if(cart.length === 0) {
-                container.innerHTML = '<div class="empty-cart-msg">Tu carrito está vacío. <br>¡Agrega servicios del catálogo!</div>';
-                totalEl.innerText = "$0 MXN";
-                return;
-            }
-
-            container.innerHTML = '';
-            let total = 0;
-            cart.forEach((item, index) => {
-                total += item.price;
-                let detailsHtml = item.details ? `<p style="font-size:0.75rem; color:var(--text-dim); margin-top:3px; line-height:1.4;">${item.details}</p>` : '';
-                container.innerHTML += `
-                    <div class="cart-item">
-                        <div class="cart-item-info">
-                            <h4>${item.title} <span style="color:var(--accent); font-size:0.75rem;">(${item.optionLabel})</span></h4>
-                            <p>${item.display}</p>
-                            ${detailsHtml}
-                        </div>
-                        <div class="remove-item" onclick="removeFromCart(${index})">✕</div>
-                    </div>`;
-            });
-            totalEl.innerText = "$" + total + " MXN";
-        }
-
-        function addToCartFromModal() {
-            if(currentItem) {
-                cart.push(currentItem);
-                updateCartUI();
-                closeModal();
-                const btn = document.querySelector('.cart-float-btn');
-                btn.style.transform = 'scale(1.2)';
-                setTimeout(() => btn.style.transform = '', 200);
-            }
-        }
-
-        function removeFromCart(index) { cart.splice(index, 1); updateCartUI(); }
-
-        /* --- LÓGICA DE COMPRA (ABRE VENTANA DE PAGOS) --- */
-        function buyNowFromModal() {
-            if(currentItem) {
-                const name = document.getElementById('buyerName').value.trim() || "(No especificado)";
-                pendingOrderText = `${currentItem.msg}: ${currentItem.optionLabel} (${currentItem.display}). Mi nombre es: ${name}`;
-                closeModal();
-                openPaymentModal(currentItem.display);
-            }
-        }
-
-        function checkoutCart() {
-            if(cart.length === 0) return alert("Tu carrito está vacío.");
-            const name = document.getElementById('cartNameInput').value.trim() || "(No especificado)";
-            
-            let text = `Hola, confirmo mi pedido en el Carrito:\n\n`;
-            let total = 0;
-            cart.forEach(item => {
-                text += `▪️ ${item.title} - ${item.optionLabel} (${item.display})\n`;
-                if(item.details) text += `   Juegos: ${item.details}\n`;
-                total += item.price;
-            });
-            text += `\nTotal estimado: $${total} MXN\nNombre: ${name}`;
-            
-            pendingOrderText = text;
-            toggleCart(); 
-            openPaymentModal(`$${total} MXN`);
-        }
-
-        /* --- CONTROL DEL MODAL DE DATOS DE PAGO --- */
-        function openPaymentModal(totalDisplay) {
-            document.getElementById('payModalTotal').innerText = totalDisplay;
-            const fileInput = document.getElementById('proofInput');
-            if(fileInput) fileInput.value = '';
-            
-            const fileText = document.getElementById('file-upload-text');
-            if(fileText) {
-                fileText.innerText = "📤 Toca aquí para subir tu foto o captura";
-                fileText.style.color = "#fff";
-            }
-            document.getElementById('paymentModal').classList.add('active');
-        }
-
-        function closePaymentModal() {
-            document.getElementById('paymentModal').classList.remove('active');
-        }
-
-        function updateFileName(input) {
-            const textElement = document.getElementById('file-upload-text');
-            if(input.files && input.files.length > 0) {
-                textElement.innerText = "📸 Archivo cargado: " + input.files[0].name;
-                textElement.style.color = "var(--accent)";
-            } else {
-                textElement.innerText = "📤 Toca aquí para subir tu foto o captura";
-                textElement.style.color = "#fff";
-            }
-        }
-
-        function sendOrderWithProof() {
-            const fileInput = document.getElementById('proofInput');
-            if(!fileInput.files || fileInput.files.length === 0) {
-                alert("⚠️ Por favor, selecciona la foto o captura de tu comprobante primero.");
-                return;
-            }
-            let finalWAtext = pendingOrderText + `\n\n*Adjunto comprobante de pago en la imagen.*`;
-            window.open(`https://wa.me/526611078412?text=${encodeURIComponent(finalWAtext)}`, '_blank');
-            closePaymentModal();
-        }
-
-        /* --- LÓGICA DEL NUEVO BUSCADOR RETRO --- */
-        function openRetroModal() {
-            selectedRetroGames = [];
-            document.getElementById('retroSearch').value = '';
-            filterRetroGrid();
-            updateRetroFooter();
-            document.getElementById('retroModal').classList.add('active');
-        }
-
-        function closeRetroModal() {
-            document.getElementById('retroModal').classList.remove('active');
-        }
 
         function filterRetroGrid() {
             const query = document.getElementById('retroSearch').value.toLowerCase();
@@ -1676,11 +1427,15 @@
                     const card = document.createElement('div');
                     card.className = `retro-card ${isSelected ? 'selected' : ''}`;
                     card.onclick = () => toggleRetroGame(game.id);
+                    
                     card.innerHTML = `
-                        <div class="r-title">${game.icon} ${game.name}</div>
-                        <div class="r-bot">
-                            <span class="r-price">${formatPrice(game.price)}</span>
-                            ${isSelected ? '<span style="color:var(--accent);">✓ Agregado</span>' : '<span style="color:var(--text-dim); font-size:0.8rem;">+ Seleccionar</span>'}
+                        <img src="${game.img}" class="retro-game-img" alt="Portada">
+                        <div style="width: 100%; text-align: center;">
+                            <div class="r-title">${game.icon} ${game.name}</div>
+                            <div class="r-bot">
+                                <span class="r-price">${formatPrice(game.price)}</span>
+                                ${isSelected ? '<span style="color:var(--accent); font-size:0.8rem; font-weight:700;">✓ Agregado</span>' : '<span style="color:var(--text-dim); font-size:0.8rem; font-weight:700;">+ Seleccionar</span>'}
+                            </div>
                         </div>
                     `;
                     container.appendChild(card);
@@ -1758,103 +1513,18 @@
             setTimeout(() => btn.style.transform = '', 200);
         }
 
-        /* --- OTROS SCRIPTS (Filtros, FAQ, Proof, etc) --- */
-        function filterCatalog(category) {
-            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-
-            document.querySelectorAll('.service-card').forEach(card => {
-                if(category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-
-            document.querySelectorAll('.cat-section').forEach(section => {
-                if(category === 'all' || section.getAttribute('data-group') === category) {
-                    section.style.display = 'block';
-                } else {
-                    section.style.display = 'none';
-                }
-            });
+        function openRetroModal() {
+            selectedRetroGames = [];
+            document.getElementById('retroSearch').value = '';
+            filterRetroGrid();
+            updateRetroFooter();
+            document.getElementById('retroModal').classList.add('active');
         }
 
-        function toggleFaq(element) {
-            let item = element.parentElement;
-            let answer = item.querySelector('.faq-answer');
-            
-            if (item.classList.contains('active')) {
-                item.classList.remove('active');
-                answer.style.maxHeight = null;
-            } else {
-                document.querySelectorAll('.faq-item').forEach(i => {
-                    i.classList.remove('active');
-                    i.querySelector('.faq-answer').style.maxHeight = null;
-                });
-                item.classList.add('active');
-                answer.style.maxHeight = answer.scrollHeight + "px";
-            }
+        function closeRetroModal() {
+            document.getElementById('retroModal').classList.remove('active');
         }
 
-        const purchases = [
-            "Netflix (1 Mes)", "Disney+ (3 Meses)", "Diamantes Free Fire", "Spotify Premium", "VIX+ (Cuenta Nueva)", "TikTok Seguidores", "Codpoints (Xbox)", "Canva Pro", "Apple TV + MLS"
-        ];
-        const phoneCodes = ["+1", "+52", "+57", "+503", "+51", "+54", "+56", "+593", "+502", "+504", "+505", "+506", "+507", "+595", "+598"];
-        const times = ["Hace 2 minutos", "Hace 5 minutos", "Hace 1 minuto", "Hace 10 minutos", "Recién ahora"];
-
-        setInterval(() => {
-            let popup = document.getElementById('socialProof');
-            let item = purchases[Math.floor(Math.random() * purchases.length)];
-            let code = phoneCodes[Math.floor(Math.random() * phoneCodes.length)];
-            let randomDigits = Math.floor(Math.random() * 90) + 10;
-            let time = times[Math.floor(Math.random() * times.length)];
-
-            document.getElementById('spLocation').innerText = `El número ${code} *****${randomDigits} compró`;
-            document.getElementById('spItem').innerText = item;
-            document.getElementById('spTime').innerText = time;
-
-            popup.classList.add('show');
-            setTimeout(() => { popup.classList.remove('show'); }, 4000); 
-        }, 20000); 
-
-        let selectedStars = 5;
-        const starSpans = document.querySelectorAll('#stars span');
-        starSpans.forEach(s => {
-            s.onclick = () => {
-                selectedStars = s.getAttribute('data-v');
-                starSpans.forEach(st => { st.classList.toggle('active', st.getAttribute('data-v') <= selectedStars); });
-            };
-        });
-
-        function postReview() {
-            const name = document.getElementById('rev-name').value.trim();
-            const msg = document.getElementById('rev-msg').value.trim();
-            if(!name || !msg) { alert("Por favor llena tu nombre y tu comentario."); return; }
-
-            const list = document.getElementById('testimonials-list');
-            const card = document.createElement('div');
-            card.className = 'testimonial-card';
-            let starsHtml = '';
-            for(let i=0; i<5; i++) starsHtml += i < selectedStars ? '★' : '☆';
-            
-            let initial = name.charAt(0).toUpperCase();
-
-            card.innerHTML = `
-                <div class="customer-profile">
-                    <div class="customer-avatar">${initial}</div>
-                    <div class="customer-info"><h4>${name}</h4><div class="stars-display">${starsHtml}</div></div>
-                </div>
-                <p>${msg}</p>
-            `;
-            list.prepend(card);
-
-            const waText = encodeURIComponent(`⭐ NUEVA RESEÑA ⭐\nNombre: ${name}\nCalificación: ${selectedStars} estrellas\nMensaje: ${msg}`);
-            window.open(`https://wa.me/526611078412?text=${waText}`, '_blank');
-
-            document.getElementById('rev-name').value = '';
-            document.getElementById('rev-msg').value = '';
-        }
     </script>
 </body>
 </html>

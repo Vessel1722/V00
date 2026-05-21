@@ -509,6 +509,73 @@
             .hero::before { background: linear-gradient(180deg, rgba(5,5,8,.90), rgba(5,5,8,.72)); }
         }
 
+
+
+        /* --- V5 BUSCADOR, PESTAÑAS MÓVILES, CONFIANZA Y ADMIN --- */
+        .catalog-tools { max-width: 1180px; margin: 18px auto 14px auto; padding: 0 5%; display: grid; grid-template-columns: 1.4fr .8fr; gap: 14px; align-items: center; }
+        .search-box-v5 { position: relative; }
+        .search-box-v5 input { width: 100%; padding: 16px 50px 16px 18px; border-radius: 18px; border: 1px solid rgba(138,43,226,.28); background: linear-gradient(135deg, rgba(18,18,26,.96), rgba(12,12,18,.96)); color: #fff; outline: none; font-weight: 700; box-shadow: 0 12px 30px rgba(0,0,0,.24); }
+        .search-box-v5 input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,255,204,.08), 0 14px 34px rgba(0,0,0,.28); }
+        .search-icon-v5 { position:absolute; right:16px; top:50%; transform:translateY(-50%); opacity:.75; }
+        .catalog-count-v5 { color: var(--text-dim); font-size: .85rem; text-align: right; }
+        .catalog-count-v5 strong { color: #fff; }
+        .mobile-tabs-label { display:none; color:var(--text-dim); font-size:.78rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; padding:0 5%; margin-top:12px; }
+        .no-results-v5 { display:none; max-width:700px; margin:25px auto 10px auto; padding:22px; border-radius:18px; background:rgba(18,18,26,.74); border:1px solid rgba(255,255,255,.08); text-align:center; color:var(--text-dim); }
+        .trust-section-v5 { padding: 70px 5%; border-top: 1px solid rgba(255,255,255,.05); }
+        .trust-grid-v5 { max-width: 1200px; margin: 0 auto; display:grid; grid-template-columns: repeat(4,1fr); gap:18px; }
+        .trust-card-v5 { background: linear-gradient(180deg, rgba(18,18,26,.95), rgba(9,9,14,.95)); border:1px solid rgba(255,255,255,.07); border-radius:22px; padding:24px; box-shadow:0 16px 42px rgba(0,0,0,.25); position:relative; overflow:hidden; }
+        .trust-card-v5::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at top right, rgba(138,43,226,.16), transparent 34%); pointer-events:none; }
+        .trust-card-v5 b { display:block; color:#fff; font-size:1.05rem; margin:12px 0 8px; position:relative; }
+        .trust-card-v5 p { color:var(--text-dim); line-height:1.55; font-size:.9rem; position:relative; }
+        .trust-icon-v5 { font-size:1.9rem; position:relative; }
+        .guarantee-box-v5 { max-width:1200px; margin: 24px auto 0 auto; padding: 28px; border-radius:26px; border:1px solid rgba(0,255,204,.18); background: radial-gradient(circle at top left, rgba(0,255,204,.15), transparent 32%), linear-gradient(135deg, rgba(9,18,18,.96), rgba(18,10,24,.96)); display:grid; grid-template-columns: 1fr auto; gap:18px; align-items:center; box-shadow:0 18px 48px rgba(0,0,0,.3); }
+        .guarantee-box-v5 h3 { font-family:'Orbitron','Montserrat',system-ui,sans-serif; font-size:1.55rem; margin-bottom:8px; color:#fff; }
+        .guarantee-box-v5 p { color:var(--text-dim); line-height:1.6; }
+        .guarantee-badge-v5 { padding:14px 18px; border-radius:999px; background:rgba(0,255,204,.10); border:1px solid rgba(0,255,204,.28); color:var(--accent); font-weight:900; white-space:nowrap; }
+        .announcement-v5 { display:none; margin-top:74px; background:linear-gradient(90deg, rgba(138,43,226,.95), rgba(255,0,127,.78)); color:#fff; text-align:center; font-weight:900; padding:9px 5%; letter-spacing:.03em; }
+        .admin-open-btn-v5 { border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.04); color:var(--text-dim); border-radius:999px; padding:8px 12px; cursor:pointer; font-size:.72rem; font-weight:900; text-transform:uppercase; }
+        .admin-open-btn-v5:hover { color:#fff; border-color:var(--primary); }
+        .admin-modal-v5 { position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:5000; background:rgba(0,0,0,.78); padding:18px; }
+        .admin-modal-v5.active { display:flex; }
+        .admin-panel-v5 { width:min(980px, 96vw); max-height:90vh; overflow:auto; background:#0c0c12; border:1px solid rgba(138,43,226,.35); border-radius:24px; box-shadow:0 25px 80px rgba(0,0,0,.75); }
+        .admin-head-v5 { position:sticky; top:0; background:#0c0c12; z-index:2; padding:20px; border-bottom:1px solid rgba(255,255,255,.07); display:flex; justify-content:space-between; gap:12px; align-items:center; }
+        .admin-head-v5 h2 { font-family:'Orbitron','Montserrat',system-ui,sans-serif; font-size:1.25rem; }
+        .admin-body-v5 { padding:20px; display:grid; gap:18px; }
+        .admin-card-v5 { background:#12121a; border:1px solid rgba(255,255,255,.07); border-radius:18px; padding:18px; }
+        .admin-card-v5 h3 { margin-bottom:14px; color:#fff; }
+        .admin-grid-v5 { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+        .admin-field-v5 label { display:block; font-size:.78rem; color:var(--text-dim); margin-bottom:7px; font-weight:900; text-transform:uppercase; }
+        .admin-field-v5 input, .admin-field-v5 textarea, .admin-field-v5 select { width:100%; padding:12px; border-radius:12px; border:1px solid #2d2d3d; background:#08080d; color:#fff; outline:none; }
+        .admin-field-v5 textarea { min-height:78px; resize:vertical; }
+        .admin-actions-v5 { display:flex; flex-wrap:wrap; gap:10px; }
+        .admin-actions-v5 button { border:0; border-radius:12px; padding:12px 15px; font-weight:900; cursor:pointer; }
+        .admin-save-v5 { background:var(--primary); color:#fff; }
+        .admin-reset-v5 { background:#252532; color:#fff; }
+        .admin-export-v5 { background:var(--accent); color:#00110e; }
+        .admin-products-v5 { display:grid; gap:10px; }
+        .admin-product-row-v5 { display:grid; grid-template-columns:1.2fr .6fr .7fr .35fr; gap:8px; align-items:end; padding:10px; border:1px solid rgba(255,255,255,.06); border-radius:14px; background:rgba(255,255,255,.025); }
+        .admin-product-badge { position:absolute; top:10px; left:10px; z-index:2; background:linear-gradient(135deg, var(--token), var(--primary)); color:#fff; font-size:.68rem; font-weight:900; padding:6px 9px; border-radius:999px; box-shadow:0 8px 18px rgba(0,0,0,.35); text-transform:uppercase; }
+        .img-container { position:relative; }
+        @media (max-width: 768px) {
+            .catalog-tools { grid-template-columns:1fr; gap:8px; margin-top:10px; padding:0 12px; }
+            .catalog-count-v5 { text-align:left; padding-left:4px; }
+            .mobile-tabs-label { display:block; }
+            .catalog-filters { border-top:1px solid rgba(255,255,255,.06); border-bottom:1px solid rgba(255,255,255,.06); }
+            .filter-btn { flex: 0 0 auto; border-radius:16px; min-width:112px; text-align:center; }
+            .filter-btn.active { transform:translateY(-1px); }
+            .trust-section-v5 { padding:46px 12px; }
+            .trust-grid-v5 { grid-template-columns:1fr 1fr; gap:10px; }
+            .trust-card-v5 { padding:16px; border-radius:18px; }
+            .trust-card-v5 b { font-size:.94rem; }
+            .trust-card-v5 p { font-size:.8rem; }
+            .guarantee-box-v5 { grid-template-columns:1fr; padding:20px; border-radius:22px; }
+            .guarantee-badge-v5 { width:fit-content; }
+            .announcement-v5 { margin-top:104px; font-size:.78rem; padding:8px 12px; }
+            .admin-grid-v5, .admin-product-row-v5 { grid-template-columns:1fr; }
+            .admin-open-btn-v5 { padding:7px 9px; }
+        }
+        @media (max-width: 460px) { .trust-grid-v5 { grid-template-columns:1fr; } }
+
     </style>
 </head>
 <body>
@@ -712,6 +779,7 @@
                 <a href="#catalogo-ancla">Catálogo</a>
                 <a href="#recompensas">Rewards</a>
                 <a href="#faq">FAQ</a>
+                <button class="admin-open-btn-v5" type="button" onclick="openAdminPanelV5()">Admin</button>
                 <button class="btn-login" type="button" onclick="openLoginModal()">Mi cuenta</button>
             </div>
             <div class="currency-switcher" aria-label="Selector de moneda">
@@ -775,14 +843,23 @@
     <div id="catalogo-ancla"></div>
 
     <div id="catalogo-main">
-        <div class="catalog-filters">
-            <button class="filter-btn active" onclick="filterCatalog('all')">Ver Todo</button>
-            <button class="filter-btn" onclick="filterCatalog('gaming')">Gaming</button>
-            <button class="filter-btn" onclick="filterCatalog('streaming')">Streaming</button>
-            <button class="filter-btn" onclick="filterCatalog('cuentas')">Cuentas Nuevas</button>
-            <button class="filter-btn" onclick="filterCatalog('software')">Software</button>
-            <button class="filter-btn" onclick="filterCatalog('redes')">Redes Sociales</button>
+        <div class="mobile-tabs-label">Categorías rápidas · desliza para ver más</div>
+        <div class="catalog-filters" id="catalogTabsV5">
+            <button class="filter-btn active" onclick="filterCatalog('all')">Todo</button>
+            <button class="filter-btn" onclick="filterCatalog('gaming')">🎮 Gaming</button>
+            <button class="filter-btn" onclick="filterCatalog('streaming')">🎬 Streaming</button>
+            <button class="filter-btn" onclick="filterCatalog('cuentas')">👤 Cuentas</button>
+            <button class="filter-btn" onclick="filterCatalog('software')">💻 Software</button>
+            <button class="filter-btn" onclick="filterCatalog('redes')">📈 Redes</button>
         </div>
+        <div class="catalog-tools">
+            <div class="search-box-v5">
+                <input type="search" id="catalogSearchV5" placeholder="Buscar Netflix, Robux, Office, Halo, ChatGPT..." autocomplete="off" oninput="applyCatalogFiltersV5()">
+                <span class="search-icon-v5">🔎</span>
+            </div>
+            <div class="catalog-count-v5" id="catalogCountV5"><strong>0</strong> servicios disponibles</div>
+        </div>
+        <div class="no-results-v5" id="noResultsV5">No encontré productos con ese nombre. Prueba con otra palabra o escríbenos por WhatsApp.</div>
 
         <div class="cat-section" data-group="gaming">
             <h2 class="section-title gaming-title">Gaming & Monedas</h2>
@@ -1179,6 +1256,24 @@
         </div>
     </div> 
     
+
+    <section class="trust-section-v5" id="como-comprar">
+        <h2 class="section-title" style="padding-top:0; margin-top:0;">Cómo comprar</h2>
+        <div class="trust-grid-v5">
+            <div class="trust-card-v5"><div class="trust-icon-v5">1️⃣</div><b>Elige tu producto</b><p>Busca el servicio, abre la tarjeta y selecciona el paquete que necesitas.</p></div>
+            <div class="trust-card-v5"><div class="trust-icon-v5">2️⃣</div><b>Agrega al carrito</b><p>Puedes comprar un servicio o juntar varios para mandar todo en un solo pedido.</p></div>
+            <div class="trust-card-v5"><div class="trust-icon-v5">3️⃣</div><b>Realiza tu pago</b><p>Usa transferencia, OXXO, PayPal o Binance y guarda tu comprobante.</p></div>
+            <div class="trust-card-v5"><div class="trust-icon-v5">4️⃣</div><b>Recibe soporte</b><p>Envíanos el comprobante por WhatsApp y procesamos tu pedido lo antes posible.</p></div>
+        </div>
+        <div class="guarantee-box-v5" id="garantia">
+            <div>
+                <h3>🛡️ Garantía VesselGames</h3>
+                <p>Si tu producto presenta algún problema, revisamos tu caso y te damos soporte hasta solucionarlo. Conserva tu comprobante y el chat de compra para validar más rápido tu garantía.</p>
+            </div>
+            <div class="guarantee-badge-v5">Soporte post-compra</div>
+        </div>
+    </section>
+
     <div class="payment-methods-banner">
         <h3>MÉTODOS DE PAGO ACEPTADOS</h3>
         <div class="payment-icons">
@@ -1292,6 +1387,51 @@
     <footer>
         <p>&copy; 2026 Vessel Games Oficial | Envíos inmediatos vía WhatsApp.</p>
     </footer>
+
+
+
+    <div class="admin-modal-v5" id="adminModalV5" aria-hidden="true">
+        <div class="admin-panel-v5">
+            <div class="admin-head-v5">
+                <h2>Panel Admin · VesselGames</h2>
+                <button class="admin-open-btn-v5" type="button" onclick="closeAdminPanelV5()">Cerrar ✕</button>
+            </div>
+            <div class="admin-body-v5">
+                <div class="admin-card-v5" id="adminLoginBoxV5">
+                    <h3>Acceso local</h3>
+                    <div class="admin-grid-v5">
+                        <div class="admin-field-v5"><label>Contraseña</label><input type="password" id="adminPassV5" placeholder="vesseladmin"></div>
+                        <div class="admin-field-v5" style="display:flex;align-items:end;"><button class="admin-save-v5" type="button" onclick="unlockAdminV5()" style="width:100%;">Entrar</button></div>
+                    </div>
+                    <p style="color:var(--text-dim);font-size:.82rem;margin-top:10px;">Este panel funciona en el navegador. Para seguridad real se necesita backend, Firebase o Supabase.</p>
+                </div>
+                <div id="adminContentV5" style="display:none;">
+                    <div class="admin-card-v5">
+                        <h3>Contenido principal</h3>
+                        <div class="admin-grid-v5">
+                            <div class="admin-field-v5"><label>Badge de portada</label><input id="adminHeroBadgeV5" placeholder="CATÁLOGO DIGITAL · ENTREGA RÁPIDA"></div>
+                            <div class="admin-field-v5"><label>Anuncio superior</label><input id="adminAnnouncementV5" placeholder="Ej. Promo de hoy activa"></div>
+                            <div class="admin-field-v5"><label>Título hero</label><textarea id="adminHeroTitleV5"></textarea></div>
+                            <div class="admin-field-v5"><label>Texto hero</label><textarea id="adminHeroTextV5"></textarea></div>
+                            <div class="admin-field-v5"><label>WhatsApp con lada</label><input id="adminWhatsappV5" placeholder="526611078412"></div>
+                            <div class="admin-field-v5"><label>Color principal</label><input id="adminPrimaryV5" placeholder="#8a2be2"></div>
+                        </div>
+                    </div>
+                    <div class="admin-card-v5">
+                        <h3>Productos visibles</h3>
+                        <p style="color:var(--text-dim);font-size:.85rem;margin-bottom:12px;">Puedes poner badge, cambiar precio visible “desde” u ocultar productos. Los cambios se guardan en este navegador.</p>
+                        <div class="admin-products-v5" id="adminProductsV5"></div>
+                    </div>
+                    <div class="admin-actions-v5">
+                        <button class="admin-save-v5" type="button" onclick="saveAdminSettingsV5()">Guardar cambios</button>
+                        <button class="admin-export-v5" type="button" onclick="exportAdminSettingsV5()">Exportar configuración</button>
+                        <button class="admin-reset-v5" type="button" onclick="resetAdminSettingsV5()">Restablecer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script>
         let cart = [];
@@ -2411,6 +2551,198 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             setTimeout(enhanceProductCards, 250);
+        });
+
+
+
+        /* --- V5: búsqueda, filtros combinados y panel admin local --- */
+        let activeCatalogCategoryV5 = 'all';
+        const ADMIN_KEY_V5 = 'vesselAdminSettingsV5';
+        const ADMIN_UNLOCK_KEY_V5 = 'vesselAdminUnlockedV5';
+
+        function normalizeTextV5(text) {
+            return String(text || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+        }
+
+        function getCardTitleV5(card) {
+            return card.querySelector('h3')?.innerText?.trim() || 'Producto';
+        }
+
+        function applyCatalogFiltersV5() {
+            const q = normalizeTextV5(document.getElementById('catalogSearchV5')?.value || '');
+            let visibleCount = 0;
+            document.querySelectorAll('.service-card').forEach(card => {
+                const cat = card.getAttribute('data-category') || '';
+                const text = normalizeTextV5(card.innerText + ' ' + (card.getAttribute('data-note') || '') + ' ' + (card.getAttribute('onclick') || ''));
+                const categoryOk = activeCatalogCategoryV5 === 'all' || cat === activeCatalogCategoryV5;
+                const searchOk = !q || text.includes(q);
+                const adminOk = card.dataset.adminHidden !== 'true';
+                const show = categoryOk && searchOk && adminOk;
+                card.style.display = show ? 'flex' : 'none';
+                if (show) visibleCount++;
+            });
+            document.querySelectorAll('.cat-section').forEach(section => {
+                const sectionCards = Array.from(section.querySelectorAll('.service-card'));
+                const anyVisible = sectionCards.some(card => card.style.display !== 'none');
+                section.style.display = anyVisible ? 'block' : 'none';
+            });
+            const count = document.getElementById('catalogCountV5');
+            if (count) count.innerHTML = `<strong>${visibleCount}</strong> servicio${visibleCount === 1 ? '' : 's'} disponible${visibleCount === 1 ? '' : 's'}`;
+            const noResults = document.getElementById('noResultsV5');
+            if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function filterCatalog(category) {
+            activeCatalogCategoryV5 = category || 'all';
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            const clicked = event?.currentTarget || Array.from(document.querySelectorAll('.filter-btn')).find(btn => btn.getAttribute('onclick')?.includes(`'${activeCatalogCategoryV5}'`));
+            if (clicked) clicked.classList.add('active');
+            applyCatalogFiltersV5();
+            document.getElementById('catalogSearchV5')?.focus({preventScroll:true});
+        }
+
+        function collectProductsForAdminV5() {
+            return Array.from(document.querySelectorAll('.service-card')).map((card, idx) => ({
+                idx,
+                key: getCardTitleV5(card),
+                price: card.querySelector('.price')?.innerText?.replace(' MXN','') || '',
+                category: card.getAttribute('data-category') || 'general'
+            }));
+        }
+
+        function readAdminSettingsV5() {
+            try { return JSON.parse(localStorage.getItem(ADMIN_KEY_V5) || '{}'); } catch(e) { return {}; }
+        }
+
+        function writeAdminSettingsV5(settings) {
+            localStorage.setItem(ADMIN_KEY_V5, JSON.stringify(settings));
+        }
+
+        function applyAdminSettingsV5() {
+            const s = readAdminSettingsV5();
+            if (s.primary) document.documentElement.style.setProperty('--primary', s.primary);
+            const badge = document.querySelector('.hero .badge');
+            if (badge && s.heroBadge) badge.innerText = s.heroBadge;
+            const heroTitle = document.querySelector('.hero h1');
+            if (heroTitle && s.heroTitle) heroTitle.innerHTML = s.heroTitle;
+            const heroText = document.querySelector('.hero p');
+            if (heroText && s.heroText) heroText.innerText = s.heroText;
+            const ann = document.getElementById('announcementV5');
+            if (ann) {
+                ann.innerText = s.announcement || '';
+                ann.style.display = s.announcement ? 'block' : 'none';
+            }
+            if (s.whatsapp) {
+                const clean = String(s.whatsapp).replace(/\D/g, '');
+                document.querySelectorAll('a[href*="wa.me/"]').forEach(a => {
+                    const text = encodeURIComponent('Hola, tengo una duda sobre sus servicios.');
+                    a.href = `https://wa.me/${clean}?text=${text}`;
+                });
+            }
+            const productSettings = s.products || {};
+            document.querySelectorAll('.service-card').forEach(card => {
+                const key = getCardTitleV5(card);
+                const cfg = productSettings[key] || {};
+                card.dataset.adminHidden = cfg.hidden ? 'true' : 'false';
+                const priceEl = card.querySelector('.price');
+                if (priceEl && cfg.price) priceEl.innerText = cfg.price.includes('MXN') ? cfg.price : `${cfg.price} MXN`;
+                card.querySelectorAll('.admin-product-badge').forEach(x => x.remove());
+                if (cfg.badge) {
+                    const img = card.querySelector('.img-container');
+                    if (img) {
+                        const b = document.createElement('div');
+                        b.className = 'admin-product-badge';
+                        b.innerText = cfg.badge;
+                        img.appendChild(b);
+                    }
+                }
+            });
+            applyCatalogFiltersV5();
+        }
+
+        function openAdminPanelV5() {
+            const modal = document.getElementById('adminModalV5');
+            if (!modal) return;
+            modal.classList.add('active');
+            if (localStorage.getItem(ADMIN_UNLOCK_KEY_V5) === '1') unlockAdminV5(true);
+        }
+        function closeAdminPanelV5() { document.getElementById('adminModalV5')?.classList.remove('active'); }
+
+        function unlockAdminV5(skipPass=false) {
+            const pass = document.getElementById('adminPassV5')?.value || '';
+            if (!skipPass && pass !== 'vesseladmin') { alert('Contraseña incorrecta. Pista: vesseladmin'); return; }
+            localStorage.setItem(ADMIN_UNLOCK_KEY_V5, '1');
+            document.getElementById('adminLoginBoxV5').style.display = 'none';
+            document.getElementById('adminContentV5').style.display = 'block';
+            hydrateAdminFormV5();
+        }
+
+        function hydrateAdminFormV5() {
+            const s = readAdminSettingsV5();
+            const set = (id, value) => { const el = document.getElementById(id); if (el) el.value = value || ''; };
+            set('adminHeroBadgeV5', s.heroBadge || document.querySelector('.hero .badge')?.innerText || '');
+            set('adminHeroTitleV5', s.heroTitle || document.querySelector('.hero h1')?.innerHTML || '');
+            set('adminHeroTextV5', s.heroText || document.querySelector('.hero p')?.innerText || '');
+            set('adminAnnouncementV5', s.announcement || '');
+            set('adminWhatsappV5', s.whatsapp || '526611078412');
+            set('adminPrimaryV5', s.primary || getComputedStyle(document.documentElement).getPropertyValue('--primary').trim());
+            const productSettings = s.products || {};
+            const wrap = document.getElementById('adminProductsV5');
+            if (!wrap) return;
+            wrap.innerHTML = collectProductsForAdminV5().map(p => {
+                const cfg = productSettings[p.key] || {};
+                return `<div class="admin-product-row-v5" data-product="${p.key.replace(/"/g,'&quot;')}">
+                    <div class="admin-field-v5"><label>${p.key} <small style="color:var(--text-dim);">${p.category}</small></label><input data-field="badge" placeholder="Badge: Más vendido" value="${(cfg.badge||'').replace(/"/g,'&quot;')}"></div>
+                    <div class="admin-field-v5"><label>Precio visible</label><input data-field="price" placeholder="${p.price}" value="${(cfg.price||'').replace(/"/g,'&quot;')}"></div>
+                    <div class="admin-field-v5"><label>Estado</label><select data-field="hidden"><option value="false" ${cfg.hidden ? '' : 'selected'}>Visible</option><option value="true" ${cfg.hidden ? 'selected' : ''}>Oculto</option></select></div>
+                    <div class="admin-field-v5"><label>Vista</label><button type="button" onclick="scrollToAdminProductV5('${p.key.replace(/'/g,"\'")}')">Ver</button></div>
+                </div>`;
+            }).join('');
+        }
+
+        function saveAdminSettingsV5() {
+            const products = {};
+            document.querySelectorAll('.admin-product-row-v5').forEach(row => {
+                const key = row.dataset.product;
+                const badge = row.querySelector('[data-field="badge"]')?.value.trim();
+                const price = row.querySelector('[data-field="price"]')?.value.trim();
+                const hidden = row.querySelector('[data-field="hidden"]')?.value === 'true';
+                if (badge || price || hidden) products[key] = { badge, price, hidden };
+            });
+            const settings = {
+                heroBadge: document.getElementById('adminHeroBadgeV5')?.value.trim(),
+                heroTitle: document.getElementById('adminHeroTitleV5')?.value.trim(),
+                heroText: document.getElementById('adminHeroTextV5')?.value.trim(),
+                announcement: document.getElementById('adminAnnouncementV5')?.value.trim(),
+                whatsapp: document.getElementById('adminWhatsappV5')?.value.trim(),
+                primary: document.getElementById('adminPrimaryV5')?.value.trim(),
+                products
+            };
+            writeAdminSettingsV5(settings);
+            applyAdminSettingsV5();
+            alert('Cambios guardados en este navegador.');
+        }
+
+        function exportAdminSettingsV5() {
+            const data = localStorage.getItem(ADMIN_KEY_V5) || '{}';
+            navigator.clipboard?.writeText(data).then(() => alert('Configuración copiada al portapapeles.')).catch(() => prompt('Copia tu configuración:', data));
+        }
+
+        function resetAdminSettingsV5() {
+            if (!confirm('¿Restablecer configuración local del panel admin?')) return;
+            localStorage.removeItem(ADMIN_KEY_V5);
+            location.reload();
+        }
+
+        function scrollToAdminProductV5(name) {
+            closeAdminPanelV5();
+            const card = Array.from(document.querySelectorAll('.service-card')).find(c => getCardTitleV5(c) === name);
+            if (card) { filterCatalog('all'); card.scrollIntoView({behavior:'smooth', block:'center'}); card.classList.add('pulse-glow'); setTimeout(()=>card.classList.remove('pulse-glow'), 1500); }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            applyAdminSettingsV5();
+            setTimeout(applyCatalogFiltersV5, 350);
         });
 
     </script>

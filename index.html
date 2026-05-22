@@ -552,152 +552,6 @@
         }
         @media (max-width: 460px) { .trust-grid-v5 { grid-template-columns:1fr; } }
 
-    
-
-/* --- ADMIN SIMPLE INTEGRADO V7 FIX --- */
-.admin-open-btn-simple {
-    border: 1px solid rgba(255,255,255,.12);
-    color: #fff;
-    background: linear-gradient(135deg, rgba(138,43,226,.75), rgba(0,255,204,.18));
-    border-radius: 999px;
-    padding: 10px 14px;
-    font-weight: 900;
-    font-size: .72rem;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: .25s;
-}
-.admin-open-btn-simple:hover { transform: translateY(-2px); filter: brightness(1.1); }
-.admin-simple-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 5000;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 18px;
-    background: rgba(0,0,0,.82);
-}
-.admin-simple-modal.active { display: flex; }
-.admin-simple-panel {
-    width: min(980px, 96vw);
-    max-height: 92vh;
-    overflow: auto;
-    background: #0c0c12;
-    border: 1px solid rgba(138,43,226,.35);
-    border-radius: 24px;
-    box-shadow: 0 25px 80px rgba(0,0,0,.75);
-}
-.admin-simple-head {
-    position: sticky;
-    top: 0;
-    z-index: 2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    padding: 18px;
-    background: rgba(12,12,18,.98);
-    border-bottom: 1px solid rgba(255,255,255,.08);
-}
-.admin-simple-head h2 {
-    font-family: 'Orbitron','Montserrat',system-ui,sans-serif;
-    font-size: 1.15rem;
-    margin: 0;
-}
-.admin-simple-close {
-    border: 1px solid rgba(255,255,255,.1);
-    background: rgba(255,255,255,.06);
-    color: white;
-    border-radius: 999px;
-    padding: 10px 14px;
-    font-weight: 900;
-    cursor: pointer;
-}
-.admin-simple-body { padding: 18px; }
-.admin-simple-card {
-    background: rgba(255,255,255,.04);
-    border: 1px solid rgba(255,255,255,.08);
-    border-radius: 18px;
-    padding: 16px;
-    margin-bottom: 14px;
-}
-.admin-simple-card h3 {
-    margin: 0 0 12px;
-    font-family: 'Orbitron','Montserrat',system-ui,sans-serif;
-    font-size: 1rem;
-}
-.admin-simple-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-}
-.admin-simple-field { display: grid; gap: 7px; }
-.admin-simple-field.full { grid-column: 1 / -1; }
-.admin-simple-field label {
-    color: var(--text-dim);
-    font-size: .76rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: .04em;
-}
-.admin-simple-field input,
-.admin-simple-field select,
-.admin-simple-field textarea {
-    width: 100%;
-    background: #08080d;
-    border: 1px solid #2d2d3d;
-    color: #fff;
-    border-radius: 12px;
-    padding: 12px;
-    outline: none;
-    font-family: 'Montserrat',system-ui,sans-serif;
-}
-.admin-simple-field textarea { min-height: 90px; resize: vertical; }
-.admin-simple-field input:focus,
-.admin-simple-field textarea:focus,
-.admin-simple-field select:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(138,43,226,.16);
-}
-.admin-simple-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
-.admin-simple-save,
-.admin-simple-secondary,
-.admin-simple-danger {
-    border: 0;
-    border-radius: 999px;
-    padding: 12px 16px;
-    font-weight: 900;
-    cursor: pointer;
-    color: #fff;
-}
-.admin-simple-save { background: linear-gradient(135deg, var(--primary), #b45cff); }
-.admin-simple-secondary { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.1); }
-.admin-simple-danger { background: rgba(255,0,127,.75); }
-.admin-product-list { display: grid; gap: 10px; }
-.admin-product-row {
-    display: grid;
-    grid-template-columns: 1.2fr .55fr .55fr .45fr;
-    gap: 10px;
-    align-items: end;
-    background: rgba(0,0,0,.20);
-    border: 1px solid rgba(255,255,255,.07);
-    border-radius: 14px;
-    padding: 12px;
-}
-.admin-product-title { align-self: center; color: #fff; font-weight: 900; font-size: .9rem; }
-.admin-muted { color: var(--text-dim); font-size: .82rem; line-height: 1.55; }
-.admin-hidden-product { display: none !important; }
-@media (max-width: 768px) {
-    .menu .admin-open-btn-simple { border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.035); border-radius:12px; padding:10px 6px; text-align:center; font-size:.64rem; }
-    .mobile-bottom-nav { grid-template-columns: repeat(5, 1fr) !important; }
-    .admin-simple-modal { align-items: flex-end; padding: 0; }
-    .admin-simple-panel { width: 100%; max-height: 94vh; border-radius: 24px 24px 0 0; }
-    .admin-simple-grid, .admin-product-row { grid-template-columns: 1fr; }
-    .admin-simple-actions { flex-direction: column; }
-    .admin-simple-actions button { width: 100%; }
-}
-
     </style>
 </head>
 <body>
@@ -903,7 +757,7 @@
                 <a href="#recompensas">Rewards</a>
                 <a href="#faq">FAQ</a>
                 <button class="btn-login" type="button" onclick="openLoginModal()">Mi cuenta</button>
-                <button class="admin-open-btn-simple" type="button" onclick="openAdminSimple()">Admin</button>
+                <a class="btn-login" href="admin.html" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center;">Admin</a>
             </div>
             <div class="currency-switcher" aria-label="Selector de moneda">
                 <button class="currency-btn active" type="button" data-currency="MXN" onclick="setCurrency('MXN')">MXN</button>
@@ -917,7 +771,7 @@
         <a href="https://wa.me/526611078412?text=Hola,%20quiero%20hacer%20un%20pedido." target="_blank"><b>💬</b><span>WhatsApp</span></a>
         <button type="button" onclick="toggleCart()"><b>🧺</b><span>Carrito</span></button>
         <button type="button" onclick="openLoginModal()"><b>👤</b><span>Cuenta</span></button>
-        <button type="button" onclick="openAdminSimple()"><b>⚙️</b><span>Admin</span></button>
+        <a href="admin.html"><b>⚙️</b><span>Admin</span></a>
     </div>
 
     <div class="hero">
@@ -1516,63 +1370,7 @@
 
 
 
-
-
-    <!-- PANEL ADMIN SIMPLE INTEGRADO: no necesita admin.html ni archivos separados -->
-    <div class="admin-simple-modal" id="adminSimpleModal" aria-hidden="true">
-        <div class="admin-simple-panel">
-            <div class="admin-simple-head">
-                <h2>Panel Admin · VesselGames</h2>
-                <button class="admin-simple-close" type="button" onclick="closeAdminSimple()">Cerrar ✕</button>
-            </div>
-            <div class="admin-simple-body">
-                <div class="admin-simple-card" id="adminSimpleLogin">
-                    <h3>Acceso local</h3>
-                    <p class="admin-muted">Este panel no usa rutas ni archivos extra. La contraseña es <strong>vesseladmin</strong> y los cambios se guardan en este navegador.</p>
-                    <div class="admin-simple-grid">
-                        <div class="admin-simple-field">
-                            <label>Contraseña</label>
-                            <input type="password" id="adminSimplePass" placeholder="vesseladmin">
-                        </div>
-                        <div class="admin-simple-field" style="align-self:end;">
-                            <button class="admin-simple-save" type="button" onclick="unlockAdminSimple()">Entrar</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="adminSimpleContent" style="display:none;">
-                    <div class="admin-simple-card">
-                        <h3>Contenido principal</h3>
-                        <div class="admin-simple-grid">
-                            <div class="admin-simple-field"><label>Badge de portada</label><input id="adminSimpleHeroBadge"></div>
-                            <div class="admin-simple-field"><label>WhatsApp con lada</label><input id="adminSimpleWhatsapp" placeholder="526611078412"></div>
-                            <div class="admin-simple-field full"><label>Título de portada</label><textarea id="adminSimpleHeroTitle"></textarea></div>
-                            <div class="admin-simple-field full"><label>Texto de portada</label><textarea id="adminSimpleHeroText"></textarea></div>
-                            <div class="admin-simple-field"><label>Color principal</label><input id="adminSimplePrimary" placeholder="#8a2be2"></div>
-                            <div class="admin-simple-field"><label>Texto anuncio/oferta</label><input id="adminSimpleAnnouncement" placeholder="Oferta limitada activa"></div>
-                        </div>
-                    </div>
-
-                    <div class="admin-simple-card">
-                        <h3>Productos</h3>
-                        <p class="admin-muted">Aquí puedes cambiar el precio visible, badge u ocultar productos. No se duplica nada: solo edita lo que ya está en la página.</p>
-                        <div class="admin-product-list" id="adminSimpleProducts"></div>
-                    </div>
-
-                    <div class="admin-simple-card">
-                        <h3>Guardar</h3>
-                        <div class="admin-simple-actions">
-                            <button class="admin-simple-save" type="button" onclick="saveAdminSimple()">Guardar cambios</button>
-                            <button class="admin-simple-secondary" type="button" onclick="exportAdminSimple()">Copiar configuración</button>
-                            <button class="admin-simple-danger" type="button" onclick="resetAdminSimple()">Restablecer</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
         let cart = [];
         let currentItem = null;
@@ -2746,147 +2544,150 @@
         });
 
 
+        /* --- SUPABASE REAL: carga productos y ajustes desde la nube --- */
+        const VESSEL_SUPABASE_URL = 'https://cdfyzmwccdqmljwhqnjm.supabase.co';
+        const VESSEL_SUPABASE_KEY = 'sb_publishable_cl0-ImakwDc9X1ZcNiJPlg_7J3L5VUm';
+        const vesselSupabase = window.supabase?.createClient(VESSEL_SUPABASE_URL, VESSEL_SUPABASE_KEY);
 
-        /* --- ADMIN SIMPLE INTEGRADO V7 FIX --- */
-        const ADMIN_SIMPLE_KEY = 'vesselAdminSimpleV7';
-        const ADMIN_SIMPLE_UNLOCK = 'vesselAdminSimpleUnlockedV7';
-
-        function adminSimpleRead() {
-            try { return JSON.parse(localStorage.getItem(ADMIN_SIMPLE_KEY) || '{}'); }
-            catch(e) { return {}; }
+        function escapeHtmlVG(value) {
+            return String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
         }
-        function adminSimpleWrite(data) { localStorage.setItem(ADMIN_SIMPLE_KEY, JSON.stringify(data)); }
-        function adminSimpleTitle(card) { return (card.querySelector('h3')?.innerText || '').trim(); }
-
-        function openAdminSimple() {
-            const modal = document.getElementById('adminSimpleModal');
-            if (!modal) return;
-            modal.classList.add('active');
-            modal.setAttribute('aria-hidden','false');
-            if (localStorage.getItem(ADMIN_SIMPLE_UNLOCK) === '1') unlockAdminSimple(true);
+        function escapeJSVG(value) {
+            return String(value ?? '').replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\n/g, ' ');
         }
-        function closeAdminSimple() {
-            const modal = document.getElementById('adminSimpleModal');
-            if (!modal) return;
-            modal.classList.remove('active');
-            modal.setAttribute('aria-hidden','true');
+        function optionStringVG(options) {
+            const arr = Array.isArray(options) ? options : [];
+            return arr.map(o => `${String(o.label || '').replace(/;/g, ',')}|${parseFloat(o.price_mxn || 0) || 0}`).join('; ');
         }
-        function unlockAdminSimple(skipPass=false) {
-            const pass = document.getElementById('adminSimplePass')?.value || '';
-            if (!skipPass && pass !== 'vesseladmin') { alert('Contraseña incorrecta'); return; }
-            localStorage.setItem(ADMIN_SIMPLE_UNLOCK, '1');
-            const login = document.getElementById('adminSimpleLogin');
-            const content = document.getElementById('adminSimpleContent');
-            if (login) login.style.display = 'none';
-            if (content) content.style.display = 'block';
-            hydrateAdminSimple();
+        function productPriceTextVG(options) {
+            const arr = Array.isArray(options) ? options : [];
+            const nums = arr.map(o => parseFloat(o.price_mxn || 0)).filter(n => n > 0);
+            if (!nums.length) return 'Cotizar';
+            const min = Math.min(...nums);
+            return '$' + min.toFixed(0) + ' MXN';
         }
-        function hydrateAdminSimple() {
-            const s = adminSimpleRead();
-            const set = (id, val) => { const el = document.getElementById(id); if (el) el.value = val || ''; };
-            set('adminSimpleHeroBadge', s.heroBadge || document.querySelector('.hero .badge')?.innerText || '');
-            set('adminSimpleHeroTitle', s.heroTitle || document.querySelector('.hero h1')?.innerHTML || '');
-            set('adminSimpleHeroText', s.heroText || document.querySelector('.hero p')?.innerText || '');
-            set('adminSimpleWhatsapp', s.whatsapp || '526611078412');
-            set('adminSimplePrimary', s.primary || getComputedStyle(document.documentElement).getPropertyValue('--primary').trim() || '#8a2be2');
-            set('adminSimpleAnnouncement', s.announcement || 'Oferta limitada activa');
-            const wrap = document.getElementById('adminSimpleProducts');
-            if (!wrap) return;
-            const products = s.products || {};
-            const cards = Array.from(document.querySelectorAll('.service-card'));
-            wrap.innerHTML = cards.map((card, i) => {
-                const title = adminSimpleTitle(card) || ('Producto ' + (i+1));
-                const key = title;
-                const price = products[key]?.price || card.querySelector('.price')?.innerText || '';
-                const badge = products[key]?.badge || card.querySelector('.limited-badge')?.innerText || '';
-                const hidden = products[key]?.hidden ? 'true' : 'false';
-                return `
-                <div class="admin-product-row" data-product-key="${key.replace(/&/g,'&amp;').replace(/"/g,'&quot;')}">
-                    <div class="admin-product-title">${title}</div>
-                    <div class="admin-simple-field"><label>Precio visible</label><input data-field="price" value="${String(price).replace(/&/g,'&amp;').replace(/"/g,'&quot;')}"></div>
-                    <div class="admin-simple-field"><label>Badge</label><input data-field="badge" value="${String(badge).replace(/&/g,'&amp;').replace(/"/g,'&quot;')}"></div>
-                    <div class="admin-simple-field"><label>Estado</label><select data-field="hidden"><option value="false" ${hidden==='false'?'selected':''}>Visible</option><option value="true" ${hidden==='true'?'selected':''}>Oculto</option></select></div>
+        function optionsListHtmlVG(options) {
+            const arr = Array.isArray(options) ? options : [];
+            if (!arr.length) return '<li><span>Consultar</span><span>Cotizar</span></li>';
+            return arr.slice(0, 6).map(o => `<li><span>${escapeHtmlVG(o.label || 'Opción')}</span><span>$${parseFloat(o.price_mxn || 0).toFixed(0)}</span></li>`).join('');
+        }
+        function buildCardVG(product) {
+            const category = product.category || 'otros';
+            const cls = category === 'gaming' ? 'service-card gaming-card' : category === 'redes' ? 'service-card social-card' : 'service-card';
+            const image = product.image_url || 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=900&q=80';
+            const badge = product.badge ? `<div class="limited-badge">${escapeHtmlVG(product.badge)}</div>` : '';
+            const note = product.delivery_note ? `<p class="service-note">${escapeHtmlVG(product.delivery_note)}</p>` : '';
+            const optionsStr = optionStringVG(product.options || []);
+            const click = product.card_type === 'retro'
+                ? 'openRetroModal()'
+                : `openModal(this, '${escapeJSVG(product.name)}', '${escapeJSVG(product.whatsapp_text || ('Hola, quiero ' + product.name))}', '${escapeJSVG(optionsStr)}')`;
+            return `
+                <div class="${cls}" data-category="${escapeHtmlVG(category)}" data-note="${escapeHtmlVG(product.delivery_note || '')}" onclick="${click}">
+                    <div class="img-container">
+                        <img src="${escapeHtmlVG(image)}" class="service-img" alt="${escapeHtmlVG(product.name)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+                        ${badge}
+                    </div>
+                    <div class="service-info">
+                        <h3>${escapeHtmlVG(product.name)}</h3>
+                        ${note}
+                        <ul class="options-list">${optionsListHtmlVG(product.options || [])}</ul>
+                        <div class="price-container"><span class="price-label">Desde</span><span class="price">${productPriceTextVG(product.options || [])}</span></div>
+                    </div>
                 </div>`;
-            }).join('');
         }
-        function applyAdminSimple() {
-            const s = adminSimpleRead();
-            if (s.primary) document.documentElement.style.setProperty('--primary', s.primary);
+        function applySettingsVG(settings) {
+            if (!settings) return;
+            if (settings.primary_color) document.documentElement.style.setProperty('--primary', settings.primary_color);
             const badge = document.querySelector('.hero .badge');
-            if (badge && s.heroBadge) badge.innerText = s.heroBadge;
-            const heroTitle = document.querySelector('.hero h1');
-            if (heroTitle && s.heroTitle) heroTitle.innerHTML = s.heroTitle;
-            const heroText = document.querySelector('.hero p');
-            if (heroText && s.heroText) heroText.innerText = s.heroText;
-            if (s.whatsapp) {
+            if (badge && settings.hero_badge) badge.textContent = settings.hero_badge;
+            const title = document.querySelector('.hero h1');
+            if (title && settings.hero_title_html) title.innerHTML = settings.hero_title_html;
+            const subtitle = document.querySelector('.hero p');
+            if (subtitle && settings.hero_subtitle) subtitle.textContent = settings.hero_subtitle;
+            if (settings.whatsapp_number) {
                 document.querySelectorAll('a[href*="wa.me/"]').forEach(a => {
                     const msg = (a.href.split('?text=')[1] || 'Hola,%20quiero%20hacer%20un%20pedido.');
-                    a.href = 'https://wa.me/' + s.whatsapp.replace(/\D/g,'') + '?text=' + msg;
+                    a.href = 'https://wa.me/' + String(settings.whatsapp_number).replace(/\D/g,'') + '?text=' + msg;
                 });
             }
-            const products = s.products || {};
-            document.querySelectorAll('.service-card').forEach(card => {
-                const title = adminSimpleTitle(card);
-                const conf = products[title];
-                if (!conf) return;
-                card.classList.toggle('admin-hidden-product', !!conf.hidden);
-                if (conf.price) {
-                    const priceEl = card.querySelector('.price');
-                    if (priceEl) priceEl.innerText = conf.price;
-                }
-                if (conf.badge) {
-                    let badge = card.querySelector('.limited-badge');
-                    const img = card.querySelector('.img-container');
-                    if (!badge && img) {
-                        badge = document.createElement('div');
-                        badge.className = 'limited-badge';
-                        img.appendChild(badge);
-                    }
-                    if (badge) badge.innerText = conf.badge;
-                }
-            });
-            if (typeof applyCatalogFiltersV5 === 'function') applyCatalogFiltersV5();
+            if (settings.telegram_url) document.querySelectorAll('a[href*="t.me/"]').forEach(a => { a.href = settings.telegram_url; });
+            const guarantee = document.querySelector('.guarantee-box-v5 p');
+            if (guarantee && settings.guarantee_text) guarantee.textContent = settings.guarantee_text;
         }
-        function saveAdminSimple() {
-            const products = {};
-            document.querySelectorAll('.admin-product-row').forEach(row => {
-                const key = row.getAttribute('data-product-key');
-                products[key] = {
-                    price: row.querySelector('[data-field="price"]')?.value.trim() || '',
-                    badge: row.querySelector('[data-field="badge"]')?.value.trim() || '',
-                    hidden: row.querySelector('[data-field="hidden"]')?.value === 'true'
-                };
-            });
-            const data = {
-                heroBadge: document.getElementById('adminSimpleHeroBadge')?.value.trim() || '',
-                heroTitle: document.getElementById('adminSimpleHeroTitle')?.value.trim() || '',
-                heroText: document.getElementById('adminSimpleHeroText')?.value.trim() || '',
-                whatsapp: document.getElementById('adminSimpleWhatsapp')?.value.trim() || '',
-                primary: document.getElementById('adminSimplePrimary')?.value.trim() || '',
-                announcement: document.getElementById('adminSimpleAnnouncement')?.value.trim() || '',
-                products
-            };
-            adminSimpleWrite(data);
-            applyAdminSimple();
-            alert('Cambios guardados en este navegador.');
+        async function loadVesselSupabaseData() {
+            if (!vesselSupabase) return;
+            try {
+                const [{ data: settings }, { data: products, error }] = await Promise.all([
+                    vesselSupabase.from('site_settings').select('*').eq('id', 1).maybeSingle(),
+                    vesselSupabase.from('products').select('*').eq('active', true).order('sort_order', { ascending: true }).order('name', { ascending: true })
+                ]);
+                if (settings) applySettingsVG(settings);
+                if (error) throw error;
+                if (!products || !products.length) return;
+                const groups = ['gaming','streaming','cuentas','software','redes'];
+                groups.forEach(g => {
+                    const grid = document.querySelector(`.cat-section[data-group="${g}"] .services-grid`);
+                    if (grid) grid.innerHTML = '';
+                });
+                products.forEach(product => {
+                    const grid = document.querySelector(`.cat-section[data-group="${product.category || 'otros'}"] .services-grid`);
+                    if (grid) grid.insertAdjacentHTML('beforeend', buildCardVG(product));
+                });
+                if (typeof updateDisplayedPrices === 'function') updateDisplayedPrices();
+                if (typeof enhanceProductCards === 'function') enhanceProductCards();
+                if (typeof initRevealAnimations === 'function') initRevealAnimations();
+                if (typeof applyCatalogFiltersV5 === 'function') applyCatalogFiltersV5();
+            } catch (err) {
+                console.warn('No se pudieron cargar datos de Supabase. Se usará catálogo local.', err);
+            }
         }
-        function exportAdminSimple() {
-            const data = localStorage.getItem(ADMIN_SIMPLE_KEY) || '{}';
-            navigator.clipboard?.writeText(data).then(() => alert('Configuración copiada.')).catch(() => prompt('Copia tu configuración:', data));
-        }
-        function resetAdminSimple() {
-            if (!confirm('¿Restablecer cambios del panel admin?')) return;
-            localStorage.removeItem(ADMIN_SIMPLE_KEY);
-            localStorage.removeItem(ADMIN_SIMPLE_UNLOCK);
-            location.reload();
-        }
-        document.addEventListener('DOMContentLoaded', applyAdminSimple);
+        document.addEventListener('DOMContentLoaded', () => setTimeout(loadVesselSupabaseData, 250));
 
     </script>
 </body>
 </html>
-{
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
-}
-
-
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>VesselGames Admin · Supabase</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    :root{--primary:#8a2be2;--accent:#00ffcc;--token:#ff007f;--bg:#07070a;--card:#12121a;--text:#fff;--dim:#a0a0b0;--line:rgba(255,255,255,.1)}
+    *{box-sizing:border-box;margin:0;padding:0} body{font-family:system-ui,-apple-system,Segoe UI,Montserrat,sans-serif;background:radial-gradient(circle at 15% 0%,rgba(138,43,226,.18),transparent 32%),#07070a;color:#fff;min-height:100vh;padding-top:82px}.top{position:fixed;inset:0 0 auto 0;height:76px;background:rgba(7,7,10,.98);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 5%;z-index:10;box-shadow:0 14px 38px rgba(0,0,0,.55)}.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:900;letter-spacing:.08em}.mark{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--primary),var(--accent));font-weight:900}.brand span span{color:var(--accent)}.nav{display:flex;gap:8px}.nav a,.nav button,.btn{border:0;border-radius:999px;padding:11px 16px;background:linear-gradient(135deg,var(--primary),#b45cff);color:#fff;font-weight:900;text-decoration:none;cursor:pointer}.nav button{background:rgba(255,0,127,.16);border:1px solid rgba(255,0,127,.3)}.wrap{max-width:1180px;margin:0 auto;padding:28px 5% 70px}.title{text-align:center;font-size:clamp(1.6rem,5vw,2.5rem);margin-bottom:22px;text-transform:uppercase}.card{background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.025)),var(--card);border:1px solid var(--line);border-radius:22px;padding:20px;margin:0 0 18px;box-shadow:0 18px 45px rgba(0,0,0,.28)}.card h2{margin-bottom:12px}.muted{color:var(--dim);line-height:1.55;margin-bottom:12px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field{display:grid;gap:7px;margin:8px 0}.full{grid-column:1/-1}label{color:var(--dim);font-size:.78rem;text-transform:uppercase;font-weight:900}input,select,textarea{width:100%;background:#08080d;border:1px solid #2d2d3d;color:#fff;border-radius:13px;padding:12px;font:inherit}textarea{min-height:86px;resize:vertical}.json{font-family:Consolas,monospace;min-height:130px}input:focus,textarea:focus,select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(138,43,226,.16)}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.btn.secondary{background:rgba(255,255,255,.06);border:1px solid var(--line);box-shadow:none}.btn.danger{background:#d9365e}.list{display:grid;gap:10px}.row{display:grid;grid-template-columns:1.2fr .7fr .5fr auto;gap:10px;align-items:center;background:rgba(255,255,255,.035);border:1px solid var(--line);border-radius:14px;padding:12px}.row strong{display:block}.row small{color:var(--dim)}.pill{display:inline-flex;border:1px solid var(--line);padding:5px 9px;border-radius:999px;color:var(--accent);font-weight:900;font-size:.76rem}.hide{display:none!important}.msg{margin-top:10px;color:var(--accent);font-weight:700}.toolbar{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:12px}.search{max-width:360px}@media(max-width:760px){body{padding-top:74px}.top{height:70px;padding:10px 4%}.brand span{font-size:.8rem}.mark{width:40px;height:40px}.nav a,.nav button{padding:9px 10px;font-size:.72rem}.grid,.row{grid-template-columns:1fr}.wrap{padding:22px 4% 50px}.toolbar{flex-direction:column;align-items:stretch}.btn{width:100%}.actions{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="top"><a class="brand" href="index.html"><b class="mark">V</b><span>VESSEL<span>ADMIN</span></span></a><div class="nav"><a href="index.html">Ver tienda</a><button onclick="logout()">Salir</button></div></div>
+  <main class="wrap">
+    <h1 class="title">Panel real Supabase</h1>
+    <section class="card" id="loginBox"><h2>Entrar</h2><p class="muted">Usa el correo y contraseña que creaste en Supabase Authentication.</p><div class="grid"><div class="field"><label>Correo</label><input id="email" type="email" placeholder="example@gmail.com"></div><div class="field"><label>Contraseña</label><input id="password" type="password"></div></div><button class="btn" onclick="login()">Entrar</button><p class="msg" id="loginMsg"></p></section>
+    <div id="adminContent" class="hide">
+      <section class="card"><h2>Configuración de página</h2><div class="grid"><div class="field"><label>Badge portada</label><input id="hero_badge"></div><div class="field"><label>WhatsApp con lada</label><input id="whatsapp_number"></div><div class="field"><label>Telegram URL</label><input id="telegram_url"></div><div class="field"><label>Color principal</label><input id="primary_color"></div><div class="field full"><label>Título HTML portada</label><textarea id="hero_title_html"></textarea></div><div class="field full"><label>Subtítulo portada</label><textarea id="hero_subtitle"></textarea></div><div class="field full"><label>Garantía</label><textarea id="guarantee_text"></textarea></div></div><button class="btn" onclick="saveSettings()">Guardar configuración</button><p class="msg" id="settingsMsg"></p></section>
+      <section class="card" id="formCard"><h2 id="formTitle">Agregar producto</h2><input type="hidden" id="p_id"><div class="grid"><div class="field"><label>Nombre</label><input id="p_name"></div><div class="field"><label>Categoría</label><select id="p_category"><option value="gaming">Gaming</option><option value="streaming">Streaming</option><option value="cuentas">Cuentas</option><option value="software">Software</option><option value="redes">Redes</option></select></div><div class="field"><label>Imagen URL</label><input id="p_image_url"></div><div class="field"><label>Badge</label><input id="p_badge" placeholder="Oferta limitada"></div><div class="field"><label>Orden</label><input id="p_sort_order" type="number" value="100"></div><div class="field"><label>Activo</label><select id="p_active"><option value="true">Visible</option><option value="false">Oculto</option></select></div><div class="field"><label>Tipo</label><select id="p_card_type"><option value="normal">Normal</option><option value="retro">Selector juegos retro</option></select></div><div class="field"><label>Mensaje WhatsApp</label><input id="p_whatsapp_text"></div><div class="field full"><label>Nota de entrega</label><textarea id="p_delivery_note"></textarea></div><div class="field full"><label>Opciones JSON</label><textarea id="p_options" class="json">[{"label":"1 Mes","price_mxn":100}]</textarea></div></div><div class="actions"><button class="btn" onclick="saveProduct()">Guardar producto</button><button class="btn secondary" onclick="clearForm()">Limpiar</button></div><p class="msg" id="productMsg"></p></section>
+      <section class="card"><div class="toolbar"><h2>Productos</h2><input class="search" id="search" placeholder="Buscar producto..." oninput="renderProducts()"></div><div class="list" id="productsList"></div></section>
+    </div>
+  </main>
+<script>
+const SUPABASE_URL='https://cdfyzmwccdqmljwhqnjm.supabase.co';
+const SUPABASE_KEY='sb_publishable_cl0-ImakwDc9X1ZcNiJPlg_7J3L5VUm';
+const db=supabase.createClient(SUPABASE_URL,SUPABASE_KEY); let allProducts=[];
+const $=id=>document.getElementById(id); const val=id=>$(id)?.value ?? '';
+function msg(id,t){const e=$(id); if(e){e.textContent=t; setTimeout(()=>e.textContent='',3500)}}
+async function login(){const {error}=await db.auth.signInWithPassword({email:val('email'),password:val('password')}); if(error){msg('loginMsg','Error: '+error.message);return} await init();}
+async function logout(){await db.auth.signOut(); location.reload();}
+async function init(){const {data:{session}}=await db.auth.getSession(); if(!session){$('loginBox').classList.remove('hide');$('adminContent').classList.add('hide');return} $('loginBox').classList.add('hide');$('adminContent').classList.remove('hide'); await loadSettings(); await loadProducts();}
+async function loadSettings(){const {data,error}=await db.from('site_settings').select('*').eq('id',1).maybeSingle(); if(error){msg('settingsMsg',error.message);return} const s=data||{}; ['hero_badge','hero_title_html','hero_subtitle','whatsapp_number','telegram_url','primary_color','guarantee_text'].forEach(k=>{if($(k))$(k).value=s[k]||''});}
+async function saveSettings(){const payload={id:1,hero_badge:val('hero_badge'),hero_title_html:val('hero_title_html'),hero_subtitle:val('hero_subtitle'),whatsapp_number:val('whatsapp_number'),telegram_url:val('telegram_url'),primary_color:val('primary_color'),guarantee_text:val('guarantee_text'),updated_at:new Date().toISOString()}; const {error}=await db.from('site_settings').upsert(payload); msg('settingsMsg',error?('Error: '+error.message):'Configuración guardada.');}
+async function loadProducts(){const {data,error}=await db.from('products').select('*').order('sort_order',{ascending:true}).order('name',{ascending:true}); if(error){alert(error.message);return} allProducts=data||[]; renderProducts();}
+function renderProducts(){const q=val('search').toLowerCase(); const list=$('productsList'); list.innerHTML=''; allProducts.filter(p=>(p.name||'').toLowerCase().includes(q)||(p.category||'').toLowerCase().includes(q)).forEach(p=>{const div=document.createElement('div'); div.className='row'; const first=(Array.isArray(p.options)&&p.options[0])?`$${p.options[0].price_mxn} MXN`:'Cotizar'; div.innerHTML=`<div><strong>${escapeHtml(p.name)}</strong><small>${escapeHtml(p.delivery_note||'')}</small></div><span class="pill">${escapeHtml(p.category)}</span><span>${p.active?'Visible':'Oculto'} · ${first}</span><div class="actions"><button class="btn secondary" onclick="editProduct(${p.id})">Editar</button><button class="btn danger" onclick="deleteProduct(${p.id})">Borrar</button></div>`; list.appendChild(div);});}
+function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+function editProduct(id){const p=allProducts.find(x=>x.id===id); if(!p)return; $('formTitle').textContent='Editando: '+p.name; $('p_id').value=p.id; ['name','category','image_url','badge','sort_order','card_type','whatsapp_text','delivery_note'].forEach(k=>{const el=$('p_'+k); if(el)el.value=p[k]??''}); $('p_active').value=String(!!p.active); $('p_options').value=JSON.stringify(p.options||[],null,2); $('formCard').scrollIntoView({behavior:'smooth',block:'start'});}
+function clearForm(){$('formTitle').textContent='Agregar producto'; ['p_id','p_name','p_image_url','p_badge','p_whatsapp_text','p_delivery_note'].forEach(id=>$(id).value=''); $('p_category').value='gaming'; $('p_sort_order').value='100'; $('p_card_type').value='normal'; $('p_active').value='true'; $('p_options').value='[{"label":"1 Mes","price_mxn":100}]';}
+async function saveProduct(){let options=[]; try{options=JSON.parse(val('p_options')||'[]'); if(!Array.isArray(options)) throw new Error('Opciones debe ser una lista');}catch(e){msg('productMsg','JSON inválido: '+e.message);return} const payload={name:val('p_name'),category:val('p_category'),image_url:val('p_image_url'),badge:val('p_badge'),delivery_note:val('p_delivery_note'),whatsapp_text:val('p_whatsapp_text'),options,active:val('p_active')==='true',sort_order:parseInt(val('p_sort_order')||'100',10),card_type:val('p_card_type')||'normal',updated_at:new Date().toISOString()}; const id=val('p_id'); let res; if(id) res=await db.from('products').update(payload).eq('id',id); else res=await db.from('products').insert(payload); if(res.error){msg('productMsg','Error: '+res.error.message);return} msg('productMsg','Producto guardado.'); clearForm(); await loadProducts();}
+async function deleteProduct(id){if(!confirm('¿Borrar este producto?'))return; const {error}=await db.from('products').delete().eq('id',id); if(error) alert(error.message); else loadProducts();}
+document.addEventListener('DOMContentLoaded',init);
+</script>
+</body></html>
+{"cleanUrls":true,"trailingSlash":false,"rewrites":[{"source":"/admin","destination":"/admin.html"},{"source":"/panel","destination":"/admin.html"}]}

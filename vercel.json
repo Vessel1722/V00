@@ -9,6 +9,14 @@
     {
       "source": "/panel",
       "destination": "/admin.html"
+    },
+    {
+      "source": "/cuenta",
+      "destination": "/cuenta.html"
+    },
+    {
+      "source": "/mi-cuenta",
+      "destination": "/cuenta.html"
     }
   ]
 }

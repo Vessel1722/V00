@@ -259,6 +259,9 @@
         .retro-card:hover { border-color: rgba(138,43,226,0.5); transform: translateY(-2px);}
         .retro-card.selected { border-color: var(--accent); background: rgba(0, 255, 204, 0.05); box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);}
         .r-title { font-weight: 700; color: #fff; font-size: 0.9rem; margin-bottom: 8px; line-height: 1.3;}
+        .platform-badge { display:inline-flex; align-items:center; justify-content:center; min-width:52px; margin-right:7px; padding:3px 7px; border-radius:999px; font-size:.62rem; font-weight:900; letter-spacing:.04em; vertical-align:middle; }
+        .platform-360 { color:#04120f; background:var(--accent); box-shadow:0 0 12px rgba(0,255,204,.22); }
+        .platform-classic { color:#fff; background:var(--primary); box-shadow:0 0 12px rgba(138,43,226,.22); }
         .r-bot { display: flex; justify-content: space-between; align-items: center; margin-top: 10px;}
         .r-price { color: var(--accent); font-weight: 900; font-size: 1.1rem;}
         .retro-footer { background: #07070a; border-top: 1px solid rgba(255,255,255,0.05); padding: 20px; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; flex-wrap: wrap; gap: 15px;}
@@ -653,7 +656,7 @@
             <div class="retro-info-banner">
                 <strong>⚠️ Información Importante:</strong><br>
                 Estos juegos se entregan en una <strong>cuenta nueva con acceso completo</strong>. Podrás cambiar la contraseña y agregar tu propio número o correo de recuperación de inmediato.<br><br>
-                <span>🎮 = Xbox 360 | 🕹️ = Xbox Clásico. ¡Todos son 100% compatibles con <strong>Xbox One</strong> y <strong>Xbox Series X/S</strong>!</span>
+                <span><strong style="color:var(--accent);">360</strong> = Xbox 360 | <strong style="color:var(--primary);">CLÁSICO</strong> = Xbox Clásico. ¡Todos son 100% compatibles con <strong>Xbox One</strong> y <strong>Xbox Series X/S</strong>!</span>
                 <span class="promo-text">🔥 ¡PROMOCIÓN! Selecciona 3 o más juegos y obtén 10% DE DESCUENTO automático.</span>
             </div>
 
@@ -1088,6 +1091,19 @@
                         <div class="img-container"><img loading="lazy" decoding="async" src="https://i.imgur.com/zyhiIPY.png" alt="Elevenlabs" class="service-img" referrerpolicy="no-referrer"></div>
                         <div class="service-info"><h3>Elevenlabs Creator</h3><div class="price-container"><span class="price-label">1 Mes</span><div class="price">$225 MXN</div></div></div>
                     </div>
+                    <div class="service-card" data-category="software" data-note="Servicio para recibir códigos de verificación en apps o páginas compatibles. El número es de un solo uso y sirve solamente para recibir el código solicitado. Debes estar pendiente para recibir el número, mandar el código de verificación de inmediato y colocar el código cuando se te entregue. Si tardas demasiado en mandar o usar el código, el número puede perderse por ser de un solo uso; si necesitas otro código, se compra otro número. Garantía: se entrega un código funcional para activar tu registro en la app o página solicitada. Uso permitido solo para registros propios y legítimos." onclick="openModal(this, 'Servicio de SMS', 'Hola, quiero un Servicio de SMS para recibir un código de verificación', 'WhatsApp|45; Telegram|45; Facebook|45; Amazon|45; TikTok|45; Uber|45; Discord|45; Otra página o app|45')">
+                        <div class="img-container"><img loading="lazy" decoding="async" src="https://i.imgur.com/VRmAJB6.jpg" onerror="if(!this.dataset.fallback){this.dataset.fallback='1';this.src='https://i.imgur.com/VRmAJB6.png';}else if(this.dataset.fallback==='1'){this.dataset.fallback='2';this.src='https://i.imgur.com/VRmAJB6.webp';}" alt="Servicio de SMS" class="service-img" referrerpolicy="no-referrer"></div>
+                        <div class="service-info">
+                            <h3>Servicio de SMS</h3>
+                            <ul class="options-list">
+                                <li><span>WhatsApp / Telegram</span> <span>$45</span></li>
+                                <li><span>Facebook, Amazon, TikTok</span> <span>$45</span></li>
+                                <li><span>Uber, Discord u otra app</span> <span>$45</span></li>
+                            </ul>
+                            <div class="service-note">Número de un solo uso para recibir códigos de verificación. Debes estar pendiente al momento de solicitarlo.</div>
+                            <div class="price-container"><span class="price-label">Cualquier número</span><div class="price">$45 MXN</div></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1287,12 +1303,12 @@
         
         <div class="faq-item">
             <div class="faq-question" onclick="toggleFaq(this)">¿En cuánto tiempo recibo mi pedido?</div>
-            <div class="faq-answer"><p>Por lo general, los accesos a perfiles y recargas de monedas se envían entre 5 y 15 minutos después de haber confirmado tu pago mediante WhatsApp. Los servicios de redes sociales pueden tardar hasta 7 días en completarse dependiendo de la cantidad.</p></div>
+            <div class="faq-answer"><p>Por lo general, el tiempo de espera es de 20 minutos a 2 horas después de confirmar tu pago por WhatsApp. El tiempo exacto depende de los pedidos que haya antes del tuyo. Los servicios de redes sociales pueden tardar hasta 7 días en completarse dependiendo de la cantidad.</p></div>
         </div>
         
         <div class="faq-item">
             <div class="faq-question" onclick="toggleFaq(this)">¿Cómo funciona la garantía?</div>
-            <div class="faq-answer"><p>Todos nuestros perfiles premium cuentan con garantía por el tiempo exacto que contrataste. Si tienes algún problema de acceso, nos escribes y lo solucionamos o reemplazamos la cuenta. *Nota: La garantía no aplica para servicios de Redes Sociales hechos con bots si hay caída.*</p></div>
+            <div class="faq-answer"><p>En streaming, los servicios de 1 mes cuentan con 25 días de garantía. Si tienes algún problema de acceso dentro del periodo de garantía, nos escribes y revisamos tu caso para solucionarlo o reemplazar el acceso. *Nota: La garantía no aplica para servicios de Redes Sociales hechos con bots si hay caída.*</p></div>
         </div>
 
         <div class="faq-item">
@@ -1700,6 +1716,9 @@
                     parsedRetroGames.push({
                         id: 'rg-' + index,
                         icon: match[1],
+                        platform: match[1] === '🎮' ? 'Xbox 360' : 'Xbox Clásico',
+                        platformShort: match[1] === '🎮' ? '360' : 'CLÁSICO',
+                        platformClass: match[1] === '🎮' ? 'platform-360' : 'platform-classic',
                         name: match[2].trim(),
                         price: parseInt(match[3])
                     });
@@ -2054,7 +2073,7 @@
                     card.className = `retro-card ${isSelected ? 'selected' : ''}`;
                     card.onclick = () => toggleRetroGame(game.id);
                     card.innerHTML = `
-                        <div class="r-title">${game.icon} ${game.name}</div>
+                        <div class="r-title"><span class="platform-badge ${game.platformClass}" title="${game.platform}">${game.platformShort}</span>${game.name}</div>
                         <div class="r-bot">
                             <span class="r-price">${formatPrice(game.price)}</span>
                             ${isSelected ? '<span style="color:var(--accent);">✓ Agregado</span>' : '<span style="color:var(--text-dim); font-size:0.8rem;">+ Seleccionar</span>'}
@@ -2115,7 +2134,7 @@
                 displayStr = `${formatPrice(total)} (10% OFF Aplicado)`;
             }
 
-            let gamesListStr = selectedRetroGames.map(g => `${g.icon} ${g.name}`).join(', ');
+            let gamesListStr = selectedRetroGames.map(g => `${g.platformShort} - ${g.name}`).join(', ');
 
             let cartItem = {
                 title: "Colección Xbox Retro",

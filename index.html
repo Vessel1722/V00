@@ -84,8 +84,8 @@
 
         /* --- PORTADA HERO --- */
         .hero { background-image: radial-gradient(circle at center, rgba(7,7,10,0.18) 0%, rgba(7,7,10,0.96) 82%), url('https://i.imgur.com/gPHHV52.gif'); background-size: cover; background-position: center top; background-attachment: scroll; height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 0 10%; position: relative; overflow: hidden; }
-        .hero-bg-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; opacity:0.72; pointer-events:none; }
-        .hero::before { content:''; position:absolute; inset:0; z-index:1; background:linear-gradient(90deg, rgba(5,5,8,0.96) 0%, rgba(5,5,8,0.82) 34%, rgba(5,5,8,0.48) 58%, rgba(5,5,8,0.18) 100%); }
+        .hero-bg-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; opacity:0.95; pointer-events:none; filter: brightness(1.18) contrast(1.08) saturate(1.08); }
+        .hero::before { content:''; position:absolute; inset:0; z-index:1; background:linear-gradient(90deg, rgba(5,5,8,0.78) 0%, rgba(5,5,8,0.58) 34%, rgba(5,5,8,0.26) 58%, rgba(5,5,8,0.06) 100%); }
         .hero-content > * { position:relative; z-index:2; }
         .hero-content { max-width: 650px; z-index: 2; margin-top: 80px; }
         .badge { background: rgba(138, 43, 226, 0.2); color: #d4a5ff; padding: 6px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; display: inline-block; margin-bottom: 20px; border: 1px solid var(--primary); font-family: 'Orbitron', 'Montserrat', system-ui, sans-serif; letter-spacing: 1px; }
@@ -510,7 +510,7 @@
             .mini-carousel-track { animation-duration: 42s !important; }
             .logo { animation-duration: 7s; }
             .viewer-dot { animation: none; }
-            .hero::before { background: linear-gradient(180deg, rgba(5,5,8,.90), rgba(5,5,8,.72)); }
+            .hero::before { background: linear-gradient(180deg, rgba(5,5,8,.54), rgba(5,5,8,.34)); }
         }
 
 
@@ -555,6 +555,14 @@
             .announcement-v5 { margin-top:104px; font-size:.78rem; padding:8px 12px; }
         }
         @media (max-width: 460px) { .trust-grid-v5 { grid-template-columns:1fr; } }
+
+
+        /* --- AJUSTE PORTADA: logo limpio y fondo más visible --- */
+        .brand-logo { overflow: visible !important; isolation: auto !important; background: transparent !important; }
+        .brand-logo::before, .brand-logo::after, .brand-name::after { content: none !important; display: none !important; animation: none !important; }
+        .brand-mark, .brand-mark::after { animation: none !important; }
+        .brand-name { text-shadow: 0 0 10px rgba(138,43,226,.45) !important; }
+        .brand-logo, .brand-word, .brand-name, .brand-tagline, .brand-mark { filter: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
 
     </style>
 </head>

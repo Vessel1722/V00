@@ -16,7 +16,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="https://i.imgur.com/D7PYEaq.png">
     <link rel="icon" type="image/png" sizes="192x192" href="https://i.imgur.com/D7PYEaq.png">
     <link rel="apple-touch-icon" href="https://i.imgur.com/D7PYEaq.png">
-    <link rel="preload" as="video" href="https://i.imgur.com/Tdi5omo.mp4" type="video/mp4" fetchpriority="high">
+    <link rel="preload" as="video" href="https://i.imgur.com/9j4rD8c.mp4" type="video/mp4" fetchpriority="high">
     <style>
         :root {
             --primary: #8a2be2; 
@@ -95,7 +95,7 @@
         .menu a:hover { color: var(--primary); }
 
         /* --- PORTADA HERO --- */
-        .hero { background-image: radial-gradient(circle at center, rgba(7,7,10,0.18) 0%, rgba(7,7,10,0.96) 82%), url('https://i.imgur.com/Tdi5omo.jpg'); background-size: cover; background-position: center top; background-attachment: scroll; height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 0 10%; position: relative; overflow: hidden; }
+        .hero { background-image: radial-gradient(circle at center, rgba(7,7,10,0.18) 0%, rgba(7,7,10,0.96) 82%), url('https://i.imgur.com/9j4rD8c.jpg'); background-size: cover; background-position: center top; background-attachment: scroll; height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 0 10%; position: relative; overflow: hidden; }
         .hero-bg-video { position:absolute; inset:0; width:100%; height:100%; min-width:100%; min-height:100%; object-fit:cover; object-position:center center; z-index:0; opacity:0.98; pointer-events:none; filter: brightness(1.32) contrast(1.16) saturate(1.14); transform: translateZ(0) scale(1.01); backface-visibility:hidden; background:#07070a; }
         .hero::before { content:''; position:absolute; inset:0; z-index:1; background:linear-gradient(90deg, rgba(5,5,8,0.78) 0%, rgba(5,5,8,0.58) 34%, rgba(5,5,8,0.26) 58%, rgba(5,5,8,0.06) 100%); }
         .hero-content > * { position:relative; z-index:2; }
@@ -648,7 +648,7 @@
                 height: auto !important;
                 padding: 190px 5% 34px !important;
                 background-color: #07070a !important;
-                background-image: radial-gradient(circle at center, rgba(7,7,10,0.08) 0%, rgba(7,7,10,0.50) 76%), url('https://i.imgur.com/Tdi5omo.jpg') !important;
+                background-image: radial-gradient(circle at center, rgba(7,7,10,0.08) 0%, rgba(7,7,10,0.50) 76%), url('https://i.imgur.com/9j4rD8c.jpg') !important;
                 background-size: cover !important;
                 background-position: center center !important;
                 background-repeat: no-repeat !important;
@@ -700,6 +700,81 @@
             .hero { padding-top: 200px !important; }
             .brand-name { font-size: 0.9rem !important; }
             .brand-tagline { font-size: 0.56rem !important; }
+        }
+
+
+        /* --- AJUSTE FINAL VIDEO HERO 9j4rD8c: visible en PC y móvil --- */
+        .hero {
+            background-image: radial-gradient(circle at center, rgba(7,7,10,0.06) 0%, rgba(7,7,10,0.42) 76%), url('https://i.imgur.com/9j4rD8c.jpg') !important;
+            background-size: cover !important;
+            background-position: center center !important;
+            background-repeat: no-repeat !important;
+        }
+
+        .hero-bg-video,
+        .hero-bg-fallback {
+            position: absolute !important;
+            inset: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            min-width: 100% !important;
+            min-height: 100% !important;
+            object-fit: cover !important;
+            object-position: center center !important;
+            transform: none !important;
+        }
+
+        .hero-bg-video {
+            display: block !important;
+            z-index: 1 !important;
+            opacity: 1 !important;
+            filter: brightness(1.20) contrast(1.08) saturate(1.10) !important;
+            background: #07070a !important;
+        }
+
+        .hero-bg-fallback {
+            display: block !important;
+            z-index: 0 !important;
+            opacity: 1 !important;
+            pointer-events: none !important;
+        }
+
+        @media (min-width: 769px) {
+            .hero {
+                height: 100vh !important;
+                min-height: 720px !important;
+                padding: 0 10% !important;
+                justify-content: center !important;
+            }
+            .hero-bg-video,
+            .hero-bg-fallback {
+                object-position: center center !important;
+            }
+            .hero::before {
+                background: linear-gradient(90deg, rgba(5,5,8,0.50) 0%, rgba(5,5,8,0.32) 40%, rgba(5,5,8,0.12) 100%) !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 100svh !important;
+                height: auto !important;
+                padding: 188px 5% 34px !important;
+                background-position: center center !important;
+            }
+            .hero-bg-video,
+            .hero-bg-fallback {
+                object-position: center center !important;
+            }
+            .hero::before {
+                background: linear-gradient(180deg, rgba(5,5,8,0.10) 0%, rgba(5,5,8,0.24) 52%, rgba(5,5,8,0.56) 100%) !important;
+            }
+        }
+
+        @media (max-width: 430px) {
+            .hero {
+                padding-top: 196px !important;
+            }
         }
 
     </style>
@@ -906,8 +981,8 @@
     </div>
 
     <div class="hero">
-        <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" poster="https://i.imgur.com/Tdi5omo.jpg" aria-hidden="true"><source src="https://i.imgur.com/Tdi5omo.mp4" type="video/mp4"></video>
-        <img class="hero-bg-fallback" src="https://i.imgur.com/Tdi5omo.jpg" alt="" aria-hidden="true" referrerpolicy="no-referrer">
+        <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" poster="https://i.imgur.com/9j4rD8c.jpg" aria-hidden="true"><source src="https://i.imgur.com/9j4rD8c.mp4" type="video/mp4"></video>
+        <img class="hero-bg-fallback" src="https://i.imgur.com/9j4rD8c.jpg" alt="" aria-hidden="true" referrerpolicy="no-referrer">
         <div class="hero-content">
             <div class="badge">CATÁLOGO DIGITAL · ENTREGA RÁPIDA</div>
             <h1>TU SIGUIENTE NIVEL <span>EMPIEZA</span> AQUÍ</h1>

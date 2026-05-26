@@ -825,6 +825,117 @@
             }
         }
 
+    
+
+        /* --- AJUSTE NÍTIDO: fondo limpio y portada legible sin blur --- */
+        .hero-bg-video {
+            filter: brightness(1.08) contrast(1.15) saturate(1.12) !important;
+            transform: none !important;
+            opacity: 1 !important;
+        }
+
+        .hero::before {
+            background:
+                linear-gradient(90deg,
+                    rgba(4,6,12,0.72) 0%,
+                    rgba(4,6,12,0.54) 26%,
+                    rgba(4,6,12,0.28) 52%,
+                    rgba(4,6,12,0.08) 100%) !important;
+        }
+
+        .hero::after {
+            background:
+                linear-gradient(180deg,
+                    rgba(0,0,0,0.04) 0%,
+                    rgba(0,0,0,0.02) 46%,
+                    rgba(0,0,0,0.14) 100%) !important;
+        }
+
+        .hero-content {
+            background: linear-gradient(135deg, rgba(8,10,18,0.18), rgba(8,10,18,0.10)) !important;
+            border: 1px solid rgba(255,255,255,0.10) !important;
+            box-shadow: 0 18px 48px rgba(0,0,0,0.24) !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+        }
+
+        .hero-content::before {
+            content: none !important;
+            display: none !important;
+        }
+
+        .badge {
+            background: linear-gradient(135deg, rgba(138,43,226,0.56), rgba(0,255,204,0.16)) !important;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.18) !important;
+        }
+
+        .hero h1 {
+            text-shadow:
+                0 3px 2px rgba(0,0,0,0.76),
+                0 10px 26px rgba(0,0,0,0.82),
+                0 0 12px rgba(0,0,0,0.24) !important;
+        }
+
+        .hero h1 span {
+            text-shadow:
+                0 3px 2px rgba(0,0,0,0.74),
+                0 0 14px rgba(138,43,226,0.46) !important;
+        }
+
+        .hero p {
+            text-shadow:
+                0 2px 2px rgba(0,0,0,0.72),
+                0 8px 18px rgba(0,0,0,0.78) !important;
+        }
+
+        .btn-contact {
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            background-color: rgba(8,8,12,0.44) !important;
+        }
+
+        .mini-card {
+            background: linear-gradient(135deg, rgba(10,10,16,0.82), rgba(14,14,22,0.68)) !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            box-shadow: 0 12px 26px rgba(0,0,0,0.22) !important;
+        }
+
+        @media (max-width: 768px) {
+            .hero::before {
+                background:
+                    linear-gradient(180deg,
+                        rgba(4,6,12,0.60) 0%,
+                        rgba(4,6,12,0.36) 34%,
+                        rgba(4,6,12,0.30) 100%) !important;
+            }
+
+            .hero::after {
+                background:
+                    linear-gradient(180deg,
+                        rgba(0,0,0,0.03) 0%,
+                        rgba(0,0,0,0.02) 48%,
+                        rgba(0,0,0,0.16) 100%) !important;
+            }
+
+            .hero-content {
+                background: linear-gradient(180deg, rgba(8,10,18,0.22), rgba(8,10,18,0.12)) !important;
+                box-shadow: 0 12px 34px rgba(0,0,0,0.22) !important;
+            }
+
+            .hero h1 {
+                text-shadow:
+                    0 3px 2px rgba(0,0,0,0.80),
+                    0 8px 22px rgba(0,0,0,0.84) !important;
+            }
+
+            .hero p {
+                text-shadow:
+                    0 2px 2px rgba(0,0,0,0.76),
+                    0 6px 16px rgba(0,0,0,0.82) !important;
+            }
+        }
+
     </style>
 </head>
 <body>

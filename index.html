@@ -14,7 +14,7 @@
   <meta name="twitter:image" content="https://www.vesselgames.xyz/portada.png" />
   <link rel="preconnect" href="https://i.imgur.com" />
   <link rel="preload" as="video" href="https://i.imgur.com/9j4rD8c.mp4" type="video/mp4" fetchpriority="high" />
-  <style>
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=gVSIAe6cSvksgJYoX0OGivdc0k6PlJ59KWHIAxHkprAimBCrIP1lrh7Amhrm8u6IriyATmTPgMw0RmqI_wSPtCV8E_0gjvGG2ci4mtC1NUXqgo-wD-YP38DvJynXQJWjBYYsOhwioTW_WxNi8QqoUTcP-Ti1Vb0Or2Cw8-0QwOeg_xrBMebE3spMfM3syklK5lucv6D4tfv1rll80ddlptSiCvyJLsXXwVZ3lVKBweoq-cg_a87HQjtCZIiq-3Ol8ee0pB8fFoj4AAXqUcnd1Q" charset="UTF-8"></script><style>
     :root {
       --bg:#080a12; --panel:#111522; --panel2:#161b2b; --line:rgba(255,255,255,.10);
       --text:#f6f8ff; --muted:#aab2c8; --soft:#727b96; --brand:#8b5cf6; --brand2:#19e6c1;
@@ -143,8 +143,11 @@
   .vg-retro-game:hover{transform:translateY(-3px)!important;border-color:rgba(25,230,193,.55)!important;}
   .vg-retro-game.active{border-color:#19e6c1!important;box-shadow:0 0 0 2px rgba(25,230,193,.18),0 18px 40px rgba(0,0,0,.32)!important;}
   .vg-retro-game.active:after{content:'✓';position:absolute;top:10px;right:10px;width:30px;height:30px;border-radius:999px;background:#19e6c1;color:#03120f;display:grid;place-items:center;font-weight:950;z-index:3;}
-  .vg-retro-cover{height:190px!important;background:#050812!important;position:relative!important;overflow:hidden!important;}
-  .vg-retro-cover img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;display:block!important;transform:scale(1.02)!important;}
+  .vg-retro-cover{height:280px!important;background:#050812!important;position:relative!important;overflow:hidden!important;display:flex!important;align-items:center!important;justify-content:center!important;isolation:isolate!important;}
+  .vg-retro-cover::after{content:''!important;position:absolute!important;inset:0!important;background:linear-gradient(180deg,rgba(4,7,14,.10),rgba(4,7,14,.16) 60%,rgba(4,7,14,.30))!important;z-index:1!important;pointer-events:none!important;}
+  .vg-retro-cover-bg{position:absolute!important;inset:0!important;background-size:cover!important;background-position:center center!important;filter:blur(18px) brightness(.48) saturate(1.05)!important;transform:scale(1.16)!important;opacity:.95!important;z-index:0!important;}
+  .vg-retro-cover img,.vg-retro-cover .vg-retro-cover-img{position:relative!important;z-index:2!important;width:100%!important;height:100%!important;display:block!important;object-fit:contain!important;object-position:center center!important;transform:none!important;padding:10px!important;image-rendering:auto!important;}
+  .vg-retro-cover.wide img,.vg-retro-cover.wide .vg-retro-cover-img{object-fit:cover!important;object-position:center center!important;padding:0!important;}
   .vg-retro-slot{position:absolute;left:10px;right:10px;bottom:10px;border:1px solid rgba(255,255,255,.20);background:rgba(0,0,0,.62);backdrop-filter:blur(8px);color:#e8ecff;border-radius:999px;padding:6px 8px;font-size:.68rem;font-weight:900;text-align:center;letter-spacing:.04em;text-transform:uppercase;}
   .vg-retro-info{padding:14px!important;}
   .vg-retro-info h4{margin:0 0 14px!important;color:#fff!important;font-size:1rem!important;line-height:1.25!important;min-height:50px!important;font-weight:950!important;}
@@ -153,7 +156,7 @@
   .vg-retro-price{font-weight:950!important;color:#fff!important;font-size:1.05rem!important;}
   .vg-retro-empty{grid-column:1/-1!important;border:1px dashed rgba(255,255,255,.18)!important;border-radius:24px!important;padding:44px!important;text-align:center!important;color:#c8d0e8!important;background:#111624!important;}
   #retroModal .retro-footer{padding:18px 32px!important;background:#090d19!important;border-top:1px solid rgba(255,255,255,.10)!important;}
-  @media(max-width:760px){#retroModal .retro-head{padding:22px 16px!important}#retroModal .retro-controls{grid-template-columns:1fr!important;padding:14px 16px!important}#retroGridContainer{grid-template-columns:repeat(2,minmax(0,1fr))!important;padding:16px!important;gap:12px!important}.vg-retro-game{min-height:260px!important}.vg-retro-cover{height:145px!important}.vg-retro-info h4{font-size:.86rem!important;min-height:44px!important}}
+  @media(max-width:760px){#retroModal .retro-head{padding:22px 16px!important}#retroModal .retro-controls{grid-template-columns:1fr!important;padding:14px 16px!important}#retroGridContainer{grid-template-columns:repeat(2,minmax(0,1fr))!important;padding:16px!important;gap:12px!important}.vg-retro-game{min-height:310px!important}.vg-retro-cover{height:210px!important}.vg-retro-info h4{font-size:.86rem!important;min-height:44px!important}}
 
 /* === AJUSTE FINAL: Xbox Retro compacto + servicios destacados gamer === */
 .featured-head{align-items:center!important;margin-bottom:22px!important;}
@@ -166,7 +169,7 @@
 #retroModal .retro-head p{font-size:.98rem!important;line-height:1.35!important;max-width:900px!important;}
 #retroModal .retro-controls{padding:14px 32px!important;gap:14px!important;}
 #retroModal .retro-controls input,#retroModal .retro-controls select{height:54px!important;}
-#retroGridContainer{padding:18px 32px!important;grid-template-columns:repeat(auto-fill,minmax(175px,1fr))!important;gap:16px!important;align-content:start!important;}
+#retroGridContainer{padding:18px 32px!important;grid-template-columns:repeat(auto-fill,minmax(200px,1fr))!important;gap:16px!important;align-content:start!important;}
 .vg-retro-game{min-height:292px!important;border-radius:18px!important;}
 .vg-retro-cover{height:190px!important;background:#070b13!important;}
 .vg-retro-cover img{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important;transform:scale(1.025);}
@@ -722,9 +725,19 @@
   function getRetroGameImage(game){
     const custom = window.RETRO_GAME_IMAGES && window.RETRO_GAME_IMAGES[game.name];
     if(custom) return custom;
-    const platformQuery = String(game.platform || '').toLowerCase().includes('cl') ? 'Original Xbox cover art' : 'Xbox 360 cover art';
-    return 'https://tse.mm.bing.net/th?q=' + encodeURIComponent(game.name + ' ' + platformQuery) + '&w=360&h=500&c=7&rs=1&p=0&o=5&pid=1.7';
+    const cleanName = String(game.name || '').replace(/[®™]/g,'').replace(/[:]+/g, ' ').replace(/\s+/g, ' ').trim();
+    const isClassic = String(game.platform || '').toLowerCase().includes('cl');
+    const platformQuery = isClassic ? 'original xbox front cover box art' : 'xbox 360 front cover box art';
+    return 'https://tse.mm.bing.net/th?q=' + encodeURIComponent(cleanName + ' ' + platformQuery) + '&w=800&h=1200&c=7&rs=1&qlt=95&p=0&o=5&pid=1.7&mkt=es-MX';
   }
+  window.adjustRetroImage = function adjustRetroImage(img){
+    if(!img) return;
+    const wrap = img.closest('.vg-retro-cover');
+    if(!wrap) return;
+    const ratio = (img.naturalWidth || 1) / Math.max(1, (img.naturalHeight || 1));
+    if(ratio > 0.9) wrap.classList.add('wide');
+    else wrap.classList.remove('wide');
+  };
   function normalizePlatform(value){
     const v = String(value||'all').toLowerCase();
     if(v === '360') return 'Xbox 360';
@@ -766,7 +779,10 @@
       const img = getRetroGameImage(g);
       const fallback = makeCover(g.name, g.platform);
       return `<article class="vg-retro-game ${active ? 'active' : ''}" onclick="toggleRetroGame('${g.id}')">
-        <div class="vg-retro-cover"><img loading="lazy" src="${img}" alt="${esc(g.name)}" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='${fallback}'"></div>
+        <div class="vg-retro-cover">
+          <div class="vg-retro-cover-bg" style="background-image:url('${img}')"></div>
+          <img class="vg-retro-cover-img" loading="lazy" src="${img}" alt="${esc(g.name)}" referrerpolicy="no-referrer" onload="adjustRetroImage(this)" onerror="this.onerror=null;this.closest('.vg-retro-cover').classList.remove('wide');this.src='${fallback}';this.nextElementSibling && (this.nextElementSibling.style.backgroundImage='url(${fallback})')">
+        </div>
         <div class="vg-retro-info"><h4>${esc(g.name)}</h4><div class="vg-retro-meta"><span class="vg-retro-platform">${esc(g.platform)}</span><span class="vg-retro-price">${fmtMoney(g.price)}</span></div></div>
       </article>`;
     }).join('');

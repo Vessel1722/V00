@@ -111,6 +111,20 @@
     .retro-info{padding:10px}.retro-info h4{margin:0 0 8px;font-size:.86rem;line-height:1.24;min-height:42px}.retro-meta{display:flex;justify-content:space-between;gap:8px;align-items:center}.retro-platform{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#bcfff3;border:1px solid rgba(25,230,193,.25);border-radius:999px;padding:4px 6px}.retro-price{font-weight:950;color:#fff}.retro-game.active:after{content:'✓';position:absolute;top:8px;right:8px;width:26px;height:26px;border-radius:999px;background:var(--brand2);color:#02120f;display:grid;place-items:center;font-weight:950}
     .retro-footer{display:flex;gap:14px;justify-content:space-between;align-items:center;padding:16px 22px;border-top:1px solid var(--line);background:#0b0f1b;flex-wrap:wrap}.retro-totals{display:flex;gap:16px;flex-wrap:wrap;color:var(--muted)}.retro-totals strong{color:#fff}
     @media(max-width:760px){.modal-card{grid-template-columns:1fr}.modal-img{min-height:260px;height:300px}.payment-grid{grid-template-columns:1fr}.retro-controls{grid-template-columns:1fr}.retro-grid{grid-template-columns:1fr 1fr;padding:12px}.retro-head,.retro-footer{padding:14px}.retro-cover{height:105px}}
+    /* Vista amplia tipo pestaña para la colección Xbox Retro */
+    #retroModal{align-items:stretch;justify-content:center;padding:24px;background:rgba(0,0,0,.78);}
+    #retroModal.active{display:flex;}
+    #retroModal .retro-modal-card{width:min(1680px,calc(100vw - 48px));max-width:1680px;height:calc(100vh - 48px);max-height:none;border-radius:30px;}
+    #retroModal .retro-head{padding:30px 34px;}
+    #retroModal .retro-head h2{font-size:clamp(2.2rem,4vw,4.4rem);line-height:.95;margin:20px 0 14px;}
+    #retroModal .retro-head p{max-width:980px;font-size:1.05rem;}
+    #retroModal .retro-controls{padding:18px 34px;grid-template-columns:minmax(260px,1fr) 260px;}
+    #retroModal .retro-grid{flex:1;min-height:0;padding:24px 34px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px;}
+    #retroModal .retro-cover{height:170px;}
+    #retroModal .retro-info h4{min-height:46px;}
+    #retroModal .retro-footer{padding:18px 34px;}
+    @media(max-width:760px){#retroModal{padding:0}#retroModal .retro-modal-card{width:100vw;height:100vh;border-radius:0}#retroModal .retro-head h2{font-size:2.4rem}#retroModal .retro-controls{grid-template-columns:1fr;padding:12px 14px}#retroModal .retro-grid{grid-template-columns:repeat(2,minmax(0,1fr));padding:14px;gap:12px}#retroModal .retro-cover{height:120px}#retroModal .retro-footer{padding:14px}}
+
 
   </style>
 </head>
@@ -572,7 +586,7 @@
     const classicRetroGames = new Set(["Armed and Dangerous", "Black", "BLiNX: The Time Sweeper", "BloodRayne 2", "Breakdown", "Chicken Little", "Conker: Live and Reloaded", "Crimson Skies: High Road to Revenge", "DEAD OR ALIVE 1 Ultimate", "DEAD OR ALIVE 2 Ultimate", "DEAD OR ALIVE 3", "Destroy All Humans!", "Full Spectrum Warrior", "Fuzion Frenzy", "Gladius", "Gunvalkyrie", "Hunter: The Reckoning", "Indiana Jones And The Emperor's Tomb", "Jade Empire", "Manhunt", "Max Payne", "Max Payne 2: The Fall of Max Payne", "Mercenaries: Playground Of Destruction", "MX Unleashed", "Oddworld: Munch's Oddysee", "Otogi: Myth of Demons", "Otogi 2: Immortal Warriors", "Panzer Dragoon Orta", "Psychonauts", "Red Dead Revolver", "Red faction II", "Secret Weapons Over Normandy", "Sid Meier's Pirates!", "Sid Meier's Civilization Revolution", "STAR WARS Battlefront", "Star Wars Battlefront II", "Star Wars Jedi Knight II: Jedi Outcast", "Star Wars Episode III: Revenge Of The Sith", "Star Wars Jedi Starfighter", "STAR WARS Starfighter Special Edition", "Star Wars Jedi Knight: Jedi Academy", "Star Wars KOTOR II", "Star Wars Republic Commando", "Star Wars: The Clone Wars", "STAR WARS™ - Knights of the Old Republic™", "SSX 3", "TimeSplitters Future Perfect", "TimeSplitters 2", "The Elder Scrolls III: Morrowind", "Tom Clancy's Splinter Cell® Chaos Theory", "Thrillville"]);
     let selectedRetroGames = [];
     function cleanRetroName(name) { return String(name||'').replace(/[🎮🕹�]/g, '').replace(/\s+/g, ' ').trim(); }
-    const RETRO_GAMES = retroGamesRaw.split('\\n').map((line, idx) => {
+    const RETRO_GAMES = retroGamesRaw.split(/\n/).map((line, idx) => {
       const cleanedLine = line.trim();
       const match = cleanedLine.match(/^[🎮🕹�]?\s*(.*?)\s+\$(\d+(?:\.\d+)?)\s*$/);
       if(!match) return null;
@@ -587,7 +601,7 @@
     function renderRetroGrid(){
       const q=(retroSearch?.value||'').trim().toLowerCase(); const plat=retroPlatform?.value||'all'; const fallback=retroFallbackImage();
       let list=RETRO_GAMES.filter(g=>(plat==='all'||g.platform===plat) && (!q||g.name.toLowerCase().includes(q)));
-      retroGridContainer.innerHTML=list.map(g=>{ const active=selectedRetroGames.some(x=>x.id===g.id); const img=g.image||fallback; const slotText=g.image?'Foto del juego':'Espacio para foto del juego'; return `<article class="retro-game ${active?'active':''}" onclick="toggleRetroGame('${g.id}')"><div class="retro-cover"><img src="${img}" loading="lazy" referrerpolicy="no-referrer" onerror="this.src='${fallback}'"><div class="photo-slot">${slotText}</div></div><div class="retro-info"><h4>${escapeHtml(g.name)}</h4><div class="retro-meta"><span class="retro-platform">${g.platform}</span><span class="retro-price">${fmt(g.price)}</span></div></div></article>`; }).join('') || '<div class="retro-empty">No encontré juegos con esa búsqueda. Prueba borrar el texto o elegir “Todas las plataformas”.</div>';
+      retroGridContainer.innerHTML=list.map(g=>{ const active=selectedRetroGames.some(x=>x.id===g.id); const img=g.image||fallback; const slotText=g.image?'Foto del juego':'Espacio para foto del juego'; return `<article class="retro-game ${active?'active':''}" onclick="toggleRetroGame('${g.id}')"><div class="retro-cover"><img src="${img}" loading="lazy" referrerpolicy="no-referrer" onerror="this.src='${fallback}'"><div class="photo-slot">${slotText}</div></div><div class="retro-info"><h4>${escapeHtml(g.name)}</h4><div class="retro-meta"><span class="retro-platform">${g.platform}</span><span class="retro-price">${fmt(g.price)}</span></div></div></article>`; }).join('') || '<div class="retro-empty">No encontré juegos con esa búsqueda. Borra el texto o elige “Todas las plataformas”.</div>';
     }
     function toggleRetroGame(id){ const g=RETRO_GAMES.find(x=>x.id===id); if(!g)return; const i=selectedRetroGames.findIndex(x=>x.id===id); if(i>=0) selectedRetroGames.splice(i,1); else selectedRetroGames.push(g); renderRetroGrid(); updateRetroTotals(); }
     function retroTotals(){ const subtotal=selectedRetroGames.reduce((s,g)=>s+g.price,0); const discount=selectedRetroGames.length>=3 ? Math.round(subtotal*0.10) : 0; return {subtotal,discount,total:subtotal-discount}; }

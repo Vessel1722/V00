@@ -154,6 +154,30 @@
   .vg-retro-empty{grid-column:1/-1!important;border:1px dashed rgba(255,255,255,.18)!important;border-radius:24px!important;padding:44px!important;text-align:center!important;color:#c8d0e8!important;background:#111624!important;}
   #retroModal .retro-footer{padding:18px 32px!important;background:#090d19!important;border-top:1px solid rgba(255,255,255,.10)!important;}
   @media(max-width:760px){#retroModal .retro-head{padding:22px 16px!important}#retroModal .retro-controls{grid-template-columns:1fr!important;padding:14px 16px!important}#retroGridContainer{grid-template-columns:repeat(2,minmax(0,1fr))!important;padding:16px!important;gap:12px!important}.vg-retro-game{min-height:260px!important}.vg-retro-cover{height:145px!important}.vg-retro-info h4{font-size:.86rem!important;min-height:44px!important}}
+
+/* === AJUSTE FINAL: Xbox Retro compacto + servicios destacados gamer === */
+.featured-head{align-items:center!important;margin-bottom:22px!important;}
+.featured-head .tools{align-self:center!important;}
+.flame-title{position:relative!important;display:inline-block!important;font-size:clamp(2.4rem,5.6vw,5.5rem)!important;line-height:.9!important;letter-spacing:-.055em!important;text-transform:uppercase!important;background:linear-gradient(180deg,#fff 0%,#fff3a8 34%,#ff7a18 62%,#ff2d55 88%)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important;text-shadow:0 0 18px rgba(255,122,24,.28),0 0 44px rgba(124,77,255,.18)!important;animation:vgFlamePulse 2.2s ease-in-out infinite!important;}
+.flame-title:after{content:'';position:absolute;left:0;right:0;bottom:-8px;height:6px;border-radius:999px;background:linear-gradient(90deg,#19e6c1,#8b5cf6,#ff7a18,#19e6c1);filter:blur(.3px);opacity:.95;}
+@keyframes vgFlamePulse{0%,100%{filter:drop-shadow(0 0 10px rgba(255,122,24,.30));transform:translateY(0)}50%{filter:drop-shadow(0 0 22px rgba(255,45,85,.46));transform:translateY(-1px)}}
+#retroModal .retro-head{padding:18px 32px 14px!important;min-height:auto!important;}
+#retroModal .retro-head h2{font-size:clamp(2.1rem,4.1vw,4rem)!important;margin:10px 0 8px!important;line-height:.92!important;}
+#retroModal .retro-head p{font-size:.98rem!important;line-height:1.35!important;max-width:900px!important;}
+#retroModal .retro-controls{padding:14px 32px!important;gap:14px!important;}
+#retroModal .retro-controls input,#retroModal .retro-controls select{height:54px!important;}
+#retroGridContainer{padding:18px 32px!important;grid-template-columns:repeat(auto-fill,minmax(175px,1fr))!important;gap:16px!important;align-content:start!important;}
+.vg-retro-game{min-height:292px!important;border-radius:18px!important;}
+.vg-retro-cover{height:190px!important;background:#070b13!important;}
+.vg-retro-cover img{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important;transform:scale(1.025);}
+.vg-retro-slot{display:none!important;}
+.vg-retro-info{padding:12px 14px!important;}
+.vg-retro-info h4{font-size:.96rem!important;line-height:1.18!important;min-height:42px!important;margin-bottom:10px!important;}
+.vg-retro-meta{gap:7px!important;}
+.vg-retro-platform{font-size:.68rem!important;padding:6px 9px!important;}
+.vg-retro-price{font-size:1.02rem!important;}
+#retroModal .retro-footer{padding:12px 32px!important;min-height:72px!important;}
+@media(max-width:760px){#retroModal .retro-head{padding:14px 16px!important}#retroModal .retro-head h2{font-size:2.1rem!important}#retroModal .retro-head p{display:none!important}#retroGridContainer{grid-template-columns:repeat(2,minmax(0,1fr))!important;padding:12px!important;gap:10px!important}.vg-retro-cover{height:150px!important}.vg-retro-game{min-height:250px!important}.flame-title{font-size:2.8rem!important}}
 </style>
 
 </head>
@@ -183,7 +207,7 @@
       </div>
       <div class="wrap">
         <div class="home-sections" id="homeTiles"></div>
-        <section class="market-head"><div><h2>Servicios destacados</h2><p>Vista previa de productos reales de tu catálogo. Para ver una categoría como interfaz independiente, abre una sección desde el menú superior.</p></div><div class="tools"><button class="pill" onclick="showSection('gaming')">Juegos</button><button class="pill" onclick="showSection('software')">Software</button></div></section>
+        <section class="market-head featured-head"><div><h2 class="flame-title">Servicios destacados</h2></div><div class="tools"><button class="pill" onclick="showSection('gaming')">Juegos</button><button class="pill" onclick="showSection('software')">Software</button></div></section>
         <div class="grid" id="featuredGrid"></div>
         <div class="trust"><div class="trust-card"><b>1. Elige producto</b><p>Abre cualquier tarjeta y selecciona la opción que necesitas.</p></div><div class="trust-card"><b>2. Agrega al carrito</b><p>Junta varios servicios en un solo pedido.</p></div><div class="trust-card"><b>3. Compra por WhatsApp</b><p>El pedido se manda preparado con tus productos.</p></div><div class="trust-card"><b>4. Soporte</b><p>Atención post-compra y seguimiento directo.</p></div></div>
       </div>
@@ -203,7 +227,7 @@
 
   <div class="modal" id="paymentModal"><div class="cart-panel" style="max-width:760px"><button class="x" onclick="closePaymentModal()">×</button><h2>Datos de pago</h2><p class="lead" style="font-size:.95rem;margin-top:0">Monto total a depositar: <strong id="payModalTotal" style="color:var(--brand2)">$0 MXN</strong></p><div class="payment-grid"><div class="pay-card"><b>🏦 Transferencia BBVA</b><p>Banco: <span>BBVA</span></p><p>Tarjeta: <span>4152314526718708</span></p><p>Titular: <span>DAHISE PARRA</span></p></div><div class="pay-card"><b>🏪 Depósito OXXO</b><p>Banco: <span>Spin by OXXO</span></p><p>Tarjeta: <span>4217 4700 2231 6489</span></p></div><div class="pay-card"><b>💳 PayPal</b><p>Correo: <span>Solicitar por WhatsApp</span></p></div><div class="pay-card"><b>🔶 Binance USDT</b><p>Pay ID: <span>000000000</span></p></div></div><div class="proof-box"><b>Después de pagar</b><br>Sube o toma captura del comprobante. Al abrir WhatsApp, adjúntalo desde tu galería para validar tu compra.<input type="file" id="proofInput" accept="image/*"></div><div class="modal-actions"><button class="primary whatsapp" onclick="sendPaymentWhatsApp()">Mandar comprobante por WhatsApp</button><button class="secondary" onclick="closePaymentModal()">Cerrar</button></div></div></div>
 
-  <div class="modal" id="retroModal"><div class="retro-modal-card"><div class="retro-head"><div><span class="badge">Xbox 360 / Clásico</span><h2>Colección Xbox Retro</h2><p>Selecciona uno o varios juegos. Cada tarjeta tiene espacio visual para foto individual; por ahora usa la imagen general si no asignas una portada propia. Promoción automática: 3 o más juegos = 10% de descuento.</p></div><button class="x" onclick="closeRetroModal()">×</button></div><div class="retro-controls"><input id="retroSearch" type="text" placeholder="Buscar juego por nombre..." oninput="renderRetroGrid()"><select id="retroPlatform" onchange="renderRetroGrid()"><option value="all">Todas las plataformas</option><option value="360">Xbox 360</option><option value="CLÁSICO">Xbox Clásico</option></select></div><div class="retro-grid" id="retroGridContainer"></div><div class="retro-footer"><div class="retro-totals"><span>Seleccionados: <strong id="retroCount">0</strong></span><span>Subtotal: <strong id="retroSubtotal">$0 MXN</strong></span><span>Descuento: <strong id="retroDiscount">$0 MXN</strong></span><span>Total final: <strong id="retroTotal">$0 MXN</strong></span></div><div class="modal-actions" style="position:static;padding-top:0;background:transparent;margin:0"><button class="primary" onclick="addRetroToCart()">Agregar al carrito</button><button class="primary whatsapp" onclick="buyRetroNow()">Comprar / ver métodos de pago</button></div></div></div></div>
+  <div class="modal" id="retroModal"><div class="retro-modal-card"><div class="retro-head"><div><span class="badge">Xbox 360 / Clásico</span><h2>Colección Xbox Retro</h2><p>Elige tus juegos, filtra por plataforma y compra por carrito o métodos de pago.</p></div><button class="x" onclick="closeRetroModal()">×</button></div><div class="retro-controls"><input id="retroSearch" type="text" placeholder="Buscar juego por nombre..." oninput="renderRetroGrid()"><select id="retroPlatform" onchange="renderRetroGrid()"><option value="all">Todas las plataformas</option><option value="360">Xbox 360</option><option value="CLÁSICO">Xbox Clásico</option></select></div><div class="retro-grid" id="retroGridContainer"></div><div class="retro-footer"><div class="retro-totals"><span>Seleccionados: <strong id="retroCount">0</strong></span><span>Subtotal: <strong id="retroSubtotal">$0 MXN</strong></span><span>Descuento: <strong id="retroDiscount">$0 MXN</strong></span><span>Total final: <strong id="retroTotal">$0 MXN</strong></span></div><div class="modal-actions" style="position:static;padding-top:0;background:transparent;margin:0"><button class="primary" onclick="addRetroToCart()">Agregar al carrito</button><button class="primary whatsapp" onclick="buyRetroNow()">Comprar / ver métodos de pago</button></div></div></div></div>
 
   <footer>Vessel Games · Catálogo digital premium · WhatsApp 661 107 8412</footer>
 
@@ -665,7 +689,6 @@
   let retroSelected = [];
 
   function fmtMoney(n){
-    if(typeof window.fmt === 'function') return window.fmt(n);
     return '$' + Number(n||0).toLocaleString('es-MX') + ' MXN';
   }
   function esc(s){
@@ -697,7 +720,10 @@
     return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
   }
   function getRetroGameImage(game){
-    return (window.RETRO_GAME_IMAGES && window.RETRO_GAME_IMAGES[game.name]) || makeCover(game.name, game.platform);
+    const custom = window.RETRO_GAME_IMAGES && window.RETRO_GAME_IMAGES[game.name];
+    if(custom) return custom;
+    const platformQuery = String(game.platform || '').toLowerCase().includes('cl') ? 'Original Xbox cover art' : 'Xbox 360 cover art';
+    return 'https://tse.mm.bing.net/th?q=' + encodeURIComponent(game.name + ' ' + platformQuery) + '&w=360&h=500&c=7&rs=1&p=0&o=5&pid=1.7';
   }
   function normalizePlatform(value){
     const v = String(value||'all').toLowerCase();
@@ -711,7 +737,7 @@
     return RETRO_DATA.filter(g => (plat === 'all' || g.platform === plat) && (!q || g.name.toLowerCase().includes(q)));
   }
   function calcTotals(){
-    const subtotal = retroSelected.length * RETRO_PRICE_PER_GAME;
+    const subtotal = retroSelected.reduce((sum, game) => sum + Number(game.price || RETRO_PRICE_PER_GAME || 0), 0);
     const discount = retroSelected.length >= 3 ? Math.round(subtotal * 0.10) : 0;
     return { subtotal, discount, total: subtotal - discount };
   }
@@ -738,9 +764,10 @@
     box.innerHTML = list.map(g => {
       const active = retroSelected.some(x => x.id === g.id);
       const img = getRetroGameImage(g);
+      const fallback = makeCover(g.name, g.platform);
       return `<article class="vg-retro-game ${active ? 'active' : ''}" onclick="toggleRetroGame('${g.id}')">
-        <div class="vg-retro-cover"><img src="${img}" alt="${esc(g.name)}"><div class="vg-retro-slot">Portada individual editable</div></div>
-        <div class="vg-retro-info"><h4>${esc(g.name)}</h4><div class="vg-retro-meta"><span class="vg-retro-platform">${esc(g.platform)}</span><span class="vg-retro-price">${fmtMoney(RETRO_PRICE_PER_GAME)}</span></div></div>
+        <div class="vg-retro-cover"><img loading="lazy" src="${img}" alt="${esc(g.name)}" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='${fallback}'"></div>
+        <div class="vg-retro-info"><h4>${esc(g.name)}</h4><div class="vg-retro-meta"><span class="vg-retro-platform">${esc(g.platform)}</span><span class="vg-retro-price">${fmtMoney(g.price)}</span></div></div>
       </article>`;
     }).join('');
     updateTotals();
@@ -770,7 +797,7 @@
     if(!retroSelected.length){ alert('Selecciona al menos un juego.'); return; }
     const t = calcTotals();
     if(Array.isArray(window.cart)){
-      window.cart.push({ title:'Colección Xbox Retro', option:retroSelected.map(g=>g.name).join(', '), price:t.total });
+      window.cart.push({ title:'Colección Xbox Retro', option:retroSelected.map(g=>`${g.name} (${fmtMoney(g.price)})`).join(', '), price:t.total });
       if(typeof window.updateCartCount === 'function') window.updateCartCount();
       window.closeRetroModal();
       if(typeof window.openCart === 'function') window.openCart();
@@ -781,7 +808,7 @@
   window.buyRetroNow = function buyRetroNow(){
     if(!retroSelected.length){ alert('Selecciona al menos un juego.'); return; }
     const t = calcTotals();
-    const order = { items:[{ title:'Colección Xbox Retro', option:retroSelected.map(g=>g.name).join(', '), price:t.total }], total:t.total, source:'retro' };
+    const order = { items:[{ title:'Colección Xbox Retro', option:retroSelected.map(g=>`${g.name} (${fmtMoney(g.price)})`).join(', '), price:t.total }], total:t.total, source:'retro' };
     window.closeRetroModal();
     if(typeof window.openPaymentModal === 'function') window.openPaymentModal(order);
     else {

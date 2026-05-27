@@ -77,6 +77,36 @@
     footer{border-top:1px solid var(--line);padding:32px 22px;color:var(--muted);text-align:center;background:#070912}
     @media(max-width:980px){.nav{grid-template-columns:1fr auto}.searchbar{grid-column:1/-1;grid-row:2}.hero-inner{grid-template-columns:1fr}.hero-panel{justify-self:start}.home-sections{grid-template-columns:1fr 1fr;margin-top:14px}.layout{grid-template-columns:1fr}.sidebar{position:static}.modal-card{grid-template-columns:1fr}.modal-img{min-height:220px;height:240px}.trust{grid-template-columns:1fr 1fr}}
     @media(max-width:600px){.nav{padding:12px}.brand span{font-size:.86rem}.nav-actions .pill:not(.cart-pill){display:none}.hero{min-height:620px}.hero-inner{padding:80px 14px 40px}.wrap{padding:22px 12px 60px}.home-sections{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr;gap:10px}.imgbox{height:128px;padding:7px}.card h3{font-size:.86rem;min-height:34px}.desc{display:none}.info{padding:10px}.market-head{grid-template-columns:1fr}.tools{justify-content:flex-start}.trust{grid-template-columns:1fr}.section-hero-content{padding:24px}}
+  
+
+    /* Ajustes pro: imágenes, modales, pagos y biblioteca Xbox Retro */
+    .imgbox{padding:0;height:178px;background:#070b15}
+    .imgbox img{width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;object-position:center;filter:saturate(1.06) contrast(1.04)}
+    .modal-card{max-width:1120px;grid-template-columns:minmax(360px,470px) 1fr}
+    .modal-img{position:relative;overflow:hidden;background-size:cover;background-position:center;min-height:560px}
+    .modal-img:before{content:"";position:absolute;inset:0;background:inherit;filter:blur(18px) brightness(.48) saturate(1.15);transform:scale(1.12)}
+    .modal-img:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,10,18,.15),rgba(8,10,18,.45))}
+    .modal-img img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;object-position:center;padding:14px}
+    .modal-body{display:flex;flex-direction:column;min-height:0}
+    #modalOptions{overflow:auto;max-height:min(42vh,460px);padding-right:4px}
+    .modal-actions{position:sticky;bottom:0;background:linear-gradient(180deg,rgba(14,18,32,.18),#0e1220 30%);padding-top:14px;margin-top:auto}
+    .payment-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+    .pay-card{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:18px;padding:14px}
+    .pay-card b{display:block;color:#fff;margin-bottom:8px}.pay-card p{margin:5px 0;color:var(--muted);font-size:.92rem}.pay-card span{color:#fff;font-weight:900}
+    .proof-box{border:1px dashed rgba(25,230,193,.35);background:rgba(25,230,193,.06);border-radius:18px;padding:14px;text-align:center;color:#dffff9;margin:12px 0}.proof-box input{width:100%;margin-top:10px}
+    .retro-modal-card{max-width:1280px;width:100%;max-height:94vh;background:#0e1220;border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+    .retro-head{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start;padding:22px;border-bottom:1px solid var(--line);background:linear-gradient(135deg,rgba(139,92,246,.14),rgba(25,230,193,.06))}
+    .retro-head h2{margin:7px 0 8px;font-size:clamp(1.6rem,4vw,3rem);letter-spacing:-.04em}.retro-head p{margin:0;color:var(--muted);line-height:1.55;max-width:850px}
+    .retro-controls{display:grid;grid-template-columns:1fr auto;gap:12px;padding:16px 22px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.025)}
+    .retro-controls input{border:1px solid var(--line);background:rgba(255,255,255,.055);color:var(--text);border-radius:16px;padding:13px 14px;outline:0}
+    .retro-grid{padding:18px 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;overflow:auto;min-height:300px}
+    .retro-game{border:1px solid var(--line);background:linear-gradient(180deg,rgba(25,30,47,.94),rgba(14,17,28,.96));border-radius:18px;overflow:hidden;cursor:pointer;transition:.18s;position:relative}
+    .retro-game:hover,.retro-game.active{border-color:rgba(25,230,193,.55);transform:translateY(-2px)}
+    .retro-cover{height:118px;background:#070b15;position:relative;overflow:hidden}.retro-cover img{width:100%;height:100%;object-fit:cover;object-position:center}.retro-cover .photo-slot{position:absolute;inset:auto 8px 8px 8px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.55);color:#d9e0f4;border-radius:999px;padding:4px 8px;font-size:.62rem;font-weight:900;text-align:center;backdrop-filter:blur(8px)}
+    .retro-info{padding:10px}.retro-info h4{margin:0 0 8px;font-size:.86rem;line-height:1.24;min-height:42px}.retro-meta{display:flex;justify-content:space-between;gap:8px;align-items:center}.retro-platform{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:#bcfff3;border:1px solid rgba(25,230,193,.25);border-radius:999px;padding:4px 6px}.retro-price{font-weight:950;color:#fff}.retro-game.active:after{content:'✓';position:absolute;top:8px;right:8px;width:26px;height:26px;border-radius:999px;background:var(--brand2);color:#02120f;display:grid;place-items:center;font-weight:950}
+    .retro-footer{display:flex;gap:14px;justify-content:space-between;align-items:center;padding:16px 22px;border-top:1px solid var(--line);background:#0b0f1b;flex-wrap:wrap}.retro-totals{display:flex;gap:16px;flex-wrap:wrap;color:var(--muted)}.retro-totals strong{color:#fff}
+    @media(max-width:760px){.modal-card{grid-template-columns:1fr}.modal-img{min-height:260px;height:300px}.payment-grid{grid-template-columns:1fr}.retro-controls{grid-template-columns:1fr}.retro-grid{grid-template-columns:1fr 1fr;padding:12px}.retro-head,.retro-footer{padding:14px}.retro-cover{height:105px}}
+
   </style>
 </head>
 <body>
@@ -121,8 +151,12 @@
     </section>
   </main>
 
-  <div class="modal" id="productModal"><div class="modal-card"><div class="modal-img"><img id="modalImage" alt=""></div><div class="modal-body"><button class="x" onclick="closeModal()">×</button><span class="badge" id="modalCat"></span><h2 id="modalTitle"></h2><p class="lead" id="modalDesc" style="font-size:.95rem"></p><h3>Selecciona una opción</h3><div id="modalOptions"></div><div class="modal-actions"><button class="primary" onclick="addSelectedToCart()">Agregar al carrito</button><button class="primary whatsapp" onclick="buySelectedNow()">Comprar por WhatsApp</button></div></div></div></div>
-  <div class="cart" id="cartModal"><div class="cart-panel"><button class="x" onclick="closeCart()">×</button><h2>Carrito</h2><div id="cartItems"></div><div class="cart-total"><span>Total</span><span id="cartTotal">$0 MXN</span></div><div class="modal-actions"><button class="primary whatsapp" onclick="sendCartWhatsApp()">Enviar pedido por WhatsApp</button><button class="secondary" onclick="clearCart()">Vaciar</button></div></div></div>
+  <div class="modal" id="productModal"><div class="modal-card"><div class="modal-img" id="modalImageBox"><img id="modalImage" alt=""></div><div class="modal-body"><button class="x" onclick="closeModal()">×</button><span class="badge" id="modalCat"></span><h2 id="modalTitle"></h2><p class="lead" id="modalDesc" style="font-size:.95rem"></p><h3>Selecciona una opción</h3><div id="modalOptions"></div><div class="modal-actions"><button class="primary" onclick="addSelectedToCart()">Agregar al carrito</button><button class="primary whatsapp" onclick="buySelectedNow()">Comprar / ver métodos de pago</button></div></div></div></div>
+  <div class="cart" id="cartModal"><div class="cart-panel"><button class="x" onclick="closeCart()">×</button><h2>Carrito</h2><div id="cartItems"></div><div class="cart-total"><span>Total</span><span id="cartTotal">$0 MXN</span></div><div class="modal-actions"><button class="primary whatsapp" onclick="openPaymentForCart()">Comprar / ver métodos de pago</button><button class="secondary" onclick="clearCart()">Vaciar</button></div></div></div>
+
+  <div class="modal" id="paymentModal"><div class="cart-panel" style="max-width:760px"><button class="x" onclick="closePaymentModal()">×</button><h2>Datos de pago</h2><p class="lead" style="font-size:.95rem;margin-top:0">Monto total a depositar: <strong id="payModalTotal" style="color:var(--brand2)">$0 MXN</strong></p><div class="payment-grid"><div class="pay-card"><b>🏦 Transferencia BBVA</b><p>Banco: <span>BBVA</span></p><p>Tarjeta: <span>4152314526718708</span></p><p>Titular: <span>DAHISE PARRA</span></p></div><div class="pay-card"><b>🏪 Depósito OXXO</b><p>Banco: <span>Spin by OXXO</span></p><p>Tarjeta: <span>4217 4700 2231 6489</span></p></div><div class="pay-card"><b>💳 PayPal</b><p>Correo: <span>Solicitar por WhatsApp</span></p></div><div class="pay-card"><b>🔶 Binance USDT</b><p>Pay ID: <span>000000000</span></p></div></div><div class="proof-box"><b>Después de pagar</b><br>Sube o toma captura del comprobante. Al abrir WhatsApp, adjúntalo desde tu galería para validar tu compra.<input type="file" id="proofInput" accept="image/*"></div><div class="modal-actions"><button class="primary whatsapp" onclick="sendPaymentWhatsApp()">Mandar comprobante por WhatsApp</button><button class="secondary" onclick="closePaymentModal()">Cerrar</button></div></div></div>
+
+  <div class="modal" id="retroModal"><div class="retro-modal-card"><div class="retro-head"><div><span class="badge">Xbox 360 / Clásico</span><h2>Colección Xbox Retro</h2><p>Selecciona uno o varios juegos. Cada tarjeta tiene espacio visual para foto individual; por ahora usa la imagen general si no asignas una portada propia. Promoción automática: 3 o más juegos = 10% de descuento.</p></div><button class="x" onclick="closeRetroModal()">×</button></div><div class="retro-controls"><input id="retroSearch" type="text" placeholder="Buscar juego por nombre..." oninput="renderRetroGrid()"><select id="retroPlatform" onchange="renderRetroGrid()"><option value="all">Todas las plataformas</option><option value="360">Xbox 360</option><option value="CLÁSICO">Xbox Clásico</option></select></div><div class="retro-grid" id="retroGridContainer"></div><div class="retro-footer"><div class="retro-totals"><span>Seleccionados: <strong id="retroCount">0</strong></span><span>Subtotal: <strong id="retroSubtotal">$0 MXN</strong></span><span>Descuento: <strong id="retroDiscount">$0 MXN</strong></span><span>Total final: <strong id="retroTotal">$0 MXN</strong></span></div><div class="modal-actions" style="position:static;padding-top:0;background:transparent;margin:0"><button class="primary" onclick="addRetroToCart()">Agregar al carrito</button><button class="primary whatsapp" onclick="buyRetroNow()">Comprar / ver métodos de pago</button></div></div></div></div>
 
   <footer>Vessel Games · Catálogo digital premium · WhatsApp 661 107 8412</footer>
 
@@ -163,29 +197,46 @@
       return list;
     }
     function renderProducts(){ const list=filteredServices(); productsGrid.innerHTML=list.map(cardHTML).join(''); emptyState.style.display=list.length?'none':'block'; renderNav(); }
-    function cardHTML(p){ return `<article class="card"><div class="imgbox"><img loading="lazy" src="${p.image}" alt="${escapeHtml(p.alt||p.title)}" referrerpolicy="no-referrer" onerror="this.src='portada.png'"></div><div class="info"><div class="meta"><span class="tag">${p.categoryName}</span><span class="stock">Disponible</span></div><h3>${escapeHtml(p.title)}</h3><p class="desc">${escapeHtml(p.description||'Servicio digital con atención rápida.')}</p><div class="price-line"><div><div class="from">Desde</div><div class="price">${p.priceLabel||fmt(minPrice(p))}</div></div></div><button class="detail-btn" onclick="openProduct(${p.id})">Ver detalles</button></div></article>`; }
-    function openProduct(id){ currentProduct=SERVICES.find(s=>s.id===id); selectedOptionIndex=0; if(!currentProduct)return; modalImage.src=currentProduct.image; modalTitle.textContent=currentProduct.title; modalCat.textContent=currentProduct.categoryName; modalDesc.textContent=currentProduct.description||'Selecciona una opción para comprar o agregar al carrito.'; renderOptions(); productModal.classList.add('active'); }
+    function cardHTML(p){ return `<article class="card"><div class="imgbox"><img loading="lazy" src="${p.image}" alt="${escapeHtml(p.alt||p.title)}" referrerpolicy="no-referrer" onerror="this.src='portada.png'"></div><div class="info"><div class="meta"><span class="tag">${p.categoryName}</span><span class="stock">Disponible</span></div><h3>${escapeHtml(p.title)}</h3><p class="desc">${escapeHtml(p.description||'Servicio digital con atención rápida.')}</p><div class="price-line"><div><div class="from">Desde</div><div class="price">${p.priceLabel||fmt(minPrice(p))}</div></div></div><button class="detail-btn" onclick="openProduct(${p.id})">${p.title.includes('Juegos Retro')?'Ver juegos':'Ver detalles'}</button></div></article>`; }
+    function openProduct(id){ currentProduct=SERVICES.find(s=>s.id===id); selectedOptionIndex=0; if(!currentProduct)return; if(currentProduct.title.includes('Juegos Retro')){ openRetroModal(); return; } modalImage.src=currentProduct.image; modalImageBox.style.backgroundImage=`url('${currentProduct.image}')`; modalTitle.textContent=currentProduct.title; modalCat.textContent=currentProduct.categoryName; modalDesc.textContent=currentProduct.description||'Selecciona una opción para comprar o agregar al carrito.'; renderOptions(); productModal.classList.add('active'); }
     function renderOptions(){ modalOptions.innerHTML=(currentProduct.options||[]).map((o,i)=>`<div class="option ${i===selectedOptionIndex?'active':''}" onclick="selectedOptionIndex=${i};renderOptions()"><b>${escapeHtml(o.name)}</b><strong>${fmt(o.price)}</strong></div>`).join('') || '<div class="empty">Cotización personalizada</div>'; }
     function closeModal(){productModal.classList.remove('active')}
     function selectedOption(){ return (currentProduct.options&&currentProduct.options[selectedOptionIndex]) || {name:'Cotización personalizada', price:0}; }
     function addSelectedToCart(){ const o=selectedOption(); cart.push({title:currentProduct.title, option:o.name, price:Number(o.price||0)}); updateCartCount(); closeModal(); openCart(); }
-    function buySelectedNow(){ const o=selectedOption(); const text=`Hola, quiero comprar:
-
-• ${currentProduct.title}
-Opción: ${o.name}
-Precio: ${fmt(o.price)}`; window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`,'_blank'); }
+    function buySelectedNow(){ const o=selectedOption(); pendingPaymentOrder={items:[{title:currentProduct.title, option:o.name, price:Number(o.price||0)}], total:Number(o.price||0), source:'producto'}; closeModal(); openPaymentModal(pendingPaymentOrder); }
     function updateCartCount(){ cartCount.textContent=cart.length; }
     function openCart(){ renderCart(); cartModal.classList.add('active'); } function closeCart(){ cartModal.classList.remove('active'); }
     function renderCart(){ if(!cart.length){ cartItems.innerHTML='<div class="empty">Tu carrito está vacío.</div>'; cartTotal.textContent='$0 MXN'; return; } cartItems.innerHTML=cart.map((it,i)=>`<div class="cart-item"><div><b>${escapeHtml(it.title)}</b><br><small>${escapeHtml(it.option)}</small></div><div><strong>${fmt(it.price)}</strong><br><button class="pill" style="padding:6px 9px;margin-top:6px" onclick="cart.splice(${i},1);updateCartCount();renderCart()">Quitar</button></div></div>`).join(''); cartTotal.textContent=fmt(cart.reduce((s,x)=>s+Number(x.price||0),0)); }
     function clearCart(){ cart=[]; updateCartCount(); renderCart(); }
-    function sendCartWhatsApp(){ if(!cart.length)return; const lines=cart.map((it,i)=>`${i+1}. ${it.title} - ${it.option} - ${fmt(it.price)}`).join('\n'); const total=fmt(cart.reduce((s,x)=>s+Number(x.price||0),0)); const text=`Hola, quiero hacer este pedido:
+    function openPaymentForCart(){ if(!cart.length)return; pendingPaymentOrder={items:[...cart], total:cart.reduce((s,x)=>s+Number(x.price||0),0), source:'carrito'}; closeCart(); openPaymentModal(pendingPaymentOrder); }
+    function sendCartWhatsApp(){ openPaymentForCart(); }
+    
+    function openPaymentModal(order){ pendingPaymentOrder=order; payModalTotal.textContent=fmt(order.total||0); paymentModal.classList.add('active'); }
+    function closePaymentModal(){ paymentModal.classList.remove('active'); }
+    function sendPaymentWhatsApp(){
+      if(!pendingPaymentOrder) return;
+      const lines=pendingPaymentOrder.items.map((it,i)=>`${i+1}. ${it.title} - ${it.option} - ${fmt(it.price)}`).join('\n');
+      const total=fmt(pendingPaymentOrder.total||0);
+      const text=`Hola, ya voy a realizar / ya realicé el pago de este pedido:\n\n${lines}\n\nTotal: ${total}\n\nAdjunto comprobante en este chat.`;
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`,'_blank');
+    }
+    function openRetroModal(){ selectedRetroGames=[]; renderRetroGrid(); updateRetroTotals(); retroModal.classList.add('active'); }
+    function closeRetroModal(){ retroModal.classList.remove('active'); }
+    function retroFallbackImage(){ const p=SERVICES.find(s=>s.title.includes('Juegos Retro')); return p ? p.image : 'portada.png'; }
+    function renderRetroGrid(){
+      const q=(retroSearch?.value||'').trim().toLowerCase(); const plat=retroPlatform?.value||'all'; const fallback=retroFallbackImage();
+      let list=RETRO_GAMES.filter(g=>(plat==='all'||g.platform===plat) && (!q||g.name.toLowerCase().includes(q)));
+      retroGridContainer.innerHTML=list.map(g=>{ const active=selectedRetroGames.some(x=>x.id===g.id); const img=g.image||fallback; return `<article class="retro-game ${active?'active':''}" onclick="toggleRetroGame('${g.id}')"><div class="retro-cover"><img src="${img}" loading="lazy" referrerpolicy="no-referrer" onerror="this.src='${fallback}'"><div class="photo-slot">Espacio para foto del juego</div></div><div class="retro-info"><h4>${escapeHtml(g.name)}</h4><div class="retro-meta"><span class="retro-platform">${g.platform}</span><span class="retro-price">${fmt(g.price)}</span></div></div></article>`; }).join('') || '<div class="empty">No encontré juegos con esa búsqueda.</div>';
+    }
+    function toggleRetroGame(id){ const g=RETRO_GAMES.find(x=>x.id===id); if(!g)return; const i=selectedRetroGames.findIndex(x=>x.id===id); if(i>=0) selectedRetroGames.splice(i,1); else selectedRetroGames.push(g); renderRetroGrid(); updateRetroTotals(); }
+    function retroTotals(){ const subtotal=selectedRetroGames.reduce((s,g)=>s+g.price,0); const discount=selectedRetroGames.length>=3 ? Math.round(subtotal*0.10) : 0; return {subtotal,discount,total:subtotal-discount}; }
+    function updateRetroTotals(){ const t=retroTotals(); retroCount.textContent=selectedRetroGames.length; retroSubtotal.textContent=fmt(t.subtotal); retroDiscount.textContent='-'+fmt(t.discount); retroTotal.textContent=fmt(t.total); }
+    function addRetroToCart(){ if(!selectedRetroGames.length){ alert('Selecciona al menos un juego.'); return; } const t=retroTotals(); cart.push({title:'Colección Xbox Retro', option:selectedRetroGames.map(g=>g.name).join(', '), price:t.total}); updateCartCount(); closeRetroModal(); openCart(); }
+    function buyRetroNow(){ if(!selectedRetroGames.length){ alert('Selecciona al menos un juego.'); return; } const t=retroTotals(); pendingPaymentOrder={items:[{title:'Colección Xbox Retro', option:selectedRetroGames.map(g=>g.name).join(', '), price:t.total}], total:t.total, source:'retro'}; closeRetroModal(); openPaymentModal(pendingPaymentOrder); }
 
-${lines}
-
-Total: ${total}`; window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`,'_blank'); }
     function openWhatsAppGeneral(){ window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hola, quiero información sobre el catálogo de Vessel Games')}`,'_blank'); }
     function escapeHtml(str){ return String(str||'').replace(/[&<>'"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c])); }
-    window.addEventListener('keydown',e=>{ if(e.key==='Escape'){closeModal();closeCart();} }); productModal.addEventListener('click',e=>{if(e.target===productModal)closeModal();}); cartModal.addEventListener('click',e=>{if(e.target===cartModal)closeCart();});
+    window.addEventListener('keydown',e=>{ if(e.key==='Escape'){closeModal();closeCart();closePaymentModal();closeRetroModal();} }); productModal.addEventListener('click',e=>{if(e.target===productModal)closeModal();}); cartModal.addEventListener('click',e=>{if(e.target===cartModal)closeCart();}); paymentModal.addEventListener('click',e=>{if(e.target===paymentModal)closePaymentModal();}); retroModal.addEventListener('click',e=>{if(e.target===retroModal)closeRetroModal();});
     init();
   </script>
 </body>

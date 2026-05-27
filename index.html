@@ -49,10 +49,15 @@
     .hero-panel h3{margin:0 0 12px} .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px} .mini{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.08);border-radius:17px;padding:12px;min-height:94px;display:flex;flex-direction:column;justify-content:space-between}
     .mini b{font-size:.9rem} .mini span{color:var(--brand2);font-size:.78rem;font-weight:900}
     .wrap{max-width:1480px;margin:auto;padding:30px 22px 80px}
-    .home-sections{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:-42px;position:relative;z-index:5}
-    .section-tile{min-height:170px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(140deg,rgba(255,255,255,.09),rgba(255,255,255,.035));padding:18px;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;box-shadow:0 14px 40px rgba(0,0,0,.24);transition:.22s;overflow:hidden;position:relative}
-    .section-tile:after{content:"";position:absolute;inset:auto -20% -35% auto;width:160px;height:160px;background:radial-gradient(circle,rgba(139,92,246,.35),transparent 65%);border-radius:50%}
-    .section-tile:hover{transform:translateY(-5px);border-color:rgba(25,230,193,.35)} .section-tile .icon{font-size:1.7rem} .section-tile b{font-size:1.05rem} .section-tile small{color:var(--muted);font-weight:800}
+    .home-sections{display:flex;gap:16px;margin-top:-42px;position:relative;z-index:5;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 16px;scrollbar-width:thin;scrollbar-color:rgba(139,92,246,.55) transparent}
+    .home-sections::-webkit-scrollbar{height:8px}.home-sections::-webkit-scrollbar-track{background:transparent}.home-sections::-webkit-scrollbar-thumb{background:rgba(139,92,246,.55);border-radius:999px}
+    .section-tile,.service-carousel-card{flex:0 0 min(365px,84vw);height:178px;border:1px solid var(--line);border-radius:24px;background:#111522;cursor:pointer;box-shadow:0 14px 40px rgba(0,0,0,.24);transition:.22s;overflow:hidden;position:relative;scroll-snap-align:start}
+    .service-carousel-card:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,10,18,.88),rgba(8,10,18,.35) 58%,rgba(8,10,18,.12));z-index:1}
+    .service-carousel-card:after{content:"";position:absolute;inset:auto -12% -45% auto;width:190px;height:190px;background:radial-gradient(circle,rgba(139,92,246,.42),transparent 66%);border-radius:50%;z-index:2}
+    .service-carousel-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.08) contrast(1.05);transform:scale(1.03);transition:.35s}
+    .service-carousel-card:hover{transform:translateY(-5px);border-color:rgba(25,230,193,.38)}.service-carousel-card:hover img{transform:scale(1.10)}
+    .service-carousel-info{position:relative;z-index:3;height:100%;padding:18px;display:flex;flex-direction:column;justify-content:flex-end;max-width:86%}
+    .service-carousel-info .tag{width:max-content;margin-bottom:8px}.service-carousel-info b{font-size:1.12rem;text-shadow:0 4px 20px rgba(0,0,0,.75)}.service-carousel-info small{color:#d7def2;font-weight:850;line-height:1.35;text-shadow:0 4px 18px rgba(0,0,0,.7)}.service-carousel-price{margin-top:8px;color:var(--brand2);font-weight:950}
     .view{display:none} .view.active{display:block;animation:fade .22s ease} @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
     .market-head{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:end;margin:24px 0 18px} .market-head h2{font-size:clamp(1.7rem,4vw,3.2rem);letter-spacing:-.04em;margin:0;text-transform:uppercase} .market-head p{color:var(--muted);margin:8px 0 0;max-width:740px;line-height:1.6}
     .tools{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end} select{border:1px solid var(--line);background:#111522;color:var(--text);border-radius:14px;padding:12px 14px;outline:0}
@@ -182,9 +187,30 @@
       catRow.innerHTML=html;
       sideList.innerHTML=CATEGORIES.map(c=>`<button class="side-item ${activeCategory===c.id?'active':''}" onclick="showSection('${c.id}')">${c.icon} ${c.label} <span style="float:right;color:var(--soft)">${c.id==='all'?SERVICES.length:SERVICES.filter(s=>s.category===c.id).length}</span></button>`).join('');
     }
+    function shuffleServices(list){
+      const copy=[...list];
+      for(let i=copy.length-1;i>0;i--){
+        const j=Math.floor(Math.random()*(i+1));
+        [copy[i],copy[j]]=[copy[j],copy[i]];
+      }
+      return copy;
+    }
     function renderHome(){
-      homeTiles.innerHTML=CATEGORIES.filter(c=>c.id!=='all').map(c=>`<div class="section-tile" onclick="showSection('${c.id}')"><div class="icon">${c.icon}</div><div><b>${c.label}</b><br><small>${SERVICES.filter(s=>s.category===c.id).length} servicios disponibles</small></div></div>`).join('');
-      featuredGrid.innerHTML=SERVICES.slice(0,10).map(cardHTML).join('');
+      const randomServices=shuffleServices(SERVICES);
+      homeTiles.innerHTML=randomServices.map(p=>`<article class="service-carousel-card" onclick="openProduct(${p.id})" title="${escapeHtml(p.title)}"><img loading="lazy" src="${p.image}" alt="${escapeHtml(p.alt||p.title)}" referrerpolicy="no-referrer" onerror="this.src='portada.png'"><div class="service-carousel-info"><span class="tag">${escapeHtml(p.categoryName||'Servicio')}</span><b>${escapeHtml(p.title)}</b><small>${escapeHtml(p.description||'Servicio digital disponible')}</small><div class="service-carousel-price">Desde ${p.priceLabel||fmt(minPrice(p))}</div></div></article>`).join('');
+      featuredGrid.innerHTML=randomServices.slice(0,10).map(cardHTML).join('');
+      startHomeCarousel();
+    }
+    let homeCarouselTimer=null;
+    function startHomeCarousel(){
+      clearInterval(homeCarouselTimer);
+      homeCarouselTimer=setInterval(()=>{
+        if(!homeTiles || !homeView.classList.contains('active')) return;
+        const max=homeTiles.scrollWidth-homeTiles.clientWidth;
+        if(max<=0) return;
+        if(homeTiles.scrollLeft>=max-20) homeTiles.scrollTo({left:0,behavior:'smooth'});
+        else homeTiles.scrollBy({left:380,behavior:'smooth'});
+      },4200);
     }
     function showHome(){ activeCategory='all'; homeView.classList.add('active'); marketView.classList.remove('active'); renderNav(); window.scrollTo(0,0); }
     function showSection(cat){ activeCategory=cat; homeView.classList.remove('active'); marketView.classList.add('active'); const c=catInfo(cat); sectionBadge.textContent='Sección'; sectionTitle.textContent=`${c.icon} ${c.label}`; sectionDesc.textContent=c.desc; sectionHero.style.setProperty('--section-bg', c.bg); productsTitle.textContent=cat==='all'?'Catálogo completo':`Productos de ${c.label}`; renderNav(); renderProducts(); window.scrollTo(0,0); }

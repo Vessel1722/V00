@@ -1180,6 +1180,108 @@
   }
 </style>
 
+
+<style id="vg-carousel-fade-smooth-v7">
+  /* Carrusel centrado con desvanecido lateral */
+  .home-sections{
+    max-width:1480px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    padding:8px 34px 22px !important;
+    gap:18px !important;
+    scroll-behavior:auto !important;
+    scroll-padding-left:34px !important;
+    scroll-padding-right:34px !important;
+    overscroll-behavior-x:contain !important;
+
+    /* Efecto desvanecido en las orillas */
+    -webkit-mask-image:linear-gradient(
+      90deg,
+      transparent 0%,
+      #000 6%,
+      #000 94%,
+      transparent 100%
+    ) !important;
+    mask-image:linear-gradient(
+      90deg,
+      transparent 0%,
+      #000 6%,
+      #000 94%,
+      transparent 100%
+    ) !important;
+  }
+
+  .home-sections::-webkit-scrollbar{
+    height:6px !important;
+  }
+
+  .home-sections::before,
+  .home-sections::after{
+    content:"" !important;
+    flex:0 0 16px !important;
+  }
+
+  .service-carousel-card{
+    flex:0 0 min(380px, calc(100vw - 74px)) !important;
+    height:180px !important;
+    box-sizing:border-box !important;
+    scroll-snap-align:center !important;
+  }
+
+  .service-carousel-card img{
+    object-fit:cover !important;
+    object-position:center center !important;
+  }
+
+  .service-carousel-info{
+    max-width:88% !important;
+  }
+
+  .service-carousel-info small{
+    display:-webkit-box !important;
+    -webkit-line-clamp:2 !important;
+    -webkit-box-orient:vertical !important;
+    overflow:hidden !important;
+  }
+
+  .service-carousel-card.retro-carousel-card::before{
+    background:linear-gradient(90deg,rgba(6,9,18,.88),rgba(6,9,18,.44) 58%,rgba(6,9,18,.18)) !important;
+  }
+
+  .service-carousel-card.retro-carousel-card .tag{
+    background:rgba(25,230,193,.12) !important;
+    border-color:rgba(25,230,193,.34) !important;
+  }
+
+  .retro-carousel-note{
+    color:#19e6c1 !important;
+    font-weight:950 !important;
+    margin-top:7px !important;
+    text-shadow:0 4px 18px rgba(0,0,0,.75) !important;
+  }
+
+  @media(max-width:760px){
+    .home-sections{
+      padding:8px 22px 20px !important;
+      gap:14px !important;
+      scroll-padding-left:22px !important;
+      scroll-padding-right:22px !important;
+      -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 9%,#000 91%,transparent 100%) !important;
+      mask-image:linear-gradient(90deg,transparent 0%,#000 9%,#000 91%,transparent 100%) !important;
+    }
+
+    .home-sections::before,
+    .home-sections::after{
+      flex-basis:10px !important;
+    }
+
+    .service-carousel-card{
+      flex-basis:min(318px, calc(100vw - 48px)) !important;
+      height:170px !important;
+    }
+  }
+</style>
+
 </head>
 <body>
   <header class="topbar">
@@ -1926,7 +2028,9 @@
 </script>
 
 
-<script id="vg-carousel-retro-random-autoscroll-v6">
+
+
+<script id="vg-carousel-retro-random-autoscroll-v7">
 (function(){
   'use strict';
 
@@ -1952,7 +2056,7 @@
         input.value = name;
         if(typeof window.renderRetroGrid === 'function') window.renderRetroGrid();
       }
-    }, 60);
+    }, 70);
   };
 
   function buildRetroCard(game){
@@ -1966,7 +2070,9 @@
       ? window.getRetroGameImage(game)
       : (typeof window.makeRetroCover === 'function' ? window.makeRetroCover(name, platform) : 'portada.png');
 
-    return `<article class="service-carousel-card retro-carousel-card" onclick="openRetroGameFromCarousel('${String(name).replace(/\\/g,'\\\\').replace(/'/g,"\\'")}')" title="${escapeHtmlLocal(name)}">
+    const safeNameForClick = String(name).replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+
+    return `<article class="service-carousel-card retro-carousel-card" onclick="openRetroGameFromCarousel('${safeNameForClick}')" title="${escapeHtmlLocal(name)}">
       <img loading="lazy" src="${img}" alt="${escapeHtmlLocal(name)}" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='portada.png'">
       <div class="service-carousel-info">
         <span class="tag">${escapeHtmlLocal(platform)}</span>
@@ -1977,40 +2083,47 @@
     </article>`;
   }
 
-  function addRandomRetroToCarousel(){
-    const row = document.getElementById('homeTiles');
+  function addRandomRetroToCarousel(row){
     const retro = Array.isArray(window.RETRO_GAMES_DATA) ? window.RETRO_GAMES_DATA : [];
     if(!row || !retro.length || row.dataset.retroAdded === '1') return;
 
-    const selected = shuffle(retro).slice(0, 12);
-    const retroCards = selected.map(buildRetroCard).join('');
+    const selected = shuffle(retro).slice(0, 14);
+    const temp = document.createElement('div');
+    temp.innerHTML = selected.map(buildRetroCard).join('');
+    const cards = Array.from(temp.children);
 
-    // Intercalar juegos retro entre servicios para que salgan uno por uno al azar.
-    const current = Array.from(row.children);
-    if(!current.length){
-      row.innerHTML = retroCards;
-    }else{
-      const temp = document.createElement('div');
-      temp.innerHTML = retroCards;
-      const cards = Array.from(temp.children);
-      cards.forEach((card, index) => {
-        const position = Math.min(row.children.length, (index + 1) * 2);
-        row.insertBefore(card, row.children[position] || null);
-      });
-    }
+    // Intercalar juegos retro entre servicios para que aparezcan uno por uno.
+    cards.forEach((card, index) => {
+      const position = Math.min(row.children.length, (index + 1) * 2);
+      row.insertBefore(card, row.children[position] || null);
+    });
 
     row.dataset.retroAdded = '1';
   }
 
-  function startSlowCarousel(){
-    const row = document.getElementById('homeTiles');
-    if(!row || row.dataset.slowScroll === '1') return;
+  function prepareLoop(row){
+    if(!row || row.dataset.loopReady === '1') return;
 
-    row.dataset.slowScroll = '1';
+    const originalCards = Array.from(row.children);
+    if(!originalCards.length) return;
+
+    originalCards.forEach(card => {
+      const clone = card.cloneNode(true);
+      clone.dataset.clone = '1';
+      row.appendChild(clone);
+    });
+
+    row.dataset.loopReady = '1';
+    row.dataset.loopWidth = String(row.scrollWidth / 2);
+  }
+
+  function startModerateAutoScroll(row){
+    if(!row || row.dataset.autoScrollV7 === '1') return;
+    row.dataset.autoScrollV7 = '1';
 
     let paused = false;
     let last = null;
-    const speed = 0.018; // px por milisegundo: lento y legible
+    const speed = 0.035; // velocidad moderada, legible y constante
 
     const pause = () => { paused = true; };
     const play = () => { paused = false; };
@@ -2028,15 +2141,12 @@
       last = ts;
 
       if(!paused && row.scrollWidth > row.clientWidth + 8){
+        const loopWidth = Number(row.dataset.loopWidth || (row.scrollWidth / 2));
         row.scrollLeft += delta * speed;
 
-        const max = row.scrollWidth - row.clientWidth;
-        if(row.scrollLeft >= max - 2){
-          paused = true;
-          setTimeout(() => {
-            row.scrollTo({left:0, behavior:'smooth'});
-            setTimeout(() => { paused = false; }, 900);
-          }, 900);
+        // Loop continuo sin salto visible
+        if(row.scrollLeft >= loopWidth){
+          row.scrollLeft = row.scrollLeft - loopWidth;
         }
       }
 
@@ -2047,19 +2157,26 @@
   }
 
   function init(){
-    addRandomRetroToCarousel();
-    startSlowCarousel();
+    const row = document.getElementById('homeTiles');
+    if(!row) return;
+
+    addRandomRetroToCarousel(row);
+
+    // Espera mínima para que el navegador calcule anchos reales.
+    requestAnimationFrame(() => {
+      prepareLoop(row);
+      startModerateAutoScroll(row);
+    });
   }
 
-  // El catálogo se pinta durante init() del sitio; esperamos un poco para no estorbar.
   if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', () => setTimeout(init, 350));
+    document.addEventListener('DOMContentLoaded', () => setTimeout(init, 450));
   }else{
-    setTimeout(init, 350);
+    setTimeout(init, 450);
   }
 
-  // Reintento por si algún script posterior repinta el carrusel.
-  setTimeout(init, 1200);
+  // Reintento por si el sitio repinta el carrusel después.
+  setTimeout(init, 1400);
 })();
 </script>
 

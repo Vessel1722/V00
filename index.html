@@ -1414,6 +1414,297 @@
   @media(max-width:760px){.floating-whatsapp{right:14px;bottom:16px;padding:12px 14px;font-size:.9rem}.floating-whatsapp span{font-size:1rem}.reviews-grid{grid-template-columns:1fr}.reviews-head{display:block}.retro-sales-note{grid-template-columns:1fr;margin:12px 14px 0}.retro-filter-row{padding:10px 14px 0}}
 </style>
 
+
+<style id="vg-retro-search-v11">
+  /* ===== Buscador estilo resultados rápidos tipo Kinguin ===== */
+  .nav{position:relative!important;}
+  .searchbar{position:relative!important; z-index:20!important;}
+  #globalSearch{
+    font-size:1rem!important;
+  }
+
+  .search-results-panel{
+    position:fixed;
+    z-index:1200;
+    display:none;
+    width:min(980px, calc(100vw - 34px));
+    max-height:min(72vh, 720px);
+    overflow:auto;
+    border:1px solid rgba(255,255,255,.10);
+    background:linear-gradient(180deg,rgba(34,39,54,.98),rgba(25,29,42,.98));
+    backdrop-filter:blur(14px);
+    border-radius:22px;
+    box-shadow:0 24px 70px rgba(0,0,0,.46);
+  }
+  .search-results-panel.active{display:block;}
+  .search-results-head{
+    position:sticky;
+    top:0;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:16px 18px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    background:linear-gradient(180deg,rgba(38,43,58,.98),rgba(30,34,47,.98));
+  }
+  .search-results-head strong{
+    color:#fff;
+    font-size:1.05rem;
+  }
+  .search-results-head small{
+    color:#97a4c2;
+    display:block;
+    margin-top:4px;
+  }
+  .search-results-head .search-see-all{
+    border:1px solid rgba(255,255,255,.10);
+    background:linear-gradient(135deg,rgba(255,145,46,.12),rgba(255,145,46,.06));
+    color:#fff;
+    border-radius:999px;
+    padding:10px 16px;
+    font-weight:900;
+    cursor:pointer;
+    white-space:nowrap;
+  }
+  .search-result-list{
+    padding:10px;
+  }
+  .search-result-item{
+    display:grid;
+    grid-template-columns:92px 1fr auto;
+    gap:14px;
+    align-items:center;
+    padding:10px;
+    border-radius:18px;
+    cursor:pointer;
+    transition:.18s ease;
+  }
+  .search-result-item:hover{
+    background:rgba(255,255,255,.05);
+  }
+  .search-result-thumb{
+    width:92px;
+    height:72px;
+    border-radius:14px;
+    overflow:hidden;
+    background:#111625;
+    border:1px solid rgba(255,255,255,.08);
+  }
+  .search-result-thumb img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center center;
+    display:block;
+  }
+  .search-result-main{
+    min-width:0;
+  }
+  .search-result-main strong{
+    display:block;
+    color:#fff;
+    font-size:1rem;
+    line-height:1.18;
+    margin-bottom:6px;
+  }
+  .search-result-main p{
+    margin:0;
+    color:#b0bad2;
+    font-size:.88rem;
+    line-height:1.4;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+  }
+  .search-result-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-top:8px;
+  }
+  .search-result-tag{
+    border:1px solid rgba(255,255,255,.10);
+    background:rgba(255,255,255,.045);
+    color:#dce4f8;
+    border-radius:999px;
+    padding:5px 9px;
+    font-size:.72rem;
+    font-weight:900;
+    letter-spacing:.04em;
+  }
+  .search-result-side{
+    text-align:right;
+    padding-left:8px;
+  }
+  .search-result-side .from{
+    color:#8f9ab7;
+    font-size:.72rem;
+    text-transform:uppercase;
+    font-weight:900;
+    letter-spacing:.07em;
+    margin-bottom:4px;
+  }
+  .search-result-side .price{
+    color:#fff;
+    font-size:1.12rem;
+    font-weight:950;
+    white-space:nowrap;
+  }
+  .search-no-results{
+    padding:26px 18px 30px;
+    text-align:center;
+    color:#c3cce0;
+  }
+  .search-no-results b{
+    display:block;
+    color:#fff;
+    margin-bottom:8px;
+  }
+
+  /* ===== Xbox Retro: menos banner, más espacio para juegos ===== */
+  #retroModal .retro-head{
+    padding:14px 24px 10px!important;
+  }
+  #retroModal .retro-head h2{
+    font-size:clamp(2rem,3.3vw,3.45rem)!important;
+    line-height:.94!important;
+    margin:8px 0 6px!important;
+  }
+  #retroModal .retro-head p{
+    font-size:.92rem!important;
+    line-height:1.35!important;
+    max-width:850px!important;
+    margin:0!important;
+    color:#b8c4dd!important;
+  }
+  #retroModal .retro-controls{
+    padding:12px 24px!important;
+    gap:12px!important;
+  }
+  #retroModal .retro-controls input,
+  #retroModal .retro-controls select{
+    height:52px!important;
+    border-radius:16px!important;
+  }
+  .retro-sales-note{
+    margin:10px 24px 0!important;
+    padding:12px 16px!important;
+    border-radius:18px!important;
+  }
+  .retro-sales-note b{
+    font-size:.96rem!important;
+    margin-bottom:4px!important;
+  }
+  .retro-sales-note p{
+    font-size:.84rem!important;
+  }
+  .retro-filter-row{
+    padding:10px 24px 0!important;
+    gap:7px!important;
+  }
+  .retro-filter-chip{
+    padding:8px 11px!important;
+    font-size:.76rem!important;
+  }
+  #retroGridContainer{
+    grid-template-columns:repeat(auto-fill,minmax(168px,1fr))!important;
+    gap:12px!important;
+    padding:14px 24px!important;
+  }
+  .vg-retro-game{
+    min-height:272px!important;
+    border-radius:16px!important;
+  }
+  .vg-retro-cover{
+    height:168px!important;
+  }
+  .vg-retro-cover-img{
+    padding:6px!important;
+  }
+  .vg-retro-info{
+    padding:10px 10px 12px!important;
+    gap:7px!important;
+  }
+  .vg-retro-info h4{
+    min-height:40px!important;
+    font-size:.88rem!important;
+  }
+  .vg-retro-price{
+    font-size:.95rem!important;
+  }
+  #retroModal .retro-footer{
+    padding:10px 24px!important;
+    min-height:64px!important;
+  }
+
+  @media(max-width:760px){
+    .search-results-panel{
+      width:calc(100vw - 18px);
+      max-height:68vh;
+      border-radius:18px;
+    }
+    .search-results-head{
+      padding:14px 14px;
+      align-items:flex-start;
+    }
+    .search-results-head .search-see-all{
+      padding:9px 13px;
+      font-size:.82rem;
+    }
+    .search-result-item{
+      grid-template-columns:74px 1fr;
+      gap:10px;
+    }
+    .search-result-thumb{
+      width:74px;
+      height:64px;
+    }
+    .search-result-side{
+      grid-column:2;
+      text-align:left;
+      padding-left:0;
+      margin-top:6px;
+    }
+    #retroModal .retro-head{
+      padding:12px 14px 8px!important;
+    }
+    #retroModal .retro-head h2{
+      font-size:2rem!important;
+    }
+    #retroModal .retro-head p{
+      display:none!important;
+    }
+    #retroModal .retro-controls{
+      padding:10px 14px!important;
+    }
+    .retro-sales-note{
+      margin:8px 14px 0!important;
+      padding:10px 12px!important;
+    }
+    .retro-filter-row{
+      padding:8px 14px 0!important;
+      gap:6px!important;
+    }
+    #retroGridContainer{
+      grid-template-columns:repeat(2,minmax(0,1fr))!important;
+      gap:10px!important;
+      padding:10px 12px!important;
+    }
+    .vg-retro-game{
+      min-height:248px!important;
+    }
+    .vg-retro-cover{
+      height:146px!important;
+    }
+    #retroModal .retro-footer{
+      padding:10px 14px!important;
+    }
+  }
+</style>
+
 </head>
 <body>
   <header class="topbar">
@@ -2412,5 +2703,206 @@
 </script>
 
 <a class="floating-whatsapp" href="https://wa.me/526611078412?text=Hola%2C%20tengo%20una%20duda%20sobre%20el%20cat%C3%A1logo%20de%20Vessel%20Games" target="_blank" rel="noopener"><span>💬</span> ¿Dudas? WhatsApp</a>
+
+<script id="vg-search-live-dropdown-v11">
+(function(){
+  'use strict';
+
+  function ensurePanel(){
+    let panel = document.getElementById('searchResultsPanel');
+    if(panel) return panel;
+    panel = document.createElement('div');
+    panel.id = 'searchResultsPanel';
+    panel.className = 'search-results-panel';
+    document.body.appendChild(panel);
+    return panel;
+  }
+
+  function escapeHtmlLocal(str){
+    if(typeof window.escapeHtml === 'function') return window.escapeHtml(str);
+    return String(str||'').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  function productText(p){
+    return [
+      p.title,
+      p.displayTitle,
+      p.description,
+      p.categoryName,
+      (p.options||[]).map(o => o.name).join(' ')
+    ].join(' ').toLowerCase();
+  }
+
+  function expandedSearch(query){
+    if(typeof window.__vesselExpandedQuery === 'function') return window.__vesselExpandedQuery(query);
+    return String(query||'').toLowerCase();
+  }
+
+  function scoreProduct(p, q, expanded){
+    const text = productText(p);
+    let score = 0;
+    if(text.includes(q)) score += 120;
+    if((p.title||'').toLowerCase().includes(q)) score += 80;
+    if((p.categoryName||'').toLowerCase().includes(q)) score += 25;
+    expanded.split(/\s+/).filter(Boolean).forEach(word => {
+      if(text.includes(word)) score += 8;
+      if((p.title||'').toLowerCase().includes(word)) score += 12;
+    });
+    return score;
+  }
+
+  function searchAllServices(rawQuery){
+    const q = String(rawQuery || '').trim().toLowerCase();
+    if(!q) return [];
+    const expanded = expandedSearch(q);
+    return (window.SERVICES || [])
+      .map(p => ({ p, score: scoreProduct(p, q, expanded) }))
+      .filter(x => x.score > 0)
+      .sort((a,b) => b.score - a.score || ((typeof window.minPrice === 'function' ? window.minPrice(a.p) : 0) - (typeof window.minPrice === 'function' ? window.minPrice(b.p) : 0)))
+      .slice(0, 8)
+      .map(x => x.p);
+  }
+
+  function closePanel(){
+    const panel = ensurePanel();
+    panel.classList.remove('active');
+    panel.innerHTML = '';
+  }
+
+  function positionPanel(input){
+    const panel = ensurePanel();
+    const box = input.getBoundingClientRect();
+    panel.style.left = Math.max(9, box.left) + 'px';
+    panel.style.top = (box.bottom + 10) + 'px';
+    panel.style.width = Math.min(window.innerWidth - 18, box.width) + 'px';
+  }
+
+  function openAllResults(){
+    if(typeof window.showSection === 'function') window.showSection('all');
+    if(typeof window.renderProducts === 'function') window.renderProducts();
+    const q = document.getElementById('globalSearch')?.value || '';
+    setTimeout(() => {
+      const title = document.getElementById('productsTitle');
+      const subtitle = document.getElementById('productsSubtitle');
+      if(title && q.trim()) title.textContent = `Resultados para "${q.trim()}"`;
+      if(subtitle && q.trim()) subtitle.textContent = 'Resultados encontrados desde el buscador principal.';
+    }, 20);
+    closePanel();
+  }
+
+  function renderPanel(query){
+    const input = document.getElementById('globalSearch');
+    if(!input) return;
+    const panel = ensurePanel();
+    const q = String(query || '').trim();
+
+    if(!q){
+      closePanel();
+      return;
+    }
+
+    const matches = searchAllServices(q);
+    positionPanel(input);
+
+    const head = `
+      <div class="search-results-head">
+        <div>
+          <strong>Resultados rápidos</strong>
+          <small>${matches.length ? `Coincidencias para "${escapeHtmlLocal(q)}"` : `Sin coincidencias para "${escapeHtmlLocal(q)}"`}</small>
+        </div>
+        <button class="search-see-all" type="button" onclick="openGlobalSearchResults()">Ver todos</button>
+      </div>
+    `;
+
+    if(!matches.length){
+      panel.innerHTML = head + `
+        <div class="search-no-results">
+          <b>No encontré productos con ese término.</b>
+          <div>Prueba con nombres como Game Pass, Netflix, Robux, Free Fire, Spotify o Xbox Retro.</div>
+        </div>`;
+      panel.classList.add('active');
+      return;
+    }
+
+    const list = matches.map(p => `
+      <article class="search-result-item" onclick="openSearchResultProduct(${p.id})">
+        <div class="search-result-thumb">
+          <img loading="lazy" decoding="async" src="${p.image}" alt="${escapeHtmlLocal(p.alt || p.title)}" referrerpolicy="no-referrer" onerror="this.src='portada.png'">
+        </div>
+        <div class="search-result-main">
+          <strong>${escapeHtmlLocal(p.title)}</strong>
+          <p>${escapeHtmlLocal(p.description || 'Servicio digital disponible')}</p>
+          <div class="search-result-tags">
+            <span class="search-result-tag">${escapeHtmlLocal(p.categoryName || 'Servicio')}</span>
+            <span class="search-result-tag">Entrega 20 min - 2 hrs</span>
+          </div>
+        </div>
+        <div class="search-result-side">
+          <div class="from">Desde</div>
+          <div class="price">${p.priceLabel || (typeof window.fmt === 'function' ? window.fmt(typeof window.minPrice === 'function' ? window.minPrice(p) : 0) : '$0 MXN')}</div>
+        </div>
+      </article>
+    `).join('');
+
+    panel.innerHTML = head + `<div class="search-result-list">${list}</div>`;
+    panel.classList.add('active');
+  }
+
+  window.openGlobalSearchResults = function openGlobalSearchResults(){
+    openAllResults();
+  };
+
+  window.openSearchResultProduct = function openSearchResultProduct(id){
+    closePanel();
+    if(typeof window.openProduct === 'function') window.openProduct(id);
+  };
+
+  function boot(){
+    const input = document.getElementById('globalSearch');
+    if(!input || input.dataset.liveDropdownReady === '1') return;
+    input.dataset.liveDropdownReady = '1';
+
+    ensurePanel();
+
+    const update = () => {
+      renderPanel(input.value);
+      if(typeof window.renderProducts === 'function') window.renderProducts();
+    };
+
+    input.addEventListener('input', update);
+    input.addEventListener('focus', update);
+    input.addEventListener('keydown', (e) => {
+      if(e.key === 'Enter'){
+        e.preventDefault();
+        if((input.value || '').trim()) openAllResults();
+      }
+      if(e.key === 'Escape') closePanel();
+    });
+
+    document.addEventListener('click', (e) => {
+      const panel = ensurePanel();
+      if(e.target === input || panel.contains(e.target)) return;
+      closePanel();
+    });
+
+    window.addEventListener('resize', () => {
+      const panel = ensurePanel();
+      if(panel.classList.contains('active')) positionPanel(input);
+    }, {passive:true});
+
+    window.addEventListener('scroll', () => {
+      const panel = ensurePanel();
+      if(panel.classList.contains('active')) positionPanel(input);
+    }, {passive:true});
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+})();
+</script>
+
 </body>
 </html>

@@ -429,6 +429,148 @@
   }
 </style>
 
+
+<style id="vg-banner-fixes-v2">
+  /* =========================================================
+     Ajustes visuales solicitados:
+     1) Xbox 360 / Retro: portadas más altas y visibles.
+     2) Servicios: banners/tarjetas un poco más anchos y fotos mejor encuadradas.
+     No modifica funciones ni lógica.
+     ========================================================= */
+
+  /* --- Tarjetas de servicios / catálogo --- */
+  @media (min-width: 1000px){
+    .grid{
+      grid-template-columns:repeat(auto-fill,minmax(280px,1fr))!important;
+      gap:22px!important;
+    }
+  }
+
+  .card{
+    overflow:hidden!important;
+  }
+
+  .imgbox{
+    height:220px!important;
+    background:#070b15!important;
+  }
+
+  .imgbox img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    object-position:center top!important;
+  }
+
+  /* En servicios destacados / tarjetas superiores */
+  .service-carousel-card{
+    min-width:290px!important;
+  }
+
+  .service-carousel-card img{
+    object-fit:cover!important;
+    object-position:center top!important;
+  }
+
+  /* Si alguna tarjeta usa imagen horizontal muy recortada,
+     el alto extra ayuda a que no se corte el nombre/logo */
+  .card h3{
+    min-height:52px!important;
+  }
+
+  /* --- Xbox Retro / Xbox 360 --- */
+  #retroGridContainer{
+    grid-template-columns:repeat(auto-fill,minmax(195px,1fr))!important;
+    gap:18px!important;
+  }
+
+  .retro-game,
+  .vg-retro-game{
+    min-height:350px!important;
+  }
+
+  .retro-cover,
+  .vg-retro-cover{
+    height:255px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    overflow:hidden!important;
+    background:#050812!important;
+  }
+
+  .retro-cover img,
+  .vg-retro-cover img,
+  .vg-retro-cover .vg-retro-cover-img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:contain!important;
+    object-position:center center!important;
+    padding:10px!important;
+  }
+
+  /* Ayuda a que el nombre del juego y precio respiren más */
+  .retro-info,
+  .vg-retro-info{
+    padding-top:12px!important;
+  }
+
+  .retro-info h4,
+  .vg-retro-info h4{
+    min-height:48px!important;
+    line-height:1.15!important;
+  }
+
+  /* Responsive */
+  @media (max-width: 999px){
+    .grid{
+      grid-template-columns:repeat(auto-fill,minmax(240px,1fr))!important;
+    }
+    .imgbox{
+      height:205px!important;
+    }
+    .service-carousel-card{
+      min-width:260px!important;
+    }
+    #retroGridContainer{
+      grid-template-columns:repeat(auto-fill,minmax(175px,1fr))!important;
+    }
+    .retro-cover,
+    .vg-retro-cover{
+      height:225px!important;
+    }
+    .retro-game,
+    .vg-retro-game{
+      min-height:320px!important;
+    }
+  }
+
+  @media (max-width: 760px){
+    .grid{
+      grid-template-columns:repeat(2,minmax(0,1fr))!important;
+      gap:12px!important;
+    }
+    .imgbox{
+      height:155px!important;
+    }
+    .card h3{
+      min-height:40px!important;
+    }
+    #retroGridContainer{
+      grid-template-columns:repeat(2,minmax(0,1fr))!important;
+      gap:12px!important;
+    }
+    .retro-cover,
+    .vg-retro-cover{
+      height:190px!important;
+    }
+    .retro-game,
+    .vg-retro-game{
+      min-height:285px!important;
+    }
+  }
+</style>
+
 </head>
 <body>
   <header class="topbar">

@@ -1902,6 +1902,272 @@
   }
 </style>
 
+
+<style id="vg-retro-header-modal-fix-v13">
+  /* ===== Xbox Retro: compactar SOLO la parte superior ===== */
+  #retroModal .retro-modal-card{
+    width:min(1580px, calc(100vw - 28px)) !important;
+    height:min(88vh, 920px) !important;
+    max-height:88vh !important;
+    border-radius:26px !important;
+  }
+
+  #retroModal .retro-head{
+    padding:12px 18px 8px !important;
+    gap:10px !important;
+  }
+
+  #retroModal .retro-head .badge{
+    padding:8px 14px !important;
+    font-size:.82rem !important;
+  }
+
+  #retroModal .retro-head h2{
+    font-size:clamp(1.9rem, 3vw, 3rem) !important;
+    line-height:.94 !important;
+    margin:8px 0 4px !important;
+  }
+
+  #retroModal .retro-head p{
+    font-size:.88rem !important;
+    line-height:1.28 !important;
+    max-width:760px !important;
+  }
+
+  #retroModal .retro-controls{
+    padding:8px 18px !important;
+    gap:10px !important;
+    grid-template-columns:minmax(240px, 1fr) 270px !important;
+  }
+
+  #retroModal .retro-controls input,
+  #retroModal .retro-controls select{
+    height:46px !important;
+    border-radius:14px !important;
+    font-size:.95rem !important;
+  }
+
+  #retroModal .retro-sales-note{
+    margin:6px 18px 0 !important;
+    padding:9px 12px !important;
+    border-radius:16px !important;
+    grid-template-columns:1fr auto !important;
+    gap:10px !important;
+  }
+
+  #retroModal .retro-sales-note b{
+    font-size:.9rem !important;
+    margin-bottom:2px !important;
+  }
+
+  #retroModal .retro-sales-note p{
+    font-size:.8rem !important;
+    line-height:1.3 !important;
+  }
+
+  #retroModal .retro-sales-note .badge{
+    padding:8px 12px !important;
+    font-size:.78rem !important;
+  }
+
+  #retroModal .retro-filter-row{
+    padding:8px 18px 0 !important;
+    gap:6px !important;
+  }
+
+  #retroModal .retro-filter-chip{
+    padding:7px 10px !important;
+    font-size:.74rem !important;
+    border-radius:999px !important;
+  }
+
+  #retroGridContainer{
+    padding:10px 18px !important;
+    gap:12px !important;
+    grid-template-columns:repeat(auto-fill, minmax(170px, 1fr)) !important;
+  }
+
+  .vg-retro-game{
+    min-height:252px !important;
+  }
+
+  .vg-retro-cover{
+    height:154px !important;
+  }
+
+  .vg-retro-info{
+    padding:9px 10px 11px !important;
+    gap:6px !important;
+  }
+
+  .vg-retro-info h4{
+    font-size:.87rem !important;
+    min-height:38px !important;
+  }
+
+  #retroModal .retro-footer{
+    padding:10px 18px !important;
+    min-height:58px !important;
+  }
+
+  #retroModal .retro-totals{
+    gap:12px !important;
+    font-size:.92rem !important;
+  }
+
+  /* ===== Modales de servicios: evitar que se vean "mochos" ===== */
+  .modal{
+    padding:14px !important;
+  }
+
+  .modal-card{
+    width:min(1080px, calc(100vw - 28px)) !important;
+    max-width:1080px !important;
+    max-height:min(88vh, 860px) !important;
+    grid-template-columns:minmax(280px, 390px) 1fr !important;
+    border-radius:24px !important;
+  }
+
+  .modal-img{
+    min-height:0 !important;
+    height:100% !important;
+  }
+
+  .modal-img img{
+    object-fit:cover !important;
+    object-position:center center !important;
+  }
+
+  .modal-body{
+    padding:18px 20px !important;
+    overflow:auto !important;
+  }
+
+  .modal-body h2{
+    margin:12px 0 10px !important;
+    font-size:clamp(1.6rem, 2.5vw, 2.4rem) !important;
+    line-height:1.04 !important;
+  }
+
+  .modal-body h3{
+    margin:12px 0 10px !important;
+  }
+
+  .modal-delivery-note{
+    margin:10px 0 12px !important;
+    padding:11px 13px !important;
+    border-radius:14px !important;
+    font-size:.88rem !important;
+  }
+
+  #modalOptions{
+    max-height:min(32vh, 310px) !important;
+    padding-right:4px !important;
+  }
+
+  .option{
+    padding:12px 14px !important;
+    margin:8px 0 !important;
+    border-radius:14px !important;
+  }
+
+  .modal-actions{
+    position:sticky !important;
+    bottom:0 !important;
+    margin-top:14px !important;
+    padding-top:12px !important;
+    padding-bottom:2px !important;
+    background:linear-gradient(180deg, rgba(14,18,32,.18), #0e1220 30%) !important;
+  }
+
+  .modal-actions .primary,
+  .modal-actions .secondary{
+    min-height:52px !important;
+    border-radius:16px !important;
+  }
+
+  @media (max-height: 900px){
+    .modal-card{
+      max-height:84vh !important;
+      grid-template-columns:minmax(250px, 340px) 1fr !important;
+    }
+    #modalOptions{
+      max-height:min(28vh, 250px) !important;
+    }
+  }
+
+  @media(max-width:760px){
+    #retroModal{padding:0 !important;}
+    #retroModal .retro-modal-card{
+      width:100vw !important;
+      height:100vh !important;
+      max-height:100vh !important;
+      border-radius:0 !important;
+    }
+    #retroModal .retro-head{
+      padding:10px 14px 6px !important;
+    }
+    #retroModal .retro-head h2{
+      font-size:1.95rem !important;
+      margin:6px 0 2px !important;
+    }
+    #retroModal .retro-head p{
+      display:none !important;
+    }
+    #retroModal .retro-controls{
+      grid-template-columns:1fr !important;
+      padding:8px 14px !important;
+    }
+    #retroModal .retro-sales-note{
+      margin:6px 14px 0 !important;
+      padding:8px 10px !important;
+      grid-template-columns:1fr !important;
+    }
+    #retroModal .retro-filter-row{
+      padding:7px 14px 0 !important;
+    }
+    #retroGridContainer{
+      grid-template-columns:repeat(2, minmax(0, 1fr)) !important;
+      padding:8px 12px !important;
+      gap:10px !important;
+    }
+    .vg-retro-cover{
+      height:146px !important;
+    }
+    .vg-retro-game{
+      min-height:244px !important;
+    }
+    #retroModal .retro-footer{
+      padding:10px 12px !important;
+    }
+
+    .modal{
+      padding:0 !important;
+    }
+    .modal-card{
+      width:100vw !important;
+      max-width:none !important;
+      max-height:100vh !important;
+      height:100vh !important;
+      border-radius:0 !important;
+      grid-template-columns:1fr !important;
+    }
+    .modal-img{
+      height:220px !important;
+      min-height:220px !important;
+    }
+    .modal-body{
+      padding:14px 14px 16px !important;
+    }
+    #modalOptions{
+      max-height:36vh !important;
+    }
+    .modal-actions{
+      padding-bottom:10px !important;
+    }
+  }
+</style>
+
 </head>
 <body>
   <header class="topbar">

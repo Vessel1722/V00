@@ -956,6 +956,151 @@
   }
 </style>
 
+
+<style id="vg-retro-covers-carousel-fix-v5">
+  .home-sections{
+    padding:4px 14px 18px !important;
+    scroll-padding-left:14px !important;
+    scroll-padding-right:14px !important;
+    box-sizing:border-box !important;
+  }
+  .home-sections::after{content:"";flex:0 0 2px;}
+  .service-carousel-card{
+    flex:0 0 min(370px, calc(100vw - 54px)) !important;
+    box-sizing:border-box !important;
+  }
+  .service-carousel-card:first-child{margin-left:2px !important;}
+  .service-carousel-card:last-child{margin-right:10px !important;}
+  .service-carousel-card img{object-position:center center !important;}
+  @media (max-width:760px){
+    .home-sections{
+      padding:4px 12px 18px !important;
+      scroll-padding-left:12px !important;
+      scroll-padding-right:12px !important;
+    }
+    .service-carousel-card{flex:0 0 min(320px, calc(100vw - 40px)) !important;}
+  }
+
+  #retroModal .retro-grid,
+  #retroGridContainer{
+    display:grid !important;
+    grid-template-columns:repeat(auto-fill,minmax(185px,1fr)) !important;
+    gap:16px !important;
+    align-content:start !important;
+    padding:18px 24px !important;
+    background:#0c1020 !important;
+  }
+  .vg-retro-game{
+    display:flex !important;
+    flex-direction:column !important;
+    min-height:320px !important;
+    border-radius:18px !important;
+    overflow:hidden !important;
+    border:1px solid rgba(255,255,255,.10) !important;
+    background:linear-gradient(180deg,#151b2b,#0d1220) !important;
+    box-shadow:0 14px 34px rgba(0,0,0,.24) !important;
+    transition:.18s ease !important;
+  }
+  .vg-retro-game:hover{border-color:rgba(25,230,193,.45) !important;transform:translateY(-2px) !important;}
+  .vg-retro-game.active{
+    border-color:rgba(25,230,193,.65) !important;
+    box-shadow:0 0 0 1px rgba(25,230,193,.38),0 16px 38px rgba(0,0,0,.28) !important;
+  }
+  .vg-retro-cover{
+    height:212px !important;
+    flex:0 0 auto !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    background:#060912 !important;
+    overflow:hidden !important;
+    position:relative !important;
+  }
+  .vg-retro-cover-bg{
+    position:absolute !important;
+    inset:0 !important;
+    background-size:cover !important;
+    background-position:center !important;
+    filter:blur(18px) brightness(.42) saturate(1.02) !important;
+    transform:scale(1.12) !important;
+    opacity:.95 !important;
+    z-index:0 !important;
+  }
+  .vg-retro-cover-img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:contain !important;
+    object-position:center center !important;
+    padding:8px !important;
+    position:relative !important;
+    z-index:1 !important;
+    background:transparent !important;
+  }
+  .vg-retro-info{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:8px !important;
+    flex:1 1 auto !important;
+    padding:12px 12px 14px !important;
+  }
+  .vg-retro-info h4{
+    margin:0 !important;
+    min-height:48px !important;
+    font-size:.92rem !important;
+    line-height:1.16 !important;
+    color:#fff !important;
+    font-weight:900 !important;
+  }
+  .vg-retro-meta{
+    margin-top:auto !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:8px !important;
+    flex-wrap:nowrap !important;
+  }
+  .vg-retro-platform{
+    font-size:.64rem !important;
+    letter-spacing:.08em !important;
+    white-space:nowrap !important;
+    padding:5px 8px !important;
+    border-radius:999px !important;
+    color:#bcfff3 !important;
+    background:rgba(25,230,193,.08) !important;
+    border:1px solid rgba(25,230,193,.28) !important;
+    font-weight:900 !important;
+    text-transform:uppercase !important;
+  }
+  .vg-retro-price{
+    font-size:.98rem !important;
+    line-height:1 !important;
+    white-space:nowrap !important;
+    font-weight:950 !important;
+    color:#fff !important;
+  }
+  .vg-retro-empty{
+    grid-column:1/-1 !important;
+    padding:40px !important;
+    text-align:center !important;
+    border-radius:22px !important;
+    border:1px dashed rgba(255,255,255,.18) !important;
+    color:#cfd7ee !important;
+    background:#111624 !important;
+  }
+  @media (max-width:760px){
+    #retroModal .retro-grid,
+    #retroGridContainer{
+      grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+      gap:10px !important;
+      padding:12px !important;
+    }
+    .vg-retro-game{min-height:272px !important;}
+    .vg-retro-cover{height:156px !important;}
+    .vg-retro-info h4{min-height:40px !important;font-size:.84rem !important;}
+    .vg-retro-price{font-size:.9rem !important;}
+  }
+</style>
+
 </head>
 <body>
   <header class="topbar">
@@ -1571,7 +1716,16 @@
   function getRetroGameImage(game){
     const custom = window.RETRO_GAME_IMAGES && window.RETRO_GAME_IMAGES[game.name];
     if(custom) return custom;
-    return makeCover(game.name, game.platform);
+    const cleanName = String(game.name || '')
+      .replace(/[®™]/g,'')
+      .replace(/\+/g, ' plus ')
+      .replace(/[:]+/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+    const isClassic = String(game.platform || '').toLowerCase().includes('cl');
+    const platformQuery = isClassic ? 'original xbox front cover box art' : 'xbox 360 front cover box art';
+    const q = `"${cleanName}" ${platformQuery} -youtube -thumbnail -disc -disk -manual`;
+    return 'https://tse4.mm.bing.net/th?q=' + encodeURIComponent(q) + '&w=800&h=1200&c=7&rs=1&qlt=95&p=0&o=5&pid=1.7&mkt=en-US';
   }
   window.adjustRetroImage = function adjustRetroImage(img){
     if(!img) return;
@@ -1623,7 +1777,7 @@
       return `<article class="vg-retro-game ${active ? 'active' : ''}" onclick="toggleRetroGame('${g.id}')">
         <div class="vg-retro-cover">
           <div class="vg-retro-cover-bg" style="background-image:url('${img}')"></div>
-          <img class="vg-retro-cover-img" loading="lazy" src="${img}" alt="${esc(g.name)}" referrerpolicy="no-referrer" onload="adjustRetroImage(this)" onerror="this.onerror=null">
+          <img class="vg-retro-cover-img" loading="lazy" src="${img}" alt="${esc(g.name)}" referrerpolicy="no-referrer" onload="adjustRetroImage(this)" onerror="this.onerror=null;this.src=makeCover(this.alt||'Xbox Retro', this.closest('.vg-retro-game')?.querySelector('.vg-retro-platform')?.textContent||'Xbox'); if(this.previousElementSibling){this.previousElementSibling.style.backgroundImage='none';}">
         </div>
         <div class="vg-retro-info">
           <h4>${esc(g.name)}</h4>

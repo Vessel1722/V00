@@ -1365,6 +1365,42 @@
   }
 </style>
 
+
+<style id="vg-carousel-elegant-slow-v9">
+  .home-sections{
+    gap:20px !important;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%) !important;
+    mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%) !important;
+  }
+
+  .service-carousel-card{
+    transition:
+      transform .45s ease,
+      border-color .45s ease,
+      box-shadow .45s ease !important;
+  }
+
+  .service-carousel-card:hover{
+    transform:translateY(-3px) scale(1.01) !important;
+  }
+
+  .service-carousel-card img{
+    transition:transform .8s ease, filter .8s ease !important;
+  }
+
+  .service-carousel-card:hover img{
+    transform:scale(1.055) !important;
+  }
+
+  @media(max-width:760px){
+    .home-sections{
+      gap:16px !important;
+      -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 10%,#000 90%,transparent 100%) !important;
+      mask-image:linear-gradient(90deg,transparent 0%,#000 10%,#000 90%,transparent 100%) !important;
+    }
+  }
+</style>
+
 </head>
 <body>
   <header class="topbar">
@@ -2141,7 +2177,7 @@
         input.value = name;
         if(typeof window.renderRetroGrid === 'function') window.renderRetroGrid();
       }
-    }, 80);
+    }, 90);
   };
 
   function safeClickName(name){
@@ -2212,7 +2248,7 @@
     let loopWidth = cloneForLoop(row);
     let paused = false;
     let last = null;
-    const speed = 0.045; // velocidad moderada
+    const speed = 0.018; // velocidad lenta y elegante
 
     const pause = () => { paused = true; };
     const play = () => { paused = false; };
@@ -2255,7 +2291,7 @@
     // Respaldo: si requestAnimationFrame se pausa por alguna razón, esto empuja suave cada 80 ms.
     window.__vesselCarouselInterval = setInterval(() => {
       if(!paused && row.scrollWidth > row.clientWidth + 20){
-        row.scrollLeft += 2.6;
+        row.scrollLeft += 1.05;
         if(row.scrollLeft >= loopWidth) row.scrollLeft = row.scrollLeft - loopWidth;
       }
     }, 80);

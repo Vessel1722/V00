@@ -2420,6 +2420,187 @@
   }
 </style>
 
+
+<style id="vg-retro-footer-top-clean-v15">
+  /* ===== Retro: parte superior más ordenada ===== */
+  #retroModal .retro-modal-card{
+    position:relative !important;
+  }
+
+  #retroModal .retro-top-shell{
+    grid-template-columns:minmax(420px,1fr) minmax(280px,.9fr) !important;
+    grid-template-areas:
+      "head promo"
+      "controls controls"
+      "filters filters" !important;
+    gap:8px 10px !important;
+    padding:10px 14px 8px !important;
+    background:linear-gradient(135deg,rgba(27,30,70,.96),rgba(8,22,40,.96)) !important;
+  }
+
+  #retroModal .retro-head{
+    grid-area:head !important;
+    padding:0 !important;
+    gap:8px !important;
+  }
+
+  #retroModal .retro-head .badge{
+    margin-bottom:6px !important;
+    padding:7px 13px !important;
+    font-size:.77rem !important;
+  }
+
+  #retroModal .retro-head h2{
+    margin:0 0 3px !important;
+    font-size:clamp(1.65rem,2.4vw,2.45rem) !important;
+    line-height:.95 !important;
+  }
+
+  #retroModal .retro-head p{
+    max-width:760px !important;
+    font-size:.82rem !important;
+    line-height:1.24 !important;
+  }
+
+  #retroModal .retro-head .x{
+    width:42px !important;
+    height:42px !important;
+  }
+
+  #retroModal .retro-controls{
+    grid-area:controls !important;
+    grid-template-columns:minmax(300px,1fr) 240px !important;
+    max-width:980px !important;
+    padding:0 !important;
+    gap:10px !important;
+  }
+
+  #retroModal .retro-controls input,
+  #retroModal .retro-controls select{
+    height:46px !important;
+    border-radius:14px !important;
+    font-size:.94rem !important;
+  }
+
+  #retroModal .retro-sales-note{
+    grid-area:promo !important;
+    margin:0 !important;
+    padding:9px 12px !important;
+    min-height:46px !important;
+    border-radius:15px !important;
+    display:grid !important;
+    grid-template-columns:1fr auto !important;
+    gap:10px !important;
+    align-items:center !important;
+  }
+
+  #retroModal .retro-sales-note b{
+    font-size:.86rem !important;
+    margin:0 0 2px !important;
+  }
+
+  #retroModal .retro-sales-note p{
+    font-size:.76rem !important;
+    line-height:1.22 !important;
+    margin:0 !important;
+  }
+
+  #retroModal .retro-sales-note .badge{
+    padding:7px 11px !important;
+    font-size:.74rem !important;
+  }
+
+  #retroModal .retro-filter-row{
+    grid-area:filters !important;
+    gap:6px !important;
+    padding:0 !important;
+    margin:0 !important;
+  }
+
+  #retroModal .retro-filter-chip{
+    padding:7px 10px !important;
+    font-size:.72rem !important;
+  }
+
+  /* ===== Más vista para juegos ===== */
+  #retroGridContainer{
+    padding:10px 14px 102px !important;
+    gap:12px !important;
+  }
+
+  /* ===== Footer transparente y solo comprar ===== */
+  #retroModal .retro-footer{
+    position:absolute !important;
+    left:0 !important;
+    right:0 !important;
+    bottom:0 !important;
+    z-index:6 !important;
+    min-height:72px !important;
+    padding:10px 14px 14px !important;
+    border-top:0 !important;
+    background:linear-gradient(180deg, rgba(9,13,25,0) 0%, rgba(9,13,25,.54) 30%, rgba(9,13,25,.84) 100%) !important;
+    backdrop-filter:blur(8px) !important;
+  }
+
+  #retroModal .retro-totals{
+    font-size:.9rem !important;
+    gap:12px !important;
+    text-shadow:0 1px 10px rgba(0,0,0,.55) !important;
+  }
+
+  #retroModal .retro-footer .modal-actions{
+    justify-content:flex-end !important;
+    gap:0 !important;
+  }
+
+  #retroModal .retro-footer .modal-actions .primary:not(.whatsapp){
+    display:none !important;
+  }
+
+  #retroModal .retro-footer .modal-actions .primary.whatsapp{
+    min-width:330px !important;
+    max-width:430px !important;
+  }
+
+  @media(max-width:980px){
+    #retroModal .retro-top-shell{
+      grid-template-columns:1fr !important;
+      grid-template-areas:
+        "head"
+        "controls"
+        "promo"
+        "filters" !important;
+      padding:10px 12px 8px !important;
+    }
+
+    #retroModal .retro-controls{
+      max-width:none !important;
+      grid-template-columns:1fr !important;
+    }
+
+    #retroModal .retro-head p{
+      display:none !important;
+    }
+
+    #retroModal .retro-sales-note{
+      grid-template-columns:1fr !important;
+    }
+
+    #retroGridContainer{
+      padding:10px 12px 112px !important;
+    }
+
+    #retroModal .retro-footer{
+      padding:10px 12px 12px !important;
+    }
+
+    #retroModal .retro-footer .modal-actions .primary.whatsapp{
+      min-width:0 !important;
+      width:100% !important;
+    }
+  }
+</style>
+
 </head>
 <body>
   <header class="topbar">

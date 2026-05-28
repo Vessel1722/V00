@@ -1282,6 +1282,89 @@
   }
 </style>
 
+
+<style id="vg-carousel-motion-working-v8">
+  /* Carrusel: centrado, con fade lateral y listo para movimiento automático */
+  .home-sections{
+    max-width:1480px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    padding:8px 34px 22px !important;
+    gap:18px !important;
+    overflow-x:auto !important;
+    scroll-snap-type:none !important;
+    scroll-behavior:auto !important;
+    scroll-padding-left:34px !important;
+    scroll-padding-right:34px !important;
+    overscroll-behavior-x:contain !important;
+    will-change:scroll-position !important;
+
+    -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 6%,#000 94%,transparent 100%) !important;
+    mask-image:linear-gradient(90deg,transparent 0%,#000 6%,#000 94%,transparent 100%) !important;
+  }
+
+  .home-sections::before,
+  .home-sections::after{
+    content:"" !important;
+    flex:0 0 16px !important;
+  }
+
+  .service-carousel-card{
+    flex:0 0 min(380px, calc(100vw - 74px)) !important;
+    height:180px !important;
+    box-sizing:border-box !important;
+    scroll-snap-align:none !important;
+  }
+
+  .service-carousel-card img{
+    object-fit:cover !important;
+    object-position:center center !important;
+  }
+
+  .service-carousel-info{
+    max-width:88% !important;
+  }
+
+  .service-carousel-info small{
+    display:-webkit-box !important;
+    -webkit-line-clamp:2 !important;
+    -webkit-box-orient:vertical !important;
+    overflow:hidden !important;
+  }
+
+  .service-carousel-card.retro-carousel-card::before{
+    background:linear-gradient(90deg,rgba(6,9,18,.88),rgba(6,9,18,.44) 58%,rgba(6,9,18,.18)) !important;
+  }
+
+  .retro-carousel-note{
+    color:#19e6c1 !important;
+    font-weight:950 !important;
+    margin-top:7px !important;
+    text-shadow:0 4px 18px rgba(0,0,0,.75) !important;
+  }
+
+  @media(max-width:760px){
+    .home-sections{
+      padding:8px 22px 20px !important;
+      gap:14px !important;
+      scroll-padding-left:22px !important;
+      scroll-padding-right:22px !important;
+      -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 9%,#000 91%,transparent 100%) !important;
+      mask-image:linear-gradient(90deg,transparent 0%,#000 9%,#000 91%,transparent 100%) !important;
+    }
+
+    .home-sections::before,
+    .home-sections::after{
+      flex-basis:10px !important;
+    }
+
+    .service-carousel-card{
+      flex-basis:min(318px, calc(100vw - 48px)) !important;
+      height:170px !important;
+    }
+  }
+</style>
+
 </head>
 <body>
   <header class="topbar">
@@ -2030,7 +2113,9 @@
 
 
 
-<script id="vg-carousel-retro-random-autoscroll-v7">
+
+
+<script id="vg-carousel-motion-working-v8">
 (function(){
   'use strict';
 
@@ -2056,8 +2141,12 @@
         input.value = name;
         if(typeof window.renderRetroGrid === 'function') window.renderRetroGrid();
       }
-    }, 70);
+    }, 80);
   };
+
+  function safeClickName(name){
+    return String(name).replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+  }
 
   function buildRetroCard(game){
     const name = game.name || 'Xbox Retro';
@@ -2070,9 +2159,7 @@
       ? window.getRetroGameImage(game)
       : (typeof window.makeRetroCover === 'function' ? window.makeRetroCover(name, platform) : 'portada.png');
 
-    const safeNameForClick = String(name).replace(/\\/g,'\\\\').replace(/'/g,"\\'");
-
-    return `<article class="service-carousel-card retro-carousel-card" onclick="openRetroGameFromCarousel('${safeNameForClick}')" title="${escapeHtmlLocal(name)}">
+    return `<article class="service-carousel-card retro-carousel-card" onclick="openRetroGameFromCarousel('${safeClickName(name)}')" title="${escapeHtmlLocal(name)}">
       <img loading="lazy" src="${img}" alt="${escapeHtmlLocal(name)}" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='portada.png'">
       <div class="service-carousel-info">
         <span class="tag">${escapeHtmlLocal(platform)}</span>
@@ -2083,100 +2170,127 @@
     </article>`;
   }
 
-  function addRandomRetroToCarousel(row){
+  function addRetroCards(row){
     const retro = Array.isArray(window.RETRO_GAMES_DATA) ? window.RETRO_GAMES_DATA : [];
-    if(!row || !retro.length || row.dataset.retroAdded === '1') return;
+    if(!row || !retro.length || row.querySelector('.retro-carousel-card')) return;
 
     const selected = shuffle(retro).slice(0, 14);
     const temp = document.createElement('div');
     temp.innerHTML = selected.map(buildRetroCard).join('');
     const cards = Array.from(temp.children);
 
-    // Intercalar juegos retro entre servicios para que aparezcan uno por uno.
     cards.forEach((card, index) => {
       const position = Math.min(row.children.length, (index + 1) * 2);
       row.insertBefore(card, row.children[position] || null);
     });
-
-    row.dataset.retroAdded = '1';
   }
 
-  function prepareLoop(row){
-    if(!row || row.dataset.loopReady === '1') return;
+  function removeOldClones(row){
+    row.querySelectorAll('[data-carousel-clone="1"]').forEach(el => el.remove());
+  }
 
-    const originalCards = Array.from(row.children);
-    if(!originalCards.length) return;
+  function cloneForLoop(row){
+    removeOldClones(row);
+    const originals = Array.from(row.children).filter(el => el.dataset.carouselClone !== '1');
+    if(!originals.length) return 0;
 
-    originalCards.forEach(card => {
+    originals.forEach(card => {
       const clone = card.cloneNode(true);
-      clone.dataset.clone = '1';
+      clone.dataset.carouselClone = '1';
       row.appendChild(clone);
     });
 
-    row.dataset.loopReady = '1';
-    row.dataset.loopWidth = String(row.scrollWidth / 2);
+    return row.scrollWidth / 2;
   }
 
-  function startModerateAutoScroll(row){
-    if(!row || row.dataset.autoScrollV7 === '1') return;
-    row.dataset.autoScrollV7 = '1';
+  function startMotion(row){
+    if(!row) return;
 
+    if(window.__vesselCarouselRAF) cancelAnimationFrame(window.__vesselCarouselRAF);
+    if(window.__vesselCarouselInterval) clearInterval(window.__vesselCarouselInterval);
+
+    let loopWidth = cloneForLoop(row);
     let paused = false;
     let last = null;
-    const speed = 0.035; // velocidad moderada, legible y constante
+    const speed = 0.045; // velocidad moderada
 
     const pause = () => { paused = true; };
     const play = () => { paused = false; };
 
-    row.addEventListener('mouseenter', pause);
-    row.addEventListener('mouseleave', play);
-    row.addEventListener('touchstart', pause, {passive:true});
-    row.addEventListener('touchend', () => setTimeout(play, 1800), {passive:true});
-    row.addEventListener('focusin', pause);
-    row.addEventListener('focusout', play);
+    if(!row.dataset.motionListeners){
+      row.addEventListener('mouseenter', pause);
+      row.addEventListener('mouseleave', play);
+      row.addEventListener('touchstart', pause, {passive:true});
+      row.addEventListener('touchend', () => setTimeout(play, 1700), {passive:true});
+      row.addEventListener('focusin', pause);
+      row.addEventListener('focusout', play);
+      row.dataset.motionListeners = '1';
+    }
+
+    function recalc(){
+      loopWidth = row.scrollWidth / 2;
+      if(row.scrollLeft >= loopWidth) row.scrollLeft = row.scrollLeft - loopWidth;
+    }
+
+    window.addEventListener('resize', () => setTimeout(recalc, 200), {passive:true});
 
     function tick(ts){
       if(last == null) last = ts;
       const delta = ts - last;
       last = ts;
 
-      if(!paused && row.scrollWidth > row.clientWidth + 8){
-        const loopWidth = Number(row.dataset.loopWidth || (row.scrollWidth / 2));
+      if(!paused && row.scrollWidth > row.clientWidth + 20){
         row.scrollLeft += delta * speed;
 
-        // Loop continuo sin salto visible
         if(row.scrollLeft >= loopWidth){
           row.scrollLeft = row.scrollLeft - loopWidth;
         }
       }
 
-      requestAnimationFrame(tick);
+      window.__vesselCarouselRAF = requestAnimationFrame(tick);
     }
 
-    requestAnimationFrame(tick);
+    window.__vesselCarouselRAF = requestAnimationFrame(tick);
+
+    // Respaldo: si requestAnimationFrame se pausa por alguna razón, esto empuja suave cada 80 ms.
+    window.__vesselCarouselInterval = setInterval(() => {
+      if(!paused && row.scrollWidth > row.clientWidth + 20){
+        row.scrollLeft += 2.6;
+        if(row.scrollLeft >= loopWidth) row.scrollLeft = row.scrollLeft - loopWidth;
+      }
+    }, 80);
   }
 
-  function init(){
+  function bootCarousel(){
     const row = document.getElementById('homeTiles');
-    if(!row) return;
+    if(!row || !row.children.length) return false;
 
-    addRandomRetroToCarousel(row);
+    addRetroCards(row);
 
-    // Espera mínima para que el navegador calcule anchos reales.
     requestAnimationFrame(() => {
-      prepareLoop(row);
-      startModerateAutoScroll(row);
+      startMotion(row);
     });
+
+    return true;
+  }
+
+  function tryBoot(){
+    let attempts = 0;
+    const timer = setInterval(() => {
+      attempts++;
+      if(bootCarousel() || attempts >= 20){
+        clearInterval(timer);
+      }
+    }, 250);
   }
 
   if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', () => setTimeout(init, 450));
+    document.addEventListener('DOMContentLoaded', tryBoot);
   }else{
-    setTimeout(init, 450);
+    tryBoot();
   }
 
-  // Reintento por si el sitio repinta el carrusel después.
-  setTimeout(init, 1400);
+  window.addEventListener('load', () => setTimeout(bootCarousel, 500));
 })();
 </script>
 

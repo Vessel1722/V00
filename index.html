@@ -2601,6 +2601,210 @@
   }
 </style>
 
+
+<style id="vg-retro-floating-buy-clean-v16">
+  /* ===== XBOX RETRO: CABECERA MÁS PROFESIONAL ===== */
+  #retroModal .retro-top-shell{
+    grid-template-columns:minmax(420px,1.15fr) minmax(360px,.95fr) !important;
+    grid-template-areas:
+      "head promo"
+      "controls controls"
+      "filters filters" !important;
+    gap:10px 14px !important;
+    padding:12px 16px 10px !important;
+    background:linear-gradient(135deg,rgba(24,29,67,.97),rgba(8,24,42,.97)) !important;
+    border-bottom:1px solid rgba(255,255,255,.08) !important;
+  }
+
+  #retroModal .retro-head{
+    align-items:start !important;
+    gap:10px !important;
+  }
+
+  #retroModal .retro-head > div{
+    min-width:0 !important;
+  }
+
+  #retroModal .retro-head .badge{
+    margin-bottom:7px !important;
+    padding:8px 14px !important;
+    font-size:.78rem !important;
+    letter-spacing:.08em !important;
+  }
+
+  #retroModal .retro-head h2{
+    margin:0 0 4px !important;
+    font-size:clamp(1.7rem,2.5vw,2.55rem) !important;
+    line-height:.94 !important;
+    letter-spacing:-.03em !important;
+  }
+
+  #retroModal .retro-head p{
+    margin:0 !important;
+    max-width:720px !important;
+    font-size:.83rem !important;
+    line-height:1.28 !important;
+    color:#b8c4dd !important;
+  }
+
+  #retroModal .retro-head .x{
+    width:44px !important;
+    height:44px !important;
+    margin-top:0 !important;
+    align-self:flex-start !important;
+  }
+
+  #retroModal .retro-controls{
+    max-width:none !important;
+    grid-template-columns:minmax(320px,1fr) 290px !important;
+    gap:12px !important;
+  }
+
+  #retroModal .retro-controls input,
+  #retroModal .retro-controls select{
+    height:48px !important;
+    border-radius:15px !important;
+  }
+
+  #retroModal .retro-sales-note{
+    padding:11px 14px !important;
+    border-radius:18px !important;
+    background:linear-gradient(135deg,rgba(15,59,89,.78),rgba(10,26,55,.78)) !important;
+  }
+
+  #retroModal .retro-sales-note b{
+    font-size:.9rem !important;
+  }
+
+  #retroModal .retro-sales-note p{
+    font-size:.78rem !important;
+    line-height:1.24 !important;
+  }
+
+  #retroModal .retro-sales-note .badge{
+    padding:8px 12px !important;
+    font-size:.75rem !important;
+  }
+
+  #retroModal .retro-filter-row{
+    gap:7px !important;
+  }
+
+  #retroModal .retro-filter-chip{
+    padding:7px 11px !important;
+    font-size:.73rem !important;
+    background:rgba(255,255,255,.05) !important;
+  }
+
+  /* ===== MÁS VISIBILIDAD A LOS JUEGOS ===== */
+  #retroGridContainer{
+    padding:12px 16px 26px !important;
+  }
+
+  /* ===== QUITAR BANNER INFERIOR Y DEJAR SOLO BOTÓN FLOTANTE ===== */
+  #retroModal .retro-footer{
+    position:absolute !important;
+    right:18px !important;
+    bottom:18px !important;
+    left:auto !important;
+    width:auto !important;
+    min-height:0 !important;
+    padding:0 !important;
+    margin:0 !important;
+    background:transparent !important;
+    border:0 !important;
+    backdrop-filter:none !important;
+    box-shadow:none !important;
+    z-index:15 !important;
+    pointer-events:none !important;
+  }
+
+  #retroModal .retro-totals{
+    display:none !important;
+  }
+
+  #retroModal .retro-footer .modal-actions{
+    margin:0 !important;
+    padding:0 !important;
+    background:transparent !important;
+    gap:0 !important;
+    justify-content:flex-end !important;
+    pointer-events:none !important;
+  }
+
+  #retroModal .retro-footer .modal-actions .secondary,
+  #retroModal .retro-footer .modal-actions .primary:not(.whatsapp){
+    display:none !important;
+  }
+
+  #retroModal .retro-footer .modal-actions .primary.whatsapp{
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    min-width:340px !important;
+    min-height:58px !important;
+    padding:0 26px !important;
+    border-radius:18px !important;
+    box-shadow:0 18px 42px rgba(0,0,0,.34), 0 0 28px rgba(41,219,113,.16) !important;
+    pointer-events:auto !important;
+  }
+
+  /* para que los juegos no queden tapados por el botón */
+  #retroGridContainer::after{
+    content:"" !important;
+    display:block !important;
+    height:84px !important;
+    grid-column:1/-1 !important;
+  }
+
+  @media(max-width:980px){
+    #retroModal .retro-top-shell{
+      grid-template-columns:1fr !important;
+      grid-template-areas:
+        "head"
+        "promo"
+        "controls"
+        "filters" !important;
+      gap:8px !important;
+      padding:10px 12px 9px !important;
+    }
+
+    #retroModal .retro-head p{
+      display:none !important;
+    }
+
+    #retroModal .retro-controls{
+      grid-template-columns:1fr !important;
+      gap:10px !important;
+    }
+
+    #retroGridContainer{
+      padding:10px 12px 96px !important;
+    }
+
+    #retroModal .retro-footer{
+      right:12px !important;
+      left:12px !important;
+      bottom:12px !important;
+    }
+
+    #retroModal .retro-footer .modal-actions{
+      width:100% !important;
+    }
+
+    #retroModal .retro-footer .modal-actions .primary.whatsapp{
+      width:100% !important;
+      min-width:0 !important;
+      min-height:54px !important;
+      border-radius:16px !important;
+    }
+
+    #retroGridContainer::after{
+      height:96px !important;
+    }
+  }
+</style>
+
 </head>
 <body>
   <header class="topbar">

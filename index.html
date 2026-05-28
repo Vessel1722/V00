@@ -1401,11 +1401,24 @@
   }
 </style>
 
+
+<style id="vg-requested-improvements-v10">
+  .floating-whatsapp{position:fixed;right:22px;bottom:22px;z-index:90;display:flex;align-items:center;gap:10px;padding:14px 18px;border-radius:999px;background:linear-gradient(135deg,#21d46f,#19e6c1);color:#03120f;font-weight:950;text-decoration:none;box-shadow:0 18px 42px rgba(0,0,0,.36),0 0 22px rgba(25,230,193,.18);border:1px solid rgba(255,255,255,.18)}
+  .floating-whatsapp:hover{transform:translateY(-2px)}.floating-whatsapp span{font-size:1.12rem}
+  .modal-delivery-note{margin:14px 0 16px;padding:13px 14px;border:1px solid rgba(25,230,193,.25);background:rgba(25,230,193,.07);color:#cffff8;border-radius:16px;font-size:.9rem;line-height:1.45}.modal-delivery-note b{color:#fff}
+  .reviews-section{margin-top:40px}.reviews-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:16px}.reviews-head h2{margin:0;font-size:clamp(1.7rem,3vw,2.65rem);text-transform:uppercase;letter-spacing:-.04em}.reviews-head p{margin:6px 0 0;color:var(--muted);line-height:1.5}
+  .reviews-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.review-card{border:1px solid rgba(255,255,255,.09);background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018)),rgba(14,18,31,.82);border-radius:22px;padding:18px;box-shadow:0 14px 36px rgba(0,0,0,.18)}.review-stars{color:#ffcf66;letter-spacing:.04em;font-weight:950;margin-bottom:10px}.review-card b{display:block;color:#fff;margin-bottom:7px}.review-card p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.48}
+  .retro-sales-note{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;margin:14px 24px 0;padding:16px 18px;border:1px solid rgba(25,230,193,.18);border-radius:20px;background:linear-gradient(135deg,rgba(25,230,193,.075),rgba(139,92,246,.075))}.retro-sales-note b{display:block;margin-bottom:5px;color:#fff;font-size:1rem}.retro-sales-note p{margin:0;color:#b8c4dd;font-size:.88rem;line-height:1.45}
+  .retro-filter-row{display:flex;flex-wrap:wrap;gap:8px;padding:12px 24px 0}.retro-filter-chip{border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.045);color:#dce4f8;border-radius:999px;padding:9px 12px;font-size:.8rem;font-weight:900;cursor:pointer}.retro-filter-chip:hover,.retro-filter-chip.active{border-color:rgba(25,230,193,.35);background:rgba(25,230,193,.10);color:#cffff8}
+  img{content-visibility:auto}
+  @media(max-width:760px){.floating-whatsapp{right:14px;bottom:16px;padding:12px 14px;font-size:.9rem}.floating-whatsapp span{font-size:1rem}.reviews-grid{grid-template-columns:1fr}.reviews-head{display:block}.retro-sales-note{grid-template-columns:1fr;margin:12px 14px 0}.retro-filter-row{padding:10px 14px 0}}
+</style>
+
 </head>
 <body>
   <header class="topbar">
     <div class="nav">
-      <a class="brand" onclick="showHome()" href="javascript:void(0)"><img id="brandLogo" alt="Vessel Games logo" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop stop-color='%2319e6c1'/%3E%3Cstop offset='.55' stop-color='%238b5cf6'/%3E%3Cstop offset='1' stop-color='%23ff5da8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%23080a12'/%3E%3Cpath d='M14 18h10l8 24 8-24h10L38 50H26L14 18z' fill='url(%23g)'/%3E%3Ccircle cx='48' cy='16' r='5' fill='%2319e6c1'/%3E%3C/svg%3E'"><span>Vessel Games<small>Catálogo digital premium</small></span></a>
+      <a class="brand" onclick="showHome()" href="javascript:void(0)"><img decoding="async" id="brandLogo" alt="Vessel Games logo" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop stop-color='%2319e6c1'/%3E%3Cstop offset='.55' stop-color='%238b5cf6'/%3E%3Cstop offset='1' stop-color='%23ff5da8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%23080a12'/%3E%3Cpath d='M14 18h10l8 24 8-24h10L38 50H26L14 18z' fill='url(%23g)'/%3E%3Ccircle cx='48' cy='16' r='5' fill='%2319e6c1'/%3E%3C/svg%3E'"><span>Vessel Games<small>Catálogo digital premium</small></span></a>
       <label class="searchbar">🔎 <input id="globalSearch" placeholder="Buscar juegos, cuentas, software, monedas..." oninput="renderProducts()"></label>
       <div class="nav-actions"><button class="pill" onclick="openWhatsAppGeneral()">WhatsApp</button><button class="pill" onclick="showSection('all')">Catálogo</button><button class="pill cart-pill" onclick="openCart()">🛒 Carrito <span class="cart-count" id="cartCount">0</span></button></div>
     </div>
@@ -1415,7 +1428,7 @@
   <main>
     <section id="homeView" class="view active">
       <div class="hero">
-        <img class="hero-bg" src="https://i.imgur.com/9j4rD8c.jpg" alt="Fondo gamer">
+        <img decoding="async" fetchpriority="high" class="hero-bg" src="https://i.imgur.com/9j4rD8c.jpg" alt="Fondo gamer">
         <video autoplay muted loop playsinline preload="auto" poster="https://i.imgur.com/9j4rD8c.jpg"><source src="https://i.imgur.com/9j4rD8c.mp4" type="video/mp4"></video>
         <div class="hero-inner">
           <div>
@@ -1465,6 +1478,15 @@
           </div>
         </section>
 
+
+        <section class="reviews-section">
+          <div class="reviews-head"><div><h2>Clientes recientes</h2><p>Opiniones cortas para dar confianza antes de comprar.</p></div></div>
+          <div class="reviews-grid">
+            <article class="review-card"><div class="review-stars">★★★★★</div><b>“Me llegó rápido”</b><p>Pedido validado por WhatsApp y entrega dentro del tiempo estimado.</p></article>
+            <article class="review-card"><div class="review-stars">★★★★★</div><b>“Todo claro para pagar”</b><p>Datos de pago visibles, total confirmado y soporte directo.</p></article>
+            <article class="review-card"><div class="review-stars">★★★★★</div><b>“Buen servicio”</b><p>Compré un servicio digital y recibí seguimiento después del pago.</p></article>
+          </div>
+        </section>
       </div>
     </section>
 
@@ -1477,12 +1499,12 @@
     </section>
   </main>
 
-  <div class="modal" id="productModal"><div class="modal-card"><div class="modal-img" id="modalImageBox"><img id="modalImage" alt=""></div><div class="modal-body"><button class="x" onclick="closeModal()">×</button><span class="badge" id="modalCat"></span><h2 id="modalTitle"></h2><p class="lead" id="modalDesc" style="font-size:.95rem"></p><h3>Selecciona una opción</h3><div id="modalOptions"></div><div class="modal-actions"><button class="primary" onclick="addSelectedToCart()">Agregar al carrito</button><button class="primary whatsapp" onclick="buySelectedNow()">Comprar / ver métodos de pago</button></div></div></div></div>
+  <div class="modal" id="productModal"><div class="modal-card"><div class="modal-img" id="modalImageBox"><img decoding="async" id="modalImage" alt=""></div><div class="modal-body"><button class="x" onclick="closeModal()">×</button><span class="badge" id="modalCat"></span><h2 id="modalTitle"></h2><p class="lead" id="modalDesc" style="font-size:.95rem"></p><div class="modal-delivery-note"><b>Entrega estimada:</b> 20 minutos a 2 horas, dependiendo del flujo de pedidos.</div><h3>Selecciona una opción</h3><div id="modalOptions"></div><div class="modal-actions"><button class="primary" onclick="addSelectedToCart()">Agregar al carrito</button><button class="primary whatsapp" onclick="buySelectedNow()">Comprar / ver métodos de pago</button></div></div></div></div>
   <div class="cart" id="cartModal"><div class="cart-panel"><button class="x" onclick="closeCart()">×</button><h2>Carrito</h2><div id="cartItems"></div><div class="cart-total"><span>Total</span><span id="cartTotal">$0 MXN</span></div><div class="modal-actions"><button class="primary whatsapp" onclick="openPaymentForCart()">Comprar / ver métodos de pago</button><button class="secondary" onclick="clearCart()">Vaciar</button></div></div></div>
 
   <div class="modal" id="paymentModal"><div class="cart-panel" style="max-width:820px"><button class="x" onclick="closePaymentModal()">×</button><h2>Datos de pago</h2><p class="lead" style="font-size:.95rem;margin-top:0">Monto total a depositar: <strong id="payModalTotal" style="color:var(--brand2)">$0 MXN</strong></p><div class="payment-grid"><div class="pay-card"><b>🏦 Transferencia BBVA</b><div class="pay-row"><p>Banco: <span>BBVA</span></p><button class="copy-pay-btn" onclick="copyPayData('BBVA')">Copiar</button></div><div class="pay-row"><p>Tarjeta: <span>4152314526718708</span></p><button class="copy-pay-btn" onclick="copyPayData('4152314526718708')">Copiar</button></div><div class="pay-row"><p>Titular: <span>DAHISE PARRA</span></p><button class="copy-pay-btn" onclick="copyPayData('DAHISE PARRA')">Copiar</button></div><button class="copy-all-pay" onclick="copyPayData('BBVA\\nTarjeta: 4152314526718708\\nTitular: DAHISE PARRA')">Copiar datos BBVA</button></div><div class="pay-card"><b>🏪 Depósito OXXO</b><div class="pay-row"><p>Banco: <span>Spin by OXXO</span></p><button class="copy-pay-btn" onclick="copyPayData('Spin by OXXO')">Copiar</button></div><div class="pay-row"><p>Tarjeta: <span>4217470022316489</span></p><button class="copy-pay-btn" onclick="copyPayData('4217470022316489')">Copiar</button></div><button class="copy-all-pay" onclick="copyPayData('Spin by OXXO\\nTarjeta: 4217470022316489')">Copiar datos OXXO</button></div><div class="pay-card"><b>💳 PayPal</b><div class="pay-row"><p>Correo: <span>Solicitar por WhatsApp</span></p><button class="copy-pay-btn" onclick="copyPayData('Solicitar PayPal por WhatsApp')">Copiar</button></div></div><div class="pay-card"><b>🔶 Binance USDT</b><div class="pay-row"><p>Pay ID: <span>000000000</span></p><button class="copy-pay-btn" onclick="copyPayData('000000000')">Copiar</button></div></div></div><div class="proof-box"><b>Después de pagar</b><br>Toma captura del comprobante y envíala por WhatsApp con tu pedido para validar la compra.<input type="file" id="proofInput" accept="image/*"></div><div class="modal-actions"><button class="primary whatsapp" onclick="sendPaymentWhatsApp()">Mandar comprobante por WhatsApp</button><button class="secondary" onclick="closePaymentModal()">Cerrar</button></div></div></div>
 
-  <div class="modal" id="retroModal"><div class="retro-modal-card"><div class="retro-head"><div><span class="badge">Xbox 360 / Clásico</span><h2>Colección Xbox Retro</h2><p>Elige tus juegos, filtra por plataforma y compra por carrito o métodos de pago.</p></div><button class="x" onclick="closeRetroModal()">×</button></div><div class="retro-controls"><input id="retroSearch" type="text" placeholder="Buscar juego por nombre..." oninput="renderRetroGrid()"><select id="retroPlatform" onchange="renderRetroGrid()"><option value="all">Todas las plataformas</option><option value="360">Xbox 360</option><option value="CLÁSICO">Xbox Clásico</option></select></div><div class="retro-grid" id="retroGridContainer"></div><div class="retro-footer"><div class="retro-totals"><span>Seleccionados: <strong id="retroCount">0</strong></span><span>Subtotal: <strong id="retroSubtotal">$0 MXN</strong></span><span>Descuento: <strong id="retroDiscount">$0 MXN</strong></span><span>Total final: <strong id="retroTotal">$0 MXN</strong></span></div><div class="modal-actions" style="position:static;padding-top:0;background:transparent;margin:0"><button class="primary" onclick="addRetroToCart()">Agregar al carrito</button><button class="primary whatsapp" onclick="buyRetroNow()">Comprar / ver métodos de pago</button></div></div></div></div>
+  <div class="modal" id="retroModal"><div class="retro-modal-card"><div class="retro-head"><div><span class="badge">Xbox 360 / Clásico</span><h2>Colección Xbox Retro</h2><p>Elige tus juegos, filtra por plataforma y compra por carrito o métodos de pago.</p></div><button class="x" onclick="closeRetroModal()">×</button></div><div class="retro-controls"><input id="retroSearch" type="text" placeholder="Buscar juego por nombre..." oninput="renderRetroGrid()"><select id="retroPlatform" onchange="renderRetroGrid()"><option value="all">Todas las plataformas</option><option value="360">Xbox 360</option><option value="CLÁSICO">Xbox Clásico</option></select></div><div class="retro-sales-note"><div><b>Arma tu paquete Xbox Retro</b><p>Xbox 360 y Xbox Clásico. Compra por juego individual o selecciona varios; 3 juegos o más aplican descuento automático.</p></div><span class="badge">3+ juegos = descuento</span></div><div class="retro-filter-row"><button class="retro-filter-chip active" type="button" onclick="setRetroQuickFilter('all', this)">Todos</button><button class="retro-filter-chip" type="button" onclick="setRetroQuickFilter('360', this)">Xbox 360</button><button class="retro-filter-chip" type="button" onclick="setRetroQuickFilter('CLÁSICO', this)">Xbox Clásico</button><button class="retro-filter-chip" type="button" onclick="setRetroQuickSearch('Gears', this)">Gears</button><button class="retro-filter-chip" type="button" onclick="setRetroQuickSearch('Call of Duty', this)">Call of Duty</button><button class="retro-filter-chip" type="button" onclick="setRetroQuickSearch('Assassin', this)">Assassin’s Creed</button></div><div class="retro-grid" id="retroGridContainer"></div><div class="retro-footer"><div class="retro-totals"><span>Seleccionados: <strong id="retroCount">0</strong></span><span>Subtotal: <strong id="retroSubtotal">$0 MXN</strong></span><span>Descuento: <strong id="retroDiscount">$0 MXN</strong></span><span>Total final: <strong id="retroTotal">$0 MXN</strong></span></div><div class="modal-actions" style="position:static;padding-top:0;background:transparent;margin:0"><button class="primary" onclick="addRetroToCart()">Agregar al carrito</button><button class="primary whatsapp" onclick="buyRetroNow()">Comprar / ver métodos de pago</button></div></div></div></div>
 
   <div id="vgToast"><div class="vg-toast-icon">✓</div><div class="vg-toast-text"><b>Agregado al carrito</b><span>Puedes seguir comprando sin abrir el carrito.</span></div></div>
 
@@ -1536,7 +1558,7 @@
     }
     function renderHome(){
       const randomServices=shuffleServices(SERVICES);
-      homeTiles.innerHTML=randomServices.map(p=>`<article class="service-carousel-card" onclick="openProduct(${p.id})" title="${escapeHtml(p.title)}"><img loading="lazy" src="${p.image}" alt="${escapeHtml(p.alt||p.title)}" referrerpolicy="no-referrer" onerror="this.src='portada.png'"><div class="service-carousel-info"><span class="tag">${escapeHtml(p.categoryName||'Servicio')}</span><b>${escapeHtml(p.title)}</b><small>${escapeHtml(p.description||'Servicio digital disponible')}</small><div class="service-carousel-price">Desde ${p.priceLabel||fmt(minPrice(p))}</div></div></article>`).join('');
+      homeTiles.innerHTML=randomServices.map(p=>`<article class="service-carousel-card" onclick="openProduct(${p.id})" title="${escapeHtml(p.title)}"><img decoding="async" loading="lazy" src="${p.image}" alt="${escapeHtml(p.alt||p.title)}" referrerpolicy="no-referrer" onerror="this.src='portada.png'"><div class="service-carousel-info"><span class="tag">${escapeHtml(p.categoryName||'Servicio')}</span><b>${escapeHtml(p.title)}</b><small>${escapeHtml(p.description||'Servicio digital disponible')}</small><div class="service-carousel-price">Desde ${p.priceLabel||fmt(minPrice(p))}</div></div></article>`).join('');
       featuredGrid.innerHTML=randomServices.slice(0,10).map(cardHTML).join('');
       startHomeCarousel();
     }
@@ -1583,7 +1605,7 @@
       showToast('Producto agregado', `${product.title} se agregó al carrito.`);
     }
 
-    function cardHTML(p){ const badge=getCardBadge(p); const optionCount=(p.options||[]).length; return `<article class="card"><div class="imgbox"><img loading="lazy" src="${p.image}" alt="${escapeHtml(p.alt||p.title)}" referrerpolicy="no-referrer" onerror="this.src='portada.png'"></div><div class="info"><div class="meta"><span class="tag">${escapeHtml(p.categoryName||'Servicio')}</span><span class="card-badge ${badge.cls}">${badge.label}</span></div><h3>${escapeHtml(p.title)}</h3><p class="desc">${escapeHtml(p.description||'Servicio digital disponible.')}</p><div class="price-line"><div><div class="from">Desde</div><div class="price">${p.priceLabel||fmt(minPrice(p))}</div><small class="option-count">${optionCount} opción(es)</small></div></div><div class="premium-actions"><button class="detail-btn" onclick="openProduct(${p.id})">${getCardAction(p)}</button><button class="quick-add-btn" title="Agregar al carrito" onclick="quickAddFirstOption(${p.id})">${cartIconSvg()}</button></div></div></article>`; }
+    function cardHTML(p){ const badge=getCardBadge(p); const optionCount=(p.options||[]).length; return `<article class="card"><div class="imgbox"><img decoding="async" loading="lazy" src="${p.image}" alt="${escapeHtml(p.alt||p.title)}" referrerpolicy="no-referrer" onerror="this.src='portada.png'"></div><div class="info"><div class="meta"><span class="tag">${escapeHtml(p.categoryName||'Servicio')}</span><span class="card-badge ${badge.cls}">${badge.label}</span></div><h3>${escapeHtml(p.title)}</h3><p class="desc">${escapeHtml(p.description||'Servicio digital disponible.')}</p><div class="price-line"><div><div class="from">Desde</div><div class="price">${p.priceLabel||fmt(minPrice(p))}</div><small class="option-count">${optionCount} opción(es)</small></div></div><div class="premium-actions"><button class="detail-btn" onclick="openProduct(${p.id})">${getCardAction(p)}</button><button class="quick-add-btn" title="Agregar al carrito" onclick="quickAddFirstOption(${p.id})">${cartIconSvg()}</button></div></div></article>`; }
     function openProduct(id){ currentProduct=SERVICES.find(s=>s.id===id); selectedOptionIndex=0; if(!currentProduct)return; if(currentProduct.title.includes('Juegos Retro')){ openRetroModal(); return; } modalImage.src=currentProduct.image; modalImageBox.style.backgroundImage=`url('${currentProduct.image}')`; modalTitle.textContent=currentProduct.title; modalCat.textContent=currentProduct.categoryName; modalDesc.textContent=currentProduct.description||'Selecciona una opción para comprar o agregar al carrito.'; renderOptions(); productModal.classList.add('active'); }
     function renderOptions(){ modalOptions.innerHTML=(currentProduct.options||[]).map((o,i)=>`<div class="option ${i===selectedOptionIndex?'active':''}" onclick="selectedOptionIndex=${i};renderOptions()"><b>${escapeHtml(o.name)}</b><strong>${fmt(o.price)}</strong></div>`).join('') || '<div class="empty">Cotización personalizada</div>'; }
     function closeModal(){productModal.classList.remove('active')}
@@ -1592,7 +1614,7 @@
     function buySelectedNow(){ const o=selectedOption(); pendingPaymentOrder={items:[{title:currentProduct.title, option:o.name, price:Number(o.price||0)}], total:Number(o.price||0), source:'producto'}; closeModal(); openPaymentModal(pendingPaymentOrder); }
     function updateCartCount(){ cartCount.textContent=cart.length; }
     function openCart(){ renderCart(); cartModal.classList.add('active'); } function closeCart(){ cartModal.classList.remove('active'); }
-    function renderCart(){ if(!cart.length){ cartItems.innerHTML='<div class="empty">Tu carrito está vacío.</div>'; cartTotal.textContent='$0 MXN'; return; } cartItems.innerHTML=`<div class="cart-items-list">${cart.map((it,i)=>`<div class="cart-item"><div class="cart-thumb"><img src="${it.image||'portada.png'}" alt="${escapeHtml(it.title)}" onerror="this.src='portada.png'"></div><div><span class="cart-title">${escapeHtml(it.title)}</span><span class="cart-option">${escapeHtml(it.option)}</span></div><div class="cart-price-box"><strong>${fmt(it.price)}</strong><button class="cart-remove-btn" onclick="cart.splice(${i},1);updateCartCount();renderCart()">Quitar</button></div></div>`).join('')}</div>`; cartTotal.textContent=fmt(cart.reduce((s,x)=>s+Number(x.price||0),0)); }
+    function renderCart(){ if(!cart.length){ cartItems.innerHTML='<div class="empty">Tu carrito está vacío.</div>'; cartTotal.textContent='$0 MXN'; return; } cartItems.innerHTML=`<div class="cart-items-list">${cart.map((it,i)=>`<div class="cart-item"><div class="cart-thumb"><img decoding="async" src="${it.image||'portada.png'}" alt="${escapeHtml(it.title)}" onerror="this.src='portada.png'"></div><div><span class="cart-title">${escapeHtml(it.title)}</span><span class="cart-option">${escapeHtml(it.option)}</span></div><div class="cart-price-box"><strong>${fmt(it.price)}</strong><button class="cart-remove-btn" onclick="cart.splice(${i},1);updateCartCount();renderCart()">Quitar</button></div></div>`).join('')}</div>`; cartTotal.textContent=fmt(cart.reduce((s,x)=>s+Number(x.price||0),0)); }
     function clearCart(){ cart=[]; updateCartCount(); renderCart(); }
     function openPaymentForCart(){ if(!cart.length)return; pendingPaymentOrder={items:[...cart], total:cart.reduce((s,x)=>s+Number(x.price||0),0), source:'carrito'}; closeCart(); openPaymentModal(pendingPaymentOrder); }
     function sendCartWhatsApp(){ openPaymentForCart(); }
@@ -1948,7 +1970,7 @@
     function renderRetroGrid(){
       const q=(retroSearch?.value||'').trim().toLowerCase(); const plat=retroPlatform?.value||'all'; const fallback=retroFallbackImage();
       let list=RETRO_GAMES.filter(g=>(plat==='all'||g.platform===plat) && (!q||g.name.toLowerCase().includes(q)));
-      retroGridContainer.innerHTML=list.map(g=>{ const active=selectedRetroGames.some(x=>x.id===g.id); const img=g.image||fallback; const slotText=g.image?'Foto del juego':'Espacio para foto del juego'; return `<article class="retro-game ${active?'active':''}" onclick="toggleRetroGame('${g.id}')"><div class="retro-cover"><img src="${img}" loading="lazy" referrerpolicy="no-referrer" onerror="this.src='${fallback}'"><div class="photo-slot">${slotText}</div></div><div class="retro-info"><h4>${escapeHtml(g.name)}</h4><div class="retro-meta"><span class="retro-platform">${g.platform}</span><span class="retro-price">${fmt(g.price)}</span></div></div></article>`; }).join('') || '<div class="retro-empty">No encontré juegos con esa búsqueda. Borra el texto o elige “Todas las plataformas”.</div>';
+      retroGridContainer.innerHTML=list.map(g=>{ const active=selectedRetroGames.some(x=>x.id===g.id); const img=g.image||fallback; const slotText=g.image?'Foto del juego':'Espacio para foto del juego'; return `<article class="retro-game ${active?'active':''}" onclick="toggleRetroGame('${g.id}')"><div class="retro-cover"><img decoding="async" src="${img}" loading="lazy" referrerpolicy="no-referrer" onerror="this.src='${fallback}'"><div class="photo-slot">${slotText}</div></div><div class="retro-info"><h4>${escapeHtml(g.name)}</h4><div class="retro-meta"><span class="retro-platform">${g.platform}</span><span class="retro-price">${fmt(g.price)}</span></div></div></article>`; }).join('') || '<div class="retro-empty">No encontré juegos con esa búsqueda. Borra el texto o elige “Todas las plataformas”.</div>';
     }
     function toggleRetroGame(id){ const g=RETRO_GAMES.find(x=>x.id===id); if(!g)return; const i=selectedRetroGames.findIndex(x=>x.id===id); if(i>=0) selectedRetroGames.splice(i,1); else selectedRetroGames.push(g); renderRetroGrid(); updateRetroTotals(); }
     function retroTotals(){ const subtotal=selectedRetroGames.reduce((s,g)=>s+g.price,0); const discount=selectedRetroGames.length>=3 ? Math.round(subtotal*0.10) : 0; return {subtotal,discount,total:subtotal-discount}; }
@@ -2077,7 +2099,7 @@
       return `<article class="vg-retro-game ${active ? 'active' : ''}" onclick="toggleRetroGame('${g.id}')">
         <div class="vg-retro-cover">
           <div class="vg-retro-cover-bg" style="background-image:url('${img}')"></div>
-          <img class="vg-retro-cover-img" loading="lazy" src="${img}" alt="${esc(g.name)}" referrerpolicy="no-referrer" onload="adjustRetroImage(this)" onerror="this.onerror=null;this.src=makeCover(this.alt||'Xbox Retro', this.closest('.vg-retro-game')?.querySelector('.vg-retro-platform')?.textContent||'Xbox'); if(this.previousElementSibling){this.previousElementSibling.style.backgroundImage='none';}">
+          <img decoding="async" class="vg-retro-cover-img" loading="lazy" src="${img}" alt="${esc(g.name)}" referrerpolicy="no-referrer" onload="adjustRetroImage(this)" onerror="this.onerror=null;this.src=makeCover(this.alt||'Xbox Retro', this.closest('.vg-retro-game')?.querySelector('.vg-retro-platform')?.textContent||'Xbox'); if(this.previousElementSibling){this.previousElementSibling.style.backgroundImage='none';}">
         </div>
         <div class="vg-retro-info">
           <h4>${esc(g.name)}</h4>
@@ -2196,7 +2218,7 @@
       : (typeof window.makeRetroCover === 'function' ? window.makeRetroCover(name, platform) : 'portada.png');
 
     return `<article class="service-carousel-card retro-carousel-card" onclick="openRetroGameFromCarousel('${safeClickName(name)}')" title="${escapeHtmlLocal(name)}">
-      <img loading="lazy" src="${img}" alt="${escapeHtmlLocal(name)}" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='portada.png'">
+      <img decoding="async" loading="lazy" src="${img}" alt="${escapeHtmlLocal(name)}" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='portada.png'">
       <div class="service-carousel-info">
         <span class="tag">${escapeHtmlLocal(platform)}</span>
         <b>${escapeHtmlLocal(name)}</b>
@@ -2330,5 +2352,65 @@
 })();
 </script>
 
+
+<script id="vg-search-filters-whatsapp-v10">
+(function(){
+  'use strict';
+  const SYNONYMS = {
+    "cod":"codpoints call of duty warzone","warzone":"codpoints call of duty","call of duty":"codpoints cod",
+    "pelis":"netflix disney max prime video streaming","peliculas":"netflix disney max prime video streaming","series":"netflix disney max prime video streaming",
+    "xbox":"game pass juegos retro xbox 360 clasico","musica":"spotify youtube premium","música":"spotify youtube premium","vpn":"nord vpn express vpn",
+    "insta":"instagram ig seguidores likes","instagram":"ig seguidores likes redes","face":"facebook seguidores reacciones vistas",
+    "free":"free fire diamantes","diamantes":"free fire","roblox":"robux","robox":"robux"
+  };
+  function expandQuery(q){
+    const clean=String(q||'').toLowerCase().trim();
+    let expanded=clean;
+    Object.entries(SYNONYMS).forEach(([key,value])=>{ if(clean.includes(key)) expanded+=' '+value; });
+    return expanded;
+  }
+  function serviceText(s){
+    return [s.title,s.displayTitle,s.description,s.categoryName,(s.options||[]).map(o=>o.name).join(' ')].join(' ').toLowerCase();
+  }
+  window.__vesselExpandedQuery = expandQuery;
+  if(typeof window.filteredServices === 'function' && !window.__vesselSynonymSearchInstalled){
+    const original = window.filteredServices;
+    window.filteredServices = function(){
+      const input=document.getElementById('globalSearch');
+      const q=(input?.value||'').trim().toLowerCase();
+      if(!q) return original();
+      const expanded=expandQuery(q);
+      let list = window.SERVICES ? window.SERVICES.filter(s => (window.activeCategory === 'all' || s.category === window.activeCategory)) : original();
+      list = list.filter(s => serviceText(s).includes(q) || serviceText(s).split(/\s+/).some(word => expanded.includes(word)) || expanded.split(/\s+/).some(word => serviceText(s).includes(word)));
+      const sort=document.getElementById('sortSelect')?.value||'default';
+      if(typeof window.minPrice === 'function'){
+        if(sort==='priceAsc') list.sort((a,b)=>window.minPrice(a)-window.minPrice(b));
+        if(sort==='priceDesc') list.sort((a,b)=>window.minPrice(b)-window.minPrice(a));
+      }
+      if(sort==='name') list.sort((a,b)=>a.title.localeCompare(b.title));
+      return list;
+    };
+    window.__vesselSynonymSearchInstalled = true;
+  }
+  window.setRetroQuickFilter = function(platform, btn){
+    const select=document.getElementById('retroPlatform'), search=document.getElementById('retroSearch');
+    if(select) select.value=platform;
+    if(search) search.value='';
+    document.querySelectorAll('.retro-filter-chip').forEach(x=>x.classList.remove('active'));
+    if(btn) btn.classList.add('active');
+    if(typeof window.renderRetroGrid==='function') window.renderRetroGrid();
+  };
+  window.setRetroQuickSearch = function(query, btn){
+    const select=document.getElementById('retroPlatform'), search=document.getElementById('retroSearch');
+    if(select) select.value='all';
+    if(search) search.value=query;
+    document.querySelectorAll('.retro-filter-chip').forEach(x=>x.classList.remove('active'));
+    if(btn) btn.classList.add('active');
+    if(typeof window.renderRetroGrid==='function') window.renderRetroGrid();
+  };
+})();
+</script>
+
+<a class="floating-whatsapp" href="https://wa.me/526611078412?text=Hola%2C%20tengo%20una%20duda%20sobre%20el%20cat%C3%A1logo%20de%20Vessel%20Games" target="_blank" rel="noopener"><span>💬</span> ¿Dudas? WhatsApp</a>
 </body>
 </html>

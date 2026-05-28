@@ -183,8 +183,6 @@
 </style>
 
 
-<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"%3E%3Cdefs%3E%3ClinearGradient id="g" x1="0" x2="1" y1="0" y2="1"%3E%3Cstop stop-color="%2319e6c1"/%3E%3Cstop offset="0.55" stop-color="%238b5cf6"/%3E%3Cstop offset="1" stop-color="%23ff5da8"/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width="64" height="64" rx="16" fill="%23080a12"/%3E%3Cpath d="M14 18h10l8 24 8-24h10L38 50H26L14 18z" fill="url(%23g)"/%3E%3Ccircle cx="48" cy="16" r="5" fill="%2319e6c1"/%3E%3C/svg%3E'>
-<link rel="apple-touch-icon" href='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"%3E%3Crect width="64" height="64" rx="16" fill="%23080a12"/%3E%3Ctext x="32" y="43" text-anchor="middle" font-size="33" font-family="Arial" font-weight="900" fill="%2319e6c1"%3EV%3C/text%3E%3C/svg%3E'>
 
 
 <style id="vg-minimal-safe-updates">
@@ -262,11 +260,180 @@
   }
 </style>
 
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop stop-color='%2319e6c1'/%3E%3Cstop offset='.55' stop-color='%238b5cf6'/%3E%3Cstop offset='1' stop-color='%23ff5da8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%23080a12'/%3E%3Cpath d='M14 18h10l8 24 8-24h10L38 50H26L14 18z' fill='url(%23g)'/%3E%3Ccircle cx='48' cy='16' r='5' fill='%2319e6c1'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop stop-color='%2319e6c1'/%3E%3Cstop offset='.55' stop-color='%238b5cf6'/%3E%3Cstop offset='1' stop-color='%23ff5da8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%23080a12'/%3E%3Cpath d='M14 18h10l8 24 8-24h10L38 50H26L14 18z' fill='url(%23g)'/%3E%3Ccircle cx='48' cy='16' r='5' fill='%2319e6c1'/%3E%3C/svg%3E">
+
+
+<style id="vg-all-updates-stable-css">
+  /* Premium estable: solo visual, no rompe selección ni filtros */
+  .brand img{
+    background:radial-gradient(circle at 70% 20%,rgba(25,230,193,.45),transparent 20%),linear-gradient(135deg,#080a12,#151932 55%,#101625)!important;
+    border:1px solid rgba(255,255,255,.14)!important;
+    box-shadow:0 0 0 1px rgba(25,230,193,.18),0 0 24px rgba(139,92,246,.20)!important;
+  }
+
+  .flame-title{
+    color:#f6f8ff!important;
+    background:none!important;
+    -webkit-background-clip:initial!important;
+    background-clip:initial!important;
+    text-shadow:0 8px 26px rgba(0,0,0,.50),0 0 24px rgba(139,92,246,.16)!important;
+    filter:none!important;
+    animation:none!important;
+  }
+  .flame-title:before{display:none!important;content:none!important}
+  .flame-title:after{
+    content:''!important;
+    position:absolute!important;
+    left:0!important;
+    right:auto!important;
+    bottom:-9px!important;
+    width:220px!important;
+    height:4px!important;
+    border-radius:999px!important;
+    background:linear-gradient(90deg,#19e6c1,#8b5cf6,#ff5da8)!important;
+    box-shadow:0 0 10px rgba(25,230,193,.25)!important;
+  }
+
+  .promo-strip{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:14px;
+    margin:26px 0 8px;
+  }
+  .promo-card{
+    border:1px solid rgba(255,255,255,.09);
+    background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018)),rgba(14,18,31,.82);
+    border-radius:22px;
+    padding:17px 18px;
+    box-shadow:0 14px 36px rgba(0,0,0,.18);
+  }
+  .promo-card b{display:block;color:#fff;margin-bottom:6px;font-size:1rem}
+  .promo-card p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.45}
+
+  .home-compact-info{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:14px;
+    margin-top:30px;
+  }
+  .home-compact-card{
+    border:1px solid rgba(255,255,255,.09);
+    background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018)),rgba(14,18,31,.82);
+    border-radius:22px;
+    padding:18px;
+    box-shadow:0 14px 36px rgba(0,0,0,.18);
+  }
+  .home-compact-card b{display:block;color:#fff;margin-bottom:7px;font-size:1.02rem}
+  .home-compact-card p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.5}
+
+  .how-buy-section,.conditions-section{
+    margin-top:40px;
+  }
+  .mini-section-title{
+    font-size:clamp(1.7rem,3vw,2.7rem);
+    margin:0 0 9px;
+    text-transform:uppercase;
+    letter-spacing:-.04em;
+  }
+  .mini-section-subtitle{
+    margin:0 0 18px;
+    color:var(--muted);
+    line-height:1.55;
+  }
+  .how-buy-grid{
+    display:grid;
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:12px;
+  }
+  .how-step,.condition-card{
+    border:1px solid rgba(255,255,255,.09);
+    background:rgba(255,255,255,.035);
+    border-radius:20px;
+    padding:16px;
+  }
+  .step-number{
+    width:34px;height:34px;border-radius:12px;display:grid;place-items:center;
+    background:linear-gradient(135deg,#19e6c1,#8b5cf6);
+    color:#07110f;font-weight:950;margin-bottom:12px;
+  }
+  .how-step b,.condition-card b{display:block;color:#fff;margin-bottom:7px}
+  .how-step p,.condition-card p{margin:0;color:var(--muted);font-size:.88rem;line-height:1.45}
+
+  .conditions-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:12px;
+  }
+
+  .grid{align-items:stretch}
+  .card{border-radius:24px!important;display:flex!important;flex-direction:column!important}
+  .imgbox{position:relative!important;height:190px!important;background:#070b15!important}
+  .imgbox img{object-fit:cover!important;object-position:center!important}
+  .info{display:flex!important;flex-direction:column!important;flex:1!important}
+  .meta{align-items:center!important}
+  .stock{display:none!important}
+  .tag{font-size:.64rem!important;padding:6px 10px!important}
+  .card-badge{
+    font-size:.62rem;
+    border:1px solid rgba(255,255,255,.10);
+    background:rgba(255,255,255,.05);
+    border-radius:999px;
+    padding:6px 9px;
+    font-weight:950;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:#eef4ff;
+    white-space:nowrap;
+  }
+  .card-badge.hot{color:#ffe6c6;background:rgba(255,180,92,.12);border-color:rgba(255,180,92,.24)}
+  .card-badge.ready{color:#c6fff6;background:rgba(25,230,193,.10);border-color:rgba(25,230,193,.27)}
+  .card-badge.premium{color:#eee6ff;background:rgba(139,92,246,.12);border-color:rgba(139,92,246,.28)}
+  .card h3{font-size:1.08rem!important;line-height:1.22!important}
+  .option-count{display:block;margin-top:6px;color:#92a0be;font-size:.76rem;font-weight:850}
+  .premium-actions{display:grid;grid-template-columns:1fr 52px;gap:10px;margin-top:14px}
+  .premium-actions .detail-btn{margin-top:0!important}
+  .quick-add-btn{
+    display:grid;place-items:center;
+    border:1px solid rgba(25,230,193,.30);
+    background:rgba(25,230,193,.075);
+    color:#dffff9;
+    border-radius:16px;
+    cursor:pointer;
+  }
+  .quick-add-btn svg{width:20px;height:20px;display:block}
+
+  .retro-cover,.vg-retro-cover{background:#050812!important}
+  .retro-cover img,.vg-retro-cover img,.vg-retro-cover .vg-retro-cover-img{
+    object-fit:contain!important;
+    object-position:center!important;
+    padding:8px!important;
+    background:radial-gradient(circle at center,rgba(255,255,255,.04),rgba(0,0,0,.14))!important;
+  }
+  #retroGridContainer{grid-template-columns:repeat(auto-fill,minmax(176px,1fr))!important;gap:16px!important}
+  .retro-cover,.vg-retro-cover{height:220px!important}
+  .retro-game,.vg-retro-game{min-height:304px!important}
+
+  @media(max-width:980px){
+    .promo-strip,.home-compact-info,.conditions-grid{grid-template-columns:1fr 1fr}
+    .how-buy-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:760px){
+    .promo-strip,.home-compact-info,.conditions-grid,.how-buy-grid{grid-template-columns:1fr}
+    .imgbox{height:145px!important}
+    .premium-actions{grid-template-columns:1fr}
+    .quick-add-btn{display:none}
+    .retro-cover,.vg-retro-cover{height:178px!important}
+    .retro-game,.vg-retro-game{min-height:268px!important}
+  }
+</style>
+
 </head>
 <body>
   <header class="topbar">
     <div class="nav">
-      <a class="brand" onclick="showHome()" href="javascript:void(0)"><img id="brandLogo" alt="Vessel Games logo" onerror="this.style.display=\'none\'"><span>Vessel Games<small>Catálogo digital premium</small></span></a>
+      <a class="brand" onclick="showHome()" href="javascript:void(0)"><img id="brandLogo" alt="Vessel Games logo" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop stop-color='%2319e6c1'/%3E%3Cstop offset='.55' stop-color='%238b5cf6'/%3E%3Cstop offset='1' stop-color='%23ff5da8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%23080a12'/%3E%3Cpath d='M14 18h10l8 24 8-24h10L38 50H26L14 18z' fill='url(%23g)'/%3E%3Ccircle cx='48' cy='16' r='5' fill='%2319e6c1'/%3E%3C/svg%3E'"><span>Vessel Games<small>Catálogo digital premium</small></span></a>
       <label class="searchbar">🔎 <input id="globalSearch" placeholder="Buscar juegos, cuentas, software, monedas..." oninput="renderProducts()"></label>
       <div class="nav-actions"><button class="pill" onclick="openWhatsAppGeneral()">WhatsApp</button><button class="pill" onclick="showSection('all')">Catálogo</button><button class="pill cart-pill" onclick="openCart()">🛒 Carrito <span class="cart-count" id="cartCount">0</span></button></div>
     </div>
@@ -291,7 +458,41 @@
         <div class="home-sections" id="homeTiles"></div>
         <section class="market-head featured-head"><div><h2 class="flame-title">Servicios destacados</h2></div><div class="tools"><button class="pill" onclick="showSection('gaming')">Juegos</button><button class="pill" onclick="showSection('software')">Software</button></div></section>
         <div class="grid" id="featuredGrid"></div>
-        <div class="trust"><div class="trust-card"><b>1. Elige producto</b><p>Abre cualquier tarjeta y selecciona la opción que necesitas.</p></div><div class="trust-card"><b>2. Agrega al carrito</b><p>Junta varios servicios en un solo pedido.</p></div><div class="trust-card"><b>3. Compra por WhatsApp</b><p>El pedido se manda preparado con tus productos.</p></div><div class="trust-card"><b>4. Soporte</b><p>Atención post-compra y seguimiento directo.</p></div></div>
+        
+        <div class="promo-strip">
+          <article class="promo-card"><b>Promos de la semana</b><p>Revisa servicios destacados y paquetes especiales disponibles.</p></article>
+          <article class="promo-card"><b>Pedido por WhatsApp</b><p>Tu carrito se manda listo para confirmar disponibilidad y pago.</p></article>
+          <article class="promo-card"><b>Catálogo gamer</b><p>Juegos, cuentas, streaming, software y servicios digitales en un solo lugar.</p></article>
+        </div>
+
+        <div class="home-compact-info">
+          <article class="home-compact-card"><b>Compra fácil</b><p>Elige producto, revisa opciones y arma tu pedido.</p></article>
+          <article class="home-compact-card"><b>Pago claro</b><p>El total y los datos aparecen antes de mandar comprobante.</p></article>
+          <article class="home-compact-card"><b>Soporte directo</b><p>Confirmación y seguimiento por WhatsApp.</p></article>
+        </div>
+
+        <section class="how-buy-section">
+          <h2 class="mini-section-title">Cómo comprar</h2>
+          <p class="mini-section-subtitle">Proceso simple para reducir dudas antes de pagar.</p>
+          <div class="how-buy-grid">
+            <article class="how-step"><span class="step-number">1</span><b>Elige producto</b><p>Busca por nombre, categoría o servicio.</p></article>
+            <article class="how-step"><span class="step-number">2</span><b>Selecciona opción</b><p>Escoge duración, paquete o variante.</p></article>
+            <article class="how-step"><span class="step-number">3</span><b>Agrega al carrito</b><p>Junta varios productos en un pedido.</p></article>
+            <article class="how-step"><span class="step-number">4</span><b>Realiza el pago</b><p>Usa el método mostrado y copia los datos.</p></article>
+            <article class="how-step"><span class="step-number">5</span><b>Envía comprobante</b><p>WhatsApp se abre con tu pedido listo.</p></article>
+          </div>
+        </section>
+
+        <section class="conditions-section">
+          <h2 class="mini-section-title">Compra con confianza</h2>
+          <p class="mini-section-subtitle">Información corta y clara para evitar confusiones.</p>
+          <div class="conditions-grid">
+            <article class="condition-card"><b>Disponibilidad</b><p>Algunos servicios pueden variar según stock o plataforma.</p></article>
+            <article class="condition-card"><b>Validación</b><p>El pedido se procesa después de confirmar el comprobante.</p></article>
+            <article class="condition-card"><b>Soporte</b><p>El seguimiento se mantiene por el mismo chat de WhatsApp.</p></article>
+          </div>
+        </section>
+
       </div>
     </section>
 
@@ -388,7 +589,29 @@
       return list;
     }
     function renderProducts(){ const list=filteredServices(); productsGrid.innerHTML=list.map(cardHTML).join(''); emptyState.style.display=list.length?'none':'block'; renderNav(); }
-    function cardHTML(p){ return `<article class="card"><div class="imgbox"><img loading="lazy" src="${p.image}" alt="${escapeHtml(p.alt||p.title)}" referrerpolicy="no-referrer" onerror="this.src='portada.png'"></div><div class="info"><div class="meta"><span class="tag">${p.categoryName}</span><span class="stock">Disponible</span></div><h3>${escapeHtml(p.title)}</h3><p class="desc">${escapeHtml(p.description||'Servicio digital con atención rápida.')}</p><div class="price-line"><div><div class="from">Desde</div><div class="price">${p.priceLabel||fmt(minPrice(p))}</div></div></div><button class="detail-btn" onclick="openProduct(${p.id})">${p.title.includes('Juegos Retro')?'Ver juegos':'Ver detalles'}</button></div></article>`; }
+    
+    function getCardBadge(p){
+      const title=(p.title||'').toLowerCase();
+      const category=(p.category||'').toLowerCase();
+      if(['free fire','codpoints','halo','game pass','juegos retro','netflix','spotify','canva'].some(k=>title.includes(k))) return {label:'Más vendido', cls:'hot'};
+      if(category==='gaming'||category==='streaming') return {label:'Disponible', cls:'ready'};
+      return {label:'Premium', cls:'premium'};
+    }
+    function getCardAction(p){ return p.title.includes('Juegos Retro') ? 'Ver juegos' : 'Ver opciones'; }
+    function cartIconSvg(){
+      return `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.2 6.8h14.1l-1.6 7.4a2 2 0 0 1-2 1.6H9.2a2 2 0 0 1-2-1.7L5.7 4.9H3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.4 20.1h.01M17.2 20.1h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M13 9.4v4M11 11.4h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`;
+    }
+    function quickAddFirstOption(id){
+      const product=SERVICES.find(s=>s.id===id);
+      if(!product) return;
+      if(product.title.includes('Juegos Retro')){ openRetroModal(); return; }
+      const option=(product.options&&product.options[0]) || {name:'Cotización personalizada', price:0};
+      cart.push({title:product.title, option:option.name, price:Number(option.price||0), image:product.image});
+      updateCartCount();
+      showToast('Producto agregado', `${product.title} se agregó al carrito.`);
+    }
+
+    function cardHTML(p){ const badge=getCardBadge(p); const optionCount=(p.options||[]).length; return `<article class="card"><div class="imgbox"><img loading="lazy" src="${p.image}" alt="${escapeHtml(p.alt||p.title)}" referrerpolicy="no-referrer" onerror="this.src='portada.png'"></div><div class="info"><div class="meta"><span class="tag">${escapeHtml(p.categoryName||'Servicio')}</span><span class="card-badge ${badge.cls}">${badge.label}</span></div><h3>${escapeHtml(p.title)}</h3><p class="desc">${escapeHtml(p.description||'Servicio digital disponible.')}</p><div class="price-line"><div><div class="from">Desde</div><div class="price">${p.priceLabel||fmt(minPrice(p))}</div><small class="option-count">${optionCount} opción(es)</small></div></div><div class="premium-actions"><button class="detail-btn" onclick="openProduct(${p.id})">${getCardAction(p)}</button><button class="quick-add-btn" title="Agregar al carrito" onclick="quickAddFirstOption(${p.id})">${cartIconSvg()}</button></div></div></article>`; }
     function openProduct(id){ currentProduct=SERVICES.find(s=>s.id===id); selectedOptionIndex=0; if(!currentProduct)return; if(currentProduct.title.includes('Juegos Retro')){ openRetroModal(); return; } modalImage.src=currentProduct.image; modalImageBox.style.backgroundImage=`url('${currentProduct.image}')`; modalTitle.textContent=currentProduct.title; modalCat.textContent=currentProduct.categoryName; modalDesc.textContent=currentProduct.description||'Selecciona una opción para comprar o agregar al carrito.'; renderOptions(); productModal.classList.add('active'); }
     function renderOptions(){ modalOptions.innerHTML=(currentProduct.options||[]).map((o,i)=>`<div class="option ${i===selectedOptionIndex?'active':''}" onclick="selectedOptionIndex=${i};renderOptions()"><b>${escapeHtml(o.name)}</b><strong>${fmt(o.price)}</strong></div>`).join('') || '<div class="empty">Cotización personalizada</div>'; }
     function closeModal(){productModal.classList.remove('active')}

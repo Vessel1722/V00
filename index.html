@@ -13,8 +13,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://www.vesselgames.xyz/portada.png" />
   <link rel="preconnect" href="https://i.imgur.com" />
-  <link rel="preload" as="video" href="https://i.imgur.com/9j4rD8c.mp4" type="video/mp4" fetchpriority="high" />
-  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=gVSIAe6cSvksgJYoX0OGivdc0k6PlJ59KWHIAxHkprAimBCrIP1lrh7Amhrm8u6IriyATmTPgMw0RmqI_wSPtCV8E_0gjvGG2ci4mtC1NUXqgo-wD-YP38DvJynXQJWjBYYsOhwioTW_WxNi8QqoUTcP-Ti1Vb0Or2Cw8-0QwOeg_xrBMebE3spMfM3syklK5lucv6D4tfv1rll80ddlptSiCvyJLsXXwVZ3lVKBweoq-cg_a87HQjtCZIiq-3Ol8ee0pB8fFoj4AAXqUcnd1Q" charset="UTF-8"></script><style>
+  <link rel="preload" as="video" href="https://i.imgur.com/9j4rD8c.mp4" type="video/mp4" fetchpriority="high" /><style>
     :root {
       --bg:#080a12; --panel:#111522; --panel2:#161b2b; --line:rgba(255,255,255,.10);
       --text:#f6f8ff; --muted:#aab2c8; --soft:#727b96; --brand:#8b5cf6; --brand2:#19e6c1;
@@ -184,1192 +183,114 @@
 </style>
 
 
-
-<style id="vg-final-gamer-retro-polish">
-  /* === AJUSTE FINAL: Servicios destacados gamer premium === */
-  .featured-head{
-    align-items:center!important;
-    margin-bottom:24px!important;
-  }
-
-  .featured-head .tools{
-    align-self:center!important;
-  }
-
-  .flame-title{
-    position:relative!important;
-    display:inline-block!important;
-    font-size:clamp(2.6rem,6vw,5.8rem)!important;
-    line-height:.88!important;
-    letter-spacing:-.06em!important;
-    text-transform:uppercase!important;
-    font-weight:950!important;
-    background:linear-gradient(180deg,#ffffff 0%,#e9f7ff 18%,#9eefff 34%,#8b5cf6 56%,#ff2d8d 78%,#ff8a1f 100%)!important;
-    -webkit-background-clip:text!important;
-    background-clip:text!important;
-    color:transparent!important;
-    text-shadow:0 0 12px rgba(25,230,193,.35),0 0 28px rgba(139,92,246,.35),0 0 52px rgba(255,45,141,.22)!important;
-    filter:drop-shadow(0 10px 18px rgba(0,0,0,.55));
-    animation:vgGamerTitlePulse 2.8s ease-in-out infinite!important;
-  }
-
-  .flame-title:before{
-    content:'';
-    position:absolute;
-    inset:-12px -20px -10px -20px;
-    background:linear-gradient(90deg,transparent,rgba(25,230,193,.16),rgba(139,92,246,.20),rgba(255,45,141,.16),transparent);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:22px;
-    z-index:-1;
-    box-shadow:inset 0 0 24px rgba(25,230,193,.08),0 0 36px rgba(139,92,246,.16);
-  }
-
-  .flame-title:after{
-    content:'';
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:-10px;
-    height:7px;
-    border-radius:999px;
-    background:linear-gradient(90deg,#19e6c1 0%,#8b5cf6 35%,#ff2d8d 68%,#ff8a1f 100%);
-    box-shadow:0 0 14px rgba(25,230,193,.55),0 0 26px rgba(139,92,246,.38),0 0 34px rgba(255,45,141,.30);
-  }
-
-  @keyframes vgGamerTitlePulse{
-    0%,100%{
-      transform:translateY(0) scale(1);
-      filter:drop-shadow(0 10px 18px rgba(0,0,0,.55)) drop-shadow(0 0 8px rgba(25,230,193,.22));
-    }
-    50%{
-      transform:translateY(-2px) scale(1.01);
-      filter:drop-shadow(0 10px 18px rgba(0,0,0,.55)) drop-shadow(0 0 18px rgba(255,45,141,.35));
-    }
-  }
-
-  /* === AJUSTE FINAL: Xbox Retro con más espacio visible para juegos === */
-  #retroModal .retro-head{
-    padding:14px 30px 12px!important;
-    min-height:auto!important;
-    align-items:center!important;
-  }
-
-  #retroModal .retro-head h2{
-    font-size:clamp(1.9rem,3.4vw,3.4rem)!important;
-    line-height:.92!important;
-    margin:8px 0 6px!important;
-    letter-spacing:-.045em!important;
-  }
-
-  #retroModal .retro-head p{
-    font-size:.9rem!important;
-    line-height:1.3!important;
-    max-width:820px!important;
-    color:#bfc8e8!important;
-  }
-
-  #retroModal .retro-head .badge{
-    padding:7px 12px!important;
-    font-size:.68rem!important;
-  }
-
-  #retroModal .retro-head .x{
-    width:42px!important;
-    height:42px!important;
-    flex-shrink:0!important;
-  }
-
-  #retroModal .retro-controls{
-    padding:12px 30px!important;
-    gap:12px!important;
-    grid-template-columns:minmax(260px,1fr) 250px!important;
-  }
-
-  #retroModal .retro-controls input,
-  #retroModal .retro-controls select{
-    height:48px!important;
-    border-radius:16px!important;
-    font-size:.94rem!important;
-  }
-
-  #retroGridContainer{
-    padding:16px 30px!important;
-    grid-template-columns:repeat(auto-fill,minmax(190px,1fr))!important;
-    gap:15px!important;
-    align-content:start!important;
-  }
-
-  .vg-retro-game{
-    min-height:268px!important;
-    border-radius:18px!important;
-  }
-
-  .vg-retro-cover{
-    height:178px!important;
-  }
-
-  .vg-retro-info{
-    padding:11px 13px!important;
-  }
-
-  .vg-retro-info h4{
-    font-size:.92rem!important;
-    line-height:1.18!important;
-    min-height:38px!important;
-    margin-bottom:9px!important;
-  }
-
-  .vg-retro-platform{
-    font-size:.64rem!important;
-    padding:5px 8px!important;
-  }
-
-  .vg-retro-price{
-    font-size:.98rem!important;
-  }
-
-  #retroModal .retro-footer{
-    padding:10px 30px!important;
-    min-height:64px!important;
-  }
-
-  #retroModal .retro-totals{
-    gap:13px!important;
-    font-size:.92rem!important;
-  }
-
-  @media(max-width:760px){
-    .flame-title{
-      font-size:2.8rem!important;
-    }
-
-    .flame-title:before{
-      inset:-10px -12px -8px -12px;
-    }
-
-    #retroModal .retro-head{
-      padding:12px 14px!important;
-    }
-
-    #retroModal .retro-head h2{
-      font-size:2rem!important;
-      margin:7px 0 0!important;
-    }
-
-    #retroModal .retro-head p{
-      display:none!important;
-    }
-
-    #retroModal .retro-controls{
-      grid-template-columns:1fr!important;
-      padding:12px 14px!important;
-    }
-
-    #retroGridContainer{
-      grid-template-columns:repeat(2,minmax(0,1fr))!important;
-      padding:12px!important;
-      gap:10px!important;
-    }
-
-    .vg-retro-cover{
-      height:145px!important;
-    }
-
-    .vg-retro-game{
-      min-height:238px!important;
-    }
-
-    #retroModal .retro-footer{
-      padding:12px 14px!important;
-    }
-  }
-</style>
-
-
-<style id="vg-user-fixes-v2">
-  /* === Ajuste limpio para el título de Servicios Destacados === */
-  .featured-head{
-    align-items:flex-end!important;
-    justify-content:space-between!important;
-    gap:16px!important;
-    margin-bottom:20px!important;
-  }
-  .flame-title{
-    position:relative!important;
-    display:inline-block!important;
-    margin:0!important;
-    padding:0 0 16px!important;
-    font-size:clamp(2.3rem,5vw,4.9rem)!important;
-    line-height:.92!important;
-    letter-spacing:-.055em!important;
-    font-weight:950!important;
-    text-transform:uppercase!important;
-    color:transparent!important;
-    background:linear-gradient(180deg,#f7fbff 0%,#b7f4ff 38%,#9b8cff 65%,#ff88c2 100%)!important;
-    -webkit-background-clip:text!important;
-    background-clip:text!important;
-    text-shadow:0 4px 16px rgba(14,18,30,.48),0 0 20px rgba(25,230,193,.10),0 0 24px rgba(139,92,246,.14)!important;
-    filter:none!important;
-    animation:none!important;
-  }
-  .flame-title:before{
-    display:none!important;
-    content:none!important;
-  }
-  .flame-title:after{
-    content:''!important;
-    position:absolute!important;
-    left:0!important;
-    right:0!important;
-    bottom:0!important;
-    height:4px!important;
-    border-radius:999px!important;
-    background:linear-gradient(90deg,rgba(25,230,193,.95),rgba(139,92,246,.92),rgba(255,136,194,.9),rgba(255,138,31,.92))!important;
-    box-shadow:0 0 10px rgba(25,230,193,.22),0 0 16px rgba(139,92,246,.18)!important;
-  }
-
-  /* === Tarjetas: un solo badge, fuera de la imagen === */
-  .card{
-    border-radius:24px!important;
-    overflow:hidden!important;
-  }
-  .imgbox{
-    position:relative!important;
-    height:190px!important;
-    background:#070b15!important;
-  }
-  .imgbox::after{
-    content:'';
-    position:absolute;
-    inset:auto 0 0 0;
-    height:48%;
-    background:linear-gradient(180deg,rgba(6,10,18,0) 0%,rgba(6,10,18,.06) 35%,rgba(6,10,18,.32) 100%);
-    pointer-events:none;
-  }
-  .imgbox img{
-    object-fit:cover!important;
-    object-position:center!important;
-  }
-  .info{
-    padding:16px 16px 18px!important;
-  }
-  .card-topline{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:8px;
-    margin-bottom:10px;
-    flex-wrap:wrap;
-  }
-  .card-badge{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    min-height:30px;
-    padding:6px 11px;
-    border-radius:999px;
-    font-size:.68rem;
-    font-weight:950;
-    letter-spacing:.08em;
-    text-transform:uppercase;
-    border:1px solid rgba(255,255,255,.08);
-    background:rgba(255,255,255,.05);
-    color:#eef4ff;
-    white-space:nowrap;
-  }
-  .card-badge.hot{
-    color:#ffd8b5;
-    background:rgba(255,136,31,.12);
-    border-color:rgba(255,136,31,.25);
-  }
-  .card-badge.ready{
-    color:#bcfff3;
-    background:rgba(25,230,193,.10);
-    border-color:rgba(25,230,193,.25);
-  }
-  .card-badge.premium{
-    color:#efe2ff;
-    background:rgba(139,92,246,.12);
-    border-color:rgba(139,92,246,.26);
-  }
-  .card h3{
-    margin:0 0 8px!important;
-    font-size:1.08rem!important;
-    line-height:1.22!important;
-    min-height:44px!important;
-  }
-  .desc{
-    min-height:48px!important;
-    margin:0 0 14px!important;
-    font-size:.84rem!important;
-    line-height:1.45!important;
-    color:#b9c4de!important;
-  }
-  .price-line{
-    margin-top:auto!important;
-    display:flex!important;
-    align-items:flex-end!important;
-    justify-content:space-between!important;
-    gap:10px!important;
-  }
-  .option-count{
-    display:block;
-    margin-top:6px;
-    color:#90a0c2;
-    font-size:.76rem;
-    font-weight:800;
-  }
-  .detail-btn{
-    margin-top:14px!important;
-    border-radius:16px!important;
-    padding:13px 14px!important;
-    background:linear-gradient(135deg,rgba(139,92,246,.78),rgba(25,230,193,.22))!important;
-    border:1px solid rgba(25,230,193,.30)!important;
-  }
-  .detail-btn:hover{
-    background:linear-gradient(135deg,rgba(139,92,246,.94),rgba(25,230,193,.34))!important;
-  }
-
-  /* === Bloque inferior simplificado === */
-  .home-compact-info{
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:14px;
-    margin-top:28px;
-  }
-  .home-compact-card{
-    background:linear-gradient(180deg,rgba(16,21,35,.95),rgba(10,13,23,.96));
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:22px;
-    padding:18px;
-    box-shadow:0 14px 34px rgba(0,0,0,.18);
-  }
-  .home-compact-card b{
-    display:block;
-    margin-bottom:8px;
-    font-size:1rem;
-  }
-  .home-compact-card p{
-    margin:0;
-    color:var(--muted);
-    line-height:1.55;
-    font-size:.92rem;
-  }
-
-  @media(max-width:980px){
-    .home-compact-info{grid-template-columns:1fr 1fr;}
-  }
-  @media(max-width:760px){
-    .flame-title{
-      font-size:2.35rem!important;
-      padding-bottom:12px!important;
-    }
-    .featured-head{
-      align-items:flex-start!important;
-    }
-    .imgbox{height:154px!important;}
-    .home-compact-info{grid-template-columns:1fr;gap:12px;}
-    .card-topline{align-items:flex-start;}
-    .card h3{font-size:.98rem!important;min-height:40px!important;}
-    .desc{display:block!important;font-size:.78rem!important;min-height:auto!important;}
-  }
-</style>
-
-
-<style id="vg-premium-v3">
-  /* =========================================================
-     VESSEL GAMES — PREMIUM V3
-     Ajustes visuales finales sin cambiar catálogo ni precios.
-     ========================================================= */
-
-  :root{
-    --premium-card:rgba(17,22,37,.88);
-    --premium-card-2:rgba(10,14,25,.96);
-    --premium-line:rgba(255,255,255,.105);
-    --premium-cyan:#19e6c1;
-    --premium-purple:#8b5cf6;
-    --premium-pink:#ff5da8;
-    --premium-gold:#ffb45c;
-  }
-
-  body{
-    background:
-      radial-gradient(circle at 10% 0%,rgba(139,92,246,.18),transparent 34%),
-      radial-gradient(circle at 90% 8%,rgba(25,230,193,.09),transparent 28%),
-      linear-gradient(180deg,#070912 0%,#090c16 45%,#06070d 100%)!important;
-  }
-
-  .wrap{
-    max-width:1500px!important;
-  }
-
-  /* ---------- Encabezado más premium ---------- */
-  .topbar{
-    background:rgba(7,9,16,.82)!important;
-    border-bottom:1px solid rgba(255,255,255,.075)!important;
-    box-shadow:0 12px 38px rgba(0,0,0,.24)!important;
-  }
-
-  .brand img{
-    box-shadow:0 0 0 1px rgba(255,255,255,.10),0 0 24px rgba(139,92,246,.22)!important;
-  }
-
-  .searchbar{
-    background:rgba(255,255,255,.045)!important;
-    border-color:rgba(255,255,255,.10)!important;
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 10px 28px rgba(0,0,0,.14)!important;
-  }
-
-  .pill{
-    background:rgba(255,255,255,.045)!important;
-    border-color:rgba(255,255,255,.105)!important;
-  }
-
-  .pill:hover,
-  .pill.active{
-    background:linear-gradient(135deg,rgba(139,92,246,.20),rgba(25,230,193,.10))!important;
-    border-color:rgba(25,230,193,.32)!important;
-  }
-
-  /* ---------- Título Servicios Destacados elegante gamer ---------- */
-  .featured-head{
-    position:relative!important;
-    margin:34px 0 24px!important;
-    padding:0!important;
-    align-items:center!important;
-  }
-
-  .featured-head::before{
-    content:'';
-    position:absolute;
-    left:0;
-    right:auto;
-    bottom:-12px;
-    width:min(520px,100%);
-    height:1px;
-    background:linear-gradient(90deg,rgba(25,230,193,.85),rgba(139,92,246,.72),transparent);
-    opacity:.9;
-  }
-
-  .flame-title{
-    position:relative!important;
-    display:inline-flex!important;
-    align-items:center!important;
-    gap:14px!important;
-    margin:0!important;
-    padding:0!important;
-    font-size:clamp(2.15rem,4.8vw,4.65rem)!important;
-    line-height:.92!important;
-    letter-spacing:-.055em!important;
-    font-weight:950!important;
-    text-transform:uppercase!important;
-    color:#f4f7ff!important;
-    background:none!important;
-    -webkit-background-clip:initial!important;
-    background-clip:initial!important;
-    text-shadow:
-      0 1px 0 rgba(255,255,255,.12),
-      0 8px 26px rgba(0,0,0,.50),
-      0 0 28px rgba(139,92,246,.16)!important;
-    filter:none!important;
-    animation:none!important;
-  }
-
-  .flame-title::before{
-    content:'★';
-    position:relative!important;
-    display:inline-grid!important;
-    place-items:center!important;
-    width:42px!important;
-    height:42px!important;
-    min-width:42px!important;
-    border-radius:14px!important;
-    font-size:1.05rem!important;
-    letter-spacing:0!important;
-    color:#07100e!important;
-    background:linear-gradient(135deg,var(--premium-cyan),#a78bfa)!important;
-    box-shadow:0 0 22px rgba(25,230,193,.22),0 12px 26px rgba(0,0,0,.30)!important;
-    z-index:1!important;
-  }
-
-  .flame-title::after{
-    content:''!important;
-    position:absolute!important;
-    left:58px!important;
-    right:auto!important;
-    bottom:-12px!important;
-    width:190px!important;
-    height:3px!important;
-    border-radius:999px!important;
-    background:linear-gradient(90deg,var(--premium-cyan),var(--premium-purple),var(--premium-pink))!important;
-    box-shadow:0 0 12px rgba(25,230,193,.32)!important;
-  }
-
-  .featured-head .tools{
-    gap:10px!important;
-  }
-
-  /* ---------- Home carousel ---------- */
-  .home-sections{
-    gap:18px!important;
-    padding-bottom:18px!important;
-  }
-
-  .service-carousel-card{
-    border-radius:26px!important;
-    border-color:rgba(255,255,255,.12)!important;
-    box-shadow:0 18px 44px rgba(0,0,0,.30)!important;
-  }
-
-  .service-carousel-card:hover{
-    transform:translateY(-5px)!important;
-    border-color:rgba(25,230,193,.38)!important;
-    box-shadow:0 22px 58px rgba(0,0,0,.38),0 0 28px rgba(139,92,246,.12)!important;
-  }
-
-  /* ---------- Grid y tarjetas premium ---------- */
-  .grid{
-    grid-template-columns:repeat(auto-fill,minmax(245px,1fr))!important;
-    gap:22px!important;
-    align-items:stretch!important;
-  }
-
-  .card{
-    display:flex!important;
-    flex-direction:column!important;
-    min-height:100%!important;
-    overflow:hidden!important;
-    border-radius:26px!important;
-    background:
-      linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015)),
-      linear-gradient(180deg,var(--premium-card),var(--premium-card-2))!important;
-    border:1px solid var(--premium-line)!important;
-    box-shadow:
-      0 20px 54px rgba(0,0,0,.30),
-      inset 0 1px 0 rgba(255,255,255,.055)!important;
-    transform:translateZ(0);
-  }
-
-  .card::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    border-radius:inherit;
-    padding:1px;
-    background:linear-gradient(135deg,rgba(25,230,193,.30),rgba(139,92,246,.24),rgba(255,93,168,.14),transparent 64%);
-    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-    -webkit-mask-composite:xor;
-    mask-composite:exclude;
-    pointer-events:none;
-    opacity:.52;
-  }
-
-  .card:hover{
-    transform:translateY(-6px)!important;
-    border-color:rgba(25,230,193,.25)!important;
-    box-shadow:
-      0 26px 70px rgba(0,0,0,.42),
-      0 0 34px rgba(139,92,246,.16),
-      inset 0 1px 0 rgba(255,255,255,.075)!important;
-  }
-
-  .imgbox{
-    position:relative!important;
-    height:198px!important;
-    overflow:hidden!important;
-    background:#070b15!important;
-    border-bottom:1px solid rgba(255,255,255,.08)!important;
-  }
-
-  .imgbox::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:
-      radial-gradient(circle at 30% 0%,rgba(25,230,193,.16),transparent 34%),
-      radial-gradient(circle at 75% 18%,rgba(139,92,246,.18),transparent 36%);
-    z-index:1;
-    opacity:.68;
-    pointer-events:none;
-    mix-blend-mode:screen;
-  }
-
-  .imgbox::after{
-    content:'';
-    position:absolute;
-    inset:auto 0 0 0;
-    height:54%;
-    z-index:2;
-    background:linear-gradient(180deg,rgba(7,10,18,0),rgba(7,10,18,.10) 45%,rgba(7,10,18,.38));
-    pointer-events:none;
-  }
-
-  .imgbox img{
-    width:100%!important;
-    height:100%!important;
-    max-width:none!important;
-    max-height:none!important;
-    object-fit:cover!important;
-    object-position:center!important;
-    filter:saturate(1.08) contrast(1.05)!important;
-    transition:transform .38s ease,filter .38s ease!important;
-  }
-
-  .card:hover .imgbox img{
-    transform:scale(1.06)!important;
-    filter:saturate(1.12) contrast(1.07) brightness(1.02)!important;
-  }
-
-  .info{
-    display:flex!important;
-    flex-direction:column!important;
-    flex:1!important;
-    padding:17px 18px 18px!important;
-  }
-
-  .card-topline{
-    display:flex!important;
-    align-items:center!important;
-    justify-content:space-between!important;
-    gap:9px!important;
-    margin-bottom:12px!important;
-  }
-
-  .tag{
-    min-height:30px!important;
-    display:inline-flex!important;
-    align-items:center!important;
-    border-radius:999px!important;
-    padding:6px 10px!important;
-    color:#d8fff9!important;
-    background:rgba(25,230,193,.085)!important;
-    border:1px solid rgba(25,230,193,.28)!important;
-    font-size:.64rem!important;
-    letter-spacing:.14em!important;
-    font-weight:950!important;
-  }
-
-  .card-badge{
-    min-height:30px!important;
-    display:inline-flex!important;
-    align-items:center!important;
-    justify-content:center!important;
-    padding:6px 10px!important;
-    border-radius:999px!important;
-    font-size:.62rem!important;
-    line-height:1!important;
-    font-weight:950!important;
-    letter-spacing:.09em!important;
-    text-transform:uppercase!important;
-    white-space:nowrap!important;
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.10)!important;
-  }
-
-  .card-badge.hot{
-    color:#ffe6c6!important;
-    background:linear-gradient(135deg,rgba(255,180,92,.20),rgba(255,93,168,.12))!important;
-    border:1px solid rgba(255,180,92,.26)!important;
-  }
-
-  .card-badge.ready{
-    color:#c6fff6!important;
-    background:rgba(25,230,193,.10)!important;
-    border:1px solid rgba(25,230,193,.27)!important;
-  }
-
-  .card-badge.premium{
-    color:#eee6ff!important;
-    background:rgba(139,92,246,.12)!important;
-    border:1px solid rgba(139,92,246,.28)!important;
-  }
-
-  .card h3{
-    margin:0 0 9px!important;
-    color:#f8faff!important;
-    font-size:1.12rem!important;
-    line-height:1.18!important;
-    min-height:42px!important;
-    letter-spacing:-.015em!important;
-  }
-
-  .desc{
-    color:#aeb9d2!important;
-    font-size:.86rem!important;
-    line-height:1.45!important;
-    min-height:50px!important;
-    margin:0 0 15px!important;
-  }
-
-  .price-line{
-    margin-top:auto!important;
-    padding-top:2px!important;
-  }
-
-  .from{
-    color:#7f8cac!important;
-    font-size:.66rem!important;
-    letter-spacing:.14em!important;
-  }
-
-  .price{
-    margin-top:2px!important;
-    color:#ffffff!important;
-    font-size:1.35rem!important;
-    line-height:1!important;
-    letter-spacing:-.025em!important;
-  }
-
-  .option-count{
-    display:block!important;
-    margin-top:7px!important;
-    color:#92a0be!important;
-    font-size:.76rem!important;
-    font-weight:850!important;
-  }
-
-  .detail-btn{
-    margin-top:16px!important;
-    min-height:52px!important;
-    border-radius:17px!important;
-    border:1px solid rgba(25,230,193,.30)!important;
-    background:
-      linear-gradient(135deg,rgba(139,92,246,.88),rgba(25,230,193,.22)),
-      rgba(255,255,255,.04)!important;
-    color:#fff!important;
-    font-weight:950!important;
-    letter-spacing:.01em!important;
-    box-shadow:0 14px 30px rgba(139,92,246,.18)!important;
-  }
-
-  .detail-btn:hover{
-    background:
-      linear-gradient(135deg,rgba(139,92,246,1),rgba(25,230,193,.35)),
-      rgba(255,255,255,.04)!important;
-    box-shadow:0 18px 38px rgba(139,92,246,.24),0 0 22px rgba(25,230,193,.10)!important;
-  }
-
-  /* ---------- Bloques informativos sin saturar ---------- */
-  .home-compact-info{
-    display:grid!important;
-    grid-template-columns:repeat(3,minmax(0,1fr))!important;
-    gap:16px!important;
-    margin-top:34px!important;
-  }
-
-  .home-compact-card{
-    position:relative!important;
-    overflow:hidden!important;
-    border-radius:24px!important;
-    padding:20px!important;
-    background:
-      linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015)),
-      rgba(14,18,31,.90)!important;
-    border:1px solid rgba(255,255,255,.09)!important;
-    box-shadow:0 16px 44px rgba(0,0,0,.22)!important;
-  }
-
-  .home-compact-card::after{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:radial-gradient(circle at 16% 0%,rgba(25,230,193,.10),transparent 34%);
-    pointer-events:none;
-  }
-
-  .home-compact-card b{
-    position:relative;
-    display:block!important;
-    margin-bottom:8px!important;
-    color:#fff!important;
-    font-size:1.05rem!important;
-  }
-
-  .home-compact-card p{
-    position:relative;
-    color:#aeb9d2!important;
-    line-height:1.52!important;
-    margin:0!important;
-    font-size:.92rem!important;
-  }
-
-  /* Si todavía existen secciones largas añadidas antes, se vuelven compactas */
-  .trust{
-    grid-template-columns:repeat(3,minmax(0,1fr))!important;
-    gap:14px!important;
-    margin-top:26px!important;
-  }
-
-  .trust-card{
-    padding:18px!important;
-    border-radius:22px!important;
-    background:rgba(14,18,31,.78)!important;
-    border-color:rgba(255,255,255,.08)!important;
-  }
-
-  /* ---------- Modal Xbox Retro premium ---------- */
-  #retroModal{
-    background:
-      radial-gradient(circle at 10% 0%,rgba(139,92,246,.18),transparent 34%),
-      rgba(3,5,10,.88)!important;
-    backdrop-filter:blur(12px)!important;
-  }
-
-  #retroModal .retro-modal-card{
-    background:#080b14!important;
-  }
-
-  #retroModal .retro-head{
-    padding:18px 30px 16px!important;
-    background:
-      radial-gradient(circle at 14% 0%,rgba(25,230,193,.14),transparent 34%),
-      linear-gradient(135deg,rgba(22,24,48,.96),rgba(8,20,31,.98))!important;
-    border-bottom:1px solid rgba(255,255,255,.09)!important;
-  }
-
-  #retroModal .retro-head h2{
-    margin:9px 0 5px!important;
-    font-size:clamp(2rem,3.5vw,3.6rem)!important;
-    letter-spacing:-.05em!important;
-  }
-
-  #retroModal .retro-head p{
-    color:#aeb9d2!important;
-    font-size:.94rem!important;
-    line-height:1.36!important;
-  }
-
-  #retroModal .retro-controls{
-    padding:13px 30px!important;
-    background:rgba(10,14,25,.94)!important;
-    border-bottom:1px solid rgba(255,255,255,.08)!important;
-  }
-
-  #retroModal .retro-controls input,
-  #retroModal .retro-controls select{
-    height:48px!important;
-    background:rgba(255,255,255,.055)!important;
-    border-color:rgba(255,255,255,.10)!important;
-    border-radius:16px!important;
-  }
-
-  #retroGridContainer{
-    padding:18px 30px!important;
-    grid-template-columns:repeat(auto-fill,minmax(184px,1fr))!important;
-    gap:16px!important;
-    background:
-      radial-gradient(circle at 80% 0%,rgba(139,92,246,.10),transparent 32%),
-      #090d18!important;
-  }
-
-  .vg-retro-game{
-    min-height:268px!important;
-    border-radius:20px!important;
-    background:
-      linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.012)),
-      linear-gradient(180deg,#151b2b,#0b101d)!important;
-    border:1px solid rgba(255,255,255,.10)!important;
-    box-shadow:0 16px 42px rgba(0,0,0,.28)!important;
-  }
-
-  .vg-retro-game:hover{
-    transform:translateY(-4px)!important;
-    border-color:rgba(25,230,193,.35)!important;
-    box-shadow:0 20px 54px rgba(0,0,0,.40),0 0 24px rgba(25,230,193,.10)!important;
-  }
-
-  .vg-retro-game.active{
-    border-color:rgba(25,230,193,.88)!important;
-    box-shadow:0 0 0 2px rgba(25,230,193,.16),0 20px 54px rgba(0,0,0,.42)!important;
-  }
-
-  .vg-retro-cover{
-    height:178px!important;
-    background:#050812!important;
-  }
-
-  .vg-retro-cover img,
-  .vg-retro-cover .vg-retro-cover-img{
-    object-fit:cover!important;
-    padding:0!important;
-  }
-
-  .vg-retro-info{
-    padding:12px 13px 13px!important;
-  }
-
-  .vg-retro-info h4{
-    font-size:.92rem!important;
-    line-height:1.18!important;
-    min-height:38px!important;
-    margin-bottom:10px!important;
-  }
-
-  .vg-retro-platform{
-    font-size:.62rem!important;
-    padding:5px 8px!important;
-    background:rgba(25,230,193,.08)!important;
-  }
-
-  .vg-retro-price{
-    font-size:1rem!important;
-  }
-
-  #retroModal .retro-footer{
-    min-height:66px!important;
-    padding:11px 30px!important;
-    background:rgba(7,10,18,.98)!important;
-    border-top:1px solid rgba(255,255,255,.08)!important;
-  }
-
-  #retroModal .retro-totals{
-    gap:12px!important;
-    color:#9eaac5!important;
-  }
-
-  #retroModal .retro-totals strong{
-    color:#fff!important;
-  }
-
-  /* ---------- Modales y pago ---------- */
-  .modal-card,
-  .cart-panel,
-  .retro-modal-card{
-    border-color:rgba(255,255,255,.10)!important;
-    box-shadow:0 28px 90px rgba(0,0,0,.55)!important;
-  }
-
-  .pay-card{
-    border-color:rgba(255,255,255,.10)!important;
-    background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.025))!important;
-    border-radius:20px!important;
-  }
-
-  .proof-box{
-    border-color:rgba(25,230,193,.25)!important;
-    background:rgba(25,230,193,.055)!important;
-  }
-
-  footer{
-    background:#05070d!important;
-    border-top:1px solid rgba(255,255,255,.08)!important;
-    color:#8f9bb7!important;
-  }
-
-  /* ---------- Responsive premium ---------- */
-  @media(max-width:1100px){
-    .grid{
-      grid-template-columns:repeat(auto-fill,minmax(220px,1fr))!important;
-    }
-    .home-compact-info,
-    .trust{
-      grid-template-columns:1fr 1fr!important;
-    }
-  }
-
-  @media(max-width:760px){
-    .featured-head{
-      align-items:flex-start!important;
-      margin-top:28px!important;
-    }
-
-    .flame-title{
-      gap:10px!important;
-      font-size:2.22rem!important;
-      line-height:.95!important;
-    }
-
-    .flame-title::before{
-      width:34px!important;
-      height:34px!important;
-      min-width:34px!important;
-      border-radius:12px!important;
-      font-size:.85rem!important;
-    }
-
-    .flame-title::after{
-      left:46px!important;
-      bottom:-10px!important;
-      width:150px!important;
-    }
-
-    .grid{
-      grid-template-columns:repeat(2,minmax(0,1fr))!important;
-      gap:12px!important;
-    }
-
-    .imgbox{
-      height:146px!important;
-    }
-
-    .info{
-      padding:12px!important;
-    }
-
-    .card-topline{
-      gap:6px!important;
-      margin-bottom:9px!important;
-    }
-
-    .tag,
-    .card-badge{
-      min-height:26px!important;
-      padding:5px 7px!important;
-      font-size:.56rem!important;
-      letter-spacing:.08em!important;
-    }
-
-    .card h3{
-      font-size:.92rem!important;
-      min-height:38px!important;
-    }
-
-    .desc{
-      display:none!important;
-    }
-
-    .price{
-      font-size:1.08rem!important;
-    }
-
-    .detail-btn{
-      min-height:46px!important;
-      padding:11px 10px!important;
-      border-radius:15px!important;
-      font-size:.88rem!important;
-    }
-
-    .home-compact-info,
-    .trust{
-      grid-template-columns:1fr!important;
-      gap:12px!important;
-    }
-
-    #retroModal .retro-head{
-      padding:14px 16px!important;
-    }
-
-    #retroModal .retro-controls{
-      padding:12px 16px!important;
-      grid-template-columns:1fr!important;
-    }
-
-    #retroGridContainer{
-      padding:12px!important;
-      grid-template-columns:repeat(2,minmax(0,1fr))!important;
-      gap:10px!important;
-    }
-
-    .vg-retro-cover{
-      height:142px!important;
-    }
-
-    .vg-retro-game{
-      min-height:238px!important;
-    }
-
-    #retroModal .retro-footer{
-      padding:12px 14px!important;
-    }
-  }
-</style>
-
-
 <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"%3E%3Cdefs%3E%3ClinearGradient id="g" x1="0" x2="1" y1="0" y2="1"%3E%3Cstop stop-color="%2319e6c1"/%3E%3Cstop offset="0.55" stop-color="%238b5cf6"/%3E%3Cstop offset="1" stop-color="%23ff5da8"/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width="64" height="64" rx="16" fill="%23080a12"/%3E%3Cpath d="M14 18h10l8 24 8-24h10L38 50H26L14 18z" fill="url(%23g)"/%3E%3Ccircle cx="48" cy="16" r="5" fill="%2319e6c1"/%3E%3C/svg%3E'>
-<link rel="apple-touch-icon" href='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"%3E%3Crect width="64" height="64" rx="16" fill="%23080a12"/%3E%3Ctext x="32" y="42" text-anchor="middle" font-size="31" font-family="Arial" font-weight="900" fill="%2319e6c1"%3EV%3C/text%3E%3C/svg%3E'>
+<link rel="apple-touch-icon" href='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"%3E%3Cdefs%3E%3ClinearGradient id="g" x1="0" x2="1" y1="0" y2="1"%3E%3Cstop stop-color="%2319e6c1"/%3E%3Cstop offset="1" stop-color="%238b5cf6"/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width="64" height="64" rx="16" fill="%23080a12"/%3E%3Cpath d="M14 18h10l8 24 8-24h10L38 50H26L14 18z" fill="url(%23g)"/%3E%3C/svg%3E'>
 
 
-<style id="vg-safe-fixes-v5">
-  /* Logo visible aunque falle la imagen original */
+<style id="vg-emergency-stable-fixes">
+  /* Corrección estable: no toca lógica, solo vista */
   .brand img{
-    background:
-      radial-gradient(circle at 65% 18%,rgba(25,230,193,.45),transparent 20%),
-      linear-gradient(135deg,#080a12,#151932 55%,#101625)!important;
+    background:radial-gradient(circle at 70% 18%,rgba(25,230,193,.42),transparent 20%),linear-gradient(135deg,#080a12,#151932 55%,#101625)!important;
     border:1px solid rgba(255,255,255,.14)!important;
     box-shadow:0 0 0 1px rgba(25,230,193,.18),0 0 24px rgba(139,92,246,.20)!important;
   }
 
-  /* Botón de carrito en tarjetas */
-  .quick-add-btn{
+  .flame-title{
+    position:relative!important;
+    display:inline-flex!important;
+    align-items:center!important;
+    gap:12px!important;
+    font-size:clamp(2.1rem,4.8vw,4.6rem)!important;
+    line-height:.92!important;
+    letter-spacing:-.05em!important;
+    color:#f6f8ff!important;
+    background:none!important;
+    -webkit-background-clip:initial!important;
+    background-clip:initial!important;
+    text-shadow:0 8px 26px rgba(0,0,0,.50),0 0 24px rgba(139,92,246,.16)!important;
+    filter:none!important;
+    animation:none!important;
+  }
+  .flame-title:before{
+    content:'★'!important;
     display:grid!important;
     place-items:center!important;
-    font-size:1.06rem!important;
-    line-height:1!important;
+    width:38px!important;
+    height:38px!important;
+    min-width:38px!important;
+    border-radius:13px!important;
+    font-size:.95rem!important;
+    color:#06110e!important;
+    background:linear-gradient(135deg,#19e6c1,#8b5cf6)!important;
+    box-shadow:0 0 18px rgba(25,230,193,.20)!important;
+    position:relative!important;
+    inset:auto!important;
+    border:0!important;
+    z-index:auto!important;
   }
-  .quick-add-btn svg{width:20px;height:20px;display:block}
-
-  /* Toast de confirmación */
-  #vgToast{
-    position:fixed;
-    left:50%;
-    bottom:26px;
-    transform:translate(-50%,20px);
-    z-index:12000;
-    min-width:min(420px,calc(100vw - 28px));
-    max-width:520px;
-    padding:14px 16px;
-    border-radius:18px;
-    background:linear-gradient(135deg,rgba(14,18,31,.96),rgba(7,12,22,.96));
-    border:1px solid rgba(25,230,193,.28);
-    color:#f6f8ff;
-    box-shadow:0 22px 60px rgba(0,0,0,.48),0 0 26px rgba(25,230,193,.12);
-    display:flex;
-    align-items:center;
-    gap:12px;
-    opacity:0;
-    pointer-events:none;
-    transition:.22s ease;
+  .flame-title:after{
+    content:''!important;
+    position:absolute!important;
+    left:50px!important;
+    right:auto!important;
+    bottom:-10px!important;
+    width:180px!important;
+    height:3px!important;
+    border-radius:999px!important;
+    background:linear-gradient(90deg,#19e6c1,#8b5cf6,#ff5da8)!important;
+    box-shadow:0 0 10px rgba(25,230,193,.25)!important;
   }
-  #vgToast.active{opacity:1;transform:translate(-50%,0)}
-  .vg-toast-icon{width:38px;height:38px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#19e6c1,#8b5cf6);color:#05100e;font-weight:950;flex-shrink:0}
-  .vg-toast-text b{display:block;font-size:.98rem;margin-bottom:2px}
-  .vg-toast-text span{display:block;color:#aeb9d2;font-size:.84rem}
 
-  /* Carrito premium con imagen */
-  .cart-panel{max-width:760px!important}
+  .card{border-radius:24px!important}
+  .imgbox{position:relative!important;height:190px!important;background:#070b15!important}
+  .imgbox img{object-fit:cover!important;object-position:center!important}
+  .meta{align-items:center!important}
+  .stock{display:none!important}
+  .tag{font-size:.64rem!important;padding:6px 10px!important}
+  .card h3{font-size:1.08rem!important;line-height:1.22!important}
+  .detail-btn{border-radius:16px!important}
+
+  /* Xbox Retro: que la portada no se corte y se vea el título del juego */
+  #retroGridContainer{grid-template-columns:repeat(auto-fill,minmax(176px,1fr))!important;gap:16px!important}
+  .vg-retro-game{min-height:312px!important}
+  .vg-retro-cover{height:230px!important;background:#050812!important;display:flex!important;align-items:center!important;justify-content:center!important;position:relative!important;overflow:hidden!important}
+  .vg-retro-cover-bg{position:absolute!important;inset:0!important;background-size:cover!important;background-position:center!important;filter:blur(18px) brightness(.42) saturate(1.12)!important;transform:scale(1.18)!important;opacity:.78!important;z-index:0!important}
+  .vg-retro-cover img,.vg-retro-cover .vg-retro-cover-img{position:relative!important;z-index:2!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;padding:8px!important;transform:none!important}
+  .vg-retro-cover.wide img,.vg-retro-cover.wide .vg-retro-cover-img{object-fit:contain!important;padding:8px!important}
+
+  /* Pago copiables */
+  .pay-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:8px 0;color:var(--muted);font-size:.92rem}
+  .pay-row p{margin:0}
+  .pay-row span{color:#fff;font-weight:900;overflow-wrap:anywhere}
+  .copy-pay-btn{border:1px solid rgba(25,230,193,.28);background:rgba(25,230,193,.08);color:#dffff9;border-radius:999px;padding:7px 10px;font-size:.74rem;font-weight:950;cursor:pointer;white-space:nowrap}
+  .copy-all-pay{width:100%;margin-top:10px;border-radius:14px;padding:10px 12px;border:1px solid rgba(139,92,246,.28);background:rgba(139,92,246,.12);color:#fff;font-weight:950;cursor:pointer}
+
+  /* Carrito con imagen */
   .cart-items-list{display:grid;gap:12px;max-height:min(48vh,430px);overflow:auto;padding-right:4px}
-  .cart-item{
-    display:grid!important;
-    grid-template-columns:64px 1fr auto!important;
-    align-items:center!important;
-    gap:14px!important;
-    padding:12px!important;
-    border:1px solid rgba(255,255,255,.08)!important;
-    border-radius:18px!important;
-    background:rgba(255,255,255,.035)!important;
-  }
+  .cart-item{display:grid!important;grid-template-columns:64px 1fr auto!important;align-items:center!important;gap:14px!important;padding:12px!important;border:1px solid rgba(255,255,255,.08)!important;border-radius:18px!important;background:rgba(255,255,255,.035)!important}
   .cart-thumb{width:64px;height:64px;border-radius:15px;overflow:hidden;background:#070b15;border:1px solid rgba(255,255,255,.08)}
   .cart-thumb img{width:100%;height:100%;object-fit:cover;object-position:center}
   .cart-title{display:block;color:#fff;font-weight:950;line-height:1.2;margin-bottom:4px}
   .cart-option{color:#aeb9d2;font-size:.86rem;line-height:1.25}
   .cart-price-box{text-align:right;min-width:98px}
-  .cart-price-box strong{display:block;font-size:1rem;margin-bottom:7px}
   .cart-remove-btn{border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.045);color:#eef4ff;border-radius:999px;padding:7px 10px;font-size:.78rem;font-weight:900;cursor:pointer}
-  .cart-remove-btn:hover{border-color:rgba(255,93,168,.32);background:rgba(255,93,168,.08)}
 
-  /* Métodos de pago copiables */
-  .pay-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:8px 0;color:var(--muted);font-size:.92rem}
-  .pay-row p{margin:0}
-  .pay-row span{color:#fff;font-weight:900;overflow-wrap:anywhere}
-  .copy-pay-btn{border:1px solid rgba(25,230,193,.28);background:rgba(25,230,193,.08);color:#dffff9;border-radius:999px;padding:7px 10px;font-size:.74rem;font-weight:950;cursor:pointer;white-space:nowrap}
-  .copy-pay-btn:hover{background:rgba(25,230,193,.14);border-color:rgba(25,230,193,.45)}
-  .copy-all-pay{width:100%;margin-top:10px;border-radius:14px;padding:10px 12px;border:1px solid rgba(139,92,246,.28);background:rgba(139,92,246,.12);color:#fff;font-weight:950;cursor:pointer}
-  .copy-all-pay:hover{background:rgba(139,92,246,.20)}
-
-  /* Xbox Retro: portada completa con fondo blur para no cortar nombre */
-  #retroGridContainer{grid-template-columns:repeat(auto-fill,minmax(176px,1fr))!important;gap:16px!important}
-  .vg-retro-game{min-height:312px!important}
-  .vg-retro-cover{height:230px!important;background:#050812!important;display:flex!important;align-items:center!important;justify-content:center!important;position:relative!important;overflow:hidden!important}
-  .vg-retro-cover-bg{position:absolute!important;inset:0!important;background-size:cover!important;background-position:center!important;filter:blur(18px) brightness(.42) saturate(1.12)!important;transform:scale(1.18)!important;opacity:.78!important;z-index:0!important}
-  .vg-retro-cover::after{content:''!important;position:absolute!important;inset:0!important;background:linear-gradient(180deg,rgba(5,8,18,.05),rgba(5,8,18,.10) 55%,rgba(5,8,18,.22))!important;z-index:1!important;pointer-events:none!important}
-  .vg-retro-cover img,.vg-retro-cover .vg-retro-cover-img{position:relative!important;z-index:2!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;padding:8px!important;transform:none!important}
-  .vg-retro-cover.wide img,.vg-retro-cover.wide .vg-retro-cover-img{object-fit:contain!important;padding:8px!important}
+  #vgToast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);z-index:12000;min-width:min(420px,calc(100vw - 28px));max-width:520px;padding:14px 16px;border-radius:18px;background:linear-gradient(135deg,rgba(14,18,31,.96),rgba(7,12,22,.96));border:1px solid rgba(25,230,193,.28);color:#f6f8ff;box-shadow:0 22px 60px rgba(0,0,0,.48),0 0 26px rgba(25,230,193,.12);display:flex;align-items:center;gap:12px;opacity:0;pointer-events:none;transition:.22s ease}
+  #vgToast.active{opacity:1;transform:translate(-50%,0)}
+  .vg-toast-icon{width:38px;height:38px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#19e6c1,#8b5cf6);color:#05100e;font-weight:950;flex-shrink:0}
+  .vg-toast-text b{display:block;font-size:.98rem;margin-bottom:2px}
+  .vg-toast-text span{display:block;color:#aeb9d2;font-size:.84rem}
 
   @media(max-width:760px){
-    .cart-item{grid-template-columns:54px 1fr!important}
-    .cart-thumb{width:54px;height:54px}
-    .cart-price-box{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;min-width:0;text-align:left}
+    .flame-title{font-size:2.15rem!important}
+    .flame-title:before{width:32px!important;height:32px!important;min-width:32px!important}
+    .flame-title:after{left:42px!important;width:140px!important}
+    .imgbox{height:145px!important}
     .vg-retro-cover{height:185px!important}
     .vg-retro-game{min-height:276px!important}
+    .cart-item{grid-template-columns:54px 1fr!important}
+    .cart-thumb{width:54px;height:54px}
+    .cart-price-box{grid-column:1/-1;display:flex;justify-content:space-between;text-align:left;min-width:0}
   }
 </style>
 
@@ -1402,7 +323,7 @@
         <div class="home-sections" id="homeTiles"></div>
         <section class="market-head featured-head"><div><h2 class="flame-title">Servicios destacados</h2></div><div class="tools"><button class="pill" onclick="showSection('gaming')">Juegos</button><button class="pill" onclick="showSection('software')">Software</button></div></section>
         <div class="grid" id="featuredGrid"></div>
-        <div class="home-compact-info"><article class="home-compact-card"><b>Compra fácil</b><p>Elige producto, revisa opciones y arma tu pedido.</p></article><article class="home-compact-card"><b>Pago claro</b><p>El total y los datos aparecen antes de mandar comprobante.</p></article><article class="home-compact-card"><b>Soporte directo</b><p>Confirmación y seguimiento por WhatsApp.</p></article></div>
+        <div class="trust"><div class="trust-card"><b>1. Elige producto</b><p>Abre cualquier tarjeta y selecciona la opción que necesitas.</p></div><div class="trust-card"><b>2. Agrega al carrito</b><p>Junta varios servicios en un solo pedido.</p></div><div class="trust-card"><b>3. Compra por WhatsApp</b><p>El pedido se manda preparado con tus productos.</p></div><div class="trust-card"><b>4. Soporte</b><p>Atención post-compra y seguimiento directo.</p></div></div>
       </div>
     </section>
 
@@ -1422,7 +343,7 @@
 
   <div class="modal" id="retroModal"><div class="retro-modal-card"><div class="retro-head"><div><span class="badge">Xbox 360 / Clásico</span><h2>Colección Xbox Retro</h2><p>Elige tus juegos, filtra por plataforma y compra por carrito o métodos de pago.</p></div><button class="x" onclick="closeRetroModal()">×</button></div><div class="retro-controls"><input id="retroSearch" type="text" placeholder="Buscar juego por nombre..." oninput="renderRetroGrid()"><select id="retroPlatform" onchange="renderRetroGrid()"><option value="all">Todas las plataformas</option><option value="360">Xbox 360</option><option value="CLÁSICO">Xbox Clásico</option></select></div><div class="retro-grid" id="retroGridContainer"></div><div class="retro-footer"><div class="retro-totals"><span>Seleccionados: <strong id="retroCount">0</strong></span><span>Subtotal: <strong id="retroSubtotal">$0 MXN</strong></span><span>Descuento: <strong id="retroDiscount">$0 MXN</strong></span><span>Total final: <strong id="retroTotal">$0 MXN</strong></span></div><div class="modal-actions" style="position:static;padding-top:0;background:transparent;margin:0"><button class="primary" onclick="addRetroToCart()">Agregar al carrito</button><button class="primary whatsapp" onclick="buyRetroNow()">Comprar / ver métodos de pago</button></div></div></div></div>
 
-  <div id="vgToast"><div class="vg-toast-icon">✓</div><div class="vg-toast-text"><b>Agregado al carrito</b><span>Puedes seguir comprando o abrir el carrito cuando quieras.</span></div></div>
+  <div id="vgToast"><div class="vg-toast-icon">✓</div><div class="vg-toast-text"><b>Agregado al carrito</b><span>Puedes seguir comprando sin abrir el carrito.</span></div></div>
 
   <footer>Vessel Games · Catálogo digital premium · WhatsApp 661 107 8412</footer>
 
@@ -1441,18 +362,18 @@
     let activeCategory='all'; let cart=[]; let currentProduct=null; let selectedOptionIndex=0;
     document.getElementById('brandLogo').src = LOGO_SRC;
 
-    function showToast(title='Agregado al carrito', subtitle='Puedes seguir comprando o abrir el carrito cuando quieras.'){
+    function showToast(title='Agregado al carrito', subtitle='Puedes seguir comprando sin abrir el carrito.'){
       const toast=document.getElementById('vgToast'); if(!toast) return;
       const b=toast.querySelector('b'); const s=toast.querySelector('span');
       if(b) b.textContent=title; if(s) s.textContent=subtitle;
       toast.classList.add('active'); clearTimeout(window.__vgToastTimer);
-      window.__vgToastTimer=setTimeout(()=>toast.classList.remove('active'),2400);
+      window.__vgToastTimer=setTimeout(()=>toast.classList.remove('active'),2200);
     }
     async function copyPayData(value){
       const txt=String(value).replaceAll('\\\\n','\\n');
       try{ await navigator.clipboard.writeText(txt); }
       catch(err){ const area=document.createElement('textarea'); area.value=txt; document.body.appendChild(area); area.select(); document.execCommand('copy'); area.remove(); }
-      showToast('Datos copiados','Ya puedes pegarlos en tu app de pago.');
+      showToast('Datos copiados','Listo para pegar en tu app de pago.');
     }
     function cartIconSvg(){
       return `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.2 6.8h14.1l-1.6 7.4a2 2 0 0 1-2 1.6H9.2a2 2 0 0 1-2-1.7L5.7 4.9H3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.4 20.1h.01M17.2 20.1h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M13 9.4v4M11 11.4h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`;
@@ -1502,73 +423,12 @@
       return list;
     }
     function renderProducts(){ const list=filteredServices(); productsGrid.innerHTML=list.map(cardHTML).join(''); emptyState.style.display=list.length?'none':'block'; renderNav(); }
-    function getCardBadge(p){ const title=(p.title||'').toLowerCase(); const category=(p.category||'').toLowerCase(); if(['free fire','codpoints','halo','game pass','juegos retro','netflix','spotify','canva'].some(k=>title.includes(k))) return {label:'Más vendido', cls:'hot'}; if(category==='gaming' || category==='streaming') return {label:'Disponible', cls:'ready'}; return {label:'Premium', cls:'premium'}; }
+    function getCardBadge(p){ const title=(p.title||'').toLowerCase(); const category=(p.category||'').toLowerCase(); if(['free fire','codpoints','halo','game pass','juegos retro','netflix','spotify','canva'].some(k=>title.includes(k))) return {label:'Más vendido', cls:'hot'}; if(category==='gaming'||category==='streaming') return {label:'Disponible', cls:'ready'}; return {label:'Premium', cls:'premium'}; }
     function getCardAction(p){ return p.title.includes('Juegos Retro') ? 'Ver juegos' : 'Ver opciones'; }
-        function cardHTML(p){
+    function cardHTML(p){
       const badge=getCardBadge(p);
       const optionCount=(p.options||[]).length;
-      const price=p.priceLabel||fmt(minPrice(p));
-      return `<article class="card premium-product-card">
-        <div class="imgbox">
-          <img loading="lazy" src="${p.image}" alt="${escapeHtml(p.alt||p.title)}" referrerpolicy="no-referrer" onerror="this.src='portada.png'">
-        </div>
-        <div class="info">
-          <div class="card-topline">
-            <span class="tag">${escapeHtml(p.categoryName||'Servicio')}</span>
-            <span class="card-badge ${badge.cls}">${badge.label}</span>
-          </div>
-          <h3>${escapeHtml(p.title)}</h3>
-          <p class="desc">${escapeHtml(p.description||'Servicio digital disponible.')}</p>
-          <div class="price-line">
-            <div>
-              <div class="from">Desde</div>
-              <div class="price">${price}</div>
-              <small class="option-count">${optionCount} opción(es) disponibles</small>
-            </div>
-          </div>
-          <div class="premium-actions">
-            <button class="detail-btn" onclick="openProduct(${p.id})">${getCardAction(p)}</button>
-            <button class="quick-add-btn" title="Agregar primera opción al carrito" onclick="quickAddFirstOption(${p.id})">${cartIconSvg()}</button>
-          </div>
-        </div>
-      </article>`;
-    }
-    
-    function quickAddFirstOption(id){
-      const product=SERVICES.find(s=>s.id===id);
-      if(!product) return;
-      if(product.title.includes('Juegos Retro')){ openRetroModal(); return; }
-      const option=(product.options&&product.options[0]) || {name:'Cotización personalizada', price:0};
-      cart.push({title:product.title, option:option.name, price:Number(option.price||0), image:product.image});
-      updateCartCount();
-      showToast('Producto agregado', `${product.title} se agregó al carrito.`);
-    }
-
-    function openProduct(id){ currentProduct=SERVICES.find(s=>s.id===id); selectedOptionIndex=0; if(!currentProduct)return; if(currentProduct.title.includes('Juegos Retro')){ openRetroModal(); return; } modalImage.src=currentProduct.image; modalImageBox.style.backgroundImage=`url('${currentProduct.image}')`; modalTitle.textContent=currentProduct.title; modalCat.textContent=currentProduct.categoryName; modalDesc.textContent=currentProduct.description||'Selecciona una opción para comprar o agregar al carrito.'; renderOptions(); productModal.classList.add('active'); }
-    function renderOptions(){ modalOptions.innerHTML=(currentProduct.options||[]).map((o,i)=>`<div class="option ${i===selectedOptionIndex?'active':''}" onclick="selectedOptionIndex=${i};renderOptions()"><b>${escapeHtml(o.name)}</b><strong>${fmt(o.price)}</strong></div>`).join('') || '<div class="empty">Cotización personalizada</div>'; }
-    function closeModal(){productModal.classList.remove('active')}
-    function selectedOption(){ return (currentProduct.options&&currentProduct.options[selectedOptionIndex]) || {name:'Cotización personalizada', price:0}; }
-    function addSelectedToCart(){ const o=selectedOption(); cart.push({title:currentProduct.title, option:o.name, price:Number(o.price||0), image:currentProduct.image}); updateCartCount(); closeModal(); showToast('Producto agregado', `${currentProduct.title} se agregó al carrito.`); }); updateCartCount(); closeModal(); openCart(); }
-    function buySelectedNow(){ const o=selectedOption(); pendingPaymentOrder={items:[{title:currentProduct.title, option:o.name, price:Number(o.price||0)}], total:Number(o.price||0), source:'producto'}; closeModal(); openPaymentModal(pendingPaymentOrder); }
-    function updateCartCount(){ cartCount.textContent=cart.length; }
-    function openCart(){ renderCart(); cartModal.classList.add('active'); } function closeCart(){ cartModal.classList.remove('active'); }
-    function renderCart(){
-      if(!cart.length){ cartItems.innerHTML='<div class="empty">Tu carrito está vacío.</div>'; cartTotal.textContent='$0 MXN'; return; }
-      cartItems.innerHTML=`<div class="cart-items-list">${cart.map((it,i)=>`<div class="cart-item"><div class="cart-thumb"><img src="${it.image||'portada.png'}" alt="${escapeHtml(it.title)}" onerror="this.src='portada.png'"></div><div><span class="cart-title">${escapeHtml(it.title)}</span><span class="cart-option">${escapeHtml(it.option)}</span></div><div class="cart-price-box"><strong>${fmt(it.price)}</strong><button class="cart-remove-btn" onclick="cart.splice(${i},1);updateCartCount();renderCart()">Quitar</button></div></div>`).join('')}</div>`;
-      cartTotal.textContent=fmt(cart.reduce((s,x)=>s+Number(x.price||0),0));
-    }
-    function clearCart(){ cart=[]; updateCartCount(); renderCart(); }
-    function openPaymentForCart(){ if(!cart.length)return; pendingPaymentOrder={items:[...cart], total:cart.reduce((s,x)=>s+Number(x.price||0),0), source:'carrito'}; closeCart(); openPaymentModal(pendingPaymentOrder); }
-    function sendCartWhatsApp(){ openPaymentForCart(); }
-    
-    function openPaymentModal(order){ pendingPaymentOrder=order; payModalTotal.textContent=fmt(order.total||0); paymentModal.classList.add('active'); }
-    function closePaymentModal(){ paymentModal.classList.remove('active'); }
-    function sendPaymentWhatsApp(){
-      if(!pendingPaymentOrder) return;
-      const lines=pendingPaymentOrder.items.map((it,i)=>`${i+1}. ${it.title} - ${it.option} - ${fmt(it.price)}`).join('\n');
-      const total=fmt(pendingPaymentOrder.total||0);
-      const text=`Hola, ya voy a realizar / ya realicé el pago de este pedido:\n\n${lines}\n\nTotal: ${total}\n\nAdjunto comprobante en este chat.`;
-      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`,'_blank');
+      return `<article class="card"><div class="imgbox"><img loading="lazy" src="${p.image}" alt="${escapeHtml(p.alt||p.title)}" referrerpolicy="no-referrer" onerror="this.src='portada.png'"></div><div class="info"><div class="meta"><span class="tag">${escapeHtml(p.categoryName||'Servicio')}</span><span class="card-badge ${badge.cls}" style="font-size:.62rem;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.05);border-radius:999px;padding:6px 9px;font-weight:950;text-transform:uppercase;letter-spacing:.08em">${badge.label}</span></div><h3>${escapeHtml(p.title)}</h3><p class="desc">${escapeHtml(p.description||'Servicio digital disponible.')}</p><div class="price-line"><div><div class="from">Desde</div><div class="price">${p.priceLabel||fmt(minPrice(p))}</div><small class="option-count" style="display:block;margin-top:6px;color:#92a0be;font-size:.76rem;font-weight:850">${optionCount} opción(es)</small></div></div><div style="display:grid;grid-template-columns:1fr 52px;gap:10px;margin-top:14px"><button class="detail-btn" style="margin-top:0" onclick="openProduct(${p.id})">${getCardAction(p)}</button><button class="quick-add-btn" title="Agregar al carrito" style="border:1px solid rgba(25,230,193,.30);background:rgba(25,230,193,.075);color:#dffff9;border-radius:16px;cursor:pointer" onclick="quickAddFirstOption(${p.id})">${cartIconSvg()}</button></div></div></article>`;
     }
 
     // ===== LISTA XBOX 360 / XBOX CLÁSICO =====

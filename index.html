@@ -571,6 +571,235 @@
   }
 </style>
 
+
+<style id="vg-layout-cleanup-v3">
+  /* =========================================================
+     Ajustes solicitados:
+     - 5 productos por fila en desktop para ver más catálogo.
+     - Xbox Retro con precio/etiqueta bien visibles.
+     - Parte baja de la página más limpia y menos confusa.
+     ========================================================= */
+
+  /* ---- Catálogo: 5 productos por fila ---- */
+  @media (min-width: 1200px){
+    .grid{
+      grid-template-columns:repeat(5,minmax(0,1fr))!important;
+      gap:16px!important;
+    }
+  }
+
+  @media (min-width: 860px) and (max-width: 1199px){
+    .grid{
+      grid-template-columns:repeat(4,minmax(0,1fr))!important;
+      gap:15px!important;
+    }
+  }
+
+  .card{
+    min-width:0!important;
+  }
+
+  .imgbox{
+    height:175px!important;
+    background:#070b15!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+
+  .imgbox img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    object-position:center center!important;
+  }
+
+  .info{
+    padding:14px!important;
+  }
+
+  .card h3{
+    min-height:46px!important;
+    font-size:1rem!important;
+    line-height:1.18!important;
+    margin-bottom:10px!important;
+  }
+
+  .desc{
+    min-height:54px!important;
+    font-size:.84rem!important;
+    line-height:1.4!important;
+  }
+
+  .price{
+    font-size:1.15rem!important;
+  }
+
+  .premium-actions{
+    grid-template-columns:1fr 48px!important;
+    gap:10px!important;
+  }
+
+  .detail-btn{
+    padding:12px 10px!important;
+    font-size:.95rem!important;
+  }
+
+  /* ---- Xbox Retro: que no se corten precio y plataforma ---- */
+  #retroGridContainer{
+    grid-template-columns:repeat(auto-fill,minmax(180px,1fr))!important;
+    gap:14px!important;
+    align-content:start!important;
+  }
+
+  .retro-game,
+  .vg-retro-game{
+    min-height:0!important;
+    display:flex!important;
+    flex-direction:column!important;
+    justify-content:flex-start!important;
+    border-radius:18px!important;
+    overflow:hidden!important;
+  }
+
+  .retro-cover,
+  .vg-retro-cover{
+    height:180px!important;
+    flex:0 0 auto!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    background:#050812!important;
+    overflow:hidden!important;
+  }
+
+  .retro-cover img,
+  .vg-retro-cover img,
+  .vg-retro-cover .vg-retro-cover-img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:contain!important;
+    object-position:center center!important;
+    padding:8px!important;
+  }
+
+  .retro-info,
+  .vg-retro-info{
+    padding:12px 12px 14px!important;
+    display:flex!important;
+    flex-direction:column!important;
+    gap:8px!important;
+    flex:1 1 auto!important;
+  }
+
+  .retro-info h4,
+  .vg-retro-info h4{
+    min-height:48px!important;
+    margin:0!important;
+    line-height:1.16!important;
+    font-size:.9rem!important;
+  }
+
+  .retro-meta{
+    margin-top:auto!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    gap:8px!important;
+    flex-wrap:nowrap!important;
+  }
+
+  .retro-platform{
+    font-size:.60rem!important;
+    padding:5px 8px!important;
+    white-space:nowrap!important;
+  }
+
+  .retro-price{
+    font-size:.9rem!important;
+    white-space:nowrap!important;
+    line-height:1!important;
+  }
+
+  /* ---- Parte baja más limpia: menos texto y mejor orden ---- */
+  .promo-strip,
+  .how-buy-section,
+  .conditions-section{
+    display:none!important;
+  }
+
+  .home-compact-info{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:12px!important;
+    margin-top:28px!important;
+    margin-bottom:8px!important;
+  }
+
+  .home-compact-card{
+    padding:16px!important;
+    border-radius:20px!important;
+  }
+
+  .home-compact-card b{
+    font-size:1rem!important;
+    margin-bottom:6px!important;
+  }
+
+  .home-compact-card p{
+    font-size:.86rem!important;
+    line-height:1.4!important;
+  }
+
+  @media (max-width: 859px){
+    .grid{
+      grid-template-columns:repeat(2,minmax(0,1fr))!important;
+      gap:12px!important;
+    }
+
+    .imgbox{
+      height:150px!important;
+    }
+
+    .card h3{
+      min-height:40px!important;
+      font-size:.92rem!important;
+    }
+
+    .desc{
+      display:none!important;
+      min-height:0!important;
+    }
+
+    .premium-actions{
+      grid-template-columns:1fr!important;
+    }
+
+    .quick-add-btn{
+      display:none!important;
+    }
+
+    #retroGridContainer{
+      grid-template-columns:repeat(2,minmax(0,1fr))!important;
+      gap:10px!important;
+    }
+
+    .retro-cover,
+    .vg-retro-cover{
+      height:150px!important;
+    }
+
+    .retro-info h4,
+    .vg-retro-info h4{
+      min-height:42px!important;
+      font-size:.84rem!important;
+    }
+
+    .home-compact-info{
+      grid-template-columns:1fr!important;
+    }
+  }
+</style>
+
 </head>
 <body>
   <header class="topbar">

@@ -3165,6 +3165,94 @@
   }
 </style>
 
+
+<style id="vg-premium-visual-proposal-v21">
+:root{
+  --bg:#070A12;--bg2:#0A0F1C;--panel:#0D1220;--card:#111827;--card2:#151B2E;
+  --line:rgba(255,255,255,.085);--text:#F6F8FF;--muted:#A8B3CF;--soft:#7F8BA8;
+  --brand:#19E6C1;--brand2:#7C5CFF;--buy:#22C55E;--hot:#FFB020;--danger:#FF4D6D;
+  --shadow:0 22px 58px rgba(0,0,0,.34);
+}
+body{
+  color:var(--text)!important;
+  background:radial-gradient(circle at 12% 0%,rgba(25,230,193,.08),transparent 30%),
+    radial-gradient(circle at 88% 6%,rgba(124,92,255,.10),transparent 34%),
+    linear-gradient(180deg,#070A12 0%,#080B14 46%,#05070D 100%)!important;
+}
+.topbar{background:rgba(7,10,18,.84)!important;border-bottom:1px solid rgba(255,255,255,.07)!important;box-shadow:0 14px 40px rgba(0,0,0,.24)!important}
+.brand img{box-shadow:0 0 0 1px rgba(255,255,255,.10),0 0 18px rgba(25,230,193,.10)!important}
+.searchbar,.pill,.cat-btn,.side-item,.tools select,#retroModal .retro-controls input,#retroModal .retro-controls select{
+  background:rgba(255,255,255,.045)!important;border-color:rgba(255,255,255,.09)!important;box-shadow:none!important;
+}
+.pill:hover,.cat-btn:hover,.cat-btn.active,.side-item:hover,.side-item.active{
+  border-color:rgba(25,230,193,.30)!important;background:rgba(25,230,193,.075)!important;color:#EFFFFB!important;
+}
+.hero{
+  background:radial-gradient(circle at 70% 8%,rgba(124,92,255,.14),transparent 34%),
+    radial-gradient(circle at 18% 22%,rgba(25,230,193,.10),transparent 36%),
+    linear-gradient(135deg,#0A1020,#070A12)!important;
+}
+.hero::after{background:linear-gradient(180deg,rgba(7,10,18,.05),#070A12)!important}
+.hero-title,.flame-title{
+  color:#F6F8FF!important;background:none!important;-webkit-background-clip:initial!important;background-clip:initial!important;
+  text-shadow:0 10px 28px rgba(0,0,0,.48)!important;filter:none!important;animation:none!important;
+}
+.flame-title:before{display:none!important;content:none!important}
+.flame-title:after{
+  content:''!important;position:absolute!important;left:0!important;bottom:-10px!important;width:210px!important;height:3px!important;
+  border-radius:999px!important;background:linear-gradient(90deg,var(--brand),var(--brand2))!important;box-shadow:none!important;
+}
+.badge,.tag,.card-badge,.conditions-service-badge,.search-result-tag{box-shadow:none!important}
+.card,.service-carousel-card,.home-compact-card,.promo-card,.review-card,.condition-card,.condition-service-card,.conditions-service-section{
+  background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.015)),var(--card)!important;
+  border-color:rgba(255,255,255,.085)!important;box-shadow:0 16px 42px rgba(0,0,0,.24)!important;
+}
+.card:hover,.service-carousel-card:hover{border-color:rgba(25,230,193,.26)!important;box-shadow:0 20px 50px rgba(0,0,0,.32)!important;transform:translateY(-3px)!important}
+.imgbox,.modal-img,.search-result-thumb{background:#080C16!important}
+.price,.service-carousel-price,#retroTotal{color:var(--brand)!important;text-shadow:none!important}
+.primary,.detail-btn,.search-see-all{
+  background:linear-gradient(135deg,rgba(124,92,255,.92),rgba(25,230,193,.22))!important;
+  border:1px solid rgba(25,230,193,.25)!important;color:#fff!important;box-shadow:0 12px 28px rgba(0,0,0,.22)!important;
+}
+.primary.whatsapp,.whatsapp,.floating-whatsapp{
+  background:linear-gradient(135deg,#22C55E,#19E6C1)!important;color:#03120F!important;box-shadow:0 16px 36px rgba(0,0,0,.30)!important;
+}
+.quick-add-btn{background:rgba(25,230,193,.075)!important;border-color:rgba(25,230,193,.24)!important;color:#DFFFF9!important;box-shadow:none!important}
+
+/* Xbox Retro como sección especial */
+#retroModal{background:rgba(3,6,12,.94)!important}
+#retroModal .retro-modal-card{
+  background:radial-gradient(circle at 78% 4%,rgba(25,230,193,.06),transparent 26%),linear-gradient(180deg,#080D18,#070A12)!important;
+}
+#retroModal .retro-top-shell{
+  background:radial-gradient(circle at 7% 0%,rgba(25,230,193,.10),transparent 32%),linear-gradient(135deg,rgba(13,18,32,.97),rgba(8,15,28,.97))!important;
+  border-bottom:1px solid rgba(255,255,255,.075)!important;
+}
+#retroModal .retro-head h2{color:#F6F8FF!important;text-shadow:none!important}
+#retroModal .retro-head p,#retroModal .retro-sales-note p{color:#A8B3CF!important}
+#retroModal .retro-sales-note{background:rgba(255,255,255,.035)!important;border:1px solid rgba(25,230,193,.16)!important;box-shadow:none!important}
+#retroModal .retro-filter-chip{background:rgba(255,255,255,.045)!important;border-color:rgba(255,255,255,.09)!important;color:#D9E2F7!important}
+#retroModal .retro-filter-chip:hover,#retroModal .retro-filter-chip.active{background:rgba(25,230,193,.08)!important;border-color:rgba(25,230,193,.28)!important;color:#CFFFF8!important}
+#retroGridContainer{background:radial-gradient(circle at 96% 4%,rgba(124,92,255,.055),transparent 30%),#070A12!important}
+.vg-retro-game{background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012)),#111827!important;border-color:rgba(255,255,255,.085)!important;box-shadow:0 14px 34px rgba(0,0,0,.24)!important}
+.vg-retro-game:hover{border-color:rgba(25,230,193,.28)!important;transform:translateY(-2px)!important}
+.vg-retro-game.active{border-color:rgba(25,230,193,.70)!important;box-shadow:0 0 0 1px rgba(25,230,193,.22),0 16px 34px rgba(0,0,0,.28)!important}
+.vg-retro-cover{background:#080C16!important}
+.vg-retro-platform{background:rgba(25,230,193,.075)!important;border-color:rgba(25,230,193,.22)!important;color:#CBFFF8!important}
+.vg-retro-price{color:#fff!important}
+#retroModal .retro-footer{background:linear-gradient(135deg,rgba(13,18,32,.82),rgba(8,13,24,.66))!important;border-color:rgba(255,255,255,.08)!important;box-shadow:0 22px 60px rgba(0,0,0,.34)!important}
+
+/* Footer limpio */
+footer{margin-top:36px!important;padding:30px 18px!important;border-top:1px solid rgba(255,255,255,.075)!important;background:#05070D!important;color:#A8B3CF!important}
+.vg-clean-footer{max-width:1480px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
+.vg-clean-footer b{display:block;color:#F6F8FF;font-size:1.05rem;margin-bottom:5px}
+.vg-clean-footer p{margin:0;color:#A8B3CF;line-height:1.45;font-size:.92rem}
+.vg-clean-footer-links{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.vg-clean-footer-links a{color:#DCE4F8;text-decoration:none;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.035);border-radius:999px;padding:9px 12px;font-size:.84rem;font-weight:900}
+.vg-clean-footer-links a:hover{border-color:rgba(25,230,193,.28);color:#CFFFF8}
+@media(max-width:760px){.vg-clean-footer{grid-template-columns:1fr}.vg-clean-footer-links{justify-content:flex-start}}
+</style>
+
 </head>
 <body>
   <header class="topbar">
@@ -3307,7 +3395,19 @@
 
   <div id="vgToast"><div class="vg-toast-icon">✓</div><div class="vg-toast-text"><b>Agregado al carrito</b><span>Puedes seguir comprando sin abrir el carrito.</span></div></div>
 
-  <footer>Vessel Games · Catálogo digital premium · WhatsApp 661 107 8412</footer>
+  <footer>
+    <div class="vg-clean-footer">
+      <div>
+        <b>Vessel Games</b>
+        <p>Catálogo digital premium · Atención por WhatsApp · Entrega estimada de 20 minutos a 2 horas según flujo de pedidos.</p>
+      </div>
+      <div class="vg-clean-footer-links">
+        <a href="javascript:void(0)" onclick="openWhatsAppGeneral()">WhatsApp</a>
+        <a href="#condiciones-servicio">Condiciones</a>
+        <a href="javascript:void(0)" onclick="showSection('all')">Catálogo</a>
+      </div>
+    </div>
+  </footer>
 
   <script>
     const WHATSAPP_NUMBER = '526611078412';

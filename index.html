@@ -3511,6 +3511,377 @@
   }
 </style>
 
+
+<style id="vg-lujo-digital-v23">
+  /* =========================================================
+     PALETA LUJO DIGITAL
+     Fondo: #08090F
+     Tarjetas: #12141D
+     Dorado: #D6A84F
+     Azul noche: #101C36
+     Cian premium: #18D9C2
+     Texto: #F7F3EA
+     Texto secundario: #A7ACBA
+     Compra: #21C66B
+     ========================================================= */
+
+  :root{
+    --bg:#08090F !important;
+    --bg2:#0C1018 !important;
+    --panel:#101C36 !important;
+    --card:#12141D !important;
+    --card2:#171B26 !important;
+    --line:rgba(214,168,79,.16) !important;
+    --text:#F7F3EA !important;
+    --muted:#A7ACBA !important;
+    --brand:#18D9C2 !important;
+    --brand2:#D6A84F !important;
+    --buy:#21C66B !important;
+    --hot:#D6A84F !important;
+  }
+
+  html, body{
+    background:
+      radial-gradient(circle at 10% -6%, rgba(24,217,194,.10), transparent 30%),
+      radial-gradient(circle at 88% 0%, rgba(214,168,79,.16), transparent 32%),
+      linear-gradient(180deg, #08090F 0%, #0A0C13 46%, #05060A 100%) !important;
+    color:var(--text) !important;
+  }
+
+  body::before{
+    content:"" !important;
+    position:fixed !important;
+    inset:0 !important;
+    pointer-events:none !important;
+    z-index:-1 !important;
+    background:
+      linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.014) 1px, transparent 1px) !important;
+    background-size:46px 46px !important;
+    opacity:.18 !important;
+  }
+
+  .topbar{
+    background:rgba(8,9,15,.92) !important;
+    border-bottom:1px solid rgba(214,168,79,.15) !important;
+    box-shadow:0 18px 40px rgba(0,0,0,.42) !important;
+    backdrop-filter:blur(16px) !important;
+  }
+
+  .brand img{
+    border:1px solid rgba(214,168,79,.28) !important;
+    box-shadow:0 0 0 1px rgba(255,255,255,.05), 0 0 22px rgba(214,168,79,.12) !important;
+  }
+
+  .brand span,
+  .hero-title,
+  .flame-title,
+  .conditions-service-head h2,
+  .reviews-head h2{
+    color:#F7F3EA !important;
+  }
+
+  .brand small,
+  .lead,
+  .hero .lead,
+  .review-card p,
+  .condition-service-card p,
+  .conditions-service-head p{
+    color:#A7ACBA !important;
+  }
+
+  .searchbar,
+  .pill,
+  .cat-btn,
+  .side-item,
+  .tools select,
+  #retroModal .retro-controls input,
+  #retroModal .retro-controls select{
+    background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.028)) !important;
+    border:1px solid rgba(214,168,79,.14) !important;
+    box-shadow:none !important;
+    color:#F7F3EA !important;
+  }
+
+  .searchbar input{ color:#F7F3EA !important; }
+
+  .pill:hover,
+  .cat-btn:hover,
+  .cat-btn.active,
+  .side-item:hover,
+  .side-item.active{
+    background:linear-gradient(135deg, rgba(214,168,79,.10), rgba(24,217,194,.08)) !important;
+    border-color:rgba(214,168,79,.34) !important;
+    color:#FFF8EC !important;
+  }
+
+  .hero{
+    background:
+      radial-gradient(circle at 76% 10%, rgba(214,168,79,.20), transparent 34%),
+      radial-gradient(circle at 15% 18%, rgba(24,217,194,.12), transparent 34%),
+      linear-gradient(135deg, #101C36 0%, #0D1323 56%, #08090F 100%) !important;
+  }
+
+  .hero::before{
+    content:"" !important;
+    position:absolute !important;
+    inset:0 !important;
+    pointer-events:none !important;
+    background:linear-gradient(90deg, rgba(8,9,15,.86), rgba(8,9,15,.46), rgba(8,9,15,.78)) !important;
+    z-index:0 !important;
+  }
+
+  .hero-inner{ position:relative !important; z-index:1 !important; }
+
+  .flame-title{
+    background:none !important;
+    text-shadow:0 10px 24px rgba(0,0,0,.44) !important;
+    filter:none !important;
+    animation:none !important;
+  }
+
+  .flame-title::before{ display:none !important; content:none !important; }
+
+  .flame-title::after{
+    content:"" !important;
+    display:block !important;
+    position:absolute !important;
+    left:0 !important;
+    bottom:-12px !important;
+    width:220px !important;
+    height:4px !important;
+    border-radius:999px !important;
+    background:linear-gradient(90deg, #D6A84F, #18D9C2) !important;
+    box-shadow:none !important;
+  }
+
+  .badge,
+  .tag,
+  .card-badge,
+  .conditions-service-badge,
+  .search-result-tag,
+  .vg-retro-platform{
+    box-shadow:none !important;
+  }
+
+  .card,
+  .service-carousel-card,
+  .home-compact-card,
+  .promo-card,
+  .review-card,
+  .condition-card,
+  .condition-service-card,
+  .conditions-service-section,
+  .search-results-panel{
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015)),
+      #12141D !important;
+    border:1px solid rgba(214,168,79,.12) !important;
+    box-shadow:0 18px 48px rgba(0,0,0,.30) !important;
+  }
+
+  .card:hover,
+  .service-carousel-card:hover{
+    transform:translateY(-4px) !important;
+    border-color:rgba(214,168,79,.30) !important;
+    box-shadow:0 24px 60px rgba(0,0,0,.42) !important;
+  }
+
+  .imgbox,
+  .modal-img,
+  .vg-retro-cover,
+  .search-result-thumb{
+    background:#0B0F17 !important;
+  }
+
+  .tag,
+  .search-result-tag,
+  .vg-retro-platform{
+    background:rgba(24,217,194,.07) !important;
+    border-color:rgba(24,217,194,.22) !important;
+    color:#CFFAF5 !important;
+  }
+
+  .card-badge.hot{
+    background:rgba(214,168,79,.11) !important;
+    border-color:rgba(214,168,79,.28) !important;
+    color:#F6DEAE !important;
+  }
+
+  .card-badge.premium{
+    background:rgba(16,28,54,.80) !important;
+    border-color:rgba(214,168,79,.22) !important;
+    color:#E9D6AE !important;
+  }
+
+  .price,
+  .service-carousel-price,
+  .vg-retro-price,
+  #retroTotal{
+    color:#18D9C2 !important;
+    text-shadow:none !important;
+  }
+
+  .primary,
+  .detail-btn,
+  .search-see-all{
+    background:linear-gradient(135deg, #D6A84F 0%, #B88B38 52%, #101C36 100%) !important;
+    border:1px solid rgba(214,168,79,.26) !important;
+    color:#FFF9EF !important;
+    box-shadow:0 14px 30px rgba(0,0,0,.28) !important;
+  }
+
+  .primary.whatsapp,
+  .whatsapp,
+  .floating-whatsapp{
+    background:linear-gradient(135deg, #21C66B, #18D9C2) !important;
+    color:#04120D !important;
+    box-shadow:0 16px 34px rgba(0,0,0,.32) !important;
+  }
+
+  .quick-add-btn{
+    background:rgba(214,168,79,.08) !important;
+    border-color:rgba(214,168,79,.20) !important;
+    color:#F2DEC0 !important;
+    box-shadow:none !important;
+  }
+
+  /* Xbox Retro como sección especial de lujo */
+  #retroModal{
+    background:rgba(4,6,12,.95) !important;
+  }
+
+  #retroModal .retro-modal-card{
+    background:
+      radial-gradient(circle at 96% 0%, rgba(214,168,79,.14), transparent 26%),
+      radial-gradient(circle at 0% 0%, rgba(24,217,194,.08), transparent 26%),
+      linear-gradient(180deg, #0A0F18, #08090F) !important;
+  }
+
+  #retroModal .retro-top-shell{
+    background:
+      linear-gradient(135deg, rgba(16,28,54,.94), rgba(12,16,27,.94)) !important;
+    border-bottom:1px solid rgba(214,168,79,.14) !important;
+  }
+
+  #retroModal .retro-head h2{ color:#F7F3EA !important; }
+  #retroModal .retro-head p,
+  #retroModal .retro-sales-note p{ color:#A7ACBA !important; }
+
+  #retroModal .retro-sales-note{
+    background:rgba(255,255,255,.03) !important;
+    border:1px solid rgba(214,168,79,.16) !important;
+  }
+
+  #retroModal .retro-filter-chip{
+    background:rgba(255,255,255,.04) !important;
+    border-color:rgba(214,168,79,.12) !important;
+    color:#DDD0BB !important;
+  }
+
+  #retroModal .retro-filter-chip:hover,
+  #retroModal .retro-filter-chip.active{
+    background:rgba(214,168,79,.10) !important;
+    border-color:rgba(214,168,79,.30) !important;
+    color:#FFF4DE !important;
+  }
+
+  #retroGridContainer{
+    background:
+      radial-gradient(circle at 95% 2%, rgba(214,168,79,.07), transparent 32%),
+      #08090F !important;
+  }
+
+  .vg-retro-game{
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015)),
+      #12141D !important;
+    border:1px solid rgba(214,168,79,.12) !important;
+    box-shadow:0 14px 34px rgba(0,0,0,.28) !important;
+  }
+
+  .vg-retro-game:hover{
+    border-color:rgba(214,168,79,.28) !important;
+  }
+
+  .vg-retro-game.active{
+    border-color:rgba(24,217,194,.58) !important;
+    box-shadow:0 0 0 1px rgba(24,217,194,.18), 0 18px 40px rgba(0,0,0,.30) !important;
+  }
+
+  #retroModal .retro-footer{
+    background:linear-gradient(135deg, rgba(18,20,29,.82), rgba(10,12,19,.64)) !important;
+    border:1px solid rgba(214,168,79,.14) !important;
+    box-shadow:0 20px 52px rgba(0,0,0,.34) !important;
+  }
+
+  /* Footer más limpio y elegante */
+  footer{
+    margin-top:42px !important;
+    padding:34px 20px !important;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.015), rgba(255,255,255,.005)),
+      #07080D !important;
+    border-top:1px solid rgba(214,168,79,.14) !important;
+    color:#A7ACBA !important;
+  }
+
+  .vg-clean-footer{
+    max-width:1480px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:18px;
+    align-items:center;
+  }
+
+  .vg-clean-footer b{
+    display:block;
+    color:#F7F3EA;
+    font-size:1.08rem;
+    margin-bottom:5px;
+  }
+
+  .vg-clean-footer p{
+    margin:0;
+    color:#A7ACBA;
+    line-height:1.45;
+    font-size:.92rem;
+  }
+
+  .vg-clean-footer-links{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+  }
+
+  .vg-clean-footer-links a{
+    color:#F2E6D1;
+    text-decoration:none;
+    border:1px solid rgba(214,168,79,.14);
+    background:rgba(255,255,255,.03);
+    border-radius:999px;
+    padding:9px 12px;
+    font-size:.84rem;
+    font-weight:900;
+  }
+
+  .vg-clean-footer-links a:hover{
+    border-color:rgba(214,168,79,.30);
+    color:#FFF4DE;
+  }
+
+  @media(max-width:760px){
+    .vg-clean-footer{
+      grid-template-columns:1fr;
+    }
+    .vg-clean-footer-links{
+      justify-content:flex-start;
+    }
+  }
+</style>
+
 </head>
 <body>
   <header class="topbar">

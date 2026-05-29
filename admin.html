@@ -5041,6 +5041,58 @@
   }
 </style>
 
+
+<style id="vg-admin-visible-button-v36">
+  /* Botón admin SIEMPRE visible, independiente del header */
+  .vg-admin-direct-fixed{
+    position:fixed !important;
+    right:14px !important;
+    bottom:92px !important;
+    z-index:25000 !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:7px !important;
+    min-width:92px !important;
+    height:46px !important;
+    padding:0 15px !important;
+    border-radius:999px !important;
+    border:1px solid rgba(25,230,193,.34) !important;
+    background:linear-gradient(135deg,#8B5CF6 0%,#19E6C1 100%) !important;
+    color:#ffffff !important;
+    font-size:.82rem !important;
+    font-weight:950 !important;
+    letter-spacing:.03em !important;
+    cursor:pointer !important;
+    box-shadow:0 18px 46px rgba(0,0,0,.42),0 0 22px rgba(25,230,193,.18) !important;
+    backdrop-filter:blur(12px) !important;
+  }
+
+  .vg-admin-direct-fixed:hover{
+    transform:translateY(-2px) !important;
+    box-shadow:0 22px 54px rgba(0,0,0,.48),0 0 28px rgba(25,230,193,.24) !important;
+  }
+
+  /* Si por alguna razón quedó otro botón admin viejo, también hacerlo visible */
+  #vgAdminOpenBtn,
+  .vg-admin-open{
+    display:inline-flex !important;
+    visibility:visible !important;
+    opacity:1 !important;
+  }
+
+  @media(max-width:820px){
+    .vg-admin-direct-fixed{
+      right:12px !important;
+      bottom:82px !important;
+      height:42px !important;
+      min-width:82px !important;
+      padding:0 12px !important;
+      font-size:.76rem !important;
+    }
+  }
+</style>
+
 </head>
 <body>
   <header class="topbar">
@@ -5052,9 +5104,6 @@
           <button type="button" class="vg-currency-option active" data-currency="MXN">MXN</button>
           <button type="button" class="vg-currency-option" data-currency="USD">USD</button>
         </div>
-
-<button class="vg-admin-top-btn" type="button" onclick="vgAdminOpen()" title="Panel administrador">Admin</button>
-
 <button class="pill cart-pill" onclick="openCart()">🛒 Carrito <span class="cart-count" id="cartCount">0</span></button></div>
     </div>
     <div class="category-nav"><div class="category-row" id="catRow"></div></div>
@@ -6444,9 +6493,6 @@
   }, true);
 })();
 </script>
-
-
-<button class="vg-admin-open" id="vgAdminOpenBtn" type="button">Admin</button>
 <div class="vg-admin-modal" id="vgAdminModal">
   <div class="vg-admin-panel">
     <div class="vg-admin-head"><div><h2>Panel administrador Supabase</h2><p>Historial real, comprobantes, edición de artículos, stock y precios.</p></div><button class="vg-admin-x" onclick="vgAdminClose()">×</button></div>
@@ -6596,6 +6642,22 @@ create policy "allow read comprobantes" on storage.objects for select to anon us
 `;
 function boot(){bind();vgAdminLoadConfig();initSB();patchWhats();setTimeout(patchWhats,1000);setTimeout(patchWhats,2500)}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+})();
+</script>
+
+
+<button class="vg-admin-direct-fixed" id="vgAdminDirectFixed" type="button" onclick="vgAdminOpen()" title="Abrir panel administrador">
+  ⚙ Admin
+</button>
+
+
+<script id="vg-admin-open-fallback-v36">
+(function(){
+  if(typeof window.vgAdminOpen !== 'function'){
+    window.vgAdminOpen = function(){
+      alert('El panel admin no cargó todavía. Revisa que el archivo sea index_supabase_admin_boton_visible_v36.html y que haya conexión a internet para cargar Supabase.');
+    };
+  }
 })();
 </script>
 

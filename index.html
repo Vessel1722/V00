@@ -3882,6 +3882,293 @@
   }
 </style>
 
+
+<style id="vg-cyan-purple-xbox-v24">
+  /* =========================================================
+     AJUSTE DE PALETA:
+     quitar dorado suave y cambiarlo por cyan + púrpura.
+     Además se destaca la sección de Xbox Retro.
+     ========================================================= */
+
+  :root{
+    --bg:#08090F !important;
+    --bg2:#0C1018 !important;
+    --panel:#101C36 !important;
+    --card:#12141D !important;
+    --card2:#171B26 !important;
+    --line:rgba(122,92,255,.18) !important;
+    --text:#F7F3EA !important;
+    --muted:#A7ACBA !important;
+    --brand:#19E6C1 !important;
+    --brand2:#8B5CF6 !important;
+    --buy:#21C66B !important;
+    --hot:#8B5CF6 !important;
+  }
+
+  html, body{
+    background:
+      radial-gradient(circle at 10% -6%, rgba(25,230,193,.12), transparent 30%),
+      radial-gradient(circle at 88% 0%, rgba(139,92,246,.18), transparent 32%),
+      linear-gradient(180deg, #08090F 0%, #0A0C13 46%, #05060A 100%) !important;
+    color:var(--text) !important;
+  }
+
+  .topbar{
+    border-bottom:1px solid rgba(139,92,246,.16) !important;
+  }
+
+  .brand img{
+    border:1px solid rgba(139,92,246,.28) !important;
+    box-shadow:0 0 0 1px rgba(255,255,255,.05), 0 0 24px rgba(25,230,193,.10) !important;
+  }
+
+  .searchbar,
+  .pill,
+  .cat-btn,
+  .side-item,
+  .tools select,
+  #retroModal .retro-controls input,
+  #retroModal .retro-controls select{
+    border:1px solid rgba(139,92,246,.14) !important;
+  }
+
+  .pill:hover,
+  .cat-btn:hover,
+  .cat-btn.active,
+  .side-item:hover,
+  .side-item.active{
+    background:linear-gradient(135deg, rgba(139,92,246,.12), rgba(25,230,193,.08)) !important;
+    border-color:rgba(25,230,193,.34) !important;
+  }
+
+  .hero{
+    background:
+      radial-gradient(circle at 76% 10%, rgba(139,92,246,.22), transparent 34%),
+      radial-gradient(circle at 15% 18%, rgba(25,230,193,.14), transparent 34%),
+      linear-gradient(135deg, #101C36 0%, #0D1323 56%, #08090F 100%) !important;
+  }
+
+  .flame-title::after{
+    background:linear-gradient(90deg, #19E6C1, #8B5CF6) !important;
+  }
+
+  .card,
+  .service-carousel-card,
+  .home-compact-card,
+  .promo-card,
+  .review-card,
+  .condition-card,
+  .condition-service-card,
+  .conditions-service-section,
+  .search-results-panel{
+    border:1px solid rgba(139,92,246,.12) !important;
+  }
+
+  .card:hover,
+  .service-carousel-card:hover{
+    border-color:rgba(25,230,193,.26) !important;
+  }
+
+  .tag,
+  .search-result-tag,
+  .vg-retro-platform{
+    background:rgba(25,230,193,.08) !important;
+    border-color:rgba(25,230,193,.22) !important;
+    color:#D6FFF8 !important;
+  }
+
+  .card-badge.hot{
+    background:rgba(139,92,246,.12) !important;
+    border-color:rgba(139,92,246,.28) !important;
+    color:#E5DAFF !important;
+  }
+
+  .card-badge.premium{
+    background:rgba(16,28,54,.80) !important;
+    border-color:rgba(25,230,193,.20) !important;
+    color:#D6FFF8 !important;
+  }
+
+  .primary,
+  .detail-btn,
+  .search-see-all{
+    background:linear-gradient(135deg, #8B5CF6 0%, #5B5DFF 52%, #19E6C1 100%) !important;
+    border:1px solid rgba(25,230,193,.24) !important;
+    color:#FFF9EF !important;
+  }
+
+  .quick-add-btn{
+    background:rgba(139,92,246,.09) !important;
+    border-color:rgba(139,92,246,.22) !important;
+    color:#EDE4FF !important;
+  }
+
+  /* ==============================
+     XBOX RETRO MEJOR DESTACADO
+     ============================== */
+
+  #retroModal{
+    background:rgba(4,6,12,.96) !important;
+  }
+
+  #retroModal .retro-modal-card{
+    background:
+      radial-gradient(circle at 98% 0%, rgba(139,92,246,.18), transparent 24%),
+      radial-gradient(circle at 0% 0%, rgba(25,230,193,.12), transparent 26%),
+      linear-gradient(180deg, #0A0F18, #08090F) !important;
+  }
+
+  #retroModal .retro-top-shell{
+    background:
+      radial-gradient(circle at 10% 0%, rgba(25,230,193,.08), transparent 30%),
+      linear-gradient(135deg, rgba(13,23,45,.97), rgba(15,14,31,.97)) !important;
+    border-bottom:1px solid rgba(139,92,246,.18) !important;
+    box-shadow:0 16px 40px rgba(0,0,0,.24) !important;
+  }
+
+  #retroModal .retro-head .badge{
+    background:linear-gradient(135deg, rgba(25,230,193,.12), rgba(139,92,246,.12)) !important;
+    border:1px solid rgba(25,230,193,.26) !important;
+    color:#E9FFFC !important;
+  }
+
+  #retroModal .retro-head h2{
+    color:#FFFFFF !important;
+    text-shadow:0 10px 22px rgba(0,0,0,.28) !important;
+    letter-spacing:-.03em !important;
+  }
+
+  #retroModal .retro-head p{
+    color:#B7C0D4 !important;
+  }
+
+  #retroModal .retro-head .x{
+    background:rgba(255,255,255,.06) !important;
+    border:1px solid rgba(139,92,246,.22) !important;
+  }
+
+  #retroModal .retro-head .x:hover{
+    background:rgba(139,92,246,.12) !important;
+    border-color:rgba(25,230,193,.24) !important;
+  }
+
+  #retroModal .retro-controls input,
+  #retroModal .retro-controls select{
+    background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.025)) !important;
+    border:1px solid rgba(139,92,246,.16) !important;
+    color:#F7F3EA !important;
+    box-shadow:0 10px 24px rgba(0,0,0,.16) !important;
+  }
+
+  #retroModal .retro-controls input:focus,
+  #retroModal .retro-controls select:focus{
+    outline:none !important;
+    border-color:rgba(25,230,193,.42) !important;
+    box-shadow:0 0 0 3px rgba(25,230,193,.10) !important;
+  }
+
+  #retroModal .retro-sales-note{
+    background:
+      linear-gradient(135deg, rgba(139,92,246,.10), rgba(25,230,193,.06)) !important;
+    border:1px solid rgba(139,92,246,.20) !important;
+    box-shadow:0 12px 28px rgba(0,0,0,.18) !important;
+  }
+
+  #retroModal .retro-sales-note b{
+    color:#FFFFFF !important;
+  }
+
+  #retroModal .retro-sales-note p{
+    color:#B7C0D4 !important;
+  }
+
+  #retroModal .retro-sales-note .badge{
+    background:rgba(25,230,193,.10) !important;
+    border:1px solid rgba(25,230,193,.22) !important;
+    color:#D9FFFA !important;
+  }
+
+  #retroModal .retro-filter-chip{
+    background:rgba(255,255,255,.045) !important;
+    border-color:rgba(139,92,246,.14) !important;
+    color:#DCD7ED !important;
+  }
+
+  #retroModal .retro-filter-chip:hover,
+  #retroModal .retro-filter-chip.active{
+    background:linear-gradient(135deg, rgba(139,92,246,.16), rgba(25,230,193,.10)) !important;
+    border-color:rgba(25,230,193,.28) !important;
+    color:#FFFFFF !important;
+  }
+
+  #retroGridContainer{
+    background:
+      radial-gradient(circle at 95% 2%, rgba(139,92,246,.09), transparent 32%),
+      radial-gradient(circle at 5% 20%, rgba(25,230,193,.05), transparent 24%),
+      #08090F !important;
+  }
+
+  .vg-retro-game{
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.015)),
+      #12141D !important;
+    border:1px solid rgba(139,92,246,.14) !important;
+    box-shadow:0 14px 34px rgba(0,0,0,.28) !important;
+    transition:transform .22s ease, border-color .22s ease, box-shadow .22s ease !important;
+  }
+
+  .vg-retro-game:hover{
+    transform:translateY(-4px) !important;
+    border-color:rgba(25,230,193,.26) !important;
+    box-shadow:0 20px 40px rgba(0,0,0,.34), 0 0 22px rgba(25,230,193,.06) !important;
+  }
+
+  .vg-retro-game.active{
+    border-color:rgba(25,230,193,.62) !important;
+    box-shadow:0 0 0 1px rgba(25,230,193,.18), 0 18px 40px rgba(0,0,0,.30) !important;
+  }
+
+  .vg-retro-cover{
+    background:
+      linear-gradient(180deg, rgba(139,92,246,.08), rgba(25,230,193,.04)),
+      #0B0F17 !important;
+    border-bottom:1px solid rgba(139,92,246,.10) !important;
+  }
+
+  .vg-retro-info h4{
+    color:#FFFFFF !important;
+  }
+
+  .vg-retro-price{
+    color:#19E6C1 !important;
+    font-weight:950 !important;
+  }
+
+  #retroModal .retro-footer{
+    background:linear-gradient(135deg, rgba(15,18,31,.84), rgba(10,12,19,.68)) !important;
+    border:1px solid rgba(139,92,246,.16) !important;
+    box-shadow:0 20px 52px rgba(0,0,0,.34) !important;
+  }
+
+  #retroModal .retro-totals strong{
+    color:#FFFFFF !important;
+  }
+
+  /* Footer con la nueva paleta */
+  footer{
+    border-top:1px solid rgba(139,92,246,.16) !important;
+  }
+
+  .vg-clean-footer-links a{
+    border:1px solid rgba(139,92,246,.14) !important;
+  }
+
+  .vg-clean-footer-links a:hover{
+    border-color:rgba(25,230,193,.30) !important;
+    color:#E8FFFD !important;
+  }
+</style>
+
 </head>
 <body>
   <header class="topbar">

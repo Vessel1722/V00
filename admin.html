@@ -4970,26 +4970,28 @@
 </style>
 
 
-<style id="vg-admin-v33">
-.vg-admin-open{position:fixed;left:14px;top:92px;z-index:90;display:none;border:1px solid rgba(25,230,193,.24);background:rgba(10,13,24,.9);color:#eafffb;border-radius:999px;padding:10px 13px;font-size:.78rem;font-weight:950;cursor:pointer;backdrop-filter:blur(12px)}
-.vg-admin-open.visible{display:inline-flex}
-.vg-admin-modal{position:fixed;inset:0;z-index:20000;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.78)}
-.vg-admin-modal.active{display:flex}
-.vg-admin-panel{width:min(1180px,calc(100vw - 24px));height:min(88vh,850px);display:grid;grid-template-rows:auto auto minmax(0,1fr);overflow:hidden;border-radius:28px;border:1px solid rgba(255,255,255,.10);background:linear-gradient(180deg,rgba(18,20,31,.98),rgba(8,10,18,.98));box-shadow:0 30px 90px rgba(0,0,0,.55)}
-.vg-admin-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.08)}
-.vg-admin-head h2{margin:0;color:#fff;font-size:1.35rem}.vg-admin-head p{margin:4px 0 0;color:#a7acba;font-size:.86rem}
-.vg-admin-x{width:42px;height:42px;border-radius:14px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.055);color:#fff;font-size:1.2rem;cursor:pointer}
-.vg-admin-tabs{display:flex;gap:8px;padding:12px 18px;border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto}
-.vg-admin-tab{border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.04);color:#dbe4f8;border-radius:999px;padding:9px 13px;font-weight:950;font-size:.78rem;cursor:pointer;white-space:nowrap}
-.vg-admin-tab.active{background:linear-gradient(135deg,#8B5CF6,#19E6C1);color:#fff}
-.vg-admin-content{overflow:auto;padding:18px}.vg-admin-section{display:none}.vg-admin-section.active{display:block}
-.vg-admin-note{border:1px solid rgba(255,180,92,.22);background:rgba(255,180,92,.06);color:#ffe5c7;border-radius:16px;padding:12px 14px;margin-bottom:14px;font-size:.86rem;line-height:1.45}
-.vg-admin-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:16px}.vg-admin-stat{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);border-radius:18px;padding:14px}.vg-admin-stat b{display:block;color:#fff;font-size:1.2rem}.vg-admin-stat span{color:#a7acba;font-size:.78rem}
-.vg-admin-tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}.vg-admin-input,.vg-admin-select,.vg-admin-textarea{border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.045);color:#fff;border-radius:14px;padding:11px 12px;outline:none}.vg-admin-input{min-width:220px}.vg-admin-textarea{width:100%;min-height:110px;resize:vertical}
-.vg-admin-btn{border:1px solid rgba(25,230,193,.22);background:rgba(25,230,193,.08);color:#dcfffa;border-radius:14px;padding:11px 13px;font-weight:950;cursor:pointer}.vg-admin-btn.primary{background:linear-gradient(135deg,#8B5CF6,#19E6C1);color:#fff}.vg-admin-btn.danger{border-color:rgba(255,77,109,.24);background:rgba(255,77,109,.08);color:#ffd7df}
-.vg-admin-table{width:100%;border-collapse:separate;border-spacing:0 8px}.vg-admin-table th{text-align:left;color:#a7acba;font-size:.75rem;text-transform:uppercase;padding:0 10px 4px}.vg-admin-table td{background:rgba(255,255,255,.04);border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);padding:10px;color:#e8edf8;vertical-align:top;font-size:.84rem}.vg-admin-table td:first-child{border-left:1px solid rgba(255,255,255,.08);border-radius:14px 0 0 14px}.vg-admin-table td:last-child{border-right:1px solid rgba(255,255,255,.08);border-radius:0 14px 14px 0}
-.vg-admin-card{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);border-radius:18px;padding:14px;margin-bottom:12px}.vg-admin-cardtop{display:grid;grid-template-columns:70px 1fr auto;gap:12px;align-items:center}.vg-admin-cardtop img{width:70px;height:60px;object-fit:cover;border-radius:14px;background:#070b18}.vg-admin-cardtop b{display:block;color:#fff}.vg-admin-cardtop small{color:#a7acba}.vg-admin-options{margin-top:12px;display:grid;gap:8px}.vg-admin-oprow{display:grid;grid-template-columns:1fr 130px;gap:8px}
-@media(max-width:820px){.vg-admin-modal{padding:0}.vg-admin-panel{width:100vw;height:100vh;border-radius:0}.vg-admin-stats{grid-template-columns:1fr 1fr}.vg-admin-cardtop{grid-template-columns:58px 1fr}.vg-admin-cardtop img{width:58px;height:52px}.vg-admin-cardtop .vg-admin-btn{grid-column:1/-1}.vg-admin-oprow{grid-template-columns:1fr}.vg-admin-table{font-size:.78rem}}
+<style id="vg-supabase-admin-v34">
+  .vg-admin-open{position:fixed;left:14px;top:92px;z-index:95;display:none;border:1px solid rgba(25,230,193,.24);background:rgba(10,13,24,.92);color:#eafffb;border-radius:999px;padding:10px 13px;font-size:.78rem;font-weight:950;cursor:pointer;backdrop-filter:blur(12px);box-shadow:0 12px 32px rgba(0,0,0,.30)}
+  .vg-admin-open.visible{display:inline-flex}
+  .vg-admin-modal{position:fixed;inset:0;z-index:20000;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.78)}
+  .vg-admin-modal.active{display:flex}
+  .vg-admin-panel{width:min(1220px,calc(100vw - 24px));height:min(90vh,880px);display:grid;grid-template-rows:auto auto minmax(0,1fr);overflow:hidden;border-radius:28px;border:1px solid rgba(255,255,255,.10);background:linear-gradient(180deg,rgba(18,20,31,.98),rgba(8,10,18,.98));box-shadow:0 30px 90px rgba(0,0,0,.55)}
+  .vg-admin-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .vg-admin-head h2{margin:0;color:#fff;font-size:1.35rem}.vg-admin-head p{margin:4px 0 0;color:#a7acba;font-size:.86rem}
+  .vg-admin-x{width:42px;height:42px;border-radius:14px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.055);color:#fff;font-size:1.2rem;cursor:pointer}
+  .vg-admin-tabs{display:flex;gap:8px;padding:12px 18px;border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto}
+  .vg-admin-tab{border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.04);color:#dbe4f8;border-radius:999px;padding:9px 13px;font-weight:950;font-size:.78rem;cursor:pointer;white-space:nowrap}
+  .vg-admin-tab.active{background:linear-gradient(135deg,#8B5CF6,#19E6C1);color:#fff}
+  .vg-admin-content{overflow:auto;padding:18px}.vg-admin-section{display:none}.vg-admin-section.active{display:block}
+  .vg-admin-note{border:1px solid rgba(255,180,92,.22);background:rgba(255,180,92,.06);color:#ffe5c7;border-radius:16px;padding:12px 14px;margin-bottom:14px;font-size:.86rem;line-height:1.45}
+  .vg-admin-ok{border-color:rgba(25,230,193,.22);background:rgba(25,230,193,.07);color:#d9fffa}
+  .vg-admin-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:16px}.vg-admin-stat{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);border-radius:18px;padding:14px}.vg-admin-stat b{display:block;color:#fff;font-size:1.2rem}.vg-admin-stat span{color:#a7acba;font-size:.78rem}
+  .vg-admin-tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}.vg-admin-input,.vg-admin-select,.vg-admin-textarea{border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.045);color:#fff;border-radius:14px;padding:11px 12px;outline:none}.vg-admin-input{min-width:220px}.vg-admin-textarea{width:100%;min-height:110px;resize:vertical}
+  .vg-admin-btn{border:1px solid rgba(25,230,193,.22);background:rgba(25,230,193,.08);color:#dcfffa;border-radius:14px;padding:11px 13px;font-weight:950;cursor:pointer}.vg-admin-btn.primary{background:linear-gradient(135deg,#8B5CF6,#19E6C1);color:#fff}.vg-admin-btn.danger{border-color:rgba(255,77,109,.24);background:rgba(255,77,109,.08);color:#ffd7df}
+  .vg-admin-table{width:100%;border-collapse:separate;border-spacing:0 8px}.vg-admin-table th{text-align:left;color:#a7acba;font-size:.75rem;text-transform:uppercase;padding:0 10px 4px}.vg-admin-table td{background:rgba(255,255,255,.04);border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);padding:10px;color:#e8edf8;vertical-align:top;font-size:.84rem}.vg-admin-table td:first-child{border-left:1px solid rgba(255,255,255,.08);border-radius:14px 0 0 14px}.vg-admin-table td:last-child{border-right:1px solid rgba(255,255,255,.08);border-radius:0 14px 14px 0}
+  .vg-admin-card{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);border-radius:18px;padding:14px;margin-bottom:12px}.vg-admin-cardtop{display:grid;grid-template-columns:70px 1fr auto;gap:12px;align-items:center}.vg-admin-cardtop img{width:70px;height:60px;object-fit:cover;border-radius:14px;background:#070b18}.vg-admin-cardtop b{display:block;color:#fff}.vg-admin-cardtop small{color:#a7acba}.vg-admin-options{margin-top:12px;display:grid;gap:8px}.vg-admin-oprow{display:grid;grid-template-columns:1fr 130px;gap:8px}
+  .vg-proof-box{margin-top:10px;padding:12px;border:1px dashed rgba(25,230,193,.24);border-radius:16px;background:rgba(25,230,193,.045);color:#d9fffa}
+  @media(max-width:820px){.vg-admin-modal{padding:0}.vg-admin-panel{width:100vw;height:100vh;border-radius:0}.vg-admin-stats{grid-template-columns:1fr 1fr}.vg-admin-cardtop{grid-template-columns:58px 1fr}.vg-admin-cardtop img{width:58px;height:52px}.vg-admin-cardtop .vg-admin-btn{grid-column:1/-1}.vg-admin-oprow{grid-template-columns:1fr}.vg-admin-table{font-size:.78rem}}
 </style>
 
 </head>
@@ -6397,35 +6399,39 @@
 <button class="vg-admin-open" id="vgAdminOpenBtn" type="button">Admin</button>
 <div class="vg-admin-modal" id="vgAdminModal">
   <div class="vg-admin-panel">
-    <div class="vg-admin-head"><div><h2>Panel administrador</h2><p>Historial local, artículos, precios, stock y ajustes rápidos.</p></div><button class="vg-admin-x" onclick="vgAdminClose()">×</button></div>
+    <div class="vg-admin-head"><div><h2>Panel administrador Supabase</h2><p>Historial real, comprobantes, edición de artículos, stock y precios.</p></div><button class="vg-admin-x" onclick="vgAdminClose()">×</button></div>
     <div class="vg-admin-tabs">
       <button class="vg-admin-tab active" data-tab="orders">Compras</button>
       <button class="vg-admin-tab" data-tab="products">Artículos</button>
-      <button class="vg-admin-tab" data-tab="settings">Ajustes rápidos</button>
+      <button class="vg-admin-tab" data-tab="setup">Supabase</button>
       <button class="vg-admin-tab" data-tab="export">Exportar</button>
     </div>
     <div class="vg-admin-content">
       <section class="vg-admin-section active" id="vgAdminOrders">
-        <div class="vg-admin-note"><b>Importante:</b> en una página estática de GitHub, el historial se guarda localmente en el navegador. Para ver compras de todos los usuarios en un solo panel necesitas backend/base de datos. Este panel registra cuando se abre WhatsApp desde la página.</div>
+        <div class="vg-admin-note vg-admin-ok"><b>Funcional con Supabase:</b> cuando el cliente abre WhatsApp con comprobante cargado, se crea pedido y se sube el archivo al bucket.</div>
         <div class="vg-admin-stats" id="vgAdminStats"></div>
-        <div class="vg-admin-tools"><input class="vg-admin-input" id="vgOrderSearch" placeholder="Buscar pedido..." oninput="vgAdminRenderOrders()"><select class="vg-admin-select" id="vgOrderFilter" onchange="vgAdminRenderOrders()"><option value="all">Todos</option><option value="pendiente">Pendiente</option><option value="validado">Validado</option><option value="entregado">Entregado</option><option value="cancelado">Cancelado</option></select><button class="vg-admin-btn" onclick="vgAdminRenderOrders()">Actualizar</button><button class="vg-admin-btn danger" onclick="vgAdminClearOrders()">Borrar historial</button></div>
+        <div class="vg-admin-tools"><input class="vg-admin-input" id="vgOrderSearch" placeholder="Buscar pedido..." oninput="vgAdminRenderOrders()"><select class="vg-admin-select" id="vgOrderFilter" onchange="vgAdminRenderOrders()"><option value="all">Todos</option><option value="pendiente">Pendiente</option><option value="validado">Validado</option><option value="entregado">Entregado</option><option value="cancelado">Cancelado</option></select><button class="vg-admin-btn" onclick="vgAdminLoadOrders()">Actualizar</button></div>
         <div id="vgAdminOrdersList"></div>
       </section>
       <section class="vg-admin-section" id="vgAdminProducts">
-        <div class="vg-admin-tools"><input class="vg-admin-input" id="vgProductSearch" placeholder="Buscar artículo..." oninput="vgAdminRenderProducts()"><button class="vg-admin-btn primary" onclick="vgAdminSaveAllVisibleProducts()">Guardar visibles</button><button class="vg-admin-btn" onclick="vgAdminResetProducts()">Restaurar catálogo</button></div>
+        <div class="vg-admin-tools"><input class="vg-admin-input" id="vgProductSearch" placeholder="Buscar artículo..." oninput="vgAdminRenderProducts()"><button class="vg-admin-btn primary" onclick="vgAdminSyncProducts()">Subir catálogo a Supabase</button><button class="vg-admin-btn" onclick="vgAdminLoadProducts()">Cargar cambios</button></div>
         <div id="vgAdminProductsList"></div>
       </section>
-      <section class="vg-admin-section" id="vgAdminSettings">
-        <div class="vg-admin-note">Ajustes recomendados para rapidez: tipo de cambio, mensaje rápido de WhatsApp, estado de atención y nota interna.</div>
+      <section class="vg-admin-section" id="vgAdminSetup">
+        <div class="vg-admin-note"><b>Configura Supabase aquí.</b> Pega tu Project URL y tu anon public key. No pegues la service_role key en una página pública.</div>
         <div class="vg-admin-card">
-          <label>Tipo de cambio USD</label><br><input class="vg-admin-input" id="vgSetRate" type="number" step="0.01" placeholder="17.00"><br><br>
-          <label>Estado de atención</label><br><select class="vg-admin-select" id="vgSetStatus"><option>Atención activa</option><option>Alta demanda</option><option>Respuesta con demora</option><option>Fuera de horario</option></select><br><br>
-          <label>Mensaje rápido WhatsApp</label><textarea class="vg-admin-textarea" id="vgSetMsg"></textarea>
-          <button class="vg-admin-btn primary" onclick="vgAdminSaveSettings()">Guardar ajustes</button>
+          <label>Supabase URL</label><br><input class="vg-admin-input" id="vgSupabaseUrl" placeholder="https://xxxx.supabase.co" style="width:100%;max-width:680px"><br><br>
+          <label>Anon public key</label><br><textarea class="vg-admin-textarea" id="vgSupabaseAnon" placeholder="eyJhbGciOiJI..."></textarea>
+          <button class="vg-admin-btn primary" onclick="vgAdminSaveSupabase()">Guardar conexión</button>
+          <button class="vg-admin-btn" onclick="vgAdminTestSupabase()">Probar conexión</button>
+        </div>
+        <div class="vg-admin-card">
+          <b>SQL necesario</b>
+          <textarea class="vg-admin-textarea" id="vgSupabaseSQL" readonly></textarea>
         </div>
       </section>
       <section class="vg-admin-section" id="vgAdminExport">
-        <div class="vg-admin-tools"><button class="vg-admin-btn primary" onclick="vgAdminExportOrders()">Exportar compras JSON</button><button class="vg-admin-btn" onclick="vgAdminExportProducts()">Exportar artículos JSON</button><button class="vg-admin-btn" onclick="vgAdminExportCSV()">Exportar compras CSV</button></div>
+        <div class="vg-admin-tools"><button class="vg-admin-btn primary" onclick="vgAdminExportOrders()">Exportar compras JSON</button><button class="vg-admin-btn" onclick="vgAdminExportCSV()">Exportar compras CSV</button></div>
         <textarea class="vg-admin-textarea" id="vgAdminExportBox"></textarea>
       </section>
     </div>
@@ -6433,56 +6439,112 @@
 </div>
 
 
-<script id="vg-admin-v33">
+<script id="vg-supabase-admin-v34" src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script id="vg-supabase-admin-app-v34">
 (function(){
 'use strict';
-const PIN='4321', ORD='vg_admin_orders_v1', OVR='vg_admin_overrides_v1', SET='vg_admin_settings_v1';
+const PIN='4321';
+const CFG='vg_supabase_cfg_v1';
+let sb=null, adminOrders=[], adminProducts=[];
 const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
+const money=n=>'$'+Number(n||0).toLocaleString('es-MX',{maximumFractionDigits:0})+' MXN';
 const read=(k,f)=>{try{return JSON.parse(localStorage.getItem(k)||JSON.stringify(f))}catch(e){return f}};
 const write=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
-const money=n=>'$'+Number(n||0).toLocaleString('es-MX',{maximumFractionDigits:0})+' MXN';
+function cfg(){return read(CFG,{url:'',anon:''})}
 function services(){try{if(typeof SERVICES!=='undefined'&&Array.isArray(SERVICES))return SERVICES}catch(e){} return Array.isArray(window.SERVICES)?window.SERVICES:[]}
 function cartItems(){try{if(typeof cart!=='undefined'&&Array.isArray(cart))return cart}catch(e){} return Array.isArray(window.cart)?window.cart:[]}
-function orders(){return read(ORD,[])} function saveOrders(x){write(ORD,x)}
-function overrides(){return read(OVR,{})} function saveOverrides(x){write(OVR,x)}
-function settings(){return read(SET,{rate:17,status:'Atención activa',msg:'Hola, quiero confirmar disponibilidad de mi pedido.'})}
-function proof(){let i=$('#proofInput'); if(i&&i.files&&i.files[0]){let f=i.files[0];return{hasProof:true,filename:f.name,size:f.size,type:f.type}} return{hasProof:false}}
-function makeOrder(source){
+function initSB(){let c=cfg(); if(!c.url||!c.anon||!window.supabase)return null; sb=window.supabase.createClient(c.url,c.anon); return sb}
+function needSB(){return sb||initSB()}
+async function uploadProof(orderId){
+ const input=$('#proofInput'); if(!input||!input.files||!input.files[0]) return null;
+ const file=input.files[0]; const ext=(file.name.split('.').pop()||'jpg').toLowerCase(); const path=`${orderId}/${Date.now()}.${ext}`;
+ const client=needSB(); if(!client) return null;
+ const {error}=await client.storage.from('comprobantes').upload(path,file,{upsert:true,contentType:file.type||'image/jpeg'});
+ if(error) throw error;
+ const {data}=client.storage.from('comprobantes').getPublicUrl(path);
+ return {filename:file.name,path,url:data.publicUrl,size:file.size,type:file.type};
+}
+function currentOrder(source){
  let items=cartItems().map(x=>({title:x.title||'',option:x.option||'',price:Number(x.price||0)}));
  let total=items.reduce((s,x)=>s+Number(x.price||0),0);
  if(source==='xbox-retro'){let c=$('#retroCount'),t=$('#retroTotal');let count=Number(String(c?.textContent||'0').replace(/[^\d]/g,''))||0;let tv=Number(String(t?.textContent||'0').replace(/[^\d.]/g,''))||0;items=[{title:'Colección Xbox Retro',option:count+' juego(s)',price:tv}];total=tv}
- return{id:'VG-'+Date.now(),createdAt:new Date().toISOString(),createdAtText:new Date().toLocaleString('es-MX'),source,status:'pendiente',proof:proof(),items,total,whatsappOpened:true,notes:''}
+ return {source,items,total,status:'pendiente',client_name:'Cliente WhatsApp',client_phone:'',notes:'',created_at:new Date().toISOString()};
 }
-function addOrder(o){let a=orders();a.unshift(o);saveOrders(a.slice(0,500))}
+async function createOrder(source){
+ const client=needSB(); if(!client){console.warn('Supabase no configurado'); return null}
+ let order=currentOrder(source);
+ let proof=null;
+ const {data,error}=await client.from('orders').insert({source:order.source,status:order.status,total:order.total,items:order.items,client_name:order.client_name,client_phone:order.client_phone,notes:order.notes}).select().single();
+ if(error) throw error;
+ try{ proof=await uploadProof(data.id); }catch(e){ console.error('Proof upload error',e); }
+ if(proof){ await client.from('orders').update({proof}).eq('id',data.id); }
+ return {...data,proof};
+}
 function patchWhats(){
- if(!window.__vgAdminPay&&typeof window.sendPaymentWhatsApp==='function'){let old=window.sendPaymentWhatsApp;window.sendPaymentWhatsApp=function(){addOrder(makeOrder('checkout-comprobante'));return old.apply(this,arguments)};window.__vgAdminPay=true}
- if(!window.__vgAdminRetro&&typeof window.buyRetroNow==='function'){let old=window.buyRetroNow;window.buyRetroNow=function(){addOrder(makeOrder('xbox-retro'));return old.apply(this,arguments)};window.__vgAdminRetro=true}
+ if(!window.__vgSupabasePay&&typeof window.sendPaymentWhatsApp==='function'){let old=window.sendPaymentWhatsApp;window.sendPaymentWhatsApp=function(){createOrder('checkout-comprobante').catch(console.error);return old.apply(this,arguments)};window.__vgSupabasePay=true}
+ if(!window.__vgSupabaseRetro&&typeof window.buyRetroNow==='function'){let old=window.buyRetroNow;window.buyRetroNow=function(){createOrder('xbox-retro').catch(console.error);return old.apply(this,arguments)};window.__vgSupabaseRetro=true}
 }
-function applyOverrides(){
- let ov=overrides();
- services().forEach(p=>{let o=ov[p.id];if(!o)return;if(o.priceLabel!==undefined)p.priceLabel=o.priceLabel;if(o.stock!==undefined)p.adminStock=o.stock;if(o.badge!==undefined)p.adminBadge=o.badge;if(Array.isArray(o.options)&&Array.isArray(p.options)){o.options.forEach((x,i)=>{if(p.options[i]){p.options[i].name=x.name;p.options[i].price=Number(x.price||0)}})}});
- if(typeof window.renderProducts==='function')window.renderProducts();
-}
-window.vgAdminOpen=function(){if(sessionStorage.getItem('vg_admin_ok')!=='1'){if(prompt('PIN de administrador')!==PIN){alert('PIN incorrecto');return}sessionStorage.setItem('vg_admin_ok','1')}$('#vgAdminModal')?.classList.add('active');vgAdminRenderAll()};
+window.vgAdminOpen=async function(){if(sessionStorage.getItem('vg_admin_ok')!=='1'){if(prompt('PIN de administrador')!==PIN){alert('PIN incorrecto');return}sessionStorage.setItem('vg_admin_ok','1')}$('#vgAdminModal')?.classList.add('active');vgAdminLoadConfig();await vgAdminLoadAll()};
 window.vgAdminClose=()=>$('#vgAdminModal')?.classList.remove('active');
-window.vgAdminRenderAll=function(){vgAdminRenderStats();vgAdminRenderOrders();vgAdminRenderProducts();vgAdminLoadSettings()};
-window.vgAdminRenderStats=function(){let a=orders(),total=a.reduce((s,o)=>s+Number(o.total||0),0),pend=a.filter(o=>o.status==='pendiente').length,pr=a.filter(o=>o.proof?.hasProof).length;let b=$('#vgAdminStats');if(b)b.innerHTML=`<div class="vg-admin-stat"><b>${a.length}</b><span>Compras</span></div><div class="vg-admin-stat"><b>${money(total)}</b><span>Total histórico</span></div><div class="vg-admin-stat"><b>${pend}</b><span>Pendientes</span></div><div class="vg-admin-stat"><b>${pr}</b><span>Con comprobante</span></div>`};
-window.vgAdminRenderOrders=function(){let q=($('#vgOrderSearch')?.value||'').toLowerCase(),f=$('#vgOrderFilter')?.value||'all';let a=orders().filter(o=>(f==='all'||o.status===f)&&(!q||JSON.stringify(o).toLowerCase().includes(q)));let b=$('#vgAdminOrdersList');if(!b)return;if(!a.length){b.innerHTML='<div class="vg-admin-note">Sin compras registradas.</div>';return}b.innerHTML=`<table class="vg-admin-table"><thead><tr><th>Pedido</th><th>Artículos</th><th>Total</th><th>Comprobante</th><th>Estado</th><th>Acción</th></tr></thead><tbody>${a.map(o=>`<tr><td><b>${o.id}</b><br><small>${o.createdAtText}</small><br>${o.source}</td><td>${(o.items||[]).map(i=>`${i.title}<br><small>${i.option||''}</small>`).join('<hr>')}</td><td><b>${money(o.total)}</b></td><td>${o.proof?.hasProof?'Sí<br><small>'+o.proof.filename+'</small>':'No'}</td><td><select class="vg-admin-select" onchange="vgAdminSetStatus('${o.id}',this.value)">${['pendiente','validado','entregado','cancelado'].map(s=>`<option ${o.status===s?'selected':''}>${s}</option>`).join('')}</select></td><td><button class="vg-admin-btn" onclick="vgAdminCopyOrder('${o.id}')">Copiar</button> <button class="vg-admin-btn danger" onclick="vgAdminDeleteOrder('${o.id}')">Borrar</button></td></tr>`).join('')}</tbody></table>`};
-window.vgAdminSetStatus=(id,st)=>{saveOrders(orders().map(o=>o.id===id?{...o,status:st}:o));vgAdminRenderAll()};
-window.vgAdminDeleteOrder=id=>{if(confirm('¿Borrar pedido?')){saveOrders(orders().filter(o=>o.id!==id));vgAdminRenderAll()}};
-window.vgAdminClearOrders=()=>{if(confirm('¿Borrar historial local?')){saveOrders([]);vgAdminRenderAll()}};
-window.vgAdminCopyOrder=id=>{let o=orders().find(x=>x.id===id);navigator.clipboard?.writeText(JSON.stringify(o,null,2));alert('Pedido copiado')};
-window.vgAdminRenderProducts=function(){let q=($('#vgProductSearch')?.value||'').toLowerCase(),ov=overrides();let list=services().filter(p=>!q||[p.title,p.description,p.categoryName].join(' ').toLowerCase().includes(q));let b=$('#vgAdminProductsList');if(!b)return;b.innerHTML=list.map(p=>{let o=ov[p.id]||{},ops=p.options||[];return`<div class="vg-admin-card" data-pid="${p.id}"><div class="vg-admin-cardtop"><img src="${p.image||'portada.png'}" onerror="this.src='portada.png'"><div><b>${p.title}</b><small>${p.categoryName||''} · ID ${p.id}</small></div><button class="vg-admin-btn" onclick="vgAdminSaveProduct(${p.id})">Guardar</button></div><div class="vg-admin-tools" style="margin-top:12px"><input class="vg-admin-input" data-field="priceLabel" placeholder="Precio visible" value="${o.priceLabel||p.priceLabel||''}"><input class="vg-admin-input" data-field="stock" placeholder="Stock / estado" value="${o.stock||p.adminStock||''}"><select class="vg-admin-select" data-field="badge">${['','Más vendido','Disponible','Nuevo','Oferta','Bajo pedido','Stock limitado'].map(x=>`<option value="${x}" ${(o.badge||p.adminBadge||'')===x?'selected':''}>${x||'Sin badge'}</option>`).join('')}</select></div><div class="vg-admin-options">${ops.map((op,i)=>`<div class="vg-admin-oprow"><input class="vg-admin-input" data-on="${i}" value="${op.name||''}"><input class="vg-admin-input" type="number" data-op="${i}" value="${Number(op.price||0)}"></div>`).join('')}</div></div>`}).join('')};
-window.vgAdminSaveProduct=function(id){let c=document.querySelector(`[data-pid="${id}"]`),p=services().find(x=>String(x.id)===String(id));if(!c||!p)return;let ov=overrides();ov[id]={priceLabel:c.querySelector('[data-field="priceLabel"]')?.value||'',stock:c.querySelector('[data-field="stock"]')?.value||'',badge:c.querySelector('[data-field="badge"]')?.value||'',options:(p.options||[]).map((op,i)=>({name:c.querySelector(`[data-on="${i}"]`)?.value||op.name,price:Number(c.querySelector(`[data-op="${i}"]`)?.value||op.price||0)}))};saveOverrides(ov);applyOverrides();alert('Artículo guardado')};
-window.vgAdminSaveAllVisibleProducts=()=>$$('[data-pid]').forEach(c=>vgAdminSaveProduct(c.dataset.pid));
-window.vgAdminResetProducts=()=>{if(confirm('¿Restaurar cambios locales?')){localStorage.removeItem(OVR);location.reload()}};
-window.vgAdminLoadSettings=function(){let s=settings();if($('#vgSetRate'))$('#vgSetRate').value=s.rate;if($('#vgSetStatus'))$('#vgSetStatus').value=s.status;if($('#vgSetMsg'))$('#vgSetMsg').value=s.msg};
-window.vgAdminSaveSettings=function(){write(SET,{rate:Number($('#vgSetRate')?.value||17),status:$('#vgSetStatus')?.value||'Atención activa',msg:$('#vgSetMsg')?.value||''});alert('Ajustes guardados')};
-window.vgAdminExportOrders=()=>$('#vgAdminExportBox').value=JSON.stringify(orders(),null,2);
-window.vgAdminExportProducts=()=>$('#vgAdminExportBox').value=JSON.stringify(overrides(),null,2);
-window.vgAdminExportCSV=function(){let rows=[['id','fecha','estado','total','fuente','comprobante','articulos']];orders().forEach(o=>rows.push([o.id,o.createdAtText,o.status,o.total,o.source,o.proof?.hasProof?o.proof.filename:'no',(o.items||[]).map(i=>`${i.title} - ${i.option} - ${i.price}`).join(' | ')]));$('#vgAdminExportBox').value=rows.map(r=>r.map(x=>`"${String(x).replaceAll('"','""')}"`).join(',')).join('\n')};
-function bind(){ $$('.vg-admin-tab').forEach(btn=>btn.onclick=()=>{$$('.vg-admin-tab').forEach(b=>b.classList.remove('active'));$$('.vg-admin-section').forEach(s=>s.classList.remove('active'));btn.classList.add('active');$('#vgAdmin'+btn.dataset.tab.charAt(0).toUpperCase()+btn.dataset.tab.slice(1))?.classList.add('active')}); let l=$('#vgAdminOpenBtn');if(l)l.onclick=vgAdminOpen; if(location.hash==='#admin')l?.classList.add('visible');document.addEventListener('keydown',e=>{if(e.ctrlKey&&e.shiftKey&&e.key.toLowerCase()==='a'){l?.classList.add('visible');vgAdminOpen()}})}
-function boot(){bind();applyOverrides();patchWhats();setTimeout(patchWhats,1000);setTimeout(patchWhats,2500)}
+window.vgAdminSaveSupabase=function(){write(CFG,{url:$('#vgSupabaseUrl')?.value.trim()||'',anon:$('#vgSupabaseAnon')?.value.trim()||''});initSB();alert('Conexión guardada')};
+window.vgAdminLoadConfig=function(){let c=cfg(); if($('#vgSupabaseUrl'))$('#vgSupabaseUrl').value=c.url||''; if($('#vgSupabaseAnon'))$('#vgSupabaseAnon').value=c.anon||''; if($('#vgSupabaseSQL'))$('#vgSupabaseSQL').value=SQL_TEXT.trim()};
+window.vgAdminTestSupabase=async function(){let client=needSB(); if(!client){alert('Falta URL o anon key');return} let {error}=await client.from('orders').select('id').limit(1); alert(error?'Error: '+error.message:'Conexión OK')};
+window.vgAdminLoadAll=async function(){await vgAdminLoadOrders();await vgAdminLoadProducts()};
+window.vgAdminLoadOrders=async function(){let client=needSB(); if(!client){vgAdminRenderOrders('Configura Supabase primero.');return} let {data,error}=await client.from('orders').select('*').order('created_at',{ascending:false}).limit(500); if(error){vgAdminRenderOrders(error.message);return} adminOrders=data||[];vgAdminRenderStats();vgAdminRenderOrders()};
+window.vgAdminRenderStats=function(){let total=adminOrders.reduce((s,o)=>s+Number(o.total||0),0),pend=adminOrders.filter(o=>o.status==='pendiente').length,proof=adminOrders.filter(o=>o.proof&&o.proof.url).length;let b=$('#vgAdminStats');if(b)b.innerHTML=`<div class="vg-admin-stat"><b>${adminOrders.length}</b><span>Compras</span></div><div class="vg-admin-stat"><b>${money(total)}</b><span>Total</span></div><div class="vg-admin-stat"><b>${pend}</b><span>Pendientes</span></div><div class="vg-admin-stat"><b>${proof}</b><span>Comprobantes</span></div>`};
+window.vgAdminRenderOrders=function(msg){let b=$('#vgAdminOrdersList');if(!b)return;if(msg){b.innerHTML=`<div class="vg-admin-note">${msg}</div>`;return}let q=($('#vgOrderSearch')?.value||'').toLowerCase(),f=$('#vgOrderFilter')?.value||'all';let a=adminOrders.filter(o=>(f==='all'||o.status===f)&&(!q||JSON.stringify(o).toLowerCase().includes(q))); if(!a.length){b.innerHTML='<div class="vg-admin-note">Sin compras registradas.</div>';return}b.innerHTML=`<table class="vg-admin-table"><thead><tr><th>Pedido</th><th>Artículos</th><th>Total</th><th>Comprobante</th><th>Estado</th></tr></thead><tbody>${a.map(o=>`<tr><td><b>${o.id}</b><br><small>${new Date(o.created_at).toLocaleString('es-MX')}</small><br>${o.source||''}</td><td>${(o.items||[]).map(i=>`${i.title}<br><small>${i.option||''}</small>`).join('<hr>')}</td><td><b>${money(o.total)}</b></td><td>${o.proof?.url?`<a href="${o.proof.url}" target="_blank">Ver comprobante</a><br><small>${o.proof.filename||''}</small>`:'No'}</td><td><select class="vg-admin-select" onchange="vgAdminUpdateOrder('${o.id}',this.value)">${['pendiente','validado','entregado','cancelado'].map(s=>`<option ${o.status===s?'selected':''}>${s}</option>`).join('')}</select></td></tr>`).join('')}</tbody></table>`};
+window.vgAdminUpdateOrder=async function(id,status){let client=needSB(); if(!client)return; let {error}=await client.from('orders').update({status}).eq('id',id); if(error)alert(error.message); await vgAdminLoadOrders()};
+window.vgAdminLoadProducts=async function(){let client=needSB(); if(!client){vgAdminRenderProducts();return} let {data,error}=await client.from('products_admin').select('*'); if(error){adminProducts=[]}else{adminProducts=data||[]} applyAdminProducts(); vgAdminRenderProducts()};
+function applyAdminProducts(){let map=Object.fromEntries(adminProducts.map(p=>[String(p.product_id),p]));services().forEach(p=>{let ov=map[String(p.id)];if(!ov)return;if(ov.price_label)p.priceLabel=ov.price_label;if(ov.stock)p.adminStock=ov.stock;if(ov.badge)p.adminBadge=ov.badge;if(Array.isArray(ov.options)&&Array.isArray(p.options)){ov.options.forEach((x,i)=>{if(p.options[i]){p.options[i].name=x.name;p.options[i].price=Number(x.price||0)}})}}); if(typeof window.renderProducts==='function')window.renderProducts()}
+window.vgAdminRenderProducts=function(){let q=($('#vgProductSearch')?.value||'').toLowerCase(),map=Object.fromEntries(adminProducts.map(p=>[String(p.product_id),p]));let list=services().filter(p=>!q||[p.title,p.description,p.categoryName].join(' ').toLowerCase().includes(q));let b=$('#vgAdminProductsList');if(!b)return;b.innerHTML=list.map(p=>{let ov=map[String(p.id)]||{},ops=ov.options||p.options||[];return`<div class="vg-admin-card" data-pid="${p.id}"><div class="vg-admin-cardtop"><img src="${p.image||'portada.png'}" onerror="this.src='portada.png'"><div><b>${p.title}</b><small>${p.categoryName||''} · ID ${p.id}</small></div><button class="vg-admin-btn" onclick="vgAdminSaveProduct('${p.id}')">Guardar</button></div><div class="vg-admin-tools" style="margin-top:12px"><input class="vg-admin-input" data-field="price_label" placeholder="Precio visible" value="${ov.price_label||p.priceLabel||''}"><input class="vg-admin-input" data-field="stock" placeholder="Stock" value="${ov.stock||p.adminStock||''}"><select class="vg-admin-select" data-field="badge">${['','Más vendido','Disponible','Nuevo','Oferta','Bajo pedido','Stock limitado'].map(x=>`<option value="${x}" ${(ov.badge||p.adminBadge||'')===x?'selected':''}>${x||'Sin badge'}</option>`).join('')}</select></div><div class="vg-admin-options">${ops.map((op,i)=>`<div class="vg-admin-oprow"><input class="vg-admin-input" data-on="${i}" value="${op.name||''}"><input class="vg-admin-input" type="number" data-op="${i}" value="${Number(op.price||0)}"></div>`).join('')}</div></div>`}).join('')};
+window.vgAdminSaveProduct=async function(id){let client=needSB(); if(!client){alert('Configura Supabase');return}let card=document.querySelector(`[data-pid="${id}"]`),p=services().find(x=>String(x.id)===String(id)); if(!card||!p)return;let payload={product_id:String(id),title:p.title,category:p.categoryName||p.category||'',image:p.image||'',price_label:card.querySelector('[data-field="price_label"]')?.value||'',stock:card.querySelector('[data-field="stock"]')?.value||'',badge:card.querySelector('[data-field="badge"]')?.value||'',options:(p.options||[]).map((op,i)=>({name:card.querySelector(`[data-on="${i}"]`)?.value||op.name,price:Number(card.querySelector(`[data-op="${i}"]`)?.value||op.price||0)}))};let {error}=await client.from('products_admin').upsert(payload,{onConflict:'product_id'}); if(error)alert(error.message); else alert('Guardado en Supabase'); await vgAdminLoadProducts()};
+window.vgAdminSyncProducts=async function(){let client=needSB(); if(!client){alert('Configura Supabase');return}for(const p of services()){await client.from('products_admin').upsert({product_id:String(p.id),title:p.title,category:p.categoryName||p.category||'',image:p.image||'',price_label:p.priceLabel||'',stock:p.adminStock||'',badge:p.adminBadge||'',options:p.options||[]},{onConflict:'product_id'})}alert('Catálogo sincronizado');await vgAdminLoadProducts()};
+window.vgAdminExportOrders=()=>$('#vgAdminExportBox').value=JSON.stringify(adminOrders,null,2);
+window.vgAdminExportCSV=function(){let rows=[['id','fecha','estado','total','fuente','comprobante','articulos']];adminOrders.forEach(o=>rows.push([o.id,o.created_at,o.status,o.total,o.source,o.proof?.url||'',(o.items||[]).map(i=>`${i.title} - ${i.option} - ${i.price}`).join(' | ')]));$('#vgAdminExportBox').value=rows.map(r=>r.map(x=>`"${String(x).replaceAll('"','""')}"`).join(',')).join('\n')};
+function bind(){ $$('.vg-admin-tab').forEach(btn=>btn.onclick=()=>{$$('.vg-admin-tab').forEach(b=>b.classList.remove('active'));$$('.vg-admin-section').forEach(s=>s.classList.remove('active'));btn.classList.add('active');$('#vgAdmin'+btn.dataset.tab.charAt(0).toUpperCase()+btn.dataset.tab.slice(1))?.classList.add('active')}); let l=$('#vgAdminOpenBtn');if(l)l.onclick=vgAdminOpen;if(location.hash==='#admin')l?.classList.add('visible');document.addEventListener('keydown',e=>{if(e.ctrlKey&&e.shiftKey&&e.key.toLowerCase()==='a'){l?.classList.add('visible');vgAdminOpen()}})}
+const SQL_TEXT=`
+create table if not exists public.orders (
+  id uuid primary key default gen_random_uuid(),
+  created_at timestamptz default now(),
+  source text,
+  status text default 'pendiente',
+  total numeric default 0,
+  items jsonb default '[]'::jsonb,
+  proof jsonb,
+  client_name text,
+  client_phone text,
+  notes text
+);
+
+create table if not exists public.products_admin (
+  product_id text primary key,
+  title text,
+  category text,
+  image text,
+  price_label text,
+  stock text,
+  badge text,
+  options jsonb default '[]'::jsonb,
+  updated_at timestamptz default now()
+);
+
+insert into storage.buckets (id, name, public)
+values ('comprobantes', 'comprobantes', true)
+on conflict (id) do nothing;
+
+alter table public.orders enable row level security;
+alter table public.products_admin enable row level security;
+
+create policy "allow insert orders" on public.orders for insert to anon with check (true);
+create policy "allow read orders" on public.orders for select to anon using (true);
+create policy "allow update orders" on public.orders for update to anon using (true) with check (true);
+
+create policy "allow products all" on public.products_admin for all to anon using (true) with check (true);
+
+create policy "allow upload comprobantes" on storage.objects for insert to anon with check (bucket_id = 'comprobantes');
+create policy "allow read comprobantes" on storage.objects for select to anon using (bucket_id = 'comprobantes');
+`;
+function boot(){bind();vgAdminLoadConfig();initSB();patchWhats();setTimeout(patchWhats,1000);setTimeout(patchWhats,2500)}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();
 </script>

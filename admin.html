@@ -4994,6 +4994,53 @@
   @media(max-width:820px){.vg-admin-modal{padding:0}.vg-admin-panel{width:100vw;height:100vh;border-radius:0}.vg-admin-stats{grid-template-columns:1fr 1fr}.vg-admin-cardtop{grid-template-columns:58px 1fr}.vg-admin-cardtop img{width:58px;height:52px}.vg-admin-cardtop .vg-admin-btn{grid-column:1/-1}.vg-admin-oprow{grid-template-columns:1fr}.vg-admin-table{font-size:.78rem}}
 </style>
 
+
+<style id="vg-admin-direct-button-v35">
+  .vg-admin-top-btn{
+    appearance:none !important;
+    border:1px solid rgba(25,230,193,.24) !important;
+    background:linear-gradient(135deg,rgba(139,92,246,.18),rgba(25,230,193,.10)) !important;
+    color:#EFFFFB !important;
+    border-radius:999px !important;
+    height:42px !important;
+    padding:0 15px !important;
+    font-size:.78rem !important;
+    font-weight:950 !important;
+    letter-spacing:.04em !important;
+    cursor:pointer !important;
+    box-shadow:0 10px 24px rgba(0,0,0,.18) !important;
+    white-space:nowrap !important;
+  }
+
+  .vg-admin-top-btn:hover{
+    border-color:rgba(25,230,193,.38) !important;
+    background:linear-gradient(135deg,rgba(139,92,246,.28),rgba(25,230,193,.16)) !important;
+  }
+
+  #vgAdminOpenBtn{
+    display:inline-flex !important;
+    top:auto !important;
+    left:auto !important;
+    right:14px !important;
+    bottom:82px !important;
+  }
+
+  @media(max-width:820px){
+    .vg-admin-top-btn{
+      order:5 !important;
+      height:38px !important;
+      padding:0 13px !important;
+      font-size:.72rem !important;
+      justify-self:start !important;
+    }
+
+    #vgAdminOpenBtn{
+      right:12px !important;
+      bottom:78px !important;
+    }
+  }
+</style>
+
 </head>
 <body>
   <header class="topbar">
@@ -5005,6 +5052,9 @@
           <button type="button" class="vg-currency-option active" data-currency="MXN">MXN</button>
           <button type="button" class="vg-currency-option" data-currency="USD">USD</button>
         </div>
+
+<button class="vg-admin-top-btn" type="button" onclick="vgAdminOpen()" title="Panel administrador">Admin</button>
+
 <button class="pill cart-pill" onclick="openCart()">🛒 Carrito <span class="cart-count" id="cartCount">0</span></button></div>
     </div>
     <div class="category-nav"><div class="category-row" id="catRow"></div></div>

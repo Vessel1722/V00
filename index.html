@@ -4170,16 +4170,8 @@
 </style>
 
 
-<style id="vg-xboxretro-premium-upgrades-v25">
-  /* =========================================================
-     Xbox Retro Premium Upgrades:
-     1. Banner superior más fuerte y compacto.
-     4. Selección visual mejorada.
-     5. Barra flotante más inteligente.
-     6. Promoción por cantidad más clara.
-     7. Tarjetas tipo tienda.
-     12. Texto comercial mejorado.
-     ========================================================= */
+<style id="vg-xboxretro-premium-upgrades-safe-v26">
+  /* Versión segura: mejoras visuales sin scripts extra que puedan bloquear carga */
 
   #retroModal .retro-top-shell{
     background:
@@ -4232,7 +4224,6 @@
     color:#D9FFFA !important;
   }
 
-  /* Promo por cantidad, discreta y clara */
   #retroModal .retro-filter-row::after{
     content:"Arma tu paquete: 3 juegos = descuento automático · 5+ juegos = mejor precio" !important;
     display:inline-flex !important;
@@ -4248,7 +4239,6 @@
     white-space:nowrap !important;
   }
 
-  /* Tarjetas tipo tienda */
   .vg-retro-game{
     position:relative !important;
     border-radius:18px !important;
@@ -4287,10 +4277,6 @@
     font-weight:950 !important;
   }
 
-  .vg-retro-meta{
-    align-items:center !important;
-  }
-
   .vg-retro-platform{
     background:rgba(25,230,193,.09) !important;
     border:1px solid rgba(25,230,193,.25) !important;
@@ -4302,7 +4288,6 @@
     font-weight:950 !important;
   }
 
-  /* Selección visual mejorada */
   .vg-retro-game.active{
     border-color:rgba(25,230,193,.82) !important;
     box-shadow:
@@ -4337,7 +4322,6 @@
     z-index:3 !important;
   }
 
-  /* Barra flotante inteligente */
   #retroModal .retro-footer{
     width:min(780px,calc(100vw - 36px)) !important;
     grid-template-columns:1fr auto !important;
@@ -4382,10 +4366,6 @@
     min-width:300px !important;
     min-height:56px !important;
     border-radius:18px !important;
-  }
-
-  #retroModal .retro-footer .modal-actions .primary.whatsapp::after{
-    content:"" !important;
   }
 
   @media(max-width:980px){
@@ -5137,6 +5117,23 @@
     const discount = retroSelected.length >= 3 ? Math.round(subtotal * 0.10) : 0;
     return { subtotal, discount, total: subtotal - discount };
   }
+
+  function updateRetroBuyButton(){
+    const btn=document.querySelector('#retroModal .retro-footer .modal-actions .primary.whatsapp');
+    const countEl=document.getElementById('retroCount');
+    const totalEl=document.getElementById('retroTotal');
+    if(!btn || !countEl || !totalEl) return;
+    const count=Number(String(countEl.textContent||'0').replace(/[^\d]/g,''))||0;
+    const total=String(totalEl.textContent||'$0 MXN').trim();
+    if(count<=0){
+      btn.textContent='Selecciona juegos para comprar';
+      btn.style.opacity='.72';
+    }else{
+      btn.textContent=`Comprar ${count} juego${count===1?'':'s'} · ${total}`;
+      btn.style.opacity='1';
+    }
+  }
+
   function updateTotals(){
     const t = calcTotals();
     const count = document.getElementById('retroCount');
@@ -5147,7 +5144,9 @@
     if(sub) sub.textContent = fmtMoney(t.subtotal);
     if(disc) disc.textContent = '-' + fmtMoney(t.discount);
     if(total) total.textContent = fmtMoney(t.total);
-  }
+  
+      updateRetroBuyButton();
+    }
   window.renderRetroGrid = function renderRetroGrid(){
     const box = document.getElementById('retroGridContainer');
     if(!box) return;
@@ -5678,51 +5677,6 @@
   } else {
     boot();
   }
-})();
-</script>
-
-
-<script id="vg-retro-smart-footer-v25">
-(function(){
-  'use strict';
-
-  function patchRetroSmartFooter(){
-    const btn = document.querySelector('#retroModal .retro-footer .modal-actions .primary.whatsapp');
-    const countEl = document.getElementById('retroCount');
-    const totalEl = document.getElementById('retroTotal');
-    if(!btn || !countEl || !totalEl) return;
-
-    const count = Number(String(countEl.textContent || '0').replace(/[^\d]/g,'')) || 0;
-    const total = String(totalEl.textContent || '$0 MXN').trim();
-
-    if(count <= 0){
-      btn.textContent = 'Selecciona juegos para comprar';
-      btn.style.opacity = '.72';
-    }else{
-      btn.textContent = `Comprar ${count} juego${count === 1 ? '' : 's'} · ${total}`;
-      btn.style.opacity = '1';
-    }
-  }
-
-  const observer = new MutationObserver(patchRetroSmartFooter);
-
-  function boot(){
-    const footer = document.querySelector('#retroModal .retro-footer');
-    if(footer && !footer.dataset.smartFooterReady){
-      observer.observe(footer, {childList:true, subtree:true, characterData:true});
-      footer.dataset.smartFooterReady = '1';
-    }
-    patchRetroSmartFooter();
-  }
-
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', boot);
-  }else{
-    boot();
-  }
-
-  document.addEventListener('click', () => setTimeout(patchRetroSmartFooter, 40), true);
-  setInterval(patchRetroSmartFooter, 700);
 })();
 </script>
 

@@ -4403,14 +4403,15 @@
   <meta name="theme-color" content="#08090F">
 
 
-<style id="vg-service-modal-image-fix-v29">
+<style id="vg-mobile-stable-optimization-v30">
   /* =========================================================
-     Corrección de ventanas de servicio:
-     - La imagen del servicio se muestra completa.
-     - El modal no queda mocho.
-     - Las opciones y botones quedan visibles.
+     Versión estable + optimización móvil
+     - Sin scripts extra que puedan bloquear carga.
+     - Imágenes de modales completas usando solo CSS.
+     - Mejor navegación y catálogo en celular.
      ========================================================= */
 
+  /* ---------- Modal de servicios estable ---------- */
   .modal{
     padding:16px !important;
     align-items:center !important;
@@ -4418,101 +4419,71 @@
   }
 
   .modal-card{
-    width:min(1120px, calc(100vw - 32px)) !important;
-    max-width:1120px !important;
-    height:auto !important;
+    width:min(1100px, calc(100vw - 32px)) !important;
     max-height:min(88vh, 860px) !important;
-    display:grid !important;
-    grid-template-columns:minmax(320px, 440px) minmax(0, 1fr) !important;
+    grid-template-columns:minmax(300px, 430px) minmax(0,1fr) !important;
     overflow:hidden !important;
-    border-radius:28px !important;
+    border-radius:26px !important;
   }
 
-  /* Imagen completa, sin cortar */
   .modal-img{
-    position:relative !important;
-    min-height:0 !important;
-    height:auto !important;
     display:flex !important;
     align-items:center !important;
     justify-content:center !important;
     padding:22px !important;
-    background:
-      radial-gradient(circle at center, rgba(25,230,193,.08), transparent 48%),
-      linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.012)),
-      #070B18 !important;
     overflow:hidden !important;
-  }
-
-  .modal-img::before{
-    content:"" !important;
-    position:absolute !important;
-    inset:0 !important;
-    background-image:var(--modal-bg-img, none) !important;
-    background-size:cover !important;
-    background-position:center !important;
-    filter:blur(24px) brightness(.42) saturate(1.1) !important;
-    transform:scale(1.12) !important;
-    opacity:.75 !important;
-    z-index:0 !important;
+    background:
+      radial-gradient(circle at center, rgba(25,230,193,.08), transparent 46%),
+      #070B18 !important;
   }
 
   .modal-img img{
-    position:relative !important;
-    z-index:1 !important;
     width:100% !important;
-    max-width:100% !important;
     height:auto !important;
+    max-width:100% !important;
     max-height:calc(min(88vh, 860px) - 44px) !important;
     object-fit:contain !important;
     object-position:center center !important;
-    border-radius:20px !important;
-    box-shadow:0 18px 42px rgba(0,0,0,.34) !important;
-    background:#070B18 !important;
+    border-radius:18px !important;
+    box-shadow:0 18px 42px rgba(0,0,0,.32) !important;
   }
 
   .modal-body{
     min-height:0 !important;
     overflow:auto !important;
-    padding:22px 24px !important;
+    padding:20px 22px !important;
     display:flex !important;
     flex-direction:column !important;
   }
 
   .modal-body h2{
-    font-size:clamp(1.55rem, 2.4vw, 2.35rem) !important;
+    font-size:clamp(1.55rem,2.35vw,2.3rem) !important;
     line-height:1.04 !important;
     margin:12px 0 10px !important;
   }
 
-  .modal-body .lead{
-    font-size:.94rem !important;
-    line-height:1.45 !important;
-  }
-
   .modal-delivery-note{
-    margin:12px 0 14px !important;
+    margin:11px 0 13px !important;
     padding:12px 14px !important;
-    border-radius:16px !important;
+    border-radius:15px !important;
   }
 
   #modalOptions{
-    max-height:min(34vh, 330px) !important;
+    max-height:min(34vh, 320px) !important;
     overflow:auto !important;
     padding-right:5px !important;
-    margin-right:-5px !important;
   }
 
   .option{
-    padding:13px 15px !important;
+    padding:12px 14px !important;
     margin:8px 0 !important;
-    border-radius:16px !important;
+    border-radius:15px !important;
   }
 
   .modal-actions{
     position:sticky !important;
     bottom:0 !important;
-    z-index:3 !important;
+    z-index:5 !important;
     margin-top:auto !important;
     padding-top:14px !important;
     padding-bottom:4px !important;
@@ -4522,49 +4493,199 @@
 
   .modal-actions .primary,
   .modal-actions .secondary{
-    min-height:54px !important;
-    border-radius:17px !important;
+    min-height:52px !important;
+    border-radius:16px !important;
   }
 
-  /* Servicios con imagen horizontal: mantener proporción completa */
-  .modal-card.modal-wide-image .modal-img img{
-    width:100% !important;
-    height:auto !important;
-    max-height:70vh !important;
-  }
-
-  /* Servicios con imagen vertical/cuadrada: no deformar */
-  .modal-card.modal-tall-image .modal-img img{
-    width:auto !important;
-    max-width:100% !important;
-    height:auto !important;
-    max-height:calc(min(88vh, 860px) - 54px) !important;
-  }
-
-  @media (max-height: 820px){
-    .modal-card{
-      max-height:92vh !important;
-      grid-template-columns:minmax(280px, 390px) minmax(0, 1fr) !important;
+  /* ---------- Optimización móvil general ---------- */
+  @media(max-width: 820px){
+    body{
+      overflow-x:hidden !important;
     }
 
-    .modal-img{
-      padding:18px !important;
+    .topbar{
+      position:sticky !important;
+      top:0 !important;
+      z-index:80 !important;
     }
 
-    .modal-img img{
-      max-height:calc(92vh - 36px) !important;
+    .nav{
+      display:grid !important;
+      grid-template-columns:1fr auto !important;
+      gap:10px !important;
+      padding:10px 12px !important;
     }
 
-    .modal-body{
-      padding:18px 20px !important;
+    .brand{
+      min-width:0 !important;
     }
 
-    #modalOptions{
-      max-height:min(30vh, 250px) !important;
+    .brand img{
+      width:46px !important;
+      height:46px !important;
     }
-  }
 
-  @media (max-width: 820px){
+    .brand span{
+      font-size:.95rem !important;
+      white-space:nowrap !important;
+      overflow:hidden !important;
+      text-overflow:ellipsis !important;
+      max-width:180px !important;
+    }
+
+    .brand small{
+      font-size:.62rem !important;
+      letter-spacing:.10em !important;
+    }
+
+    .searchbar{
+      grid-column:1/-1 !important;
+      order:3 !important;
+      height:48px !important;
+      border-radius:16px !important;
+    }
+
+    .nav-actions,
+    .nav .actions,
+    .top-actions{
+      gap:6px !important;
+    }
+
+    .pill{
+      padding:10px 12px !important;
+      font-size:.78rem !important;
+      border-radius:14px !important;
+    }
+
+    .pill span:not(:first-child){
+      display:none !important;
+    }
+
+    .hero{
+      min-height:auto !important;
+      padding:34px 14px 30px !important;
+    }
+
+    .hero-inner{
+      padding:0 !important;
+    }
+
+    .hero-title{
+      font-size:clamp(2.15rem,11vw,3.4rem) !important;
+      line-height:.94 !important;
+    }
+
+    .hero .lead{
+      font-size:.95rem !important;
+      line-height:1.5 !important;
+      max-width:100% !important;
+    }
+
+    .hero-actions{
+      display:grid !important;
+      grid-template-columns:1fr !important;
+      gap:10px !important;
+    }
+
+    .home-sections{
+      padding:8px 14px 18px !important;
+      gap:12px !important;
+    }
+
+    .service-carousel-card{
+      flex-basis:min(302px, calc(100vw - 42px)) !important;
+      height:158px !important;
+      border-radius:20px !important;
+    }
+
+    .categories,
+    .cat-row,
+    .filters{
+      overflow-x:auto !important;
+      flex-wrap:nowrap !important;
+      -webkit-overflow-scrolling:touch !important;
+      padding-bottom:6px !important;
+    }
+
+    .cat-btn{
+      flex:0 0 auto !important;
+      white-space:nowrap !important;
+      padding:11px 14px !important;
+    }
+
+    .market-layout{
+      display:block !important;
+    }
+
+    .sidebar{
+      position:static !important;
+      width:100% !important;
+      margin-bottom:14px !important;
+    }
+
+    .side-list{
+      display:flex !important;
+      overflow-x:auto !important;
+      gap:8px !important;
+      padding-bottom:6px !important;
+      -webkit-overflow-scrolling:touch !important;
+    }
+
+    .side-item{
+      flex:0 0 auto !important;
+      min-width:150px !important;
+      padding:12px 14px !important;
+    }
+
+    .tools{
+      display:grid !important;
+      grid-template-columns:1fr !important;
+      gap:10px !important;
+      margin-bottom:14px !important;
+    }
+
+    .grid{
+      grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+      gap:12px !important;
+    }
+
+    .card{
+      border-radius:20px !important;
+      min-width:0 !important;
+    }
+
+    .imgbox{
+      height:138px !important;
+    }
+
+    .info{
+      padding:12px !important;
+    }
+
+    .card h3{
+      font-size:.9rem !important;
+      line-height:1.18 !important;
+      min-height:38px !important;
+    }
+
+    .desc{
+      display:none !important;
+    }
+
+    .price{
+      font-size:1.05rem !important;
+    }
+
+    .premium-actions{
+      grid-template-columns:1fr !important;
+      gap:8px !important;
+    }
+
+    .quick-add-btn{
+      display:none !important;
+    }
+
+    /* Modales en móvil: pantalla completa, imagen completa */
     .modal{
       padding:0 !important;
       align-items:stretch !important;
@@ -4572,56 +4693,166 @@
 
     .modal-card{
       width:100vw !important;
-      max-width:none !important;
       height:100vh !important;
       max-height:100vh !important;
-      grid-template-columns:1fr !important;
-      grid-template-rows:38vh minmax(0, 1fr) !important;
       border-radius:0 !important;
+      grid-template-columns:1fr !important;
+      grid-template-rows:34vh minmax(0,1fr) !important;
     }
 
     .modal-img{
-      padding:14px !important;
-      min-height:0 !important;
-      height:38vh !important;
+      height:34vh !important;
+      padding:12px !important;
     }
 
     .modal-img img{
-      max-height:calc(38vh - 28px) !important;
+      max-height:calc(34vh - 24px) !important;
       width:auto !important;
       max-width:100% !important;
       object-fit:contain !important;
     }
 
     .modal-body{
-      padding:16px 16px 18px !important;
       min-height:0 !important;
+      padding:14px 14px 16px !important;
     }
 
     #modalOptions{
-      max-height:31vh !important;
+      max-height:30vh !important;
     }
 
     .modal-actions{
       padding-bottom:12px !important;
     }
+
+    .modal-actions{
+      display:grid !important;
+      grid-template-columns:1fr !important;
+      gap:10px !important;
+    }
+
+    /* Xbox Retro móvil */
+    #retroModal .retro-top-shell{
+      grid-template-columns:1fr !important;
+      grid-template-areas:
+        "head"
+        "promo"
+        "controls"
+        "filters" !important;
+      padding:10px 12px 8px !important;
+      gap:8px !important;
+    }
+
+    #retroModal .retro-head h2{
+      font-size:1.9rem !important;
+    }
+
+    #retroModal .retro-head p{
+      display:none !important;
+    }
+
+    #retroModal .retro-controls{
+      grid-template-columns:1fr !important;
+      gap:8px !important;
+    }
+
+    #retroModal .retro-sales-note{
+      grid-template-columns:1fr !important;
+      padding:10px 12px !important;
+    }
+
+    #retroModal .retro-filter-row{
+      overflow-x:auto !important;
+      flex-wrap:nowrap !important;
+      -webkit-overflow-scrolling:touch !important;
+      padding-bottom:4px !important;
+    }
+
+    #retroModal .retro-filter-chip{
+      flex:0 0 auto !important;
+      white-space:nowrap !important;
+    }
+
+    #retroGridContainer{
+      grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+      gap:10px !important;
+      padding:10px 12px 142px !important;
+    }
+
+    .vg-retro-game{
+      min-height:240px !important;
+    }
+
+    .vg-retro-cover{
+      height:142px !important;
+    }
+
+    .vg-retro-info h4{
+      font-size:.82rem !important;
+      min-height:40px !important;
+    }
+
+    #retroModal .retro-footer{
+      left:10px !important;
+      right:10px !important;
+      bottom:10px !important;
+      width:auto !important;
+      grid-template-columns:1fr !important;
+      padding:10px !important;
+      border-radius:18px !important;
+    }
+
+    #retroModal .retro-totals{
+      grid-template-columns:repeat(2,1fr) !important;
+      width:100% !important;
+      gap:8px !important;
+    }
+
+    #retroModal .retro-footer .modal-actions .primary.whatsapp{
+      width:100% !important;
+      min-width:0 !important;
+    }
+
+    .floating-whatsapp{
+      right:12px !important;
+      bottom:14px !important;
+      padding:12px 14px !important;
+      font-size:.86rem !important;
+    }
+
+    footer{
+      padding:26px 14px !important;
+    }
   }
 
-  @media (max-width: 520px){
-    .modal-card{
-      grid-template-rows:34vh minmax(0, 1fr) !important;
+  @media(max-width: 420px){
+    .grid{
+      gap:10px !important;
     }
 
-    .modal-img{
-      height:34vh !important;
+    .imgbox{
+      height:124px !important;
     }
 
-    .modal-img img{
-      max-height:calc(34vh - 28px) !important;
+    .card h3{
+      font-size:.84rem !important;
     }
 
-    #modalOptions{
-      max-height:29vh !important;
+    .price{
+      font-size:.96rem !important;
+    }
+
+    .detail-btn{
+      font-size:.86rem !important;
+      padding:11px 8px !important;
+    }
+
+    #retroGridContainer{
+      gap:9px !important;
+    }
+
+    .vg-retro-cover{
+      height:132px !important;
     }
   }
 </style>
@@ -5904,68 +6135,6 @@
     document.addEventListener('DOMContentLoaded', boot);
   } else {
     boot();
-  }
-})();
-</script>
-
-
-<script id="vg-service-modal-image-fix-v29">
-(function(){
-  'use strict';
-
-  function applyModalImageLayout(){
-    const modalCard = document.querySelector('#productModal .modal-card, .modal.show .modal-card, .modal-card');
-    const img = document.querySelector('#modalImage, .modal-img img');
-    const imgWrap = document.querySelector('.modal-img');
-
-    if(!modalCard || !img || !imgWrap) return;
-
-    modalCard.classList.remove('modal-wide-image','modal-tall-image');
-
-    const src = img.currentSrc || img.src || '';
-    if(src){
-      imgWrap.style.setProperty('--modal-bg-img', `url("${src}")`);
-    }
-
-    const w = img.naturalWidth || img.width || 1;
-    const h = img.naturalHeight || img.height || 1;
-    const ratio = w / h;
-
-    if(ratio >= 1.15){
-      modalCard.classList.add('modal-wide-image');
-    }else{
-      modalCard.classList.add('modal-tall-image');
-    }
-  }
-
-  window.addEventListener('load', applyModalImageLayout);
-
-  document.addEventListener('click', function(){
-    setTimeout(applyModalImageLayout, 80);
-    setTimeout(applyModalImageLayout, 260);
-  }, true);
-
-  document.addEventListener('change', function(){
-    setTimeout(applyModalImageLayout, 80);
-  }, true);
-
-  const observer = new MutationObserver(function(){
-    applyModalImageLayout();
-  });
-
-  function bootObserver(){
-    const target = document.getElementById('productModal') || document.body;
-    if(target && !target.dataset.modalImageFixReady){
-      observer.observe(target, {attributes:true, childList:true, subtree:true});
-      target.dataset.modalImageFixReady = '1';
-    }
-    applyModalImageLayout();
-  }
-
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', bootObserver);
-  }else{
-    bootObserver();
   }
 })();
 </script>
